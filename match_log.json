@@ -313,5 +313,68 @@
         "p2": "Mike",
         "c2": "King K. Rool",
         "winner": "p1"
+    },
+    {
+        "p1": "Nick R",
+        "c1": "Snake",
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "winner": "p2"
+    },
+    {
+        "p1": "Nick R",
+        "c1": "Ice Climbers",
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "winner": "p1"
+    },
+    {
+        "p1": "Nick R",
+        "c1": "King Dedede",
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "winner": "p1"
+    },
+    {
+        "p1": "Will",
+        "c1": "Robin",
+        "p2": "Colton",
+        "c2": "Toon Link",
+        "winner": "p1"
+    },
+    {
+        "p1": "Will",
+        "c1": "Robin",
+        "p2": "Colton",
+        "c2": "Jigglypuff",
+        "winner": "p1"
+    },
+    {
+        "p1": "Will",
+        "c1": "Ganondorf",
+        "p2": "Colton",
+        "c2": "Toon Link",
+        "winner": "p1"
+    },
+    {
+        "p1": "Will",
+        "c1": "Roy",
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "winner": "p1"
+    },
+    {
+        "p1": "Will",
+        "c1": "King K. Rool",
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "winner": "p1"
+    },
+    {
+        "p1": "Will",
+        "c1": "Link",
+        "p2": "Nick W",
+        "c2": "Palutena",
+        "winner": "p1"
     }
 ]
