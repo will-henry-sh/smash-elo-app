@@ -292,5 +292,26 @@
         "p2": "Nick W",
         "c2": "Wii Fit Trainer",
         "winner": "p1"
+    },
+    {
+        "p1": "Nick R",
+        "c1": "Min Min",
+        "p2": "Mike",
+        "c2": "Bowser Jr.",
+        "winner": "p1"
+    },
+    {
+        "p1": "Nick R",
+        "c1": "Min Min",
+        "p2": "Mike",
+        "c2": "King K. Rool",
+        "winner": "p1"
+    },
+    {
+        "p1": "Nick R",
+        "c1": "Min Min",
+        "p2": "Mike",
+        "c2": "King K. Rool",
+        "winner": "p1"
     }
 ]
