@@ -376,5 +376,12 @@
         "p2": "Nick W",
         "c2": "Palutena",
         "winner": "p1"
+    },
+    {
+        "p1": "Nick R",
+        "c1": "Piranha Plant",
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "winner": "p1"
     }
 ]
