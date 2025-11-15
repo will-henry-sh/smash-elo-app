@@ -139,6 +139,10 @@ button:hover {
   border: 1px solid #444;
 }
 
+.result-box {
+  text-align: center;
+}
+
 /* ELO colors */
 .green {
   color: #4ade80;
