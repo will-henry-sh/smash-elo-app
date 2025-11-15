@@ -1,106 +1,83 @@
-/* Dark mode foundation */
-/* Dark mode foundation */
+/* ------------------------------------------
+   GLOBAL BASE STYLES (Mobile-first)
+------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* prevents any horizontal scrolling */
+}
+
 body {
   background-color: #1e1e1e;
   color: #e5e5e5;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
-  margin: 0; /* keep this */
-  padding: 0; /* <-- FIX: remove 20px desktop padding */
 }
 
-/* Headings */
+/* ------------------------------------------
+     TYPOGRAPHY
+  ------------------------------------------- */
 h1,
 h2 {
-  color: #ffffff;
-  margin-bottom: 10px;
+  color: #fff;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+h1 {
   font-size: 1.8rem;
 }
 
+h2 {
+  font-size: 1.4rem;
+}
+
+/* Center headings on small screens */
 @media (max-width: 600px) {
   h1,
   h2 {
-    font-size: 1.4rem;
     text-align: center;
   }
 }
 
-/* Input fields */
-input,
-select {
-  background-color: #2a2a2a;
-  color: #ffffff;
-  border: 1px solid #444;
-  padding: 12px;
-  width: 100%;
-  border-radius: 6px;
-  margin-bottom: 12px;
-}
-
-@media (max-width: 600px) {
-  input,
-  select {
-    padding: 16px;
-    font-size: 1.15rem;
-  }
-}
-
-/* Buttons */
-button {
-  background-color: #10a37f;
-  color: #ffffff;
-  border: none;
-  padding: 12px;
-  width: 100%;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 10px;
-  margin-bottom: 12px;
-}
-
-button:hover {
-  background-color: #0d8b6c;
-}
-
-@media (max-width: 600px) {
-  button {
-    padding: 16px;
-    font-size: 1.15rem;
-  }
-}
-
-/* Main container */
-/* Main container — desktop untouched */
+/* ------------------------------------------
+     MAIN CONTAINER
+  ------------------------------------------- */
 .container {
   background-color: #252525;
-  padding: 25px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-  max-width: 900px;
-  margin: auto;
-  width: 100%;
 }
 
-/* MOBILE ONLY FIXES */
+/* FULL-WIDTH MOBILE CONTAINER */
 @media (max-width: 600px) {
   .container {
-    width: 100%;
-    margin: 0 auto; /* keep centered */
-    border-radius: 0;
     padding: 16px;
-    max-width: 100%; /* ensures no horizontal scroll */
+    border-radius: 0;
+    max-width: 100%;
   }
 }
 
-/* Navigation link */
+/* ------------------------------------------
+     NAV LINK
+  ------------------------------------------- */
 .nav-link {
   display: inline-block;
   margin: 10px 0 20px 0;
   color: #10a37f;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .nav-link:hover {
@@ -109,23 +86,60 @@ button:hover {
 
 @media (max-width: 600px) {
   .nav-link {
-    font-size: 1.2rem;
-    text-align: center;
     display: block;
+    text-align: center;
+    font-size: 1.25rem;
   }
 }
 
-/* Match result box */
+/* ------------------------------------------
+     FORM ELEMENTS
+  ------------------------------------------- */
+input,
+select,
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* iOS-friendly: no forced heights */
+select,
+input {
+  height: auto;
+  line-height: normal;
+}
+
+/* Buttons */
+button {
+  background-color: #10a37f;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0d8b6c;
+}
+
+/* ------------------------------------------
+     MATCH RESULT + PLAYER STATS BOXES
+  ------------------------------------------- */
 .result-box,
 .player-stats-box {
   background-color: #2a2a2a;
-  padding: 15px;
+  padding: 16px;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin: 20px 0;
   border: 1px solid #444;
 }
 
-/* ELO up/down */
+/* ELO colors */
 .green {
   color: #4ade80;
   font-weight: 600;
@@ -136,144 +150,90 @@ button:hover {
   font-weight: 600;
 }
 
-/* Searchable dropdown */
-.search-input {
-  width: 100%;
-  padding: 12px;
-  background-color: #2a2a2a;
-  border: 1px solid #444;
-  color: #fff;
-  border-radius: 6px;
-}
-
-.dropdown-item:hover {
-  background-color: #3a3a3a;
-}
-
-/* Table */
+/* ------------------------------------------
+     TABLE (Leaderboard)
+  ------------------------------------------- */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-th {
-  background-color: #2c2c2c;
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #444;
-  color: #cccccc;
-}
-
+th,
 td {
   padding: 12px;
   border-bottom: 1px solid #333;
+}
+
+th {
+  background-color: #2c2c2c;
+  color: #ccc;
+  text-align: left;
 }
 
 tr:hover {
   background-color: #2b2b2b;
 }
 
-/* Mobile table behavior */
+/* MOBILE TABLE: no overflow, no scroll */
 @media (max-width: 600px) {
-  table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
+  table,
+  thead,
+  tbody,
   th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    border-bottom: 1px solid #333;
+    padding: 8px 0;
+  }
+
   td {
-    padding: 10px 8px;
-    font-size: 1rem;
+    padding: 8px 0;
+    font-size: 1.05rem;
+  }
+
+  th {
+    display: none; /* hide header row on small screens */
   }
 }
 
-/* Rank column */
+/* ------------------------------------------
+     LEADERBOARD RANK COLORS
+  ------------------------------------------- */
 .rank-col {
-  width: 40px;
-  text-align: center;
+  width: 50px;
   font-weight: 700;
+  text-align: center;
 }
 
-@media (max-width: 600px) {
-  .rank-col {
-    width: 55px;
-    font-size: 1.15rem;
-  }
-}
-
-/* Rank coloring */
 .rank-gold {
   color: #ffd700;
-  font-weight: 700;
 }
-
 .rank-silver {
   color: #9cb3c9;
-  font-weight: 700;
 }
-
 .rank-bronze {
   color: #cd7f32;
-  font-weight: 700;
 }
-
 .rank-normal {
-  color: #ffffff;
+  color: #fff;
 }
 
-.rank-number {
-  margin-right: 6px;
-  color: #888;
-}
-
-/* Sections and cards */
+/* ------------------------------------------
+     LAYOUT HELPERS
+  ------------------------------------------- */
 section,
 .card {
   margin-bottom: 24px;
 }
 
-@media (max-width: 600px) {
-  .card {
-    padding: 16px;
-  }
-}
-
-/* Fix uneven dropdown + character fields */
-
-.form-row {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 10px; /* Ensures even vertical spacing */
-}
-
-/* Force all selects + inputs inside match form to be equal height */
-select,
-input {
-  height: 48px; /* Uniform height */
-  line-height: 48px;
-  box-sizing: border-box;
-}
-
-/* Character inputs need forced height (they currently auto-size on mobile) */
-.character-field {
-  height: 48px !important;
-  display: flex;
-  align-items: center;
-}
-
-/* Match the spacing of mobile */
-@media (max-width: 600px) {
-  select,
-  input,
-  .character-field {
-    height: 56px !important;
-    line-height: 56px;
-  }
-
-  .form-row {
-    gap: 12px;
-  }
+.card {
+  padding: 16px;
+  background-color: #333;
+  border-radius: 8px;
 }
