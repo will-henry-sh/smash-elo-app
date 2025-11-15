@@ -1,47 +1,47 @@
 {
-  "Nick R": {
-    "Snake": 897,
-    "Min Min": 1094,
-    "Donkey Kong": 1033,
-    "Hero": 1010,
-    "Cloud": 978,
-    "Ice Climbers": 1018,
-    "King Dedede": 1009,
-    "Piranha Plant": 1008,
-    "Sephiroth": 976,
-    "Marth": 984
-  },
-  "Will": {
-    "Robin": 1074,
-    "Ganondorf": 1039,
-    "Wolf": 1001,
-    "Incineroar": 1024,
-    "Greninja": 1029,
-    "Ridley": 1030,
-    "Captain Falcon": 1016,
-    "Bowser": 1010,
-    "Inkling": 1010,
-    "Sheik": 1017,
-    "Hero": 1013,
-    "Roy": 1009,
-    "King K. Rool": 1008,
-    "Link": 1016,
-    "Meta Knight": 1032
-  },
-  "Colton": {
-    "Toon Link": 959,
-    "Jigglypuff": 975,
-    "Dark Samus": 1014,
-    "Mario": 1013,
-    "Yoshi": 986,
-    "Duck Hunt": 995,
-    "Marth": 996,
-    "Captain Falcon": 977,
-    "Samus": 983
-  },
-  "Nick W": {},
-  "Mike": {
-    "King K. Rool": 986,
-    "Bowser Jr.": 984
-  }
+    "Nick R": {
+        "Snake": 897,
+        "Min Min": 1094,
+        "Donkey Kong": 1033,
+        "Hero": 1010,
+        "Cloud": 978,
+        "Ice Climbers": 1018,
+        "King Dedede": 1009,
+        "Piranha Plant": 1008,
+        "Sephiroth": 976,
+        "Marth": 984
+    },
+    "Will": {
+        "Robin": 1074,
+        "Ganondorf": 1051,
+        "Wolf": 1001,
+        "Incineroar": 1024,
+        "Greninja": 1029,
+        "Ridley": 1030,
+        "Captain Falcon": 1016,
+        "Bowser": 1010,
+        "Inkling": 1010,
+        "Sheik": 1017,
+        "Hero": 1013,
+        "Roy": 1009,
+        "King K. Rool": 1008,
+        "Link": 1016,
+        "Meta Knight": 1032
+    },
+    "Colton": {
+        "Toon Link": 947,
+        "Jigglypuff": 975,
+        "Dark Samus": 1014,
+        "Mario": 1013,
+        "Yoshi": 986,
+        "Duck Hunt": 995,
+        "Marth": 996,
+        "Captain Falcon": 977,
+        "Samus": 983
+    },
+    "Nick W": {},
+    "Mike": {
+        "King K. Rool": 986,
+        "Bowser Jr.": 984
+    }
 }
