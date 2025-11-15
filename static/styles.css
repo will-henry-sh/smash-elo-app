@@ -234,16 +234,32 @@ section,
 }
 
 /* Mobile: Make leaderboard table full-width edge to edge */
+/* MOBILE FIXES FOR LEADERBOARD */
 @media (max-width: 600px) {
-  /* target only the leaderboard page container */
+  /* Keep heading padded even when container is full-width */
+  .leaderboard-container h1,
+  .leaderboard-container .nav-link {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Make table stretch edge-to-edge */
   .leaderboard-container {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
 
   .leaderboard-container table {
-    width: 100vw !important; /* full viewport width */
-    margin-left: calc(-16px); /* cancel container padding */
-    margin-right: calc(-16px);
+    width: 100vw !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 0;
+  }
+
+  /* Table cells need padding restored */
+  .leaderboard-container th,
+  .leaderboard-container td {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 }
