@@ -9,6 +9,8 @@ from flask import Response
 
 print("RUNNING FROM:", os.getcwd())
 print("APP FILE:", __file__)
+print(">>> LOADED FLASK APP FROM:", __file__)
+
 
 
 app = Flask(__name__)
