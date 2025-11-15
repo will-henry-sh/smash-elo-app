@@ -240,28 +240,24 @@ def leaderboard():
     rows = []
 
     for player, char_map in data.items():
-
-        # Sum only the differences from 1000 for characters that have changed
         diffs = [(elo - 1000) for elo in char_map.values() if elo != 1000]
         global_elo = sum(diffs) if diffs else 0
-
         rows.append((player, global_elo, char_map))
 
-    # Sort by global rating descending
     rows.sort(key=lambda x: x[1], reverse=True)
 
-    # Load the last match so the template can display it
+    # Load last match safely
+    last_match = None
     try:
         with open("last_result.json", "r") as f:
-            last_match = json.load(f)
-    except:
-        last_match = None  # If file missing or empty
+            content = f.read().strip()
+            if content:  # Ensure not empty
+                last_match = json.loads(content)
+    except Exception as e:
+        print("LAST MATCH LOAD ERROR:", e)
 
-    return render_template(
-        "leaderboard.html",
-        rows=rows,
-        last_match=last_match
-    )
+    return render_template("leaderboard.html", rows=rows, last_match=last_match)
+
 
 
 
