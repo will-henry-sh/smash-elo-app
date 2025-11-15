@@ -453,5 +453,12 @@
         "p2": "Colton",
         "c2": "Dark Samus",
         "winner": "p2"
+    },
+    {
+        "p1": "Will",
+        "c1": "Wolf",
+        "p2": "Colton",
+        "c2": "Jigglypuff",
+        "winner": "p1"
     }
 ]
