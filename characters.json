@@ -18,7 +18,7 @@
         "Incineroar": 1024,
         "Greninja": 1029,
         "Ridley": 1013,
-        "Captain Falcon": 1016,
+        "Captain Falcon": 1031,
         "Bowser": 1010,
         "Inkling": 1010,
         "Sheik": 1017,
@@ -39,7 +39,9 @@
         "Captain Falcon": 977,
         "Samus": 983
     },
-    "Nick W": {},
+    "Nick W": {
+        "Wii Fit Trainer": 985
+    },
     "Mike": {
         "King K. Rool": 986,
         "Bowser Jr.": 984
