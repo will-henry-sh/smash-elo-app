@@ -404,7 +404,8 @@ def add_match():
     queue_push("Auto-update from match submission")
 
 
-    return redirect(url_for("index"))
+    return redirect(url_for("matches"))
+
 
 @app.route("/admin")
 @requires_auth
