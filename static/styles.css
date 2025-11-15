@@ -233,3 +233,41 @@ section,
     padding: 16px;
   }
 }
+
+/* Fix uneven dropdown + character fields */
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px; /* Ensures even vertical spacing */
+}
+
+/* Force all selects + inputs inside match form to be equal height */
+select,
+input {
+  height: 48px; /* Uniform height */
+  line-height: 48px;
+  box-sizing: border-box;
+}
+
+/* Character inputs need forced height (they currently auto-size on mobile) */
+.character-field {
+  height: 48px !important;
+  display: flex;
+  align-items: center;
+}
+
+/* Match the spacing of mobile */
+@media (max-width: 600px) {
+  select,
+  input,
+  .character-field {
+    height: 56px !important;
+    line-height: 56px;
+  }
+
+  .form-row {
+    gap: 12px;
+  }
+}

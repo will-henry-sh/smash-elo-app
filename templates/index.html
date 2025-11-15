@@ -118,50 +118,53 @@
       </div>
       {% endif %}
 
-      <h2>Matchup</h2>
-      <form action="/add_match" method="POST">
-        <h3>Player 1</h3>
+        <h2>Matchup</h2>
+
+    <form action="/add_match" method="POST">
+
+    <!-- Player 1 -->
+    <h3>Player 1</h3>
+    <div class="form-row">
         <select name="player1" required>
-            <option value="" disabled>Select Player 1</option>
-            {% for p in player_list %}
-              <option value="{{ p }}" {% if p == last_player1 %}selected{% endif %}>
-                {{ p }}
-              </option>
-            {% endfor %}
-          </select>
-          
-          
+        <option value="" disabled>Select Player 1</option>
+        {% for p in player_list %}
+        <option value="{{ p }}" {% if p == last_player1 %}selected{% endif %}>
+            {{ p }}
+        </option>
+        {% endfor %}
+        </select>
 
-          <select name="p1_character" required class="searchable">
-            <option value="" disabled>Select Character</option>
-            {% for char in characters %}
-            <option value="{{ char }}" {% if char == last_char1 %}selected{% endif %}>
-              {{ char }}
-            </option>
-            {% endfor %}
-          </select>
-          
+        <select name="p1_character" required class="searchable character-field">
+        <option value="" disabled>Select Character</option>
+        {% for char in characters %}
+        <option value="{{ char }}" {% if char == last_char1 %}selected{% endif %}>
+            {{ char }}
+        </option>
+        {% endfor %}
+        </select>
+    </div>
 
-        <h3>Player 2</h3>
+    <!-- Player 2 -->
+    <h3>Player 2</h3>
+    <div class="form-row">
         <select name="player2" required>
-            <option value="" disabled>Select Player 2</option>
-            {% for p in player_list %}
-              <option value="{{ p }}" {% if p == last_player2 %}selected{% endif %}>
-                {{ p }}
-              </option>
-            {% endfor %}
-          </select>
-          
-          
+        <option value="" disabled>Select Player 2</option>
+        {% for p in player_list %}
+        <option value="{{ p }}" {% if p == last_player2 %}selected{% endif %}>
+            {{ p }}
+        </option>
+        {% endfor %}
+        </select>
 
-          <select name="p2_character" required class="searchable">
-            <option value="" disabled>Select Character</option>
-            {% for char in characters %}
-            <option value="{{ char }}" {% if char == last_char2 %}selected{% endif %}>
-              {{ char }}
-            </option>
-            {% endfor %}
-          </select>
+        <select name="p2_character" required class="searchable character-field">
+        <option value="" disabled>Select Character</option>
+        {% for char in characters %}
+        <option value="{{ char }}" {% if char == last_char2 %}selected{% endif %}>
+            {{ char }}
+        </option>
+        {% endfor %}
+        </select>
+    </div>
           
 
         <h3>Winner</h3>
