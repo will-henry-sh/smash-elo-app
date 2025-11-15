@@ -439,5 +439,12 @@
         "p2": "Nick R",
         "c2": "Snake",
         "winner": "p1"
+    },
+    {
+        "p1": "Will",
+        "c1": "Ganondorf",
+        "p2": "Colton",
+        "c2": "Toon Link",
+        "winner": "p1"
     }
 ]
