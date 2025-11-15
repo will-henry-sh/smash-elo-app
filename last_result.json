@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
     "c1": "Min Min",
-    "new1": 1076,
-    "diff1": -18,
+    "new1": 1056,
+    "diff1": -20,
     "p2": "Colton",
-    "c2": "Dark Samus",
-    "new2": 1064,
-    "diff2": 18,
+    "c2": "Yoshi",
+    "new2": 1006,
+    "diff2": 20,
     "last_player1": "Nick R",
     "last_player2": "Colton",
     "last_char1": "Min Min",
-    "last_char2": "Dark Samus"
+    "last_char2": "Yoshi"
 }
