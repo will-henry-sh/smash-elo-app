@@ -243,7 +243,6 @@ def leaderboard():
 
         # Sum only the differences from 1000 for characters that have changed
         diffs = [(elo - 1000) for elo in char_map.values() if elo != 1000]
-
         global_elo = sum(diffs) if diffs else 0
 
         rows.append((player, global_elo, char_map))
@@ -251,7 +250,19 @@ def leaderboard():
     # Sort by global rating descending
     rows.sort(key=lambda x: x[1], reverse=True)
 
-    return render_template("leaderboard.html", rows=rows)
+    # Load the last match so the template can display it
+    try:
+        with open("last_result.json", "r") as f:
+            last_match = json.load(f)
+    except:
+        last_match = None  # If file missing or empty
+
+    return render_template(
+        "leaderboard.html",
+        rows=rows,
+        last_match=last_match
+    )
+
 
 
 
