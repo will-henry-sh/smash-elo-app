@@ -1,18 +1,4 @@
-{
-  "Nick R": {
-    "Snake": 950,
-    "Min Min": 1094,
-    "Donkey Kong": 1033,
-    "Hero": 1010,
-    "Cloud": 978,
-    "Ice Climbers": 1018,
-    "King Dedede": 1009,
-    "Piranha Plant": 1008,
-    "Sephiroth": 976,
-    "Marth": 984,
-    "Mr. Game and Watch": 1016,
-    "Banjo & Kazooie": 982
-  },
+
   "Will": {
     "Robin": 1097,
     "Ganondorf": 1051,
@@ -49,6 +35,17 @@
     "Bowser Jr.": 984
   },
   "Nick R": {
-    "Min Min": 985
-  }
+    "Snake": 950,
+    "Min Min": 1094,
+    "Donkey Kong": 1033,
+    "Hero": 1010,
+    "Cloud": 978,
+    "Ice Climbers": 1018,
+    "King Dedede": 1009,
+    "Piranha Plant": 1008,
+    "Sephiroth": 976,
+    "Marth": 984,
+    "Mr. Game and Watch": 1016,
+    "Banjo & Kazooie": 982
+  },
 }
