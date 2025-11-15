@@ -237,6 +237,14 @@ def home_redirect():
 @app.route("/leaderboard")
 def leaderboard():
     data = load_players()
+
+    # Load last match JSON safely
+    try:
+        with open("last_result.json", "r") as f:
+            last_result = json.load(f)
+    except:
+        last_result = None
+
     rows = []
 
     for player, char_map in data.items():
@@ -246,9 +254,12 @@ def leaderboard():
 
     rows.sort(key=lambda x: x[1], reverse=True)
 
-    last_result = load_last_result()
+    return render_template(
+        "leaderboard.html",
+        rows=rows,
+        last_result=last_result
+    )
 
-    return render_template("leaderboard.html", rows=rows, last_result=last_result)
 
 
 
