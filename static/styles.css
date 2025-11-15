@@ -178,22 +178,23 @@ tr:hover {
 /* MOBILE TABLE: no overflow, no scroll */
 /* Mobile table — keep real table layout, allow smooth horizontal scroll if needed */
 @media (max-width: 600px) {
-  table {
+  .leaderboard-container table {
     width: 100%;
-    overflow-x: auto;
-    display: block; /* makes the wrapper scrollable, not the rows */
+    border-collapse: collapse;
+    table-layout: fixed; /* FIXES mobile column layout */
   }
 
-  th,
-  td {
-    padding: 10px 8px;
+  .leaderboard-container th,
+  .leaderboard-container td {
+    white-space: nowrap;
+    padding-left: 16px;
+    padding-right: 16px;
     font-size: 1rem;
-    white-space: nowrap; /* prevents weird wrapping */
   }
 
-  /* Rank column slightly bigger for touch readability */
   .rank-col {
     width: 50px;
+    text-align: center;
   }
 }
 
