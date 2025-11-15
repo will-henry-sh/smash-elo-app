@@ -586,5 +586,12 @@
         "p2": "Jeff",
         "c2": "Byleth",
         "winner": "p1"
+    },
+    {
+        "p1": "Will",
+        "c1": "Ike",
+        "p2": "Jeff",
+        "c2": "Byleth",
+        "winner": "p1"
     }
 ]

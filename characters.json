@@ -28,7 +28,8 @@
         "Roy": 1009,
         "King K. Rool": 1025,
         "Link": 1016,
-        "Meta Knight": 1045
+        "Meta Knight": 1045,
+        "Ike": 1015
     },
     "Colton": {
         "Toon Link": 969,
@@ -49,6 +50,6 @@
         "Bowser Jr.": 984
     },
     "Jeff": {
-        "Byleth": 976
+        "Byleth": 961
     }
 }
