@@ -80,3 +80,7 @@ match_log.json
 last_result.json
 
 The app will recreate them automatically.
+test
+
+Added admin functionality
+test
