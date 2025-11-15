@@ -3,17 +3,69 @@ import json
 import os
 import subprocess
 import threading
+from functools import wraps
+from datetime import datetime
+from flask import Response
+
 
 app = Flask(__name__)
 
-def push_to_github():
-    try:
-        subprocess.run(["git", "add", "."], check=True)
-        subprocess.run(["git", "commit", "-m", "Auto-update from match submission"], check=True)
-        subprocess.run(["git", "push", "origin", "main"], check=True)
-        print("Git push successful.")
-    except subprocess.CalledProcessError as e:
-        print("Git push failed:", e)
+push_queue = []
+is_pushing = False
+push_log = []  # Stores recent push messages
+MAX_LOGS = 20
+# Admin login credentials
+ADMIN_USERS = {
+    "bunnyslave": "Letskill666",
+    "protodong": "Icecoffin666"
+}
+
+
+def push_to_github_worker():
+    global is_pushing
+
+    if is_pushing:
+        return  # Worker already running
+
+    is_pushing = True
+
+    while push_queue:
+        commit_message = push_queue.pop(0)
+
+        try:
+            # Stage modified files only
+            subprocess.run(["git", "add", "-u"], check=True)
+
+            # Skip if nothing changed
+            diff_check = subprocess.run(["git", "diff", "--cached", "--quiet"])
+            if diff_check.returncode == 0:
+                msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] No changes to commit ({commit_message})"
+
+                print(msg)
+                push_log.append(msg)
+                if len(push_log) > MAX_LOGS:
+                    push_log.pop(0)
+                continue
+
+            # Commit + push
+            subprocess.run(["git", "commit", "-m", commit_message], check=True)
+            subprocess.run(["git", "push", "origin", "main"], check=True)
+
+            msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Git push successful: {commit_message}"
+
+
+        except subprocess.CalledProcessError as e:
+            msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Git push FAILED: {e}"
+
+
+    is_pushing = False
+
+
+def queue_push(commit_message="Auto-update from match submission"):
+    """Adds a push request to the queue and starts worker if one isn't running."""
+    push_queue.append(commit_message)
+    threading.Thread(target=push_to_github_worker).start()
+
 
 # Detect Render environment
 if os.getenv("RENDER"):
@@ -123,6 +175,23 @@ def calculate_elo(p1_rating, p2_rating, winner, k=32):
 
     return new_p1, new_p2
 
+def check_auth(username, password):
+    return ADMIN_USERS.get(username) == password
+
+def authenticate():
+    return Response(
+        "Authentication required", 401,
+        {"WWW-Authenticate": 'Basic realm="Admin Panel"'}
+    )
+
+def requires_auth(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        auth = request.authorization
+        if not auth or not check_auth(auth.username, auth.password):
+            return authenticate()
+        return f(*args, **kwargs)
+    return decorated
 
 
 # -----------------------------
@@ -233,6 +302,12 @@ def reset():
     if os.path.exists(LAST_RESULT_FILE):
         os.remove(LAST_RESULT_FILE)
     return redirect(url_for("index"))
+    
+
+@app.route("/sync")
+def sync_now():
+    queue_push("Manual sync request")
+    return "Manual sync triggered. Check /admin for status."
 
 
 @app.route("/add_match", methods=["POST"])
@@ -294,9 +369,20 @@ def add_match():
     save_match_log(log)
 
     # 🔥 Auto commit + push to GitHub (runs in background)
-    threading.Thread(target=push_to_github).start()
+    queue_push("Auto-update from match submission")
+
 
     return redirect(url_for("index"))
+
+@app.route("/admin")
+@requires_auth
+def admin_panel():
+    return render_template(
+        "admin.html",
+        queue_length=len(push_queue),
+        pushing_status="Running" if is_pushing else "Idle",
+        push_log=push_log
+    )
 
 
 
