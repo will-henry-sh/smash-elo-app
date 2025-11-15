@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Meta Knight",
-    "new1": 1045,
-    "diff1": 13,
+    "c1": "King K. Rool",
+    "new1": 1025,
+    "diff1": 17,
     "p2": "Colton",
-    "c2": "Jigglypuff",
-    "new2": 947,
-    "diff2": -13,
+    "c2": "Yoshi",
+    "new2": 1003,
+    "diff2": -17,
     "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "Meta Knight",
-    "last_char2": "Jigglypuff"
+    "last_char1": "King K. Rool",
+    "last_char2": "Yoshi"
 }
