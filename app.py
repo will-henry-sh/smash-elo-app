@@ -7,6 +7,9 @@ from functools import wraps
 from datetime import datetime
 from flask import Response
 
+print("RUNNING FROM:", os.getcwd())
+print("APP FILE:", __file__)
+
 
 app = Flask(__name__)
 
