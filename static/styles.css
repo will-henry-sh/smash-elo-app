@@ -70,28 +70,30 @@ button:hover {
 }
 
 /* Main container */
+/* Main container — desktop untouched */
 .container {
   background-color: #252525;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
   max-width: 900px;
-  margin: 20px auto; /* Desktop margin */
+  margin: auto;
   width: 100%;
 }
 
-/* Mobile full-width layout */
+/* MOBILE ONLY FIXES */
 @media (max-width: 600px) {
+  /* Remove default browser padding on mobile */
   body {
-    padding: 0; /* Remove outer padding */
+    padding: 0;
   }
 
+  /* Make the container span full screen width */
   .container {
-    border-radius: 0; /* Make it flush edge-to-edge */
-    width: 100vw; /* Full viewport width */
-    margin: 0; /* Remove side margins */
-    padding: 16px; /* Slightly smaller padding for mobile */
-    box-shadow: none; /* Optional: looks cleaner on mobile */
+    width: 100%;
+    margin: 0; /* Remove side margins only on mobile */
+    border-radius: 0; /* Mobile apps usually have edge-to-edge cards */
+    padding: 16px; /* Reduce padding to avoid zoom feeling */
   }
 }
 
