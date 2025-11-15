@@ -39,8 +39,8 @@ select {
 @media (max-width: 600px) {
   input,
   select {
-    padding: 14px;
-    font-size: 1rem;
+    padding: 16px;
+    font-size: 1.15rem;
   }
 }
 
@@ -64,8 +64,8 @@ button:hover {
 
 @media (max-width: 600px) {
   button {
-    padding: 14px;
-    font-size: 1rem;
+    padding: 16px;
+    font-size: 1.15rem;
   }
 }
 
@@ -75,13 +75,15 @@ button:hover {
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-  max-width: 900px;
-  margin: auto;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 @media (max-width: 600px) {
   .container {
-    padding: 12px;
+    padding: 16px;
+    border-radius: 10px;
   }
 }
 
@@ -101,7 +103,7 @@ button:hover {
 
 @media (max-width: 600px) {
   .nav-link {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-align: center;
     display: block;
   }
@@ -131,7 +133,7 @@ button:hover {
 /* Searchable dropdown */
 .search-input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #2a2a2a;
   border: 1px solid #444;
   color: #fff;
@@ -176,8 +178,8 @@ tr:hover {
 
   th,
   td {
-    padding: 10px 6px;
-    font-size: 0.9rem;
+    padding: 10px 8px;
+    font-size: 1rem;
   }
 }
 
@@ -186,6 +188,13 @@ tr:hover {
   width: 40px;
   text-align: center;
   font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .rank-col {
+    width: 55px;
+    font-size: 1.15rem;
+  }
 }
 
 /* Rank coloring */
