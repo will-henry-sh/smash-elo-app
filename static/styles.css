@@ -232,3 +232,18 @@ section,
   background-color: #333;
   border-radius: 8px;
 }
+
+/* Mobile: Make leaderboard table full-width edge to edge */
+@media (max-width: 600px) {
+  /* target only the leaderboard page container */
+  .leaderboard-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .leaderboard-container table {
+    width: 100vw !important; /* full viewport width */
+    margin-left: calc(-16px); /* cancel container padding */
+    margin-right: calc(-16px);
+  }
+}
