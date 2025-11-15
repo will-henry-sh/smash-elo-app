@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Panel</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #222;
+        color: #eee;
+        padding: 20px;
+      }
+      h1 {
+        color: #fff;
+      }
+      .card {
+        background-color: #333;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+      a {
+        color: #4fa3ff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      li {
+        margin-bottom: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Smash ELO Admin Panel</h1>
+
+    <div class="card">
+      <h2>System Status</h2>
+      <p><strong>Queue Length:</strong> {{ queue_length }}</p>
+      <p><strong>Push Worker Status:</strong> {{ pushing_status }}</p>
+      <p><a href="/sync">Run Manual Sync</a></p>
+    </div>
+
+    <div class="card">
+      <h2>Recent Git Push Logs</h2>
+      <ul>
+        {% for entry in push_log %}
+        <li>{{ entry }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
