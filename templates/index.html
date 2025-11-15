@@ -120,6 +120,20 @@
 </div>
 {% endif %}
 
+  </p>
+
+  <p>
+    <strong>{{ last['p2'] }} ({{ last['c2'] }})</strong>:
+    {{ last['new2'] }}
+    {% if last['diff2'] > 0 %}
+      <span class="green">+{{ last['diff2'] }}</span>
+    {% else %}
+      <span class="red">{{ last['diff2'] }}</span>
+    {% endif %}
+  </p>
+</div>
+{% endif %}
+
     </p>
     </div>
     {% endif %}
