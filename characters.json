@@ -23,7 +23,7 @@
         "Captain Falcon": 1031,
         "Bowser": 1010,
         "Inkling": 1010,
-        "Sheik": 1017,
+        "Sheik": 1031,
         "Hero": 1013,
         "Roy": 1009,
         "King K. Rool": 1025,
@@ -50,6 +50,6 @@
         "Bowser Jr.": 984
     },
     "Jeff": {
-        "Byleth": 964
+        "Byleth": 950
     }
 }
