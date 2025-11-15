@@ -83,17 +83,12 @@ button:hover {
 
 /* MOBILE ONLY FIXES */
 @media (max-width: 600px) {
-  /* Remove default browser padding on mobile */
-  body {
-    padding: 0;
-  }
-
-  /* Make the container span full screen width */
   .container {
     width: 100%;
-    margin: 0; /* Remove side margins only on mobile */
-    border-radius: 0; /* Mobile apps usually have edge-to-edge cards */
-    padding: 16px; /* Reduce padding to avoid zoom feeling */
+    margin: 0 auto; /* keep centered */
+    border-radius: 0;
+    padding: 16px;
+    max-width: 100%; /* ensures no horizontal scroll */
   }
 }
 
