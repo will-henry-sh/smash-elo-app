@@ -25,6 +25,46 @@ def push_to_github_worker():
     global is_pushing
 
     if is_pushing:
+        return
+
+    is_pushing = True
+
+    while push_queue:
+        commit_message = push_queue.pop(0)
+
+        try:
+            subprocess.run(["git", "add", "-u"], check=True)
+
+            diff_check = subprocess.run(["git", "diff", "--cached", "--quiet"])
+            if diff_check.returncode == 0:
+                msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] No changes to commit ({commit_message})"
+                print(msg)
+                push_log.append(msg)
+                if len(push_log) > MAX_LOGS:
+                    push_log.pop(0)
+                continue
+
+            subprocess.run(["git", "commit", "-m", commit_message], check=True)
+            subprocess.run(["git", "push", "origin", "main"], check=True)
+
+            msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Git push successful: {commit_message}"
+            print(msg)
+            push_log.append(msg)
+            if len(push_log) > MAX_LOGS:
+                push_log.pop(0)
+
+        except subprocess.CalledProcessError as e:
+            msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Git push FAILED: {e}"
+            print(msg)
+            push_log.append(msg)
+            if len(push_log) > MAX_LOGS:
+                push_log.pop(0)
+
+    is_pushing = False
+
+    global is_pushing
+
+    if is_pushing:
         return  # Worker already running
 
     is_pushing = True
@@ -192,6 +232,7 @@ def requires_auth(f):
             return authenticate()
         return f(*args, **kwargs)
     return decorated
+
 
 
 # -----------------------------
