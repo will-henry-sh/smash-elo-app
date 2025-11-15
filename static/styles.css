@@ -5,8 +5,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
   padding: 20px;
-  max-width: 650px;
-  margin: auto;
+  margin: 0;
 }
 
 /* Headings */
@@ -14,6 +13,15 @@ h1,
 h2 {
   color: #ffffff;
   margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+@media (max-width: 600px) {
+  h1,
+  h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
 }
 
 /* Input fields */
@@ -22,27 +30,116 @@ select {
   background-color: #2a2a2a;
   color: #ffffff;
   border: 1px solid #444;
-  padding: 10px;
+  padding: 12px;
   width: 100%;
   border-radius: 6px;
-  margin: 6px 0;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+  input,
+  select {
+    padding: 14px;
+    font-size: 1rem;
+  }
 }
 
 /* Buttons */
 button {
-  background-color: #10a37f; /* ChatGPT green */
+  background-color: #10a37f;
   color: #ffffff;
   border: none;
-  padding: 10px;
+  padding: 12px;
   width: 100%;
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
   margin-top: 10px;
+  margin-bottom: 12px;
 }
 
 button:hover {
   background-color: #0d8b6c;
+}
+
+@media (max-width: 600px) {
+  button {
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
+/* Main container */
+.container {
+  background-color: #252525;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  max-width: 900px;
+  margin: auto;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 12px;
+  }
+}
+
+/* Navigation link */
+.nav-link {
+  display: inline-block;
+  margin: 10px 0 20px 0;
+  color: #10a37f;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.nav-link:hover {
+  color: #0d8b6c;
+}
+
+@media (max-width: 600px) {
+  .nav-link {
+    font-size: 1.1rem;
+    text-align: center;
+    display: block;
+  }
+}
+
+/* Match result box */
+.result-box,
+.player-stats-box {
+  background-color: #2a2a2a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #444;
+}
+
+/* ELO up/down */
+.green {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.red {
+  color: #f87171;
+  font-weight: 600;
+}
+
+/* Searchable dropdown */
+.search-input {
+  width: 100%;
+  padding: 10px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.dropdown-item:hover {
+  background-color: #3a3a3a;
 }
 
 /* Table */
@@ -69,109 +166,61 @@ tr:hover {
   background-color: #2b2b2b;
 }
 
-/* Form container spacing */
-form {
-  margin-bottom: 25px;
+/* Mobile table behavior */
+@media (max-width: 600px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th,
+  td {
+    padding: 10px 6px;
+    font-size: 0.9rem;
+  }
 }
 
-.container {
-  background-color: #252525;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-}
-
-.nav-link {
-  display: inline-block;
-  margin: 10px 0 20px 0;
-  color: #10a37f;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.nav-link:hover {
-  color: #0d8b6c;
-}
-
-/* Last match result box */
-.result-box {
-  background-color: #2a2a2a;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #444;
-}
-
-.player-stats-box {
-  background-color: #2a2a2a;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #444;
-}
-
-/* ELO increase */
-.green {
-  color: #4ade80;
-  font-weight: 600;
-}
-
-/* ELO decrease */
-.red {
-  color: #f87171;
-  font-weight: 600;
-}
-
-/* Searchable dropdown components */
-.search-input {
-  width: 100%;
-  padding: 10px;
-  background-color: #2a2a2a;
-  border: 1px solid #444;
-  color: #fff;
-  border-radius: 6px;
-}
-
-.search-dropdown {
-  border-radius: 6px;
-}
-
-.dropdown-item:hover {
-  background-color: #3a3a3a;
-}
-
-/* RANKING SYSTEM */
-
-/* Ranking column width */
+/* Rank column */
 .rank-col {
   width: 40px;
   text-align: center;
   font-weight: 700;
 }
 
-/* Top 3 Colors */
+/* Rank coloring */
 .rank-gold {
-  color: #ffd700; /* gold */
+  color: #ffd700;
   font-weight: 700;
 }
 
 .rank-silver {
-  color: #9cb3c9; /* bluish-grey */
+  color: #9cb3c9;
   font-weight: 700;
 }
 
 .rank-bronze {
-  color: #cd7f32; /* bronze */
+  color: #cd7f32;
   font-weight: 700;
 }
 
-/* All other players */
 .rank-normal {
-  color: #ffffff; /* white */
+  color: #ffffff;
 }
 
-/* Optional subtle styling for numbers if used elsewhere */
 .rank-number {
   margin-right: 6px;
   color: #888;
+}
+
+/* Sections and cards */
+section,
+.card {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 16px;
+  }
 }
