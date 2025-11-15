@@ -236,27 +236,53 @@ def home_redirect():
 
 @app.route("/leaderboard")
 def leaderboard():
-    data = load_players()
+    # ---- LOAD PLAYER DATA SAFELY ----
+    try:
+        data = load_players()
+        if not isinstance(data, dict):
+            data = {}
+    except Exception as e:
+        print("PLAYER LOAD ERROR:", e)
+        data = {}
+
     rows = []
 
+    # ---- BUILD LEADERBOARD ----
     for player, char_map in data.items():
-        diffs = [(elo - 1000) for elo in char_map.values() if elo != 1000]
-        global_elo = sum(diffs) if diffs else 0
-        rows.append((player, global_elo, char_map))
+        try:
+            diffs = [(elo - 1000) for elo in char_map.values() if elo != 1000]
+            global_elo = sum(diffs) if diffs else 0
+            rows.append((player, global_elo, char_map))
+        except Exception as e:
+            print("ROW BUILD ERROR:", e)
+            continue
 
     rows.sort(key=lambda x: x[1], reverse=True)
 
-    # Load last match safely
+    # ---- LOAD LAST MATCH SAFELY ----
     last_match = None
     try:
         with open("last_result.json", "r") as f:
-            content = f.read().strip()
-            if content:  # Ensure not empty
-                last_match = json.loads(content)
+            text = f.read().strip()
+            if text:
+                parsed = json.loads(text)
+                if isinstance(parsed, dict):
+                    last_match = parsed
     except Exception as e:
-        print("LAST MATCH LOAD ERROR:", e)
+        print("LAST MATCH ERROR:", e)
+        last_match = None
 
-    return render_template("leaderboard.html", rows=rows, last_match=last_match)
+    # ---- ALWAYS RETURNS (NO FAILURE) ----
+    try:
+        return render_template(
+            "leaderboard.html",
+            rows=rows,
+            last_match=last_match
+        )
+    except Exception as e:
+        print("TEMPLATE ERROR:", e)
+        return "TEMPLATE RENDER ERROR — CHECK TEMPLATE", 500
+
 
 
 
