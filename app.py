@@ -23,7 +23,6 @@ ADMIN_USERS = {
     "protodong": "Icecoffin666"
 }
 
-
 def push_to_github_worker():
     global is_pushing
 
@@ -65,43 +64,8 @@ def push_to_github_worker():
 
     is_pushing = False
 
-    global is_pushing
-
-    if is_pushing:
-        return  # Worker already running
-
-    is_pushing = True
-
-    while push_queue:
-        commit_message = push_queue.pop(0)
-
-        try:
-            # Stage modified files only
-            subprocess.run(["git", "add", "-u"], check=True)
-
-            # Skip if nothing changed
-            diff_check = subprocess.run(["git", "diff", "--cached", "--quiet"])
-            if diff_check.returncode == 0:
-                msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] No changes to commit ({commit_message})"
-
-                print(msg)
-                push_log.append(msg)
-                if len(push_log) > MAX_LOGS:
-                    push_log.pop(0)
-                continue
-
-            # Commit + push
-            subprocess.run(["git", "commit", "-m", commit_message], check=True)
-            subprocess.run(["git", "push", "origin", "main"], check=True)
-
-            msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Git push successful: {commit_message}"
 
 
-        except subprocess.CalledProcessError as e:
-            msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Git push FAILED: {e}"
-
-
-    is_pushing = False
 
 
 def queue_push(commit_message="Auto-update from match submission"):
