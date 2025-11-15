@@ -62,7 +62,8 @@
           <strong>{{ last_result['p1'] }}</strong>
           ({{ last_result['c1'] }}): {{ last_result['new1'] }}
           <span class="{{ 'green' if last_result['diff1'] > 0 else 'red' }}">
-            {{ last_result['diff1'] }}
+            {% if last_result['diff1'] > 0 %} +{{ last_result['diff1'] }} {%
+            else %} {{ last_result['diff1'] }} {% endif %}
           </span>
         </p>
 
