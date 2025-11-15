@@ -19,7 +19,7 @@
         "Wolf": 1016,
         "Incineroar": 1024,
         "Greninja": 1029,
-        "Ridley": 1013,
+        "Ridley": 995,
         "Captain Falcon": 1031,
         "Bowser": 1010,
         "Inkling": 1010,
@@ -50,6 +50,6 @@
         "Bowser Jr.": 984
     },
     "Jeff": {
-        "Byleth": 961
+        "Byleth": 979
     }
 }
