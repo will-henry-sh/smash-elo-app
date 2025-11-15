@@ -75,15 +75,23 @@ button:hover {
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-  max-width: 600px;
+  max-width: 900px;
+  margin: 20px auto; /* Desktop margin */
   width: 100%;
-  margin: 0 auto;
 }
 
+/* Mobile full-width layout */
 @media (max-width: 600px) {
+  body {
+    padding: 0; /* Remove outer padding */
+  }
+
   .container {
-    padding: 16px;
-    border-radius: 10px;
+    border-radius: 0; /* Make it flush edge-to-edge */
+    width: 100vw; /* Full viewport width */
+    margin: 0; /* Remove side margins */
+    padding: 16px; /* Slightly smaller padding for mobile */
+    box-shadow: none; /* Optional: looks cleaner on mobile */
   }
 }
 
