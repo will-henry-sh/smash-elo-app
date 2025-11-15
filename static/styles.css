@@ -175,6 +175,19 @@ tr:hover {
   background-color: #2b2b2b;
 }
 
+/* Center table headings and table rows */
+th,
+td {
+  text-align: center !important;
+}
+
+/* Make Player column links centered too */
+td a {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
 /* MOBILE TABLE: no overflow, no scroll */
 /* Mobile table — keep real table layout, allow smooth horizontal scroll if needed */
 @media (max-width: 600px) {
