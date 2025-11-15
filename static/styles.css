@@ -176,29 +176,24 @@ tr:hover {
 }
 
 /* MOBILE TABLE: no overflow, no scroll */
+/* Mobile table — keep real table layout, allow smooth horizontal scroll if needed */
 @media (max-width: 600px) {
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
+  table {
     width: 100%;
+    overflow-x: auto;
+    display: block; /* makes the wrapper scrollable, not the rows */
   }
 
-  tr {
-    border-bottom: 1px solid #333;
-    padding: 8px 0;
-  }
-
+  th,
   td {
-    padding: 8px 0;
-    font-size: 1.05rem;
+    padding: 10px 8px;
+    font-size: 1rem;
+    white-space: nowrap; /* prevents weird wrapping */
   }
 
-  th {
-    display: none; /* hide header row on small screens */
+  /* Rank column slightly bigger for touch readability */
+  .rank-col {
+    width: 50px;
   }
 }
 
