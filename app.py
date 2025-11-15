@@ -208,24 +208,28 @@ def requires_auth(f):
 # Routes
 # -----------------------------
 
-@app.route("/")
-def index():
+@app.route("/matches")
+@requires_auth
+def matches():
     data = load_players()
     last = load_last_result()
-    
     player_list = sorted(list(data.keys()))
 
     return render_template(
         "index.html",
         players=data,
         characters=CHARACTERS,
-        last=last,                          # <-- REQUIRED FOR RECENT MATCH BOX
+        last=last,
         last_player1=last.get("last_player1", ""),
         last_player2=last.get("last_player2", ""),
         last_char1=last.get("last_char1", ""),
         last_char2=last.get("last_char2", ""),
         player_list=player_list
     )
+
+@app.route("/")
+def home_redirect():
+    return redirect(url_for("leaderboard"))
 
 
 
@@ -321,7 +325,9 @@ def sync_now():
 
 
 @app.route("/add_match", methods=["POST"])
+@requires_auth
 def add_match():
+
     p1 = request.form["player1"]
     c1 = request.form["p1_character"]
     p2 = request.form["player2"]
