@@ -1,14 +1,14 @@
 {
-    "p1": "Nick R",
-    "c1": "Piranha Plant",
-    "new1": 1008,
-    "diff1": 8,
-    "p2": "Nick W",
-    "c2": "Wii Fit Trainer",
-    "new2": 806,
-    "diff2": -8,
-    "last_player1": "Nick R",
-    "last_player2": "Nick W",
-    "last_char1": "Piranha Plant",
-    "last_char2": "Wii Fit Trainer"
+    "p1": "Will",
+    "c1": "Greninja",
+    "new1": 1029,
+    "diff1": 11,
+    "p2": "Nick R",
+    "c2": "Snake",
+    "new2": 897,
+    "diff2": -11,
+    "last_player1": "Will",
+    "last_player2": "Nick R",
+    "last_char1": "Greninja",
+    "last_char2": "Snake"
 }
