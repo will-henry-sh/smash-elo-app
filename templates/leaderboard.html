@@ -9,7 +9,6 @@
   <body>
     <div class="container leaderboard-container">
       <h1>Smash Ultimate Leaderboard</h1>
-
       <a href="/matches" class="nav-link">← Match Submission</a>
 
       <table>
@@ -20,7 +19,6 @@
         </tr>
 
         {% for player, rating, char_map in rows %}
-
         <tr>
           <!-- Rank -->
           <td class="rank-col">
@@ -35,7 +33,7 @@
             {% endif %}
           </td>
 
-          <!-- Player (clickable) -->
+          <!-- Player -->
           <td>
             {% if loop.index == 1 %}
             <a href="/player/{{ player }}" class="rank-gold">{{ player }}</a>
@@ -48,11 +46,36 @@
             {% endif %}
           </td>
 
-          <!-- Global ELO (highest character elo) -->
+          <!-- Global ELO -->
           <td class="rating-value">{{ rating }}</td>
         </tr>
         {% endfor %}
       </table>
+
+      <!-- Last Match Result (added under leaderboard) -->
+      {% if last_match %}
+      <div class="result-box">
+        <h2>Last Match Result</h2>
+
+        <p>
+          <strong>{{ last_match.p1_name }} ({{ last_match.p1_char }}):</strong>
+          {{ last_match.p1_elo }} {% if last_match.p1_change > 0 %}
+          <span class="green">+{{ last_match.p1_change }}</span>
+          {% else %}
+          <span class="red">{{ last_match.p1_change }}</span>
+          {% endif %}
+        </p>
+
+        <p>
+          <strong>{{ last_match.p2_name }} ({{ last_match.p2_char }}):</strong>
+          {{ last_match.p2_elo }} {% if last_match.p2_change > 0 %}
+          <span class="green">+{{ last_match.p2_change }}</span>
+          {% else %}
+          <span class="red">{{ last_match.p2_change }}</span>
+          {% endif %}
+        </p>
+      </div>
+      {% endif %}
     </div>
   </body>
 </html>
