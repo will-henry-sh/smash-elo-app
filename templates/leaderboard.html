@@ -9,6 +9,7 @@
   <body>
     <div class="container leaderboard-container">
       <h1>Smash Ultimate Leaderboard</h1>
+
       <a href="/matches" class="nav-link">← Match Submission</a>
 
       <table>
@@ -52,28 +53,24 @@
         {% endfor %}
       </table>
 
-      <!-- Last Match Result (added under leaderboard) -->
+      <!-- RECENT MATCH SECTION (Safe even if last_match is None) -->
       {% if last_match %}
-      <div class="result-box">
+      <div class="result-box" style="margin-top: 30px">
         <h2>Last Match Result</h2>
 
         <p>
-          <strong>{{ last_match.p1_name }} ({{ last_match.p1_char }}):</strong>
-          {{ last_match.p1_elo }} {% if last_match.p1_change > 0 %}
-          <span class="green">+{{ last_match.p1_change }}</span>
-          {% else %}
-          <span class="red">{{ last_match.p1_change }}</span>
-          {% endif %}
+          <strong>{{ last_match.player1 }}</strong>
+          ({{ last_match.char1 }}) : {{ last_match.player1_new }}
         </p>
 
         <p>
-          <strong>{{ last_match.p2_name }} ({{ last_match.p2_char }}):</strong>
-          {{ last_match.p2_elo }} {% if last_match.p2_change > 0 %}
-          <span class="green">+{{ last_match.p2_change }}</span>
-          {% else %}
-          <span class="red">{{ last_match.p2_change }}</span>
-          {% endif %}
+          <strong>{{ last_match.player2 }}</strong>
+          ({{ last_match.char2 }}) : {{ last_match.player2_new }}
         </p>
+
+        <!-- ELO changes -->
+        <p class="green">{{ last_match.player1_elo_diff }}</p>
+        <p class="red">{{ last_match.player2_elo_diff }}</p>
       </div>
       {% endif %}
     </div>
