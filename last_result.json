@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Ganondorf",
-    "new1": 1064,
+    "c1": "Meta Knight",
+    "new1": 1045,
     "diff1": 13,
     "p2": "Colton",
-    "c2": "Toon Link",
-    "new2": 969,
+    "c2": "Jigglypuff",
+    "new2": 947,
     "diff2": -13,
     "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "Ganondorf",
-    "last_char2": "Toon Link"
+    "last_char1": "Meta Knight",
+    "last_char2": "Jigglypuff"
 }
