@@ -446,5 +446,12 @@
         "p2": "Colton",
         "c2": "Toon Link",
         "winner": "p1"
+    },
+    {
+        "p1": "Will",
+        "c1": "Ridley",
+        "p2": "Colton",
+        "c2": "Dark Samus",
+        "winner": "p2"
     }
 ]
