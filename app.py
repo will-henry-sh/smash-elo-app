@@ -240,9 +240,24 @@ def leaderboard():
 
     # Load last match JSON safely
     try:
-        with open("last_result.json", "r") as f:
-            last_result = json.load(f)
-    except:
+        with open(LAST_RESULT_FILE, "r") as f:
+            raw = json.load(f)
+
+        # Convert to formatted structure ONLY for display
+        last_result = {
+            "p1_name": raw.get("p1"),
+            "p1_char": raw.get("c1"),
+            "p1_elo": raw.get("new1"),
+            "p1_change": raw.get("diff1"),
+
+            "p2_name": raw.get("p2"),
+            "p2_char": raw.get("c2"),
+            "p2_elo": raw.get("new2"),
+            "p2_change": raw.get("diff2"),
+        }
+
+    except Exception as e:
+        print("LEADERBOARD LAST_RESULT ERROR:", e)
         last_result = None
 
     rows = []
@@ -259,6 +274,7 @@ def leaderboard():
         rows=rows,
         last_result=last_result
     )
+
 
 
 
