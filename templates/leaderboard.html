@@ -59,18 +59,22 @@
         <h2>Last Match Result</h2>
 
         <p>
-          <strong>{{ last_result.p1_name }}</strong>
-          ({{ last_result.p1_char }}): {{ last_result.p1_elo }}
-          <span class="{{ 'green' if last_result.p1_change > 0 else 'red' }}">
-            {{ last_result.p1_change }}
+          <strong>{{ last_result['p1_name'] }}</strong>
+          ({{ last_result['p1_char'] }}): {{ last_result['p1_elo'] }}
+          <span
+            class="{{ 'green' if last_result['p1_change'] > 0 else 'red' }}"
+          >
+            {{ last_result['p1_change'] }}
           </span>
         </p>
 
         <p>
-          <strong>{{ last_result.p2_name }}</strong>
-          ({{ last_result.p2_char }}): {{ last_result.p2_elo }}
-          <span class="{{ 'green' if last_result.p2_change > 0 else 'red' }}">
-            {{ last_result.p2_change }}
+          <strong>{{ last_result['p2_name'] }}</strong>
+          ({{ last_result['p2_char'] }}): {{ last_result['p2_elo'] }}
+          <span
+            class="{{ 'green' if last_result['p2_change'] > 0 else 'red' }}"
+          >
+            {{ last_result['p2_change'] }}
           </span>
         </p>
       </div>

@@ -246,10 +246,10 @@ def leaderboard():
 
     rows.sort(key=lambda x: x[1], reverse=True)
 
-    # --- Load Last Match Result ---
     last_result = load_last_result()
 
     return render_template("leaderboard.html", rows=rows, last_result=last_result)
+
 
 
 
