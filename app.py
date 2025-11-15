@@ -1,8 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for
 import json
 import os
+import subprocess
+import threading
 
 app = Flask(__name__)
+
+def push_to_github():
+    try:
+        subprocess.run(["git", "add", "."], check=True)
+        subprocess.run(["git", "commit", "-m", "Auto-update from match submission"], check=True)
+        subprocess.run(["git", "push", "origin", "main"], check=True)
+        print("Git push successful.")
+    except subprocess.CalledProcessError as e:
+        print("Git push failed:", e)
 
 # Detect Render environment
 if os.getenv("RENDER"):
@@ -257,22 +268,19 @@ def add_match():
 
     # Save last match result
     save_last_result({
-    "p1": p1,
-    "c1": c1,
-    "new1": new1,
-    "diff1": new1 - old1,
-    "p2": p2,
-    "c2": c2,
-    "new2": new2,
-    "diff2": new2 - old2,
-
-    # Remember last form selections
-    "last_player1": p1,
-    "last_player2": p2,
-    "last_char1": c1,
-    "last_char2": c2
-})
-
+        "p1": p1,
+        "c1": c1,
+        "new1": new1,
+        "diff1": new1 - old1,
+        "p2": p2,
+        "c2": c2,
+        "new2": new2,
+        "diff2": new2 - old2,
+        "last_player1": p1,
+        "last_player2": p2,
+        "last_char1": c1,
+        "last_char2": c2
+    })
 
     # Log match history
     log = load_match_log()
@@ -285,7 +293,11 @@ def add_match():
     })
     save_match_log(log)
 
+    # 🔥 Auto commit + push to GitHub (runs in background)
+    threading.Thread(target=push_to_github).start()
+
     return redirect(url_for("index"))
+
 
 
 if __name__ == "__main__":
