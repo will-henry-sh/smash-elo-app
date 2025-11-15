@@ -212,7 +212,7 @@ def requires_auth(f):
 @requires_auth
 def matches():
     data = load_players()
-    last = load_last_result()
+    last = load_last_result() or {}   # <-- FIXED
     player_list = sorted(list(data.keys()))
 
     return render_template(
@@ -226,6 +226,7 @@ def matches():
         last_char2=last.get("last_char2", ""),
         player_list=player_list
     )
+
 
 @app.route("/")
 def home_redirect():
