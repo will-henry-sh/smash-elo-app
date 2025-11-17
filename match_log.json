@@ -670,5 +670,12 @@
         "p2": "Colton",
         "c2": "Toon Link",
         "winner": "p1"
+    },
+    {
+        "p1": "Will",
+        "c1": "Incineroar",
+        "p2": "Colton",
+        "c2": "Yoshi",
+        "winner": "p1"
     }
 ]
