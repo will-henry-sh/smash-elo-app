@@ -332,30 +332,36 @@ a:hover {
 /* badge page info */
 .badge-title {
   text-align: center;
-  margin-bottom: 25px;
+  margin: 25px 0;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-/* Badge table */
+/* Badge Table - Professional Style */
 .badge-table {
   width: 100%;
   border-collapse: collapse;
   margin: 0 auto;
+  table-layout: fixed; /* keeps uniform columns */
 }
 
-/* Center ALL table cells */
-.badge-table th,
-.badge-table td {
+.badge-table th {
   padding: 14px 10px;
-  text-align: center !important; /* force centering */
+  text-align: center;
+  font-weight: 700;
+  background: #222;
+  border-bottom: 2px solid #333;
+}
+
+.badge-table td {
+  padding: 12px 14px;
+  text-align: left; /* PRO LOOK */
   vertical-align: middle;
+  border-bottom: 1px solid #333;
+  word-wrap: break-word;
 }
 
-/* Badge names (column 1) — prevent awkward wrapping */
-.badge-table td:first-child {
-  white-space: nowrap;
-}
-
-/* Descriptions (column 2) — allow wrapping for readability */
-.badge-table td:nth-child(2) {
-  white-space: normal;
+/* Optional striping for readability */
+.badge-table tr:nth-child(even) {
+  background: #1a1a1a;
 }
