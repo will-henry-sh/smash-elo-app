@@ -74,7 +74,7 @@ h2 {
 .nav-link {
   display: inline-block;
   margin: 10px 0 20px 0;
-  color: #10a37f;
+  color: #4caf50 !important;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
@@ -316,4 +316,15 @@ section,
   .top-nav a {
     font-size: 0.9rem; /* slightly smaller to prevent wrapping */
   }
+}
+
+/* GLOBAL LINK COLOR */
+a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
 }
