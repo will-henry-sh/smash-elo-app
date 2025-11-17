@@ -330,9 +330,7 @@ a:hover {
 }
 
 .badge-title {
-  text-align: right;
-  margin-bottom: 25px;
-  margin-right: 20px;
+  text-align: center;
 }
 
 /* Badge table centering */
