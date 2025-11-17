@@ -379,3 +379,39 @@ a:hover {
 .badge-table tr:nth-child(even) {
   background: #1a1a1a;
 }
+
+/* MOBILE OPTIMIZATION FOR BADGE TABLE */
+@media (max-width: 700px) {
+  /* Make table scrollable horizontally if needed */
+  .badge-table-container {
+    padding: 0 10px;
+    overflow-x: auto;
+  }
+
+  .badge-table th {
+    font-size: 1rem;
+    padding: 12px 6px;
+  }
+
+  .badge-table td {
+    padding: 12px 6px;
+    font-size: 0.95rem;
+  }
+
+  /* Badge names stay bold + readable */
+  .badge-table td:first-child {
+    width: 35%;
+    white-space: normal; /* let long badge names wrap */
+  }
+
+  /* Description takes remaining space */
+  .badge-table td:nth-child(2) {
+    width: 65%;
+    white-space: normal;
+  }
+
+  /* Prevent ugly table squeezing by letting the table size logically */
+  .badge-table {
+    table-layout: auto;
+  }
+}
