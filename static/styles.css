@@ -132,6 +132,13 @@ button:hover {
   background-color: #66d96f; /* lighter hover */
 }
 
+.page-title {
+  text-align: center;
+  margin: 25px 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
 /* ------------------------------------------
      MATCH RESULT + PLAYER STATS BOXES
   ------------------------------------------- */
