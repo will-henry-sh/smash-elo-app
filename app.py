@@ -210,11 +210,28 @@ def requires_auth(f):
 @app.route('/badges')
 def badges():
     badges = [
-        {"badge": "First Win", "description": "Earned after winning your first match."},
-        {"badge": "Hot Streak", "description": "Awarded for winning three matches in a row."},
-        {"badge": "Underdog Upset", "description": "Earned for beating someone with at least 200 more ELO."},
-        {"badge": "Veteran", "description": "Granted after completing 50 total matches."},
-        {"badge": "Comeback", "description": "Earned after winning a match while trailing in set count."}
+        {"badge": "Bloodlust", "description": "Win (3/5/10/25) matches in a row."},
+        {"badge": "Defeatism", "description": "Lose 10 matches in a row."},
+        {"badge": "Game Set", "description": "Win (10/50/100/500) total matches) "},
+        {"badge": "Dominator", "description": "Three-stock another player."},
+        {"badge": "Devastator", "description": "Three-stock another player three times in a row in a set."},
+        {"badge": "Global Enthusiasm", "description": "Get ranked with every character."},
+        {"badge": "Sky Full of Stars", "description": "Reach (1,000/2,000/3,000) global ELO ranking."},
+        {"badge": "", "No Escape": "In a single set, win with three different characters."},
+        {"badge": "Specialism", "description": "Win five games in a row with the same character."},
+        {"badge": "Awakening", "description": "In one set, lose two games and then three-stock the other player during the third game."},
+        {"badge": "Fight for My Friends", "description": "Have all characters from the Fire Emblem series above 1,000 ELO concurrently."},
+        {"badge": "Randomizer", "description": "Win three games in a row with randomly selected characters."},
+        {"badge": "Lifestream", "description": "Three-stock Cloud while playing as Sephiroth."},
+        {"badge": "To New Heights", "description": "Gain more than 50 ELO rating from a single match."},
+        {"badge": "PACKUN FLOWER", "description": "Win a game as Packun Flower."},
+        {"badge": "Into Darkness", "description": "Reach 1,300 ELO rating with a character that has a darkness ability (Ganondorf, Hero, Joker, Mewtwo, Olimar, Piranha Plant, Robin, Ridley, Sephiroth)."},
+        {"badge": "Split Timeline", "description": "During the same set, win a game as young Link, Toon Link, and Link (in that order)."},
+        {"badge": "At Your Mercy", "description": "Win a game after letting your opponent choose your character."},
+        {"badge": "From the Grave", "description": "Three-stock another player while using a character with an ELO rating of less than 1,000."},
+        {"badge": "Usurper", "description": "Win a game against someone whose global ELO rating is at least (100/300/500/1,000) higher than yours."},
+        {"badge": "Versus Myself", "description": "During the same set, win three gamaes in a row as mirror matches."},
+
     ]
     return render_template('player_badges.html', badges=badges)
 
