@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Badges</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Badges</h1>
+
+    <table class="leaderboard">
+      <thead>
+        <tr>
+          <th>Badges</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for b in badges %}
+        <tr>
+          <td>{{ b.badge }}</td>
+          <td>{{ b.description }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

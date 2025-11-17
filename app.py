@@ -207,6 +207,19 @@ def requires_auth(f):
 # -----------------------------
 # Routes
 # -----------------------------
+@app.route('/badges')
+def badges():
+    badges = [
+        {"badge": "First Win", "description": "Earned after winning your first match."},
+        {"badge": "Hot Streak", "description": "Awarded for winning three matches in a row."},
+        {"badge": "Underdog Upset", "description": "Earned for beating someone with at least 200 more ELO."},
+        {"badge": "Veteran", "description": "Granted after completing 50 total matches."},
+        {"badge": "Comeback", "description": "Earned after winning a match while trailing in set count."}
+    ]
+    return render_template('badges.html', badges=badges)
+
+
+
 
 @app.route("/matches")
 @requires_auth
