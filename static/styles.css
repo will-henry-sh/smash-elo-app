@@ -117,14 +117,15 @@ input {
 
 /* Buttons */
 button {
-  background-color: #10a37f;
+  background-color: #4caf50; /* same green as navbar */
   border: none;
   font-weight: 600;
   cursor: pointer;
+  color: #fff;
 }
 
 button:hover {
-  background-color: #0d8b6c;
+  background-color: #66d96f; /* lighter hover */
 }
 
 /* ------------------------------------------
