@@ -337,25 +337,26 @@ a:hover {
   font-weight: 700;
 }
 
-/* Centered container */
+/* Center container (same as leaderboard uses implicitly) */
 .badge-table-container {
-  max-width: 900px;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
-/* Badge Table */
+/* Badge Table - behave like leaderboard */
 .badge-table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;
+  table-layout: auto; /* IMPORTANT — same as leaderboard */
 }
 
-/* Column headers (H2-style) */
+/* Column headers */
 .badge-table th {
-  padding: 18px 10px;
-  text-align: center;
-  font-size: 1.25rem; /* H2 size */
+  padding: 14px 10px;
+  text-align: left; /* leaderboard uses left headers */
+  font-size: 1.1rem;
   font-weight: 700;
   background: #222;
   border-bottom: 2px solid #333;
@@ -366,52 +367,35 @@ a:hover {
   font-weight: 700;
 }
 
-/* Description */
+/* Description column */
 .badge-table td {
-  padding: 14px 12px;
+  padding: 12px 10px;
   text-align: left;
-  vertical-align: middle;
+  vertical-align: top;
   border-bottom: 1px solid #333;
+  white-space: normal;
   word-wrap: break-word;
 }
 
-/* Row striping */
-.badge-table tr:nth-child(even) {
-  background: #1a1a1a;
-}
-
-/* MOBILE OPTIMIZATION FOR BADGE TABLE */
+/* Mobile readability — EXACTLY how leaderboard behaves */
 @media (max-width: 700px) {
-  /* Make table scrollable horizontally if needed */
-  .badge-table-container {
-    padding: 0 10px;
-    overflow-x: auto;
-  }
-
-  .badge-table th {
-    font-size: 1rem;
-    padding: 12px 6px;
-  }
-
+  .badge-table th,
   .badge-table td {
-    padding: 12px 6px;
-    font-size: 0.95rem;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 5px;
   }
 
-  /* Badge names stay bold + readable */
-  .badge-table td:first-child {
-    width: 35%;
-    white-space: normal; /* let long badge names wrap */
+  /* Every badge becomes its own “block row” on mobile */
+  .badge-table tr {
+    display: block;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #333;
   }
 
-  /* Description takes remaining space */
-  .badge-table td:nth-child(2) {
-    width: 65%;
-    white-space: normal;
-  }
-
-  /* Prevent ugly table squeezing by letting the table size logically */
-  .badge-table {
-    table-layout: auto;
+  /* Hide header row on mobile */
+  .badge-table thead {
+    display: none;
   }
 }
