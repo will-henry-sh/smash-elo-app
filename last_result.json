@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Incineroar",
-    "new1": 1015,
-    "diff1": 15,
-    "p2": "Colton",
-    "c2": "Yoshi",
-    "new2": 974,
-    "diff2": -15,
+    "c1": "Snake",
+    "new1": 924,
+    "diff1": -16,
+    "p2": "Jeff",
+    "c2": "Byleth",
+    "new2": 953,
+    "diff2": 16,
     "last_player1": "Nick R",
-    "last_player2": "Colton",
-    "last_char1": "Incineroar",
-    "last_char2": "Yoshi"
+    "last_player2": "Jeff",
+    "last_char1": "Snake",
+    "last_char2": "Byleth"
 }
