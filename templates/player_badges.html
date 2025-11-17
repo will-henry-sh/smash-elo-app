@@ -16,22 +16,24 @@
 
     <h1 class="badge-title">Badge Information</h1>
 
-    <table class="badge-table">
-      <thead>
-        <tr>
-          <th>Badges</th>
-          <th>Description</th>
-        </tr>
-      </thead>
+    <div class="badge-table-container">
+      <table class="badge-table">
+        <thead>
+          <tr>
+            <th>Badges</th>
+            <th>Description</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        {% for b in badges %}
-        <tr>
-          <td>{{ b.badge }}</td>
-          <td>{{ b.description }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+        <tbody>
+          {% for b in badges %}
+          <tr>
+            <td>{{ b.badge }}</td>
+            <td>{{ b.description }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
