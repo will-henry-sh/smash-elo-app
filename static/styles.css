@@ -68,6 +68,10 @@ h2 {
   }
 }
 
+.top-nav {
+  margin-bottom: 18px; /* or 20px if you want more breathing room */
+}
+
 /* ------------------------------------------
      NAV LINK
   ------------------------------------------- */
