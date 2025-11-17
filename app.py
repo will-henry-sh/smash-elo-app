@@ -217,7 +217,7 @@ def badges():
         {"badge": "Devastator", "description": "Three-stock another player three times in a row in a set."},
         {"badge": "Global Enthusiasm", "description": "Get ranked with every character."},
         {"badge": "Sky Full of Stars", "description": "Reach (1,000/2,000/3,000) global ELO ranking."},
-        {"badge": "", "No Escape": "In a single set, win with three different characters."},
+        {"badge": "No Escape", "description": "In a single set, win with three different characters."},
         {"badge": "Specialism", "description": "Win five games in a row with the same character."},
         {"badge": "Awakening", "description": "In one set, lose two games and then three-stock the other player during the third game."},
         {"badge": "Fight for My Friends", "description": "Have all characters from the Fire Emblem series above 1,000 ELO concurrently."},
@@ -230,8 +230,7 @@ def badges():
         {"badge": "At Your Mercy", "description": "Win a game after letting your opponent choose your character."},
         {"badge": "From the Grave", "description": "Three-stock another player while using a character with an ELO rating of less than 1,000."},
         {"badge": "Usurper", "description": "Win a game against someone whose global ELO rating is at least (100/300/500/1,000) higher than yours."},
-        {"badge": "Versus Myself", "description": "During the same set, win three gamaes in a row as mirror matches."},
-
+        {"badge": "Versus Myself", "description": "During the same set, win three games in a row as mirror matches."},
     ]
     return render_template('player_badges.html', badges=badges)
 
