@@ -378,53 +378,40 @@ a:hover {
 }
 
 /* Mobile readability — EXACTLY how leaderboard behaves */
-@media (max-width: 700px) {
-  .badge-table th,
+/* MOBILE / TABLET BREAKPOINT */
+@media (max-width: 900px) {
+  /* hide table header row */
+  .badge-table thead {
+    display: none !important;
+  }
+
+  /* Stack badge rows vertically */
+  .badge-table tr {
+    display: block;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #333;
+  }
+
   .badge-table td {
     display: block;
     width: 100%;
     text-align: left;
-    padding: 10px 5px;
-  }
-
-  /* Every badge becomes its own “block row” on mobile */
-  .badge-table tr {
-    display: block;
-    margin-bottom: 18px;
-    border-bottom: 2px solid #333;
-  }
-
-  /* Hide header row on mobile */
-  .badge-table thead {
-    display: none;
-  }
-}
-
-/* MOBILE READABILITY UPGRADE */
-/* MOBILE READABILITY UPGRADE — OVERRIDES PROPERLY */
-@media (max-width: 700px) {
-  /* Badge names + descriptions */
-  .badge-table td {
-    font-size: 1.15rem !important;
+    padding: 14px 10px !important;
+    font-size: 1.1rem !important;
     line-height: 1.55 !important;
-    padding: 16px 10px !important;
   }
 
-  /* Badge name emphasis */
+  /* badge names — bigger + bold */
   .badge-table td:first-child {
     font-size: 1.25rem !important;
     font-weight: 700 !important;
+    margin-bottom: 6px;
   }
 
-  /* Title */
+  /* page title */
   .badge-title {
     font-size: 2rem !important;
-    margin-bottom: 25px !important;
-  }
-
-  /* More spacing per badge block */
-  .badge-table tr {
-    margin-bottom: 26px !important;
-    padding-bottom: 12px !important;
+    margin-bottom: 25px;
   }
 }
