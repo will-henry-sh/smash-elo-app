@@ -286,23 +286,34 @@ section,
 /* NAVBAR */
 .top-nav {
   display: flex;
-  gap: 25px;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background: #1c1c1c;
-  padding: 14px 0;
-  margin-bottom: 30px;
+  padding: 12px 10px;
   border-bottom: 1px solid #333;
 }
 
 .top-nav a {
   color: #4caf50;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
+  white-space: nowrap; /* prevents text from breaking into two lines */
 }
 
 .top-nav a:hover {
   color: #ffffff;
-  text-decoration: underline;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 600px) {
+  .top-nav {
+    flex-wrap: wrap; /* allows more layout control */
+    gap: 12px; /* balanced spacing */
+    padding: 10px 6px;
+  }
+
+  .top-nav a {
+    font-size: 0.9rem; /* slightly smaller to prevent wrapping */
+  }
 }
