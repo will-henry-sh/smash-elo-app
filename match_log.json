@@ -740,5 +740,12 @@
         "p2": "Nick W",
         "c2": "Wii Fit Trainer",
         "winner": "p1"
+    },
+    {
+        "p1": "Will",
+        "c1": "Ganondorf",
+        "p2": "Nick R",
+        "c2": "Piranha Plant",
+        "winner": "p1"
     }
 ]
