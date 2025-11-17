@@ -216,7 +216,8 @@ def badges():
         {"badge": "Veteran", "description": "Granted after completing 50 total matches."},
         {"badge": "Comeback", "description": "Earned after winning a match while trailing in set count."}
     ]
-    return render_template('badges.html', badges=badges)
+    return render_template('player_badges.html', badges=badges)
+
 
 
 
