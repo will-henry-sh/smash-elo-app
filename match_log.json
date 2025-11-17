@@ -705,5 +705,12 @@
         "p2": "Colton",
         "c2": "Toon Link",
         "winner": "p2"
+    },
+    {
+        "p1": "Nick R",
+        "c1": "Piranha Plant",
+        "p2": "Colton",
+        "c2": "Dark Samus",
+        "winner": "p1"
     }
 ]
