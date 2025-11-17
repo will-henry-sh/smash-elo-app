@@ -329,26 +329,33 @@ a:hover {
   text-decoration: underline;
 }
 
+/* badge page info */
 .badge-title {
   text-align: center;
+  margin-bottom: 25px;
 }
 
-/* Badge table centering */
+/* Badge table */
 .badge-table {
   width: 100%;
   border-collapse: collapse;
   margin: 0 auto;
-  text-align: center; /* Centers ALL content */
 }
 
+/* Center ALL table cells */
 .badge-table th,
 .badge-table td {
   padding: 14px 10px;
-  text-align: center; /* Ensures no left alignment */
+  text-align: center !important; /* force centering */
   vertical-align: middle;
-  white-space: nowrap; /* Prevents awkward wrapping */
 }
 
+/* Badge names (column 1) — prevent awkward wrapping */
+.badge-table td:first-child {
+  white-space: nowrap;
+}
+
+/* Descriptions (column 2) — allow wrapping for readability */
 .badge-table td:nth-child(2) {
-  white-space: normal; /* Allow descriptions to wrap nicely */
+  white-space: normal;
 }
