@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Robin",
-    "new1": 1128,
-    "diff1": 10,
+    "c1": "Captain Falcon",
+    "new1": 1049,
+    "diff1": 18,
     "p2": "Colton",
-    "c2": "Toon Link",
-    "new2": 959,
-    "diff2": -10,
+    "c2": "Dark Samus",
+    "new2": 1046,
+    "diff2": -18,
     "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "Robin",
-    "last_char2": "Toon Link"
+    "last_char1": "Captain Falcon",
+    "last_char2": "Dark Samus"
 }
