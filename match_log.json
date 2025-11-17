@@ -628,5 +628,12 @@
         "p2": "Nick R",
         "c2": "Piranha Plant",
         "winner": "p2"
+    },
+    {
+        "p1": "Will",
+        "c1": "Ganondorf",
+        "p2": "Nick R",
+        "c2": "Piranha Plant",
+        "winner": "p1"
     }
 ]
