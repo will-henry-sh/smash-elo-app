@@ -401,28 +401,30 @@ a:hover {
 }
 
 /* MOBILE READABILITY UPGRADE */
+/* MOBILE READABILITY UPGRADE — OVERRIDES PROPERLY */
 @media (max-width: 700px) {
-  /* Bigger, more readable font sizes */
+  /* Badge names + descriptions */
   .badge-table td {
-    font-size: 1.05rem;
-    line-height: 1.45;
-    padding: 14px 8px;
+    font-size: 1.15rem !important;
+    line-height: 1.55 !important;
+    padding: 16px 10px !important;
   }
 
+  /* Badge name emphasis */
   .badge-table td:first-child {
-    font-size: 1.1rem; /* badge names slightly larger */
-    font-weight: 700;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
   }
 
-  /* Header text slightly bigger as well */
+  /* Title */
   .badge-title {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-size: 2rem !important;
+    margin-bottom: 25px !important;
   }
 
-  /* More breathing room between rows */
+  /* More spacing per badge block */
   .badge-table tr {
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    margin-bottom: 26px !important;
+    padding-bottom: 12px !important;
   }
 }
