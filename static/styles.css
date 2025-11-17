@@ -399,3 +399,30 @@ a:hover {
     display: none;
   }
 }
+
+/* MOBILE READABILITY UPGRADE */
+@media (max-width: 700px) {
+  /* Bigger, more readable font sizes */
+  .badge-table td {
+    font-size: 1.05rem;
+    line-height: 1.45;
+    padding: 14px 8px;
+  }
+
+  .badge-table td:first-child {
+    font-size: 1.1rem; /* badge names slightly larger */
+    font-weight: 700;
+  }
+
+  /* Header text slightly bigger as well */
+  .badge-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  /* More breathing room between rows */
+  .badge-table tr {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+}
