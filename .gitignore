@@ -1,0 +1,9 @@
+# Ignore Python cache
+__pycache__/
+
+# Ignore virtual env
+venv/
+.venv/
+
+# Ignore backups created by your script
+*.bak

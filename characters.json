@@ -1,70 +1,70 @@
 {
-    "Nick R": {
-        "Snake": 924,
-        "Min Min": 1056,
-        "Donkey Kong": 1028,
-        "Hero": 1012,
-        "Cloud": 978,
-        "Ice Climbers": 1018,
-        "King Dedede": 1009,
-        "Piranha Plant": 945,
-        "Sephiroth": 976,
-        "Marth": 984,
-        "Mr. Game and Watch": 1016,
-        "Banjo & Kazooie": 982,
-        "Incineroar": 1015,
-        "Young Link": 986,
-        "Pyra/Mythra": 1023,
-        "Ridley": 984,
-        "Luigi": 986
-    },
-    "Will": {
-        "Robin": 1139,
-        "Ganondorf": 1104,
-        "Wolf": 1045,
-        "Incineroar": 1051,
-        "Greninja": 1010,
-        "Ridley": 1010,
-        "Captain Falcon": 1065,
-        "Bowser": 1010,
-        "Inkling": 1010,
-        "Sheik": 1031,
-        "Hero": 1013,
-        "Roy": 1009,
-        "King K. Rool": 1039,
-        "Link": 1016,
-        "Meta Knight": 1059,
-        "Ike": 1015,
-        "Steve": 1016,
-        "Corrin": 984,
-        "Banjo & Kazooie": 984
-    },
-    "Colton": {
-        "Toon Link": 981,
-        "Jigglypuff": 947,
-        "Dark Samus": 1012,
-        "Mario": 1027,
-        "Yoshi": 974,
-        "Duck Hunt": 995,
-        "Marth": 996,
-        "Captain Falcon": 977,
-        "Samus": 983
-    },
-    "Nick W": {
-        "Wii Fit Trainer": 968,
-        "Palutena": 970,
-        "Fox": 999
-    },
-    "Mike": {
-        "King K. Rool": 900,
-        "Bowser Jr.": 900
-    },
-    "Jeff": {
-        "Byleth": 941
-    },
-    "Nat": {
-        "Snake": 984,
-        "Captain Falcon": 1016,
-        "Wolf": 1016
-    }
+  "Nick R": {
+    "Snake": 924,
+    "Min Min": 1056,
+    "Donkey Kong": 1028,
+    "Hero": 1012,
+    "Cloud": 978,
+    "Ice Climbers": 1018,
+    "King Dedede": 1009,
+    "Piranha Plant": 945,
+    "Sephiroth": 976,
+    "Marth": 984,
+    "Mr. Game and Watch": 1016,
+    "Banjo & Kazooie": 982,
+    "Incineroar": 1015,
+    "Young Link": 986,
+    "Pyra/Mythra": 1023,
+    "Ridley": 984,
+    "Luigi": 986
+  },
+  "Will": {
+    "Robin": 1139,
+    "Ganondorf": 1104,
+    "Wolf": 1045,
+    "Incineroar": 1051,
+    "Greninja": 1010,
+    "Ridley": 1010,
+    "Captain Falcon": 1065,
+    "Bowser": 1010,
+    "Inkling": 1010,
+    "Sheik": 1031,
+    "Hero": 1013,
+    "Roy": 1009,
+    "King K. Rool": 1039,
+    "Link": 1016,
+    "Meta Knight": 1059,
+    "Ike": 1015,
+    "Steve": 1016,
+    "Corrin": 984,
+    "Banjo & Kazooie": 984
+  },
+  "Colton": {
+    "Toon Link": 981,
+    "Jigglypuff": 947,
+    "Dark Samus": 1012,
+    "Mario": 1027,
+    "Yoshi": 974,
+    "Duck Hunt": 995,
+    "Marth": 996,
+    "Captain Falcon": 977,
+    "Samus": 983
+  },
+  "Nick W": {
+    "Wii Fit Trainer": 968,
+    "Palutena": 970,
+    "Fox": 999
+  },
+  "Mike": {
+    "King K. Rool": 900,
+    "Bowser Jr.": 900
+  },
+  "Jeff": {
+    "Byleth": 941
+  },
+  "Nat": {
+    "Snake": 984,
+    "Captain Falcon": 1016,
+    "Wolf": 1016
+  }
 }
