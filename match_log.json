@@ -1,17 +1,6 @@
 [
     {
         "p1": "Will",
-        "c1": "Captain Falcon",
-        "p2": "Colton",
-        "c2": "Dark Samus",
-        "winner": "p1",
-        "new1": 1057,
-        "new2": 1021,
-        "diff1": 16,
-        "diff2": -16
-    },
-    {
-        "p1": "Will",
         "c1": "Wolf",
         "p2": "Colton",
         "c2": "Toon Link",
@@ -226,6 +215,19 @@
         "c2": "Wii Fit Trainer",
         "new2": 901,
         "diff2": -12,
+        "winner": "p1",
+        "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-20 06:45",
+        "p1": "Nick R",
+        "c1": "Pyra/Mythra",
+        "new1": 1023,
+        "diff1": 11,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 890,
+        "diff2": -11,
         "winner": "p1",
         "three_stock": false
     }
