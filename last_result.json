@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Mewtwo",
-    "new1": 1016,
-    "diff1": 16,
+    "c1": "Roy",
+    "new1": 984,
+    "diff1": -16,
     "p2": "Nat",
-    "c2": "Pikachu",
-    "new2": 984,
-    "diff2": -16,
+    "c2": "Rosalina and Luma",
+    "new2": 1016,
+    "diff2": 16,
     "last_player1": "Nick R",
     "last_player2": "Nat",
-    "last_char1": "Mewtwo",
-    "last_char2": "Pikachu"
+    "last_char1": "Roy",
+    "last_char2": "Rosalina and Luma"
 }

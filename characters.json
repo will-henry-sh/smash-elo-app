@@ -17,7 +17,8 @@
         "Pyra/Mythra": 1023,
         "Ridley": 984,
         "Luigi": 986,
-        "Mewtwo": 1016
+        "Mewtwo": 1016,
+        "Roy": 984
     },
     "Will": {
         "Robin": 1139,
@@ -67,6 +68,7 @@
         "Snake": 984,
         "Captain Falcon": 1016,
         "Wolf": 1016,
-        "Pikachu": 984
+        "Pikachu": 984,
+        "Rosalina and Luma": 1016
     }
 }
