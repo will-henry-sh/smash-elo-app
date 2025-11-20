@@ -426,11 +426,10 @@ a:hover {
     margin-bottom: 25px;
   }
 
-  .submit-match {
-    width: auto; /* stops stretching */
-    max-width: 300px; /* control size */
-    padding: 14px 24px; /* nicer shape */
-    display: block; /* allows centering */
-    margin: 20px auto; /* centers */
+  button[type="submit"] {
+    width: auto !important;
+    max-width: 280px;
+    display: block;
+    margin: 20px auto 0 auto;
   }
 }
