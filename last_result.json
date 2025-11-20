@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
-    "c1": "Meta Knight",
-    "new1": 1059,
-    "diff1": 14,
-    "p2": "Nick R",
-    "c2": "Young Link",
-    "new2": 986,
-    "diff2": -14,
-    "last_player1": "Will",
-    "last_player2": "Nick R",
-    "last_char1": "Meta Knight",
-    "last_char2": "Young Link"
+    "p1": "Nick R",
+    "c1": "Pyra/Mythra",
+    "new1": 1012,
+    "diff1": 12,
+    "p2": "Nick W",
+    "c2": "Wii Fit Trainer",
+    "new2": 901,
+    "diff2": -12,
+    "last_player1": "Nick R",
+    "last_player2": "Nick W",
+    "last_char1": "Pyra/Mythra",
+    "last_char2": "Wii Fit Trainer"
 }
