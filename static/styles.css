@@ -643,35 +643,46 @@ button {
    FINAL MOBILE ALIGNMENT FIX
    ========================================== */
 
+/* ==========================================
+   MOBILE: FIX PLAYER TOO WIDE & CHARACTER TOO NARROW
+   ========================================== */
 @media (max-width: 600px) {
-  /* Force consistent side-by-side layout */
   .form-row {
     display: flex !important;
     justify-content: center !important;
-    gap: 16px !important;
+    gap: 12px !important;
     width: 100% !important;
   }
 
-  /* REMOVE desktop widths and set correct mobile widths */
-  .form-row select,
-  .form-row .search-input {
-    width: 48% !important; /* makes both fields larger */
-    min-width: 48% !important;
-    max-width: 48% !important;
-    padding-right: 16px !important;
+  /* Player field = wider */
+  .form-row select:first-child,
+  .form-row .search-input:first-child {
+    width: 55% !important;
+    min-width: 55% !important;
+    max-width: 55% !important;
   }
 
-  /* Labels match field width */
-  .form-row-labels {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
-    gap: 16px !important;
+  /* Character field = narrower but still spacious */
+  .form-row select:last-child,
+  .form-row .search-input:last-child {
+    width: 45% !important;
+    min-width: 45% !important;
+    max-width: 45% !important;
   }
 
-  .player-label,
+  /* FIX searchable dropdown wrapper width */
+  .form-row > div {
+    width: 45% !important;
+    min-width: 45% !important;
+    max-width: 45% !important;
+  }
+
+  /* Labels match field widths */
+  .player-label {
+    width: 55% !important;
+  }
+
   .character-label {
-    width: 48% !important; /* matches select width */
-    text-align: center !important;
+    width: 45% !important;
   }
 }
