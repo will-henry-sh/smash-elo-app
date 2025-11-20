@@ -652,17 +652,17 @@ button {
   /* PLAYER WRAPPER */
   .form-row > select:first-child,
   .form-row > div:first-child {
-    width: 50% !important;
-    min-width: 50% !important;
-    max-width: 50% !important;
+    width: 30% !important;
+    min-width: 30% !important;
+    max-width: 30% !important;
   }
 
   /* CHARACTER WRAPPER */
   .form-row > select:last-child,
   .form-row > div:last-child {
-    width: 50% !important;
-    min-width: 50% !important;
-    max-width: 50% !important;
+    width: 30% !important;
+    min-width: 30% !important;
+    max-width: 30% !important;
   }
 
   /* Input inside wrapper must fill wrapper */
@@ -676,4 +676,18 @@ button {
     width: 50% !important;
     text-align: center !important;
   }
+}
+
+/* Move Three-stock above button and center it */
+.submit-row {
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.three-stock-wrapper {
+  position: static !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
