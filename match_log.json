@@ -1,17 +1,6 @@
 [
     {
         "p1": "Nick R",
-        "c1": "Snake",
-        "p2": "Jeff",
-        "c2": "Byleth",
-        "winner": "p2",
-        "new1": 875,
-        "new2": 950,
-        "diff1": -14,
-        "diff2": 14
-    },
-    {
-        "p1": "Nick R",
         "c1": "Donkey Kong",
         "p2": "Jeff",
         "c2": "Byleth",
@@ -234,6 +223,19 @@
         "c2": "Wii Fit Trainer",
         "new2": 879,
         "diff2": -11,
+        "winner": "p1",
+        "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-20 06:46",
+        "p1": "Nick R",
+        "c1": "Hero",
+        "new1": 1035,
+        "diff1": 14,
+        "p2": "Nick W",
+        "c2": "Palutena",
+        "new2": 970,
+        "diff2": -14,
         "winner": "p1",
         "three_stock": false
     }
