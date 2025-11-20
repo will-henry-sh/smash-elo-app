@@ -637,64 +637,43 @@ button {
 }
 
 /* ==========================================
-   MOBILE FIELD CENTERING + REDUCED WIDTH
-   ========================================== */
-/* ==========================================
-   FINAL MOBILE ALIGNMENT FIX
-   ========================================== */
-
-/* ==========================================
-   MOBILE: FIX PLAYER TOO WIDE & CHARACTER TOO NARROW
-   ========================================== */
-/* ==========================================
-   MOBILE: FIX PLAYER + CHARACTER FIELD WIDTHS
+   MOBILE: SHRINK FIELD WIDTHS TO PREVENT OVERFLOW
    ========================================== */
 @media (max-width: 600px) {
-  /* Keep layout side-by-side */
+  /* Keep layout side-by-side but compact */
   .form-row {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 14px !important;
+    gap: 10px !important;
     width: 100% !important;
   }
 
-  /* PLAYER WRAPPER = WIDER */
+  /* PLAYER WRAPPER */
   .form-row > select:first-child,
   .form-row > div:first-child {
-    width: 58% !important;
-    min-width: 58% !important;
-    max-width: 58% !important;
+    width: 50% !important;
+    min-width: 50% !important;
+    max-width: 50% !important;
   }
 
-  /* CHARACTER WRAPPER = A LITTLE NARROWER */
+  /* CHARACTER WRAPPER */
   .form-row > select:last-child,
   .form-row > div:last-child {
-    width: 42% !important;
-    min-width: 42% !important;
-    max-width: 42% !important;
+    width: 50% !important;
+    min-width: 50% !important;
+    max-width: 50% !important;
   }
 
-  /* Input inside wrapper fills it */
+  /* Input inside wrapper must fill wrapper */
   .form-row input.search-input {
     width: 100% !important;
   }
 
-  /* Labels match widths exactly */
-  .form-row-labels {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 14px !important;
-    width: 100% !important;
-  }
-
-  .player-label {
-    width: 58% !important;
-    text-align: center !important;
-  }
-
+  /* Labels match widths */
+  .player-label,
   .character-label {
-    width: 42% !important;
+    width: 50% !important;
     text-align: center !important;
   }
 }
