@@ -1,57 +1,57 @@
 {
-    "Nick R": {
-        "Snake": 924,
-        "Min Min": 1056,
-        "Donkey Kong": 1045,
-        "Hero": 1010,
-        "Cloud": 978,
-        "Ice Climbers": 1018,
-        "King Dedede": 1009,
-        "Piranha Plant": 996,
-        "Sephiroth": 976,
-        "Marth": 984,
-        "Mr. Game and Watch": 1016,
-        "Banjo & Kazooie": 982,
-        "Incineroar": 1015
-    },
-    "Will": {
-        "Robin": 1139,
-        "Ganondorf": 1104,
-        "Wolf": 1045,
-        "Incineroar": 1051,
-        "Greninja": 1029,
-        "Ridley": 1010,
-        "Captain Falcon": 1065,
-        "Bowser": 1010,
-        "Inkling": 1010,
-        "Sheik": 1014,
-        "Hero": 1013,
-        "Roy": 1009,
-        "King K. Rool": 1025,
-        "Link": 1016,
-        "Meta Knight": 1045,
-        "Ike": 1015
-    },
-    "Colton": {
-        "Toon Link": 981,
-        "Jigglypuff": 947,
-        "Dark Samus": 1012,
-        "Mario": 1027,
-        "Yoshi": 974,
-        "Duck Hunt": 995,
-        "Marth": 996,
-        "Captain Falcon": 977,
-        "Samus": 983
-    },
-    "Nick W": {
-        "Wii Fit Trainer": 913,
-        "Palutena": 984
-    },
-    "Mike": {
-        "King K. Rool": 986,
-        "Bowser Jr.": 984
-    },
-    "Jeff": {
-        "Byleth": 941
-    }
+  "Nick R": {
+    "Snake": 924,
+    "Min Min": 1056,
+    "Donkey Kong": 1045,
+    "Hero": 1010,
+    "Cloud": 978,
+    "Ice Climbers": 1018,
+    "King Dedede": 1009,
+    "Piranha Plant": 975,
+    "Sephiroth": 976,
+    "Marth": 984,
+    "Mr. Game and Watch": 1016,
+    "Banjo & Kazooie": 982,
+    "Incineroar": 1015
+  },
+  "Will": {
+    "Robin": 1139,
+    "Ganondorf": 1104,
+    "Wolf": 1045,
+    "Incineroar": 1051,
+    "Greninja": 1029,
+    "Ridley": 1010,
+    "Captain Falcon": 1065,
+    "Bowser": 1010,
+    "Inkling": 1010,
+    "Sheik": 1014,
+    "Hero": 1013,
+    "Roy": 1009,
+    "King K. Rool": 1025,
+    "Link": 1016,
+    "Meta Knight": 1045,
+    "Ike": 1015
+  },
+  "Colton": {
+    "Toon Link": 981,
+    "Jigglypuff": 947,
+    "Dark Samus": 1012,
+    "Mario": 1027,
+    "Yoshi": 974,
+    "Duck Hunt": 995,
+    "Marth": 996,
+    "Captain Falcon": 977,
+    "Samus": 983
+  },
+  "Nick W": {
+    "Wii Fit Trainer": 913,
+    "Palutena": 984
+  },
+  "Mike": {
+    "King K. Rool": 900,
+    "Bowser Jr.": 900
+  },
+  "Jeff": {
+    "Byleth": 941
+  }
 }
