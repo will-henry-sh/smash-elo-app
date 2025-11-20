@@ -3,17 +3,6 @@
         "p1": "Nick R",
         "c1": "Piranha Plant",
         "p2": "Colton",
-        "c2": "Toon Link",
-        "winner": "p2",
-        "new1": 976,
-        "new2": 958,
-        "diff1": -19,
-        "diff2": 19
-    },
-    {
-        "p1": "Nick R",
-        "c1": "Piranha Plant",
-        "p2": "Colton",
         "c2": "Dark Samus",
         "winner": "p1",
         "new1": 994,
@@ -239,6 +228,19 @@
         "new2": 902,
         "diff2": 23,
         "winner": "p2",
+        "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-20 06:57",
+        "p1": "Will",
+        "c1": "Steve",
+        "new1": 1016,
+        "diff1": 16,
+        "p2": "Nat",
+        "c2": "Snake",
+        "new2": 984,
+        "diff2": -16,
+        "winner": "p1",
         "three_stock": false
     }
 ]
