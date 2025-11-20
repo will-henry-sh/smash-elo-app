@@ -635,3 +635,32 @@ button {
 .page-title {
   margin: 10px 0 20px !important;
 }
+
+/* ============================
+   FIX MOBILE HORIZONTAL SCROLLING
+   ============================ */
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .form-row select,
+  .form-row .search-input {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .player-label,
+  .character-label {
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .container {
+    overflow-x: hidden !important;
+  }
+}
