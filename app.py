@@ -489,8 +489,7 @@ def add_match():
         "three_stock": three_stock
     })
 
-    # Keep newest 20
-    log = log[-20:]
+
     save_match_log(log)
 
     # Auto commit/push
