@@ -636,29 +636,40 @@ button {
   margin: 10px 0 20px !important;
 }
 
+/* ==========================================
+   MOBILE FIELD CENTERING + REDUCED WIDTH
+   ========================================== */
 @media (max-width: 600px) {
+  /* Keep the two fields side by side */
   .form-row {
     display: flex !important;
-    flex-direction: row !important;
     justify-content: center !important;
-    gap: 10px !important;
+    gap: 12px !important;
     width: 100% !important;
   }
 
+  /* Reduce width + center fields */
   .form-row select,
   .form-row .search-input {
-    width: 45% !important; /* two fields fit side-by-side */
-    min-width: 0 !important; /* remove problematic 200px min */
+    width: 42% !important; /* fixed width that fits all phones */
+    min-width: 0 !important;
     max-width: none !important;
+    margin: 0 auto !important; /* centers the boxes */
+    text-align: center;
+  }
+
+  /* Center the labels above the fields */
+  .form-row-labels {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
   }
 
   .player-label,
   .character-label {
-    width: 45% !important; /* match select widths */
+    width: 42% !important; /* match field width */
     text-align: center !important;
-  }
-
-  .container {
-    overflow-x: hidden !important;
+    margin: 0 auto !important;
   }
 }
