@@ -35,7 +35,8 @@
         "Link": 1016,
         "Meta Knight": 1059,
         "Ike": 1015,
-        "Steve": 1016
+        "Steve": 1016,
+        "Corrin": 984
     },
     "Colton": {
         "Toon Link": 981,
@@ -61,6 +62,7 @@
         "Byleth": 941
     },
     "Nat": {
-        "Snake": 984
+        "Snake": 984,
+        "Captain Falcon": 1016
     }
 }
