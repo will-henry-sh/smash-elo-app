@@ -1,16 +1,5 @@
 [
     {
-        "p1": "Will",
-        "c1": "Incineroar",
-        "p2": "Colton",
-        "c2": "Yoshi",
-        "winner": "p1",
-        "new1": 1051,
-        "new2": 983,
-        "diff1": 14,
-        "diff2": -14
-    },
-    {
         "p1": "Nick R",
         "c1": "Incineroar",
         "p2": "Colton",
@@ -231,6 +220,19 @@
         "new2": 1016,
         "diff2": 16,
         "winner": "p2",
+        "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-20 06:45",
+        "p1": "Nick R",
+        "c1": "Luigi",
+        "new1": 1017,
+        "diff1": 17,
+        "p2": "Nick W",
+        "c2": "Fox",
+        "new2": 999,
+        "diff2": -17,
+        "winner": "p1",
         "three_stock": false
     }
 ]
