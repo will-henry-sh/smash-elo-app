@@ -425,11 +425,12 @@ a:hover {
     font-size: 2rem !important;
     margin-bottom: 25px;
   }
+}
 
-  button[type="submit"] {
-    width: auto !important;
-    max-width: 280px;
-    display: block;
-    margin: 20px auto 0 auto;
-  }
+button[type="submit"] {
+  width: auto !important;
+  max-width: 280px;
+  display: block;
+  margin: 20px auto 0 auto;
+  padding: 14px 24px;
 }
