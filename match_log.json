@@ -1,17 +1,6 @@
 [
     {
         "p1": "Will",
-        "c1": "Robin",
-        "p2": "Colton",
-        "c2": "Toon Link",
-        "winner": "p1",
-        "new1": 1116,
-        "new2": 951,
-        "diff1": 10,
-        "diff2": -10
-    },
-    {
-        "p1": "Will",
         "c1": "Captain Falcon",
         "p2": "Colton",
         "c2": "Dark Samus",
@@ -222,6 +211,19 @@
         "c2": "Donkey Kong",
         "new2": 1028,
         "diff2": -17,
+        "winner": "p1",
+        "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-20 06:43",
+        "p1": "Will",
+        "c1": "Meta Knight",
+        "new1": 1059,
+        "diff1": 14,
+        "p2": "Nick R",
+        "c2": "Young Link",
+        "new2": 986,
+        "diff2": -14,
         "winner": "p1",
         "three_stock": false
     }
