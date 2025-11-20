@@ -3,17 +3,6 @@
         "p1": "Nick R",
         "c1": "Piranha Plant",
         "p2": "Nick W",
-        "c2": "Palutena",
-        "winner": "p1",
-        "new1": 1001,
-        "new2": 968,
-        "diff1": 16,
-        "diff2": -16
-    },
-    {
-        "p1": "Nick R",
-        "c1": "Piranha Plant",
-        "p2": "Nick W",
         "c2": "Wii Fit Trainer",
         "winner": "p1",
         "new1": 1009,
@@ -247,6 +236,19 @@
         "new2": 891,
         "diff2": -11,
         "winner": "p1",
+        "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-20 07:22",
+        "p1": "Nick R",
+        "c1": "Luigi",
+        "new1": 1006,
+        "diff1": -22,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 913,
+        "diff2": 22,
+        "winner": "p2",
         "three_stock": false
     }
 ]
