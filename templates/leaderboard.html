@@ -7,6 +7,16 @@
   </head>
 
   <body>
+    {% macro colored(name) -%} {% if rank_map.get(name) == 1 %}
+    <span class="rank-gold">{{ name }}</span>
+    {% elif rank_map.get(name) == 2 %}
+    <span class="rank-silver">{{ name }}</span>
+    {% elif rank_map.get(name) == 3 %}
+    <span class="rank-bronze">{{ name }}</span>
+    {% else %}
+    <span class="rank-normal">{{ name }}</span>
+    {% endif %} {%- endmacro %}
+
     <nav class="top-nav">
       <a href="/matches">Matches</a>
       <a href="/leaderboard">Leaderboard</a>
@@ -58,28 +68,51 @@
       </table>
 
       <!-- RECENT MATCH SECTION (Safe even if last_match is None) -->
-      {% if last_result %}
-      <div class="result-box">
-        <h2>Last Match Result</h2>
 
-        <p>
-          <strong>{{ last_result['p1'] }}</strong>
-          ({{ last_result['c1'] }}): {{ last_result['new1'] }}
-          <span class="{{ 'green' if last_result['diff1'] > 0 else 'red' }}">
-            {% if last_result['diff1'] > 0 %} +{{ last_result['diff1'] }} {%
-            else %} {{ last_result['diff1'] }} {% endif %}
-          </span>
-        </p>
+      <h2 style="text-align: center; margin-top: 40px">
+        Recent Matches (Last 20)
+      </h2>
 
-        <p>
-          <strong>{{ last_result['p2'] }}</strong>
-          ({{ last_result['c2'] }}): {{ last_result['new2'] }}
-          <span class="{{ 'green' if last_result['diff2'] > 0 else 'red' }}">
-            {{ last_result['diff2'] }}
-          </span>
-        </p>
+      <div class="recent-matches-list">
+        {% for m in recent_matches %}
+        <div class="result-box recent-match-card">
+          {# Player 1 #}
+          <p>
+            <strong>{{ colored(m.p1) }}</strong>
+            ({{ m.c1 }}) {% if m.diff1 is defined %} : {{ m.new1 }}
+            <span class="{{ 'green' if m.diff1 > 0 else 'red' }}">
+              {% if m.diff1 > 0 %}+{{ m.diff1 }}{% else %}{{ m.diff1 }}{% endif
+              %}
+            </span>
+            {% endif %}
+          </p>
+
+          {# Player 2 #}
+          <p>
+            <strong>{{ colored(m.p2) }}</strong>
+            ({{ m.c2 }}) {% if m.diff2 is defined %} : {{ m.new2 }}
+            <span class="{{ 'green' if m.diff2 > 0 else 'red' }}">
+              {% if m.diff2 > 0 %}+{{ m.diff2 }}{% else %}{{ m.diff2 }}{% endif
+              %}
+            </span>
+            {% endif %}
+          </p>
+
+          {# Winner #}
+          <p style="margin-top: 10px">
+            Winner: {% if m.winner == "p1" %}
+            <strong>{{ colored(m.p1) }}</strong>
+            {% else %}
+            <strong>{{ colored(m.p2) }}</strong>
+            {% endif %}
+          </p>
+
+          {# Date (if timestamps added) #} {% if m.timestamp %}
+          <p class="recent-date">{{ m.timestamp }}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
       </div>
-      {% endif %}
     </div>
   </body>
 </html>

@@ -269,27 +269,43 @@ def home_redirect():
 def leaderboard():
     data = load_players()
 
-    # Load raw JSON exactly as saved
+    # Load last result safely
     try:
         with open(LAST_RESULT_FILE, "r") as f:
             last_result = json.load(f)
     except:
         last_result = None
 
+    # Build leaderboard rows
     rows = []
-
     for player, char_map in data.items():
         diffs = [(elo - 1000) for elo in char_map.values() if elo != 1000]
         global_elo = sum(diffs) if diffs else 0
         rows.append((player, global_elo, char_map))
 
+    # Sort by ELO (descending)
     rows.sort(key=lambda x: x[1], reverse=True)
 
+    # Build rank lookup table: {"Will": 1, "Nick R": 2, ...}
+    rank_map = {player: i + 1 for i, (player, _, _) in enumerate(rows)}
+
+    # Load match log once
+    log = load_match_log()
+
+    # Last 20 matches, newest → oldest
+    recent_matches = log[-20:][::-1]
+
+    # Render page
     return render_template(
         "leaderboard.html",
         rows=rows,
-        last_result=last_result
+        last_result=last_result,
+        recent_matches=recent_matches,
+        rank_map=rank_map
     )
+
+
+
 
 
 
@@ -369,7 +385,6 @@ def sync_now():
     queue_push("Manual sync request")
     return "Manual sync triggered. Check /admin for status."
 
-
 @app.route("/add_match", methods=["POST"])
 @requires_auth
 def add_match():
@@ -379,6 +394,9 @@ def add_match():
     p2 = request.form["player2"]
     c2 = request.form["p2_character"]
     winner = request.form["winner"]
+
+    # Three-stock checkbox
+    three_stock = request.form.get("three_stock") == "on"
 
     data = load_players()
 
@@ -396,11 +414,47 @@ def add_match():
     old1 = data[p1][c1]
     old2 = data[p2][c2]
 
+    # --- NORMAL ELO UPDATE ---
     new1, new2 = calculate_elo(old1, old2, winner)
 
+    # the change (before three-stock adjustments)
+    change1 = new1 - old1
+    change2 = new2 - old2
+
+    # --- CHECK GLOBAL RANKINGS ---
+    players_data = load_players()
+
+    def global_rank(player_name):
+        if player_name not in players_data:
+            return 999999  # safely last
+        ratings = players_data[player_name].values()
+        return sum(r - 1000 for r in ratings if r != 1000)
+
+    p1_global = global_rank(p1)
+    p2_global = global_rank(p2)
+
+    # --- DETERMINE WINNER/LOSER GLOBAL RATINGS ---
+    if winner == "p1":
+        winner_global = p1_global
+        loser_global = p2_global
+    else:
+        winner_global = p2_global
+        loser_global = p1_global
+
+    # --- APPLY THREE-STOCK DOUBLING ONLY WHEN VALID ---
+    if three_stock and winner_global < loser_global:
+        change1 *= 2
+        change2 *= 2
+        new1 = old1 + change1
+        new2 = old2 + change2
+
+    # Apply min rating of 800
+    new1 = max(800, round(new1))
+    new2 = max(800, round(new2))
+
+    # Save final ratings
     data[p1][c1] = new1
     data[p2][c2] = new2
-
     save_players(data)
 
     # Save last match result
@@ -422,19 +476,29 @@ def add_match():
     # Log match history
     log = load_match_log()
     log.append({
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "p1": p1,
         "c1": c1,
+        "new1": new1,
+        "diff1": new1 - old1,
         "p2": p2,
         "c2": c2,
-        "winner": winner
+        "new2": new2,
+        "diff2": new2 - old2,
+        "winner": winner,
+        "three_stock": three_stock
     })
+
+    # Keep newest 20
+    log = log[-20:]
     save_match_log(log)
 
-    # 🔥 Auto commit + push to GitHub (runs in background)
+    # Auto commit/push
     queue_push("Auto-update from match submission")
 
-
     return redirect(url_for("matches"))
+
+
 
 
 @app.route("/admin")
