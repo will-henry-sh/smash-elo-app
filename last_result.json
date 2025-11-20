@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Corrin",
+    "c1": "Banjo & Kazooie",
     "new1": 984,
     "diff1": -16,
     "p2": "Nat",
-    "c2": "Captain Falcon",
+    "c2": "Wolf",
     "new2": 1016,
     "diff2": 16,
     "last_player1": "Will",
     "last_player2": "Nat",
-    "last_char1": "Corrin",
-    "last_char2": "Captain Falcon"
+    "last_char1": "Banjo & Kazooie",
+    "last_char2": "Wolf"
 }

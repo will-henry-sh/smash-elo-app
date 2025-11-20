@@ -2,17 +2,6 @@
     {
         "p1": "Nick R",
         "c1": "Piranha Plant",
-        "p2": "Colton",
-        "c2": "Toon Link",
-        "winner": "p2",
-        "new1": 976,
-        "new2": 976,
-        "diff1": -18,
-        "diff2": 18
-    },
-    {
-        "p1": "Nick R",
-        "c1": "Piranha Plant",
         "p2": "Nick W",
         "c2": "Wii Fit Trainer",
         "winner": "p1",
@@ -240,6 +229,19 @@
         "diff1": -16,
         "p2": "Nat",
         "c2": "Captain Falcon",
+        "new2": 1016,
+        "diff2": 16,
+        "winner": "p2",
+        "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-20 07:04",
+        "p1": "Will",
+        "c1": "Banjo & Kazooie",
+        "new1": 984,
+        "diff1": -16,
+        "p2": "Nat",
+        "c2": "Wolf",
         "new2": 1016,
         "diff2": 16,
         "winner": "p2",
