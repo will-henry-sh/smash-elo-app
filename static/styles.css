@@ -636,28 +636,26 @@ button {
   margin: 10px 0 20px !important;
 }
 
-/* ============================
-   FIX MOBILE HORIZONTAL SCROLLING
-   ============================ */
-
 @media (max-width: 600px) {
   .form-row {
-    flex-direction: column !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
     gap: 10px !important;
     width: 100% !important;
   }
 
   .form-row select,
   .form-row .search-input {
-    min-width: 100% !important;
-    max-width: 100% !important;
-    width: 100% !important;
+    width: 45% !important; /* two fields fit side-by-side */
+    min-width: 0 !important; /* remove problematic 200px min */
+    max-width: none !important;
   }
 
   .player-label,
   .character-label {
-    width: 100% !important;
-    text-align: left !important;
+    width: 45% !important; /* match select widths */
+    text-align: center !important;
   }
 
   .container {
