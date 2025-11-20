@@ -646,43 +646,55 @@ button {
 /* ==========================================
    MOBILE: FIX PLAYER TOO WIDE & CHARACTER TOO NARROW
    ========================================== */
+/* ==========================================
+   MOBILE: FIX PLAYER + CHARACTER FIELD WIDTHS
+   ========================================== */
 @media (max-width: 600px) {
+  /* Keep layout side-by-side */
   .form-row {
     display: flex !important;
     justify-content: center !important;
-    gap: 12px !important;
+    align-items: center !important;
+    gap: 14px !important;
     width: 100% !important;
   }
 
-  /* Player field = wider */
-  .form-row select:first-child,
-  .form-row .search-input:first-child {
-    width: 55% !important;
-    min-width: 55% !important;
-    max-width: 55% !important;
+  /* PLAYER WRAPPER = WIDER */
+  .form-row > select:first-child,
+  .form-row > div:first-child {
+    width: 58% !important;
+    min-width: 58% !important;
+    max-width: 58% !important;
   }
 
-  /* Character field = narrower but still spacious */
-  .form-row select:last-child,
-  .form-row .search-input:last-child {
-    width: 45% !important;
-    min-width: 45% !important;
-    max-width: 45% !important;
+  /* CHARACTER WRAPPER = A LITTLE NARROWER */
+  .form-row > select:last-child,
+  .form-row > div:last-child {
+    width: 42% !important;
+    min-width: 42% !important;
+    max-width: 42% !important;
   }
 
-  /* FIX searchable dropdown wrapper width */
-  .form-row > div {
-    width: 45% !important;
-    min-width: 45% !important;
-    max-width: 45% !important;
+  /* Input inside wrapper fills it */
+  .form-row input.search-input {
+    width: 100% !important;
   }
 
-  /* Labels match field widths */
+  /* Labels match widths exactly */
+  .form-row-labels {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    width: 100% !important;
+  }
+
   .player-label {
-    width: 55% !important;
+    width: 58% !important;
+    text-align: center !important;
   }
 
   .character-label {
-    width: 45% !important;
+    width: 42% !important;
+    text-align: center !important;
   }
 }
