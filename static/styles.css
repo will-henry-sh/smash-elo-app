@@ -425,4 +425,12 @@ a:hover {
     font-size: 2rem !important;
     margin-bottom: 25px;
   }
+
+  .submit-match {
+    width: auto; /* stops stretching */
+    max-width: 300px; /* control size */
+    padding: 14px 24px; /* nicer shape */
+    display: block; /* allows centering */
+    margin: 20px auto; /* centers */
+  }
 }
