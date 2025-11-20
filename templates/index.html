@@ -95,112 +95,111 @@
     
     <div class="container">
       <h1 class="page-title">Smash Ultimate Match Info</h1>
-
-      <!-- ✅ FORM STARTS HERE (this was missing before) -->
-      <form action="/submit_match" method="POST">
-
-        <!-- Player 1 -->
-        <div class="form-row-labels">
-          <h3 class="player-label">Player 1</h3>
-          <h3 class="character-label">Character</h3>
-        </div>
-
-        <div class="form-row">
-          <select name="player1" required>
-            <option value="" disabled>Select Player 1</option>
-            {% for p in player_list %}
-            <option value="{{ p }}" {% if p == last_player1 %}selected{% endif %}>
-              {{ p }}
-            </option>
-            {% endfor %}
-          </select>
-
-          <select name="p1_character" required class="searchable character-field">
-            <option value="" disabled>Select Character</option>
-            {% for char in characters %}
-            <option value="{{ char }}" {% if char == last_char1 %}selected{% endif %}>
-              {{ char }}
-            </option>
-            {% endfor %}
-          </select>
-        </div>
-
-        <!-- Player 2 -->
-        <div class="form-row-labels">
-          <h3 class="player-label">Player 2</h3>
-          <h3 class="character-label">Character</h3>
-        </div>
-
-        <div class="form-row">
-          <select name="player2" required>
-            <option value="" disabled>Select Player 2</option>
-            {% for p in player_list %}
-            <option value="{{ p }}" {% if p == last_player2 %}selected{% endif %}>
-              {{ p }}
-            </option>
-            {% endfor %}
-          </select>
-
-          <select name="p2_character" required class="searchable character-field">
-            <option value="" disabled>Select Character</option>
-            {% for char in characters %}
-            <option value="{{ char }}" {% if char == last_char2 %}selected{% endif %}>
-              {{ char }}
-            </option>
-            {% endfor %}
-          </select>
-        </div>
-
-        <h3 class="form-section-label">Winner</h3>
-        <div class="form-row">
-            <select name="winner" required>
-                <option value="p1">Player 1 Wins</option>
-                <option value="p2">Player 2 Wins</option>
-            </select>
-        </div>
-
-        <!-- Submit -->
-        <div class="submit-row">
-
-          <div class="three-stock-wrapper">
-              <input type="checkbox" id="three_stock" name="three_stock">
-              <label for="three_stock">Three-stock?</label>
+    
+      <form action="/add_match" method="POST">
+    
+          <!-- Player 1 -->
+          <div class="form-row-labels">
+              <h3 class="player-label">Player 1</h3>
+              <h3 class="character-label">Character</h3>
           </div>
-        
-          <button type="submit" class="submit-match">Submit Match</button>
-        </div>
-
-      </form>
-      <!-- ✅ FORM ENDS HERE -->
-
+    
+          <div class="form-row">
+              <select name="player1" required>
+                  <option value="" disabled>Select Player 1</option>
+                  {% for p in player_list %}
+                  <option value="{{ p }}" {% if p == last_player1 %}selected{% endif %}>
+                      {{ p }}
+                  </option>
+                  {% endfor %}
+              </select>
+    
+              <select name="p1_character" required class="searchable character-field">
+                  <option value="" disabled>Select Character</option>
+                  {% for char in characters %}
+                  <option value="{{ char }}" {% if char == last_char1 %}selected{% endif %}>
+                      {{ char }}
+                  </option>
+                  {% endfor %}
+              </select>
+          </div>
+    
+          <!-- Player 2 -->
+          <div class="form-row-labels">
+              <h3 class="player-label">Player 2</h3>
+              <h3 class="character-label">Character</h3>
+          </div>
+    
+          <div class="form-row">
+              <select name="player2" required>
+                  <option value="" disabled>Select Player 2</option>
+                  {% for p in player_list %}
+                  <option value="{{ p }}" {% if p == last_player2 %}selected{% endif %}>
+                      {{ p }}
+                  </option>
+                  {% endfor %}
+              </select>
+    
+              <select name="p2_character" required class="searchable character-field">
+                  <option value="" disabled>Select Character</option>
+                  {% for char in characters %}
+                  <option value="{{ char }}" {% if char == last_char2 %}selected{% endif %}>
+                      {{ char }}
+                  </option>
+                  {% endfor %}
+              </select>
+          </div>
+    
+          <!-- Winner -->
+          <h3 class="form-section-label">Winner</h3>
+          <div class="form-row">
+              <select name="winner" required>
+                  <option value="p1">Player 1 Wins</option>
+                  <option value="p2">Player 2 Wins</option>
+              </select>
+          </div>
+    
+          <!-- Submit + Three stock -->
+          <div class="submit-row">
+              <div class="three-stock-wrapper">
+                  <input type="checkbox" id="three_stock" name="three_stock">
+                  <label for="three_stock">Three-stock?</label>
+              </div>
+    
+              <button type="submit" class="submit-match">Submit Match</button>
+          </div>
+    
+      </form>   <!-- ✅ CORRECT CLOSING FORM TAG -->
+    
       <!-- Last Match Result -->
       {% if last and last.get('p1') %}
       <div class="result-box" style="text-align:center;">
-        <h2>Last Match Result</h2>
-
-        <p>
-          <strong>{{ last['p1'] }} ({{ last['c1'] }})</strong>:
-          {{ last['new1'] }}
-          {% if last['diff1'] > 0 %}
-            <span class="green">+{{ last['diff1'] }}</span>
-          {% else %}
-            <span class="red">{{ last['diff1'] }}</span>
-          {% endif %}
-        </p>
-
-        <p>
-          <strong>{{ last['p2'] }} ({{ last['c2'] }})</strong>:
-          {{ last['new2'] }}
-          {% if last['diff2'] > 0 %}
-            <span class="green">+{{ last['diff2'] }}</span>
-          {% else %}
-            <span class="red">{{ last['diff2'] }}</span>
-          {% endif %}
-        </p>
+          <h2>Last Match Result</h2>
+    
+          <p>
+            <strong>{{ last['p1'] }} ({{ last['c1'] }})</strong>:
+            {{ last['new1'] }}
+            {% if last['diff1'] > 0 %}
+              <span class="green">+{{ last['diff1'] }}</span>
+            {% else %}
+              <span class="red">{{ last['diff1'] }}</span>
+            {% endif %}
+          </p>
+    
+          <p>
+            <strong>{{ last['p2'] }} ({{ last['c2'] }})</strong>:
+            {{ last['new2'] }}
+            {% if last['diff2'] > 0 %}
+              <span class="green">+{{ last['diff2'] }}</span>
+            {% else %}
+              <span class="red">{{ last['diff2'] }}</span>
+            {% endif %}
+          </p>
       </div>
       {% endif %}
-
-    </div>
+    
+    </div> <!-- container -->
+    
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
