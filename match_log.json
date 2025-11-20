@@ -1,16 +1,5 @@
 [
     {
-        "p1": "Nick R",
-        "c1": "Piranha Plant",
-        "p2": "Nick W",
-        "c2": "Wii Fit Trainer",
-        "winner": "p1",
-        "new1": 1009,
-        "new2": 800,
-        "diff1": 8,
-        "diff2": 0
-    },
-    {
         "p1": "Will",
         "c1": "Ganondorf",
         "p2": "Nick R",
@@ -248,6 +237,19 @@
         "c2": "Wii Fit Trainer",
         "new2": 913,
         "diff2": 22,
+        "winner": "p2",
+        "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-20 07:27",
+        "p1": "Nick R",
+        "c1": "Luigi",
+        "new1": 986,
+        "diff1": -20,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 933,
+        "diff2": 20,
         "winner": "p2",
         "three_stock": false
     }
