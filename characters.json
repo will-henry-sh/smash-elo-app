@@ -3,7 +3,7 @@
         "Snake": 924,
         "Min Min": 1056,
         "Donkey Kong": 1028,
-        "Hero": 1012,
+        "Hero": 1027,
         "Cloud": 978,
         "Ice Climbers": 1018,
         "King Dedede": 1009,
@@ -69,6 +69,7 @@
         "Captain Falcon": 1016,
         "Wolf": 1016,
         "Pikachu": 984,
-        "Rosalina and Luma": 1016
+        "Rosalina and Luma": 1016,
+        "Peach": 985
     }
 }
