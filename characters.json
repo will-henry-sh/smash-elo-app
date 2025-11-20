@@ -36,7 +36,7 @@
         "King K. Rool": 1039,
         "Link": 1016,
         "Meta Knight": 1059,
-        "Ike": 1015,
+        "Ike": 1030,
         "Steve": 1016,
         "Corrin": 984,
         "Banjo & Kazooie": 984
@@ -71,6 +71,7 @@
         "Pikachu": 984,
         "Rosalina and Luma": 1016,
         "Peach": 985,
-        "Ken": 1015
+        "Ken": 1015,
+        "Olimar": 985
     }
 }
