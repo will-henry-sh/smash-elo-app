@@ -1,17 +1,6 @@
 [
     {
         "p1": "Will",
-        "c1": "Ganondorf",
-        "p2": "Nick R",
-        "c2": "Piranha Plant",
-        "winner": "p1",
-        "new1": 1091,
-        "new2": 1011,
-        "diff1": 14,
-        "diff2": -14
-    },
-    {
-        "p1": "Will",
         "c1": "Wolf",
         "p2": "Nick R",
         "c2": "Piranha Plant",
@@ -219,6 +208,19 @@
         "new2": 961,
         "diff2": -14,
         "winner": "p1",
+        "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-20 06:33",
+        "p1": "Will",
+        "c1": "Greninja",
+        "new1": 1010,
+        "diff1": -19,
+        "p2": "Nick R",
+        "c2": "Piranha Plant",
+        "new2": 980,
+        "diff2": 19,
+        "winner": "p2",
         "three_stock": false
     }
 ]
