@@ -4,7 +4,7 @@
         "Min Min": 1056,
         "Donkey Kong": 1028,
         "Hero": 1027,
-        "Cloud": 978,
+        "Cloud": 963,
         "Ice Climbers": 1018,
         "King Dedede": 1009,
         "Piranha Plant": 945,
@@ -70,6 +70,7 @@
         "Wolf": 1016,
         "Pikachu": 984,
         "Rosalina and Luma": 1016,
-        "Peach": 985
+        "Peach": 985,
+        "Ken": 1015
     }
 }
