@@ -294,6 +294,24 @@ def leaderboard():
     # Load match log once
     log = load_match_log()
 
+        # Compute win streaks
+    from collections import defaultdict
+
+    def compute_win_streaks(match_log):
+        streaks = defaultdict(int)
+
+        for m in match_log:
+            winner = m["p1"] if m["winner"] == "p1" else m["p2"]
+            loser = m["p2"] if winner == m["p1"] else m["p1"]
+
+            streaks[winner] += 1
+            streaks[loser] = 0
+
+        return streaks
+
+    win_streaks = compute_win_streaks(log)
+
+
     # Last 20 matches, newest → oldest
     recent_matches = log[-20:][::-1]
 
@@ -304,7 +322,8 @@ def leaderboard():
     last_result=last_result,
     recent_matches=recent_matches,
     rank_map=rank_map,
-    admin_usernames=ADMIN_USERNAMES
+    admin_usernames=ADMIN_USERNAMES,
+    win_streaks=win_streaks
 )
 
 

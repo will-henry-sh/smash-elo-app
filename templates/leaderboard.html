@@ -29,6 +29,7 @@
       <table>
         <tr>
           <th>Rank</th>
+          <th class="ws-col"></th>
           <th>Player</th>
           <th>Global ELO</th>
         </tr>
@@ -45,6 +46,13 @@
             <span class="rank-bronze">{{ loop.index }}</span>
             {% else %}
             <span class="rank-normal">{{ loop.index }}</span>
+            {% endif %}
+          </td>
+
+          <td class="ws-col">
+            {% set streak = win_streaks.get(player, 0) %} {% if streak > 1 %}
+            <img src="/static/icons/win_streak.png" class="ws-icon" />
+            <span class="ws-number">{{ streak }}</span>
             {% endif %}
           </td>
 

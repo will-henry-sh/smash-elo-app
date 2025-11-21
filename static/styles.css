@@ -828,15 +828,6 @@ button {
   margin-left: 6px;
 }
 
-.leaderboard-container table th:nth-child(1),
-.leaderboard-container table td:nth-child(1),
-.leaderboard-container table th:nth-child(2),
-.leaderboard-container table td:nth-child(2),
-.leaderboard-container table th:nth-child(3),
-.leaderboard-container table td:nth-child(3) {
-  width: 33.33%;
-}
-
 /* ============================
    MANUAL TARGETING: WILL + KEY
    ============================ */
@@ -867,4 +858,53 @@ button {
 .player-cell a[href="/player/Colton"] + .admin-key-icon {
   position: relative;
   left: 11px; /* <-- adjust this */
+}
+
+/* WIN STREAK COLUMN — DOES NOT MOVE ANYTHING */
+.ws-col {
+  width: 40px !important;
+  max-width: 40px !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+
+/* Win streak icon + number */
+.win-streak {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ff4d4d;
+}
+
+.ws-icon {
+  width: 18px;
+  height: 18px;
+  image-rendering: pixelated;
+  vertical-align: middle !important;
+  margin-right: 4px;
+  position: relative;
+  top: -1px; /* nudge 1px up */
+}
+
+.ws-number {
+  vertical-align: middle !important;
+}
+
+.ws-number {
+  font-weight: 600;
+  color: #ff6a00; /* optional: matches the flame vibe */
+}
+
+.ws-icon,
+.ws-number {
+  vertical-align: middle !important;
+}
+
+.ws-icon {
+  width: 21px;
+  height: 26px;
+  image-rendering: pixelated;
+  vertical-align: middle !important;
+  margin-right: 4px;
+  position: relative;
+  top: -1px;
 }
