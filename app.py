@@ -22,7 +22,7 @@ MAX_LOGS = 20
 # Admin login credentials
 ADMIN_USERS = {
     "bunnyslave": "Letskill666",
-    "protodong": "Icecoffin666"
+    "todaycowboy": "Heisrisen!"
 }
 
 def push_to_github_worker():
