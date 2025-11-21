@@ -7,3 +7,7 @@ venv/
 
 # Ignore backups created by your script
 *.bak
+
+match_log.json
+characters.json
+last_result.json
