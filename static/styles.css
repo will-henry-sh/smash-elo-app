@@ -657,6 +657,12 @@ button {
     left: -10px !important; /* adjust until centered */
   }
 
+  .player-label {
+    position: relative !important;
+
+    align-items: center !important; /* adjust until centered */
+  }
+
   /* ===== INPUT ROWS ===== */
   .form-row {
     display: flex !important;
@@ -761,5 +767,20 @@ button {
   .result-box p,
   .result-box h2 {
     margin: 2px 0 !important;
+  }
+}
+
+/* iPhone 14 Pro portrait (393px width) specific fixes */
+@media screen and (max-width: 400px) {
+  .form-row-labels {
+    justify-content: center !important;
+    gap: 20px !important; /* adjust until perfectly centered */
+  }
+
+  .player-label,
+  .character-label {
+    text-align: center !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
   }
 }
