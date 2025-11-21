@@ -715,13 +715,13 @@ button {
     width: 40% !important;
     text-align: center !important;
   }
+  .character-label {
+    position: relative !important;
+    left: -10px !important; /* tweak this number until perfectly centered */
+  }
 }
 
 /* Move only CHARACTER label horizontally */
-.character-label {
-  position: relative !important;
-  left: -10px !important; /* tweak this number until perfectly centered */
-}
 
 @media (max-width: 600px) {
   /* Reduce height of ALL interactive fields */
@@ -771,16 +771,28 @@ button {
 }
 
 /* iPhone 14 Pro portrait (393px width) specific fixes */
-@media screen and (max-width: 400px) {
+@media (max-width: 400px) {
   .form-row-labels {
-    justify-content: center !important;
-    gap: 20px !important; /* adjust until perfectly centered */
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important; /* 🔥 perfect spacing */
+    align-items: center !important;
+    padding: 0 12px !important; /* 🔥 keeps edges clean on iPhone */
+    gap: 0 !important;
   }
 
   .player-label,
   .character-label {
-    text-align: center !important;
-    width: auto !important;
     flex: 0 0 auto !important;
+    text-align: center !important;
+    font-size: 1rem !important;
+  }
+  .character-label {
+    position: relative !important;
+    left: -25px !important; /* tweak this number until perfectly centered */
+  }
+  .player-label {
+    position: relative !important;
+    left: -2px !important; /* tweak this number until perfectly centered */
   }
 }
