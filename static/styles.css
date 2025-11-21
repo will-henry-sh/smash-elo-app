@@ -844,13 +844,13 @@ button {
 /* Move Will's NAME */
 .player-cell a[href="/player/Will"] .player-name {
   position: relative;
-  left: 12px; /* <-- adjust this */
+  left: 13px; /* <-- adjust this */
 }
 
 /* Move Will's KEY */
 .player-cell a[href="/player/Will"] + .admin-key-icon {
   position: relative;
-  left: 10px; /* <-- adjust this */
+  left: 11px; /* <-- adjust this */
 }
 
 /* ===============================
@@ -860,11 +860,11 @@ button {
 /* Move Colton's NAME */
 .player-cell a[href="/player/Colton"] .player-name {
   position: relative;
-  left: 12px; /* <-- adjust this */
+  left: 13px; /* <-- adjust this */
 }
 
 /* Move Colton's KEY */
 .player-cell a[href="/player/Colton"] + .admin-key-icon {
   position: relative;
-  left: 10px; /* <-- adjust this */
+  left: 11px; /* <-- adjust this */
 }
