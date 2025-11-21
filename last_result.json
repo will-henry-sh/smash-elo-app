@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Piranha Plant",
-    "new1": 896,
-    "diff1": -14,
+    "c1": "Donkey Kong",
+    "new1": 1043,
+    "diff1": 15,
     "p2": "Colton",
-    "c2": "Toon Link",
-    "new2": 957,
-    "diff2": 14,
+    "c2": "Marth",
+    "new2": 981,
+    "diff2": -15,
     "last_player1": "Nick R",
     "last_player2": "Colton",
-    "last_char1": "Piranha Plant",
-    "last_char2": "Toon Link"
+    "last_char1": "Donkey Kong",
+    "last_char2": "Marth"
 }
