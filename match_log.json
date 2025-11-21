@@ -1587,5 +1587,18 @@
         "diff2": -9,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-21 08:17",
+        "p1": "Nick R",
+        "c1": "Piranha Plant",
+        "new1": 896,
+        "diff1": -14,
+        "p2": "Colton",
+        "c2": "Toon Link",
+        "new2": 957,
+        "diff2": 14,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
