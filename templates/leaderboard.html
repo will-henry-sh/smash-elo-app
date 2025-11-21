@@ -50,10 +50,10 @@
           </td>
 
           <td class="ws-col">
-            {% set streak = win_streaks.get(player, 0) %} {% if streak > 1 %}
+            {% set streak = win_streaks.get(player, 0) -%} {% if streak > 1 -%}
             <img src="/static/icons/win_streak.png" class="ws-icon" />
             <span class="ws-number">{{ streak }}</span>
-            {% endif %}
+            {%- endif %}
           </td>
 
           <!-- Player -->
