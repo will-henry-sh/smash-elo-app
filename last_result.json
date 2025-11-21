@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Ganondorf",
-    "new1": 1114,
-    "diff1": 10,
-    "p2": "Colton",
-    "c2": "Toon Link",
-    "new2": 952,
-    "diff2": -10,
+    "c1": "Sheik",
+    "new1": 1066,
+    "diff1": -24,
+    "p2": "Nick R",
+    "c2": "Piranha Plant",
+    "new2": 910,
+    "diff2": 24,
     "last_player1": "Will",
-    "last_player2": "Colton",
-    "last_char1": "Ganondorf",
-    "last_char2": "Toon Link"
+    "last_player2": "Nick R",
+    "last_char1": "Sheik",
+    "last_char2": "Piranha Plant"
 }
