@@ -636,45 +636,43 @@ button {
   margin: 10px 0 20px !important;
 }
 
-/* ==========================================
-   MOBILE: SHRINK FIELD WIDTHS TO PREVENT OVERFLOW
-   ========================================== */
 @media (max-width: 600px) {
-  /* Keep layout side-by-side but compact */
+  /* Center labels */
+  .form-row-labels,
+  .form-section-label {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  /* Keep both selects on one row */
   .form-row {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 10px !important;
-    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
   }
 
-  /* PLAYER WRAPPER */
-  .form-row > select:first-child,
-  .form-row > div:first-child {
-    width: 30% !important;
-    min-width: 30% !important;
-    max-width: 30% !important;
+  /* Player & character dropdowns */
+  .form-row select {
+    width: 42%;
   }
 
-  /* CHARACTER WRAPPER */
-  .form-row > select:last-child,
-  .form-row > div:last-child {
-    width: 30% !important;
-    min-width: 30% !important;
-    max-width: 30% !important;
+  /* Character search field */
+  .character-field,
+  .search-input {
+    width: 80%;
+    margin: 0 auto;
   }
 
-  /* Input inside wrapper must fill wrapper */
-  .form-row input.search-input {
-    width: 100% !important;
-  }
-
-  /* Labels match widths */
-  .player-label,
-  .character-label {
-    width: 50% !important;
-    text-align: center !important;
+  /* Three-stock + submit button alignment */
+  .submit-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
   }
 }
 
@@ -690,4 +688,25 @@ button {
   justify-content: center;
   align-items: center;
   gap: 8px;
+}
+
+@media (max-width: 600px) {
+  /* Center the LABEL ROW just like the input row */
+  .form-row-labels {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-bottom: 5px !important;
+  }
+
+  /* Make Player / Character labels line up directly above their fields */
+  .player-label,
+  .character-label {
+    width: 45% !important; /* match form-row column width */
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
 }
