@@ -1496,5 +1496,18 @@
         "diff2": -10,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-21 03:50",
+        "p1": "Will",
+        "c1": "Sheik",
+        "new1": 1073,
+        "diff1": 9,
+        "p2": "Nick R",
+        "c2": "Piranha Plant",
+        "new2": 903,
+        "diff2": -9,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
