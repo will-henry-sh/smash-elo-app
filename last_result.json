@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Ridley",
-    "new1": 1026,
-    "diff1": 16,
-    "p2": "Nick R",
-    "c2": "Mr. Game and Watch",
-    "new2": 985,
-    "diff2": -16,
+    "c1": "Ganondorf",
+    "new1": 1123,
+    "diff1": 9,
+    "p2": "Colton",
+    "c2": "Toon Link",
+    "new2": 943,
+    "diff2": -9,
     "last_player1": "Will",
-    "last_player2": "Nick R",
-    "last_char1": "Ridley",
-    "last_char2": "Mr. Game and Watch"
+    "last_player2": "Colton",
+    "last_char1": "Ganondorf",
+    "last_char2": "Toon Link"
 }
