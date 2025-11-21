@@ -49,15 +49,22 @@
           </td>
 
           <!-- Player -->
-          <td>
-            {% if loop.index == 1 %}
-            <a href="/player/{{ player }}" class="rank-gold">{{ player }}</a>
-            {% elif loop.index == 2 %}
-            <a href="/player/{{ player }}" class="rank-silver">{{ player }}</a>
-            {% elif loop.index == 3 %}
-            <a href="/player/{{ player }}" class="rank-bronze">{{ player }}</a>
-            {% else %}
-            <a href="/player/{{ player }}" class="rank-normal">{{ player }}</a>
+          <td class="player-cell">
+            <!-- NAME (centered perfectly under Player) -->
+            <a href="/player/{{ player }}" class="player-name-block">
+              <span
+                class="player-name {{ 'rank-gold' if loop.index==1 else
+                                         'rank-silver' if loop.index==2 else
+                                         'rank-bronze' if loop.index==3 else
+                                         'rank-normal' }}"
+              >
+                {{ player }}
+              </span>
+            </a>
+
+            <!-- KEY (does NOT affect centering) -->
+            {% if player in admin_usernames %}
+            <img src="/static/icons/admin_key.png" class="admin-key-icon" />
             {% endif %}
           </td>
 

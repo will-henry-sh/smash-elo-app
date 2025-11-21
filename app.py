@@ -24,6 +24,8 @@ ADMIN_USERS = {
     "bunnyslave": "Letskill666",
     "todaycowboy": "Heisrisen!"
 }
+ADMIN_USERNAMES = ["Will", "Colton"]  # or ["Will", "YourOtherAdmins"]
+
 
 def push_to_github_worker():
     global is_pushing
@@ -297,12 +299,14 @@ def leaderboard():
 
     # Render page
     return render_template(
-        "leaderboard.html",
-        rows=rows,
-        last_result=last_result,
-        recent_matches=recent_matches,
-        rank_map=rank_map
-    )
+    "leaderboard.html",
+    rows=rows,
+    last_result=last_result,
+    recent_matches=recent_matches,
+    rank_map=rank_map,
+    admin_usernames=ADMIN_USERNAMES
+)
+
 
 
 

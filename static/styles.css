@@ -212,11 +212,11 @@ td {
 }
 
 /* Make Player column links centered too */
-td a {
+/* td a {
   display: inline-block;
   text-align: center;
   width: 100%;
-}
+} */
 
 /* MOBILE TABLE: no overflow, no scroll */
 /* Mobile table — keep real table layout, allow smooth horizontal scroll if needed */
@@ -795,4 +795,76 @@ button {
     position: relative !important;
     left: -2px !important; /* tweak this number until perfectly centered */
   }
+}
+
+/* === FINAL NAME CENTERING FIX === */
+
+/* Perfect name centering under "Player" */
+.player-cell {
+  text-align: center;
+  position: relative;
+}
+
+.player-name-block {
+  display: inline-block; /* shrink-wrap around name only */
+  text-align: center; /* center the text inside it */
+}
+
+.player-name {
+  display: inline-block;
+}
+
+/* Key floats near the name without shifting centering */
+.admin-key-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 6px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* Keep key spacing the same */
+.admin-key-icon {
+  margin-left: 6px;
+}
+
+.leaderboard-container table th:nth-child(1),
+.leaderboard-container table td:nth-child(1),
+.leaderboard-container table th:nth-child(2),
+.leaderboard-container table td:nth-child(2),
+.leaderboard-container table th:nth-child(3),
+.leaderboard-container table td:nth-child(3) {
+  width: 33.33%;
+}
+
+/* ============================
+   MANUAL TARGETING: WILL + KEY
+   ============================ */
+
+/* Move Will's NAME */
+.player-cell a[href="/player/Will"] .player-name {
+  position: relative;
+  left: 12px; /* <-- adjust this */
+}
+
+/* Move Will's KEY */
+.player-cell a[href="/player/Will"] + .admin-key-icon {
+  position: relative;
+  left: 10px; /* <-- adjust this */
+}
+
+/* ===============================
+   MANUAL TARGETING: COLTON + KEY
+   =============================== */
+
+/* Move Colton's NAME */
+.player-cell a[href="/player/Colton"] .player-name {
+  position: relative;
+  left: 12px; /* <-- adjust this */
+}
+
+/* Move Colton's KEY */
+.player-cell a[href="/player/Colton"] + .admin-key-icon {
+  position: relative;
+  left: 10px; /* <-- adjust this */
 }
