@@ -703,3 +703,76 @@ button {
     margin-top: 5px !important;
   }
 }
+
+@media (max-width: 600px) {
+  /* Reduce title size */
+  .page-title {
+    font-size: 1.6rem !important;
+    margin: 10px 0 16px !important;
+  }
+
+  /* Reduce header text */
+  .player-label,
+  .character-label,
+  .form-section-label {
+    font-size: 1rem !important;
+    margin: 6px 0 !important;
+  }
+
+  /* Compress form row spacing */
+  .form-row {
+    gap: 8px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .form-row-labels {
+    gap: 12px !important;
+    margin-top: 6px !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Reduce dropdown padding (shrinks visual height) */
+  select,
+  .search-input {
+    padding: 6px !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Winner label spacing tighter */
+  .form-section-label {
+    margin-top: 12px !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Submit area compact */
+  .submit-row {
+    gap: 10px !important;
+    margin-top: 10px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .submit-match {
+    padding: 10px 18px !important;
+    font-size: 1rem !important;
+  }
+
+  .three-stock-wrapper {
+    margin-top: 4px !important;
+  }
+
+  /* Compress last match result box */
+  .result-box {
+    padding: 10px 12px !important;
+    margin: 10px 0 !important;
+  }
+
+  .result-box h2 {
+    margin-bottom: 8px !important;
+    font-size: 1.2rem !important;
+  }
+
+  .result-box p {
+    margin: 2px 0 !important;
+    font-size: 0.95rem !important;
+  }
+}
