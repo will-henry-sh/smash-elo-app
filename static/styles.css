@@ -954,3 +954,60 @@ button {
     left: 0 !important;
   }
 }
+/* ============================================
+   MOVE ONLY THE TEXT INSIDE THE PLAYER COLUMN
+   (Does NOT move the column, does NOT create gaps)
+   ============================================ */
+@media (max-width: 400px) {
+  /* Move "Player" header text ONLY */
+  th:nth-child(3) span,
+  th:nth-child(3) {
+    position: relative;
+    left: -10px; /* ← adjust until perfect */
+  }
+
+  /* Move each player name ONLY */
+  td.player-cell .player-name {
+    position: relative;
+    left: -10px; /* ← same offset for consistency */
+  }
+
+  /* Move the admin key with it */
+  td.player-cell .admin-key-icon {
+    position: relative;
+    left: -8px;
+  }
+}
+
+/* ============================================
+   MOBILE: SHIFT ONLY WILL + COLTON LEFT
+   (Names + keys, nothing else)
+   ============================================ */
+@media (max-width: 400px) {
+  /* Will — name */
+  td.player-cell a[href="/player/Will"] .player-name {
+    position: relative !important;
+    left: 4px !important;
+  }
+
+  /* Will — key */
+  td.player-cell a[href="/player/Will"] + .admin-key-icon {
+    position: relative !important;
+    left: 4px !important;
+  }
+
+  /* Colton — name */
+  td.player-cell a[href="/player/Colton"] .player-name {
+    position: relative !important;
+    left: 3px !important;
+  }
+
+  /* Colton — key */
+  td.player-cell a[href="/player/Colton"] + .admin-key-icon {
+    position: relative !important;
+    left: 2px !important;
+  }
+  th:nth-child(3) {
+    padding-left: 0px !important;
+  }
+}
