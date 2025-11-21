@@ -637,17 +637,17 @@ button {
 }
 
 @media (max-width: 600px) {
-  /* Center labels */
+  /* Center "Player / Character" label row */
   .form-row-labels,
   .form-section-label {
     text-align: center;
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
   }
 
-  /* Keep both selects on one row */
+  /* Dropdown pairs */
   .form-row {
     display: flex;
     justify-content: center;
@@ -655,58 +655,51 @@ button {
     width: 100%;
   }
 
-  /* Player & character dropdowns */
-  .form-row select {
-    width: 42%;
+  /* Make both dropdowns narrower */
+  .form-row select,
+  .character-field {
+    width: 38% !important;
+    min-width: 38% !important;
+    max-width: 38% !important;
   }
 
-  /* Character search field */
-  .character-field,
+  /* Searchable input inside wrapper */
   .search-input {
-    width: 80%;
-    margin: 0 auto;
+    width: 100% !important;
   }
 
-  /* Three-stock + submit button alignment */
+  /* Center labels above their fields */
+  .player-label,
+  .character-label {
+    width: 38% !important;
+    text-align: center !important;
+  }
+
+  /* Submit row stacks vertically */
   .submit-row {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 12px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    margin-top: 20px !important;
   }
-}
 
-/* Move Three-stock above button and center it */
-.submit-row {
-  flex-direction: column !important;
-  gap: 12px !important;
-}
-
-.three-stock-wrapper {
-  position: static !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-@media (max-width: 600px) {
-  /* Center the LABEL ROW just like the input row */
-  .form-row-labels {
+  /* FIX: three-stock goes UNDER the submit button */
+  .three-stock-wrapper {
+    position: static !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin-top: 0px !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 10px !important;
-    width: 100% !important;
-    margin-bottom: 5px !important;
+    gap: 0px !important;
+    order: 2 !important;
   }
 
-  /* Make Player / Character labels line up directly above their fields */
-  .player-label,
-  .character-label {
-    width: 45% !important; /* match form-row column width */
-    text-align: center !important;
-    display: flex !important;
-    justify-content: center !important;
+  /* Button stays above checkbox */
+  .submit-match {
+    order: 1 !important;
+    margin-top: 5px !important;
   }
 }
