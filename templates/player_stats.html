@@ -22,6 +22,30 @@
         <p><strong>Win Percentage:</strong> {{ win_rate }}%</p>
       </div>
 
+      <!-- BADGES SECTION -->
+      {% if badges %}
+      <div class="badge-section">
+        <h2 class="badge-header">Badges</h2>
+
+        <div class="badge-grid">
+          {% for badge in badges %}
+          <div class="badge-wrapper" onclick="toggleBadge(this)">
+            <img
+              src="{{ badge.icon }}"
+              class="player-badge-icon"
+              alt="{{ badge.name }}"
+            />
+
+            <div class="badge-popup">
+              {{ badge.name }}<br />
+              {{ badge.description }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
       <!-- Character count -->
       <p><strong>Total Characters Played:</strong> {{ total_chars }}</p>
 
@@ -52,5 +76,10 @@
         {% endfor %}
       </table>
     </div>
+    <script>
+      function toggleBadge(wrapper) {
+        wrapper.classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
