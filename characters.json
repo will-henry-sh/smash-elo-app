@@ -51,7 +51,8 @@
         "Hero": 1026,
         "Roy": 1021,
         "Link": 1020,
-        "badges": []
+        "badges": [],
+        "Lucina": 1018
     },
     "Nat": {
         "Snake": 1000,
@@ -66,7 +67,7 @@
         "badges": []
     },
     "Colton": {
-        "Toon Link": 1076,
+        "Toon Link": 1062,
         "Jigglypuff": 1000,
         "Dark Samus": 1086,
         "Mario": 1054,
