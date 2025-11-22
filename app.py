@@ -269,6 +269,7 @@ def badges():
         {"badge": "From the Grave", "description": "Three-stock another player while using your worst-rated character."},
         {"badge": "Usurper", "description": "Win a game against someone whose global ELO rating is at least 1,000 higher than yours."},
         {"badge": "Versus Myself", "description": "During the same set, win three games in a row as mirror matches."},
+        {"badge": "Earth Badge", "description": "Get Pokemon Trainer to 1,500 ELO rating."},
     ]
     return render_template('player_badges.html', badges=badges)
 
@@ -417,6 +418,45 @@ def player_stats(name):
 
     win_rate = round((wins / total_matches) * 100, 1) if total_matches > 0 else 0
 
+    player_badges = []
+
+ 
+
+        # ----------------------------------------
+    # BADGE AUTO-DETECTION FROM FILE NAMES
+    # ----------------------------------------
+
+    def parse_badge_from_filename(filename):
+        base = filename.rsplit(".", 1)[0]          # "packun_flower"
+        name = base.replace("_", " ").upper()      # "PACKUN FLOWER"
+
+        pretty = [w.capitalize() for w in base.replace("_", " ").split()]
+        pretty_name = " ".join(pretty)
+
+        description = f"Win a game as {pretty_name}."
+
+        return name, description
+
+
+
+    badge_folder = "static/badges"
+    player_badges = []
+
+    if os.path.exists(badge_folder):
+        for file in os.listdir(badge_folder):
+            if file.endswith(".png"):
+                badge_name, badge_desc = parse_badge_from_filename(file)
+
+                # Example of a badge condition:
+                if badge_name == "PACKUN FLOWER" and char_map.get("Piranha Plant", 1000) > 1000:
+                    player_badges.append({
+                        "name": badge_name,
+                        "description": badge_desc,
+                        "icon": f"/static/badges/{file}"
+                    })
+
+
+
     return render_template(
         "player_stats.html",
         name=name,
@@ -427,9 +467,9 @@ def player_stats(name):
         total_matches=total_matches,
         wins=wins,
         losses=losses,
-        win_rate=win_rate
+        win_rate=win_rate,
+        badges=player_badges
     )
-
 
 @app.route("/reset", methods=["POST"])
 def reset():
