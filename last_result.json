@@ -1,14 +1,14 @@
 {
-    "p1": "Nick R",
-    "c1": "Cloud",
-    "new1": 1000,
-    "diff1": 0,
-    "p2": "Will",
-    "c2": "King K. Rool",
-    "new2": 1108,
-    "diff2": 18,
-    "last_player1": "Nick R",
-    "last_player2": "Will",
-    "last_char1": "Cloud",
-    "last_char2": "King K. Rool"
+    "p1": "Will",
+    "c1": "Wolf",
+    "new1": 1106,
+    "diff1": 15,
+    "p2": "Colton",
+    "c2": "Yoshi",
+    "new2": 1000,
+    "diff2": -3,
+    "last_player1": "Will",
+    "last_player2": "Colton",
+    "last_char1": "Wolf",
+    "last_char2": "Yoshi"
 }

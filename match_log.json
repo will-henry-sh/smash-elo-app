@@ -1883,5 +1883,18 @@
         "diff2": 18,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-22 07:39",
+        "p1": "Will",
+        "c1": "Wolf",
+        "new1": 1106,
+        "diff1": 15,
+        "p2": "Colton",
+        "c2": "Yoshi",
+        "new2": 1000,
+        "diff2": -3,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
