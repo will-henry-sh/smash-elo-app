@@ -321,9 +321,14 @@ def leaderboard():
     # Build leaderboard rows
     rows = []
     for player, char_map in data.items():
-        diffs = [(elo - 1000) for elo in char_map.values() if elo != 1000]
+    # Remove badges key from ELO calculations
+        clean_map = {c: v for c, v in char_map.items() if c != "badges"}
+
+        diffs = [(elo - 1000) for elo in clean_map.values() if isinstance(elo, int) and elo != 1000]
         global_elo = sum(diffs) if diffs else 0
-        rows.append((player, global_elo, char_map))
+
+        rows.append((player, global_elo, clean_map))
+
 
     # Sort by ELO (descending)
     rows.sort(key=lambda x: x[1], reverse=True)
