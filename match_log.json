@@ -1909,5 +1909,18 @@
         "diff2": -14,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-22 07:44",
+        "p1": "Will",
+        "c1": "Ganondorf",
+        "new1": 1226,
+        "diff1": 15,
+        "p2": "Colton",
+        "c2": "Dark Samus",
+        "new2": 1073,
+        "diff2": -13,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
