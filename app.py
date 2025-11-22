@@ -472,7 +472,7 @@ def player_stats(name):
 
 
     for raw_id in data[name].get("badges", []):
-        
+
         # Normalize badge ID for dictionary + file lookup
         clean_id = raw_id.strip().lower().replace(" ", "_")
 
@@ -483,11 +483,15 @@ def player_stats(name):
         if not os.path.exists(full_path):
             continue  # skip missing icons
 
-        # Pretty name
+        # --- PRETTY NAME GENERATION ---
         spaced = "".join(" " + c if c.isdigit() else c for c in clean_id)
         pretty = " ".join(word.capitalize() for word in spaced.split("_"))
 
-        # Get description or fallback
+        # SPECIAL CASE → PACKUN FLOWER SHOULD BE ALL CAPS
+        if clean_id == "packun_flower":
+            pretty = "PACKUN FLOWER"
+
+        # --- DESCRIPTION ---
         description = CUSTOM_DESCRIPTIONS.get(
             clean_id,
             f"{pretty} badge earned."
@@ -498,6 +502,7 @@ def player_stats(name):
             "description": description,
             "icon": f"/static/badges/{file_name}"
         })
+
 
 
 
