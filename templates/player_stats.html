@@ -78,8 +78,29 @@
     </div>
     <script>
       function toggleBadge(wrapper) {
+        // Close any other open badge first
+        document.querySelectorAll(".badge-wrapper.active").forEach((el) => {
+          if (el !== wrapper) el.classList.remove("active");
+        });
+
+        // Toggle the one tapped
         wrapper.classList.toggle("active");
       }
+
+      // Close popup when tapping outside
+      document.addEventListener(
+        "click",
+        function (e) {
+          const openPopup = document.querySelector(".badge-wrapper.active");
+          if (!openPopup) return;
+
+          // If the click is NOT inside the open badge wrapper → close it
+          if (!openPopup.contains(e.target)) {
+            openPopup.classList.remove("active");
+          }
+        },
+        true
+      );
     </script>
   </body>
 </html>
