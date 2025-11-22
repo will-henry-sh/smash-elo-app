@@ -125,7 +125,7 @@ def recompute_all():
 
         # Append updated match
         new_log.append({
-            "timestamp": entry["timestamp"],
+            "timestamp": entry.get("timestamp", ""),
             "p1": p1,
             "c1": c1,
             "new1": new1,
