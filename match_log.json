@@ -2013,5 +2013,18 @@
         "diff2": -14,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-22 08:29",
+        "p1": "Will",
+        "c1": "Lucina",
+        "new1": 1037,
+        "diff1": 19,
+        "p2": "Nick R",
+        "c2": "Piranha Plant",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
