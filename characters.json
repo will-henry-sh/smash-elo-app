@@ -29,7 +29,8 @@
         "Wii Fit Trainer": 1027,
         "Fox": 1013,
         "Ike": 1000,
-        "badges": []
+        "badges": [],
+        "Min Min": 1000
     },
     "Will": {
         "Ganondorf": 1244,
@@ -52,7 +53,8 @@
         "Roy": 1021,
         "Link": 1020,
         "badges": [],
-        "Lucina": 1037
+        "Lucina": 1037,
+        "Kazuya": 1015
     },
     "Nat": {
         "Snake": 1000,
