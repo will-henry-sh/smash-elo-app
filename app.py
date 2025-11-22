@@ -389,10 +389,14 @@ def player_stats(name):
     if name not in data:
         return f"Player '{name}' not found.", 404
 
-    char_map = data[name]
+    # Pull badges safely
+    badges_list = data[name].get("badges", [])
+
+    # Remove badges entry from character ratings
+    char_map = {c: v for c, v in data[name].items() if c != "badges"}
+
     total_chars = len(char_map)
 
-    # Best/Worst
     if char_map:
         best_char = max(char_map, key=lambda c: char_map[c])
         worst_char = min(char_map, key=lambda c: char_map[c])
@@ -418,44 +422,28 @@ def player_stats(name):
 
     win_rate = round((wins / total_matches) * 100, 1) if total_matches > 0 else 0
 
+    # ----- Manual Badges -----
     player_badges = []
-
- 
-
-        # ----------------------------------------
-    # BADGE AUTO-DETECTION FROM FILE NAMES
-    # ----------------------------------------
-
-    def parse_badge_from_filename(filename):
-        base = filename.rsplit(".", 1)[0]          # "packun_flower"
-        name = base.replace("_", " ").upper()      # "PACKUN FLOWER"
-
-        pretty = [w.capitalize() for w in base.replace("_", " ").split()]
-        pretty_name = " ".join(pretty)
-
-        description = f"Win a game as {pretty_name}."
-
-        return name, description
-
-
 
     badge_folder = "static/badges"
-    player_badges = []
 
     if os.path.exists(badge_folder):
         for file in os.listdir(badge_folder):
-            if file.endswith(".png"):
-                badge_name, badge_desc = parse_badge_from_filename(file)
+            if not file.endswith(".png"):
+                continue
 
-                # Example of a badge condition:
-                if badge_name == "PACKUN FLOWER" and char_map.get("Piranha Plant", 1000) > 1000:
-                    player_badges.append({
-                        "name": badge_name,
-                        "description": badge_desc,
-                        "icon": f"/static/badges/{file}"
-                    })
+            base = file.rsplit(".", 1)[0]      
+            badge_name = base.replace("_", " ").upper()
 
+            if badge_name in badges_list:
+                pretty = " ".join([w.capitalize() for w in base.replace("_", " ").split()])
+                description = f"Win a game as {pretty}."
 
+                player_badges.append({
+                    "name": badge_name,
+                    "description": description,
+                    "icon": f"/static/badges/{file}"
+                })
 
     return render_template(
         "player_stats.html",
@@ -470,6 +458,7 @@ def player_stats(name):
         win_rate=win_rate,
         badges=player_badges
     )
+
 
 @app.route("/reset", methods=["POST"])
 def reset():
