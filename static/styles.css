@@ -853,8 +853,8 @@ button {
 
 /* Key floats near the name without shifting centering */
 .admin-key-icon {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   margin-left: 6px;
   vertical-align: middle;
   display: inline-block;
@@ -872,7 +872,7 @@ button {
 /* Move Will's NAME */
 .player-cell a[href="/player/Will"] .player-name {
   position: relative;
-  left: 13px; /* <-- adjust this */
+  left: 14px; /* <-- adjust this */
 }
 
 /* Move Will's KEY */
@@ -1033,25 +1033,25 @@ button {
   /* Will — name */
   td.player-cell a[href="/player/Will"] .player-name {
     position: relative !important;
-    left: 4px !important;
+    left: 2px !important;
   }
 
   /* Will — key */
   td.player-cell a[href="/player/Will"] + .admin-key-icon {
     position: relative !important;
-    left: 4px !important;
+    left: 3px !important;
   }
 
   /* Colton — name */
   td.player-cell a[href="/player/Colton"] .player-name {
     position: relative !important;
-    left: 4px !important;
+    left: 3px !important;
   }
 
   /* Colton — key */
   td.player-cell a[href="/player/Colton"] + .admin-key-icon {
     position: relative !important;
-    left: 2.5px !important;
+    left: 2px !important;
   }
   th:nth-child(3) {
     padding-left: 0px !important;
@@ -1060,13 +1060,13 @@ button {
   /* Move Nick R's NAME */
   .player-cell a[href="/player/Nick R"] .player-name {
     position: relative !important;
-    left: 5px !important; /* adjust as needed */
+    left: 3px !important; /* adjust as needed */
   }
 
   /* Move Nick R's KEY */
   .player-cell a[href="/player/Nick R"] + .admin-key-icon {
     position: relative !important;
-    left: 3px !important; /* adjust as needed */
+    left: 2px !important; /* adjust as needed */
   }
   .ws-number {
     font-size: 0.65rem !important; /* smaller */

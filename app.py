@@ -181,9 +181,9 @@ def calculate_elo(p1_rating, p2_rating, winner, k=32):
     new_p1 = p1_rating + k * (score_p1 - expected_p1)
     new_p2 = p2_rating + k * (score_p2 - expected_p2)
 
-    # Apply floor of 800
-    new_p1 = max(800, round(new_p1))
-    new_p2 = max(800, round(new_p2))
+    # Apply floor of 1000
+    new_p1 = max(1000, round(new_p1))
+    new_p2 = max(1000, round(new_p2))
 
     return new_p1, new_p2
 
@@ -231,7 +231,7 @@ def badges():
         {"badge": "Into Darkness", "description": "Reach 1,300 ELO rating with a character that has a darkness ability (Ganondorf, Hero, Joker, Mewtwo, Olimar, Piranha Plant, Robin, Ridley, Sephiroth)."},
         {"badge": "Split Timeline", "description": "During the same set, win a game as young Link, Toon Link, and Link (in that order)."},
         {"badge": "At Your Mercy", "description": "Win a game after letting your opponent choose your character."},
-        {"badge": "From the Grave", "description": "Three-stock another player while using a character with an ELO rating of less than 1,000."},
+        {"badge": "From the Grave", "description": "Three-stock another player while using your worst-rated character."},
         {"badge": "Usurper", "description": "Win a game against someone whose global ELO rating is at least (100/300/500/1,000) higher than yours."},
         {"badge": "Versus Myself", "description": "During the same set, win three games in a row as mirror matches."},
     ]
@@ -472,9 +472,9 @@ def add_match():
         new1 = old1 + change1
         new2 = old2 + change2
 
-    # Apply min rating of 800
-    new1 = max(800, round(new1))
-    new2 = max(800, round(new2))
+    # Apply min rating of 1000
+    new1 = max(1000, round(new1))
+    new2 = max(1000, round(new2))
 
     # Save final ratings
     data[p1][c1] = new1
