@@ -166,26 +166,61 @@ CHARACTERS = sorted([
 # ELO Calculation
 # -----------------------------
 
-def calculate_elo(p1_rating, p2_rating, winner, k=32):
-    # Expected scores
-    expected_p1 = 1 / (1 + 10 ** ((p2_rating - p1_rating) / 400))
-    expected_p2 = 1 - expected_p1
+# -----------------------------
+# NEW MATCHMAKING ELO SYSTEM
+# -----------------------------
 
-    # Actual scores
+BASE_WIN = 30
+BASE_LOSS = 15
+
+def combined_value(char_rating, global_rating):
+    return char_rating * 0.7 + global_rating * 0.3
+
+def expected_score(my_combined, opp_combined):
+    return 1 / (1 + 10 ** ((opp_combined - my_combined) / 400))
+
+
+def calculate_elo_custom(
+    p1_char, p2_char,
+    p1_global, p2_global,
+    winner
+):
+    # Combined character+global weighted values
+    c1 = combined_value(p1_char, p1_global)
+    c2 = combined_value(p2_char, p2_global)
+
+    # Expected outcomes
+    exp_p1 = expected_score(c1, c2)
+    exp_p2 = 1 - exp_p1
+
+    # Select expected based on who won
+    expected = exp_p1 if winner == "p1" else exp_p2
+
+    # Winner multiplier
+    winner_mult = 1 + 1.2 * (0.5 - expected)
+
+    # Loser multiplier
+    loser_mult = 1.2 + 0.8 * (0.5 - expected)
+
+    # Gains & losses
+    gain  = round(BASE_WIN  * winner_mult)
+    loss  = round(BASE_LOSS * loser_mult)
+
+    # Apply results
     if winner == "p1":
-        score_p1, score_p2 = 1, 0
+        new_p1 = p1_char + gain
+        new_p2 = p2_char - loss
     else:
-        score_p1, score_p2 = 0, 1
-
-    # New ratings
-    new_p1 = p1_rating + k * (score_p1 - expected_p1)
-    new_p2 = p2_rating + k * (score_p2 - expected_p2)
+        new_p1 = p1_char - loss
+        new_p2 = p2_char + gain
 
     # Apply floor of 1000
-    new_p1 = max(1000, round(new_p1))
-    new_p2 = max(1000, round(new_p2))
+    new_p1 = max(1000, new_p1)
+    new_p2 = max(1000, new_p2)
 
+    # Return ONLY updated ratings, to match your original function
     return new_p1, new_p2
+
 
 def check_auth(username, password):
     return ADMIN_USERS.get(username) == password
@@ -409,6 +444,13 @@ def sync_now():
     queue_push("Manual sync request")
     return "Manual sync triggered. Check /admin for status."
 
+def compute_global_elo(player_name, players_data):
+    """Returns total global ELO offset (sum of character deviations from 1000)."""
+    if player_name not in players_data:
+        return 0
+    return sum(r - 1000 for r in players_data[player_name].values())
+
+
 @app.route("/add_match", methods=["POST"])
 @requires_auth
 def add_match():
@@ -438,32 +480,44 @@ def add_match():
     old1 = data[p1][c1]
     old2 = data[p2][c2]
 
-    # --- NORMAL ELO UPDATE ---
-    new1, new2 = calculate_elo(old1, old2, winner)
+    # -------------------------------------------------
+    # NEW CUSTOM ELO UPDATE (replaces old calculate_elo)
+    # -------------------------------------------------
 
-    # the change (before three-stock adjustments)
+    players_data = load_players()
+
+
+    p1_global = compute_global_elo(p1, players_data)
+    p2_global = compute_global_elo(p2, players_data)
+
+
+    # New elo calculation
+    new1, new2 = calculate_elo_custom(
+        old1, old2,
+        p1_global, p2_global,
+        winner
+    )
+
+    # Change amount (needed for 3-stock logic)
     change1 = new1 - old1
     change2 = new2 - old2
 
-    # --- CHECK GLOBAL RANKINGS ---
-    players_data = load_players()
+    # -------------------------------------------------
+    # REMAINDER OF ROUTE IS UNCHANGED
+    # -------------------------------------------------
 
-    def global_rank(player_name):
-        if player_name not in players_data:
-            return 999999  # safely last
-        ratings = players_data[player_name].values()
-        return sum(r - 1000 for r in ratings if r != 1000)
 
-    p1_global = global_rank(p1)
-    p2_global = global_rank(p2)
+    p1_global_rank = compute_global_elo(p1, players_data)
+    p2_global_rank = compute_global_elo(p2, players_data)
+
 
     # --- DETERMINE WINNER/LOSER GLOBAL RATINGS ---
     if winner == "p1":
-        winner_global = p1_global
-        loser_global = p2_global
+        winner_global = p1_global_rank
+        loser_global = p2_global_rank
     else:
-        winner_global = p2_global
-        loser_global = p1_global
+        winner_global = p2_global_rank
+        loser_global = p1_global_rank
 
     # --- APPLY THREE-STOCK DOUBLING ONLY WHEN VALID ---
     if three_stock and winner_global < loser_global:
@@ -512,7 +566,6 @@ def add_match():
         "winner": winner,
         "three_stock": three_stock
     })
-
 
     save_match_log(log)
 
