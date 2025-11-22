@@ -1129,6 +1129,11 @@ button {
   .player-stats-box p {
     margin-bottom: 22px; /* space between rows */
   }
+  .form-row select,
+  .form-row input,
+  .search-input {
+    font-size: 16px !important;
+  }
 }
 
 @media (min-width: 601px) {
