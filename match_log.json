@@ -1987,5 +1987,18 @@
         "diff2": 21,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-22 08:11",
+        "p1": "Nick W",
+        "c1": "Palutena",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Nick R",
+        "c2": "Incineroar",
+        "new2": 1047,
+        "diff2": 21,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
