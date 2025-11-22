@@ -546,7 +546,13 @@ def compute_global_elo(player_name, players_data):
     """Returns total global ELO offset (sum of character deviations from 1000)."""
     if player_name not in players_data:
         return 0
-    return sum(r - 1000 for r in players_data[player_name].values())
+
+    return sum(
+        (elo - 1000)
+        for elo in players_data[player_name].values()
+        if isinstance(elo, (int, float))  # only count numeric ELO values
+    )
+
 
 
 @app.route("/add_match", methods=["POST"])
