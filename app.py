@@ -22,9 +22,10 @@ MAX_LOGS = 20
 # Admin login credentials
 ADMIN_USERS = {
     "bunnyslave": "Letskill666",
-    "todaycowboy": "Heisrisen!"
+    "todaycowboy": "Heisrisen!",
+    "protodong": "Icecoffin666"
 }
-ADMIN_USERNAMES = ["Will", "Colton"]  # or ["Will", "YourOtherAdmins"]
+ADMIN_USERNAMES = ["Will", "Colton", "Nick R"]  # or ["Will", "YourOtherAdmins"]
 
 
 def push_to_github_worker():

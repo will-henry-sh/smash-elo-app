@@ -770,6 +770,43 @@ button {
   }
 }
 
+/* === DESKTOP FLAME RESET (fixes spacing/stacking) === */
+@media (min-width: 601px) {
+  .ws-col {
+    width: 55px !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  .ws-icon {
+    width: 20px !important;
+    height: 24px !important;
+    position: relative !important;
+    top: 0 !important;
+    margin: 0 4px 0 0 !important; /* space to the right */
+    vertical-align: middle !important;
+  }
+
+  .ws-mult {
+    font-size: 0.9rem !important;
+    margin: 0 2px !important;
+    vertical-align: middle !important;
+    color: #ff4d4d !important;
+  }
+
+  .ws-num {
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    vertical-align: middle !important;
+    color: #ff4d4d !important;
+  }
+
+  /* Full inline flame × number layout */
+  .ws-col > * {
+    display: inline-block !important;
+  }
+}
+
 /* iPhone 14 Pro portrait (393px width) specific fixes */
 @media (max-width: 400px) {
   .form-row-labels {
@@ -860,6 +897,18 @@ button {
   left: 11px; /* <-- adjust this */
 }
 
+/* Move Nick R's NAME */
+.player-cell a[href="/player/Nick R"] .player-name {
+  position: relative !important;
+  left: 14px !important; /* adjust as needed */
+}
+
+/* Move Nick R's KEY */
+.player-cell a[href="/player/Nick R"] + .admin-key-icon {
+  position: relative !important;
+  left: 11px !important; /* adjust as needed */
+}
+
 /* WIN STREAK COLUMN — DOES NOT MOVE ANYTHING */
 .ws-col {
   width: 40px !important;
@@ -877,9 +926,6 @@ button {
 
 .ws-number {
   vertical-align: middle !important;
-}
-
-.ws-number {
   font-weight: 600;
   color: #ff6a00; /* optional: matches the flame vibe */
 }
@@ -999,15 +1045,137 @@ button {
   /* Colton — name */
   td.player-cell a[href="/player/Colton"] .player-name {
     position: relative !important;
-    left: 3px !important;
+    left: 4px !important;
   }
 
   /* Colton — key */
   td.player-cell a[href="/player/Colton"] + .admin-key-icon {
     position: relative !important;
-    left: 2px !important;
+    left: 2.5px !important;
   }
   th:nth-child(3) {
     padding-left: 0px !important;
   }
+
+  /* Move Nick R's NAME */
+  .player-cell a[href="/player/Nick R"] .player-name {
+    position: relative !important;
+    left: 5px !important; /* adjust as needed */
+  }
+
+  /* Move Nick R's KEY */
+  .player-cell a[href="/player/Nick R"] + .admin-key-icon {
+    position: relative !important;
+    left: 3px !important; /* adjust as needed */
+  }
+  .ws-number {
+    font-size: 0.65rem !important; /* smaller */
+    font-weight: 700 !important;
+    position: relative !important;
+    top: -6px !important; /* lift upward */
+    left: -4px !important; /* tighter to flame */
+    font-family: "Helvetica Neue", Arial, sans-serif !important;
+    opacity: 0.9; /* subtle, modern */
+  }
+  .ws-mult {
+    font-size: 0.9rem;
+    margin: 0 3px;
+    vertical-align: middle;
+    opacity: 0.9;
+  }
+
+  .ws-num {
+    font-size: 0.9rem;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+  .ws-mult,
+  .ws-num {
+    color: #ff4d4d !important; /* same red you were using */
+  }
+  .ws-icon {
+    margin-right: -3px !important; /* less gap before × */
+  }
+
+  .ws-mult {
+    margin-left: -4px !important; /* pull × closer to flame */
+    margin-right: 1px !important; /* light space before number */
+  }
+
+  .ws-num {
+    margin-left: -2px !important; /* pull number closer to × */
+  }
+  /* Move ONLY the flame + x + number together */
+  .ws-icon,
+  .ws-mult,
+  .ws-num {
+    position: relative !important;
+    left: 25px !important; /* adjust until perfect */
+  }
+}
+@media (max-width: 400px) {
+  .player-stats-box p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px !important;
+    margin-top: 20px !important; /* space between label and value */ /* subtle vertical breathing room */
+  }
+  .player-stats-box p strong {
+    display: block;
+    margin-bottom: 6px; /* space between label and number */
+  }
+
+  .player-stats-box p {
+    margin-bottom: 22px; /* space between rows */
+  }
+}
+
+@media (min-width: 601px) {
+  .ws-col {
+    white-space: nowrap !important; /* prevents line breaks */
+  }
+
+  .ws-icon {
+    position: relative !important;
+    top: 1px !important; /* flame alignment */
+    margin-right: 4px !important;
+  }
+
+  .ws-mult,
+  .ws-num {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    margin-right: 2px !important;
+  }
+
+  .ws-mult {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #ff4d4d !important;
+  }
+
+  .ws-num {
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: #ff4d4d !important;
+  }
+  .ws-col {
+    white-space: nowrap !important; /* keep them on one line */
+  }
+
+  .ws-icon {
+    margin-right: -1px !important; /* pull multiplier closer */
+    position: relative;
+    top: -1px; /* slightly align vertically */
+  }
+
+  .ws-mult {
+    margin-right: 1px !important; /* “×” gap tweak */
+  }
+}
+.ws-num {
+  font-family: "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 450 !important;
+  letter-spacing: 0.5px; /* optional: gives it a more “badge counter” feel */
 }
