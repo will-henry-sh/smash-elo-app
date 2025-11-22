@@ -1,5 +1,4 @@
 import json
-import math
 import os
 
 # ----------------------------------------
@@ -25,7 +24,7 @@ def calculate_elo_custom(p1_char, p2_char, p1_global, p2_global, winner):
     expected = exp_p1 if winner == "p1" else exp_p2
 
     winner_mult = 1 + 1.2 * (0.5 - expected)
-    loser_mult = 1.2 + 0.8 * (0.5 - expected)
+    loser_mult  = 1.2 + 0.8 * (0.5 - expected)
 
     gain = round(BASE_WIN  * winner_mult)
     loss = round(BASE_LOSS * loser_mult)
@@ -37,10 +36,7 @@ def calculate_elo_custom(p1_char, p2_char, p1_global, p2_global, winner):
         new_p1 = p1_char - loss
         new_p2 = p2_char + gain
 
-    new_p1 = max(1000, new_p1)
-    new_p2 = max(1000, new_p2)
-
-    return new_p1, new_p2
+    return max(1000, new_p1), max(1000, new_p2)
 
 
 # ----------------------------------------
@@ -58,17 +54,15 @@ def compute_global_elo(player, data):
 # ----------------------------------------
 
 def recompute_all():
-    # Load original data
     if not os.path.exists("match_log.json"):
         raise FileNotFoundError("match_log.json not found!")
 
     with open("match_log.json", "r") as f:
         match_log = json.load(f)
 
-    # Reset players completely
+    # Completely reset players
     players = {}
 
-    # New match log to avoid corrupting original
     new_log = []
 
     for entry in match_log:
@@ -79,53 +73,56 @@ def recompute_all():
         winner = entry["winner"]
         three_stock = entry.get("three_stock", False)
 
-        # Ensure players + characters exist
-        if p1 not in players:
-            players[p1] = {}
-        if p2 not in players:
-            players[p2] = {}
-
-        if c1 not in players[p1]:
-            players[p1][c1] = 1000
-        if c2 not in players[p2]:
-            players[p2][c2] = 1000
+        # Ensure structure
+        players.setdefault(p1, {})
+        players.setdefault(p2, {})
+        players[p1].setdefault(c1, 1000)
+        players[p2].setdefault(c2, 1000)
 
         old1 = players[p1][c1]
         old2 = players[p2][c2]
 
-        # Compute globals BEFORE updating
+        # Globals before updating
         p1_global = compute_global_elo(p1, players)
         p2_global = compute_global_elo(p2, players)
 
-        # Calculate new ratings
+        # Base new ratings
         new1, new2 = calculate_elo_custom(
-            old1, old2,
-            p1_global, p2_global,
-            winner
+            old1, old2, p1_global, p2_global, winner
         )
 
         change1 = new1 - old1
         change2 = new2 - old2
 
-        # Three-stock rule
-        winner_global = compute_global_elo(p1 if winner == "p1" else p2, players)
-        loser_global  = compute_global_elo(p2 if winner == "p1" else p1, players)
+        # Determine winner/loser global
+        if winner == "p1":
+            winner_global = compute_global_elo(p1, players)
+            loser_global  = compute_global_elo(p2, players)
+        else:
+            winner_global = compute_global_elo(p2, players)
+            loser_global  = compute_global_elo(p1, players)
 
+        # 3-stock multiplier
         if three_stock and winner_global < loser_global:
             change1 *= 2
             change2 *= 2
-            new1 = old1 + change1 if winner == "p1" else old1 - change1
-            new2 = old2 + change2 if winner == "p2" else old2 - change2
+
+            if winner == "p1":
+                new1 = old1 + change1
+                new2 = old2 - change2
+            else:
+                new1 = old1 - change1
+                new2 = old2 + change2
+
             new1 = max(1000, round(new1))
             new2 = max(1000, round(new2))
 
-        # Save updated ratings
+        # Record new values
         players[p1][c1] = new1
         players[p2][c2] = new2
 
-        # Append updated match
         new_log.append({
-            "timestamp": entry.get("timestamp", ""),
+            "timestamp": entry.get("timestamp") or entry.get("date") or "",
             "p1": p1,
             "c1": c1,
             "new1": new1,
@@ -141,21 +138,18 @@ def recompute_all():
         print(f"{p1} ({c1}) vs {p2} ({c2}) → winner {winner}")
         print(f"    New ratings: {new1} / {new2}")
 
-    # Write results
+    # Write updated character state
     with open("characters.json", "w") as f:
         json.dump(players, f, indent=4)
 
-    with open("recomputed_match_log.json", "w") as f:
+    # Replace the real match log
+    with open("match_log.json", "w") as f:
         json.dump(new_log, f, indent=4)
 
     print("\n✔ RECOMPUTE COMPLETE")
-    print("✔ characters.json overwritten with new values")
-    print("✔ recomputed_match_log.json generated\n")
+    print("✔ characters.json updated")
+    print("✔ match_log.json updated with new diffs\n")
 
-
-# ----------------------------------------
-# Execute
-# ----------------------------------------
 
 if __name__ == "__main__":
     recompute_all()

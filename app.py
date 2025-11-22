@@ -314,6 +314,9 @@ def leaderboard():
     except:
         last_result = None
 
+    log = load_match_log()
+
+
     # Build leaderboard rows
     rows = []
     for player, char_map in data.items():
