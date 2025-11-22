@@ -1289,39 +1289,34 @@ button {
   position: absolute;
   bottom: 55px;
   left: 50%;
-  transform: translateX(-50%);
-
+  transform: translateX(-50%) translateY(10px);
   background: rgba(0, 0, 0, 0.9);
   padding: 12px 16px;
   border-radius: 10px;
-
   width: max-content;
-  max-width: 260px; /* keeps it wide, not tall */
+  max-width: 260px;
   text-align: center;
-  white-space: normal; /* allows line breaks */
+  white-space: normal;
   line-height: 1.35;
-
   font-size: 0.85rem;
   color: #fff;
 
-  display: none;
+  /* FIX */
   opacity: 0;
-  transition: opacity 0.25s ease, transform 0.25s ease;
   pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* When active (mobile tap) */
 .badge-wrapper.active .badge-popup {
-  display: block;
   opacity: 1;
+  pointer-events: auto;
   transform: translateX(-50%) translateY(-4px);
 }
 
-/* Desktop hover */
 @media (hover: hover) {
   .badge-wrapper:hover .badge-popup {
-    display: block;
     opacity: 1;
+    pointer-events: auto;
     transform: translateX(-50%) translateY(-4px);
   }
 }
