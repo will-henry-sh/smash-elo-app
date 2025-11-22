@@ -1,14 +1,14 @@
 {
-    "p1": "Nick W",
-    "c1": "Palutena",
-    "new1": 1000,
-    "diff1": 0,
+    "p1": "Will",
+    "c1": "Ganondorf",
+    "new1": 1244,
+    "diff1": 18,
     "p2": "Nick R",
-    "c2": "Incineroar",
-    "new2": 1047,
-    "diff2": 21,
-    "last_player1": "Nick W",
+    "c2": "Min Min",
+    "new2": 1137,
+    "diff2": -14,
+    "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Palutena",
-    "last_char2": "Incineroar"
+    "last_char1": "Ganondorf",
+    "last_char2": "Min Min"
 }
