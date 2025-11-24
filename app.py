@@ -438,37 +438,38 @@ def player_stats(name):
     CUSTOM_DESCRIPTIONS = {
 
         # --- TIERED BADGES ---
-        "bloodlust1": "Win 5 matches in a row.",
-        "bloodlust2": "Win 15 matches in a row.",
-        "bloodlust3": "Win 25 matches in a row.",
+        "bloodlust1": "Win 5 matches in a row",
+        "bloodlust2": "Win 15 matches in a row",
+        "bloodlust3": "Win 25 matches in a row",
 
-        "gameset1": "Win 10 total matches.",
-        "gameset2": "Win 50 total matches.",
-        "gameset3": "Win 100 total matches.",
-        "gameset4": "Win 500 total matches.",
+        "gameset1": "Win 10 total matches",
+        "gameset2": "Win 50 total matches",
+        "gameset3": "Win 100 total matches",
+        "gameset4": "Win 500 total matches",
 
         # --- SINGLE ACHIEVEMENT BADGES ---
-        "defeatism": "Lose 10 matches in a row.",
-        "dominator": "Three-stock another player.",
-        "devastator": "Three-stock another player three times in a row during one set.",
-        "global_enthusiasm": "Get ranked with every character.",
-        "sky_full_of_stars": "Reach 2,000 global ELO.",
-        "no_escape": "Win a set using three different characters.",
-        "specialism": "Win five games in a row with the same character.",
-        "awakening": "Lose two games in a set, then three-stock your opponent in game three.",
-        "fight_for_my_friends": "Have all Fire Emblem characters above 1,000 ELO.",
-        "randomizer": "Win three games in a row with randomly selected characters.",
-        "lifestream": "Three-stock Cloud while playing as Sephiroth.",
+        "defeatism": "Lose 10 matches in a row",
+        "soaked in blood": "Beat three different players without losing a game",
+        "dominator": "Three-stock another player",
+        "devastator": "Three-stock another player three times in a row during one set",
+        "global_enthusiasm": "Get ranked with every character",
+        "sky_full_of_stars": "Reach 2,000 global ELO",
+        "no_escape": "Win a set using three different characters",
+        "specialism": "Win five games in a row with the same character",
+        "awakening": "Lose two games in a set, then three-stock your opponent in game three",
+        "fight_for_my_friends": "Have all Fire Emblem characters above 1,000 ELO",
+        "randomizer": "Win three games in a row with randomly selected characters",
+        "lifestream": "Three-stock Cloud while playing as Sephiroth",
 
-        "packun_flower": "Win a game as Packun Flower.",
+        "packun_flower": "Win a game as Packun Flower",
 
-        "into_darkness": "Reach 1,500 ELO with a character that uses darkness abilities.",
-        "split_timeline": "Win a set as Young Link, then Toon Link, then Link in order.",
-        "at_your_mercy": "Win a game after letting your opponent choose your character.",
-        "from_the_grave": "Three-stock another player using your lowest-rated character.",
-        "usurper": "Defeat a player whose global ELO is at least 1,000 higher than yours.",
-        "versus_myself": "Win three mirror matches in a row in the same set.",
-        "earth_badge": "Reach 1,500 ELO with Pokémon Trainer."
+        "into_darkness": "Reach 1,500 ELO with a character that uses darkness abilities",
+        "split_timeline": "Win a set as Young Link, then Toon Link, then Link in order",
+        "at_your_mercy": "Win a game after letting your opponent choose your character",
+        "from_the_grave": "Three-stock another player using your lowest-rated character",
+        "usurper": "Defeat a player whose global ELO is at least 1,000 higher than yours",
+        "versus_myself": "Win three mirror matches in a row in the same set",
+        "earth_badge": "Reach 1,500 ELO with Pokémon Trainer"
     }
 
 
