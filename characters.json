@@ -28,7 +28,8 @@
         "Steve": 1000,
         "Ganondorf": 1008,
         "Corrin": 1021,
-        "Samus": 1044
+        "Samus": 1044,
+        "Dark Samus": 1000
     },
     "Nick W": {
         "Palutena": 1000,
@@ -40,7 +41,7 @@
     },
     "Will": {
         "Ganondorf": 1326,
-        "Robin": 1321,
+        "Robin": 1335,
         "King K. Rool": 1108,
         "Greninja": 1056,
         "Sheik": 1100,
