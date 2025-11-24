@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Dark Samus",
+    "c1": "Dr. Mario",
     "new1": 1000,
     "diff1": 0,
     "p2": "Will",
-    "c2": "Robin",
-    "new2": 1335,
-    "diff2": 14,
+    "c2": "Meta Knight",
+    "new2": 1094,
+    "diff2": 16,
     "last_player1": "Nick R",
     "last_player2": "Will",
-    "last_char1": "Dark Samus",
-    "last_char2": "Robin"
+    "last_char1": "Dr. Mario",
+    "last_char2": "Meta Knight"
 }
