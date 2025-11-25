@@ -2715,5 +2715,18 @@
         "diff2": 38,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-25 20:39",
+        "p1": "Nick R",
+        "c1": "Ike",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 1179,
+        "diff2": 34,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
