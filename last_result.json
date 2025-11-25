@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Steve",
-    "new1": 1000,
-    "diff1": 0,
+    "c1": "Bowser",
+    "new1": 1030,
+    "diff1": 30,
     "p2": "Nick W",
     "c2": "Wii Fit Trainer",
-    "new2": 1245,
-    "diff2": 31,
+    "new2": 1227,
+    "diff2": -18,
     "last_player1": "Nick R",
     "last_player2": "Nick W",
-    "last_char1": "Steve",
+    "last_char1": "Bowser",
     "last_char2": "Wii Fit Trainer"
 }
