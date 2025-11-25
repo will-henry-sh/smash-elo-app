@@ -2702,5 +2702,18 @@
         "diff2": 38,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-25 20:39",
+        "p1": "Nick R",
+        "c1": "Ice Climbers",
+        "new1": 1027,
+        "diff1": -21,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 1145,
+        "diff2": 38,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
