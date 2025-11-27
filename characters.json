@@ -36,7 +36,8 @@
         "Byleth": 1029,
         "Richter": 1048,
         "Captain Falcon": 1000,
-        "Terry": 1000
+        "Terry": 1000,
+        "Fox": 1000
     },
     "Nick W": {
         "Palutena": 1000,
@@ -65,7 +66,7 @@
         "Bowser": 1040,
         "Inkling": 1023,
         "Hero": 1054,
-        "Roy": 1021,
+        "Roy": 1038,
         "Link": 1020,
         "badges": [
             "bloodlust",
