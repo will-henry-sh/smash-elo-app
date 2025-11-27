@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Ganondorf",
-    "new1": 1368,
-    "diff1": 14,
+    "c1": "Dr. Mario",
+    "new1": 1019,
+    "diff1": 19,
     "p2": "Nick R",
-    "c2": "Corrin",
-    "new2": 1008,
-    "diff2": -13,
+    "c2": "Dr. Mario",
+    "new2": 1058,
+    "diff2": -14,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Ganondorf",
-    "last_char2": "Corrin"
+    "last_char1": "Dr. Mario",
+    "last_char2": "Dr. Mario"
 }

@@ -30,7 +30,7 @@
         "Corrin": 1008,
         "Samus": 1044,
         "Dark Samus": 1000,
-        "Dr. Mario": 1072,
+        "Dr. Mario": 1058,
         "Little Mac": 1000,
         "Pichu": 1000,
         "Byleth": 1029,
@@ -76,7 +76,8 @@
         "Zelda": 1015,
         "Olimar": 1015,
         "Wario": 1017,
-        "Falco": 1018
+        "Falco": 1018,
+        "Dr. Mario": 1019
     },
     "Nat": {
         "Snake": 1000,
