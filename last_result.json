@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Ridley",
-    "new1": 1066,
-    "diff1": -23,
+    "c1": "Wolf",
+    "new1": 1180,
+    "diff1": 15,
     "p2": "Nick R",
-    "c2": "Ganondorf",
-    "new2": 1045,
-    "diff2": 45,
+    "c2": "Dark Samus",
+    "new2": 1000,
+    "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Ridley",
-    "last_char2": "Ganondorf"
+    "last_char1": "Wolf",
+    "last_char2": "Dark Samus"
 }
