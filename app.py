@@ -248,7 +248,7 @@ def requires_auth(f):
 @app.route('/badges')
 def badges():
     badges = [
-        {"badge": "Bloodlust", "description": "Win (5/15/25) matches in a row"},
+        {"badge": "Ambition", "description": "Win (5/15/25) matches in a row"},
         {"badge": "Defeatism", "description": "Lose 10 matches in a row"},
         {"badge": "Game Set", "description": "Win (10/50/100/500) total matches) "},
         {"badge": "Dominator", "description": "Three-stock another player"},
@@ -270,7 +270,7 @@ def badges():
         {"badge": "Usurper", "description": "Win a game against someone whose global ELO rating is at least 1,000 higher than yours"},
         {"badge": "Versus Myself", "description": "During the same set, win three games in a row as mirror matches"},
         {"badge": "Earth Badge", "description": "Get Pokemon Trainer to 1,500 ELO rating"},
-        {"badge": "Soaked in Blood", "description": "Beat three different players without losing a game"},
+        {"badge": "Bloodlust", "description": "Beat three different players without losing a game"},
     ]
     return render_template('player_badges.html', badges=badges)
 
@@ -395,6 +395,7 @@ def player_stats(name):
     if name not in data:
         return f"Player '{name}' not found.", 404
 
+    all_players = sorted(data.keys())  # <-- add this
     # Pull badges safely
     badges_list = data[name].get("badges", [])
 
@@ -438,9 +439,9 @@ def player_stats(name):
     CUSTOM_DESCRIPTIONS = {
 
         # --- TIERED BADGES ---
-        "bloodlust1": "Win 5 matches in a row",
-        "bloodlust2": "Win 15 matches in a row",
-        "bloodlust3": "Win 25 matches in a row",
+        "ambition1": "Win 5 matches in a row",
+        "ambition2": "Win 15 matches in a row",
+        "ambition3": "Win 25 matches in a row",
 
         "gameset1": "Win 10 total matches",
         "gameset2": "Win 50 total matches",
@@ -449,7 +450,7 @@ def player_stats(name):
 
         # --- SINGLE ACHIEVEMENT BADGES ---
         "defeatism": "Lose 10 matches in a row",
-        "soaked in blood": "Beat three different players without losing a game",
+        "bloodlust": "Beat three different players without losing a game",
         "dominator": "Three-stock another player",
         "devastator": "Three-stock another player three times in a row during one set",
         "global_enthusiasm": "Get ranked with every character",
@@ -524,7 +525,8 @@ def player_stats(name):
         wins=wins,
         losses=losses,
         win_rate=win_rate,
-        badges=player_badges
+        badges=player_badges,
+        all_players=all_players
     )
 
 
@@ -692,6 +694,33 @@ def admin_panel():
         pushing_status="Running" if is_pushing else "Idle",
         push_log=push_log
     )
+
+@app.route("/api/matchup/<player>/<opponent>")
+def api_matchup(player, opponent):
+    log = load_match_log()
+
+    wins = 0
+    losses = 0
+
+    for m in log:
+        players_in_match = {m["p1"], m["p2"]}
+
+        if {player, opponent} == players_in_match:
+            winner_name = m["p1"] if m["winner"] == "p1" else m["p2"]
+            if winner_name == player:
+                wins += 1
+            else:
+                losses += 1
+
+    total = wins + losses
+    win_rate = round((wins / total) * 100, 1) if total > 0 else 0
+
+    return {
+        "total": total,
+        "wins": wins,
+        "losses": losses,
+        "win_rate": win_rate
+    }
 
 
 

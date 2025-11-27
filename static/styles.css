@@ -1117,23 +1117,25 @@ button {
   .player-stats-box p {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 10px !important;
-    margin-top: 20px !important; /* space between label and value */ /* subtle vertical breathing room */
-  }
-  .player-stats-box p strong {
-    display: block;
-    margin-bottom: 6px; /* space between label and number */
+    align-items: center !important; /* ← CENTER on mobile */
+    margin-bottom: 14px !important;
+    margin-top: 14px !important;
   }
 
-  .player-stats-box p {
-    margin-bottom: 22px; /* space between rows */
+  .player-stats-box p strong {
+    display: block;
+    margin-bottom: 4px;
+    text-align: center !important;
   }
-  .form-row select,
-  .form-row input,
-  .search-input {
-    font-size: 16px !important;
-  }
+}
+
+.player-stats-box p {
+  margin-bottom: 22px; /* space between rows */
+}
+.form-row select,
+.form-row input,
+.search-input {
+  font-size: 16px !important;
 }
 
 @media (min-width: 601px) {
@@ -1325,4 +1327,72 @@ button {
 .player-badge-icon[src*="dominator.png"] {
   width: 38px !important;
   height: 38px !important;
+}
+
+.matchup-box {
+  margin-top: 20px;
+  padding: 20px;
+  background: #1e1e1e;
+  border-radius: 12px;
+}
+
+.matchup-box h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+#opponentSelect {
+  width: 100%;
+  padding: 10px;
+  background: #2a2a2a;
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.matchup-results p {
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+.matchup-box {
+  text-align: center;
+}
+
+.matchup-results p {
+  text-align: center;
+}
+
+.player-stats-box {
+  text-align: center;
+}
+
+.player-stats-box p {
+  margin: 6px 0;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .player-stats-box,
+  .player-stats-box p,
+  .player-stats-box strong {
+    text-align: center !important;
+  }
+}
+
+.matchup-box h2 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+#opponentSelect {
+  margin: 0 auto 16px auto;
+  display: block;
+}
+
+.matchup-results p {
+  margin: 10px 0;
+  line-height: 1.4;
+  text-align: center;
 }

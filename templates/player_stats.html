@@ -22,6 +22,23 @@
         <p><strong>Win Percentage:</strong> {{ win_rate }}%</p>
       </div>
 
+      <!-- Head-to-Head Section -->
+      <div class="matchup-box">
+        <h2>Matchup History</h2>
+
+        <select id="opponentSelect">
+          <option value="">Select Opponent</option>
+
+          {% for other in all_players %} {% if other != name %}
+          <option value="{{ other }}">{{ other }}</option>
+          {% endif %} {% endfor %}
+        </select>
+
+        <div id="matchupResults" class="matchup-results">
+          <p>Select a player to view head-to-head stats.</p>
+        </div>
+      </div>
+
       <!-- BADGES SECTION -->
       {% if badges %}
       <div class="badge-section">
@@ -68,7 +85,7 @@
           <th>ELO</th>
         </tr>
 
-        {% for char, elo in char_map.items() %}
+        {% for char, elo in char_map | dictsort(by='value', reverse=true) %}
         <tr>
           <td>{{ char }}</td>
           <td>{{ elo }}</td>
@@ -76,6 +93,35 @@
         {% endfor %}
       </table>
     </div>
+
+    <script>
+      async function loadMatchup() {
+        const opp = document.getElementById("opponentSelect").value;
+        if (!opp) return;
+
+        const res = await fetch(`/api/matchup/{{ name }}/${opp}`);
+        const data = await res.json();
+
+        document.getElementById("matchupResults").innerHTML = `
+          <div class="matchup-row">
+            <div class="matchup-left">
+              <p><strong>Total Games:</strong> ${data.total}</p>
+              <p><strong>{{ name }} Wins:</strong> ${data.wins}</p>
+              <p><strong>${opp} Wins:</strong> ${data.losses}</p>
+            </div>
+
+            <div class="matchup-right">
+              <p><strong>Win Rate:</strong> ${data.win_rate}%</p>
+            </div>
+          </div>
+        `;
+      }
+
+      document
+        .getElementById("opponentSelect")
+        .addEventListener("change", loadMatchup);
+    </script>
+
     <script>
       function toggleBadge(wrapper) {
         // Close any other open badge
