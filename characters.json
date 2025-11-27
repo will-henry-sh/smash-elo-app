@@ -26,7 +26,7 @@
         "Ike": 1028,
         "Bowser": 1030,
         "Steve": 1000,
-        "Ganondorf": 1029,
+        "Ganondorf": 1007,
         "Corrin": 1021,
         "Samus": 1044,
         "Dark Samus": 1000,
@@ -105,6 +105,7 @@
     },
     "Jeff": {
         "Byleth": 1096,
-        "badges": []
+        "badges": [],
+        "Cloud": 1042
     }
 }
