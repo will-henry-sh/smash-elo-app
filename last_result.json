@@ -1,14 +1,14 @@
 {
-    "p1": "Jeff",
-    "c1": "Cloud",
-    "new1": 1106,
-    "diff1": -15,
+    "p1": "Will",
+    "c1": "Meta Knight",
+    "new1": 1088,
+    "diff1": 17,
     "p2": "Nick R",
-    "c2": "Donkey Kong",
-    "new2": 1133,
-    "diff2": 22,
-    "last_player1": "Jeff",
+    "c2": "Marth",
+    "new2": 1000,
+    "diff2": 0,
+    "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Cloud",
-    "last_char2": "Donkey Kong"
+    "last_char1": "Meta Knight",
+    "last_char2": "Marth"
 }
