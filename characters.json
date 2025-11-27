@@ -23,7 +23,7 @@
         "badges": [
             "PACKUN FLOWER"
         ],
-        "Ike": 1028,
+        "Ike": 1006,
         "Bowser": 1030,
         "Steve": 1000,
         "Ganondorf": 1007,
@@ -42,7 +42,8 @@
         "Fox": 1013,
         "Ike": 1000,
         "badges": [],
-        "Min Min": 1000
+        "Min Min": 1000,
+        "Ridley": 1042
     },
     "Will": {
         "Ganondorf": 1340,
