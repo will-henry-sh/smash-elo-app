@@ -1,14 +1,14 @@
 {
     "p1": "Will",
     "c1": "Sheik",
-    "new1": 1167,
+    "new1": 1183,
     "diff1": 16,
     "p2": "Nick R",
-    "c2": "Marth",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Mr. Game and Watch",
+    "new2": 1022,
+    "diff2": -13,
     "last_player1": "Will",
     "last_player2": "Nick R",
     "last_char1": "Sheik",
-    "last_char2": "Marth"
+    "last_char2": "Mr. Game and Watch"
 }
