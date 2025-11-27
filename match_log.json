@@ -3365,5 +3365,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-27 10:10",
+        "p1": "Will",
+        "c1": "Sheik",
+        "new1": 1137,
+        "diff1": -23,
+        "p2": "Nick R",
+        "c2": "Mr. Game and Watch",
+        "new2": 1054,
+        "diff2": 45,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
