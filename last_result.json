@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Dr. Mario",
-    "new1": 1019,
-    "diff1": 19,
+    "c1": "Meta Knight",
+    "new1": 1104,
+    "diff1": 16,
     "p2": "Nick R",
-    "c2": "Dr. Mario",
-    "new2": 1058,
-    "diff2": -14,
+    "c2": "Young Link",
+    "new2": 1000,
+    "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Dr. Mario",
-    "last_char2": "Dr. Mario"
+    "last_char1": "Meta Knight",
+    "last_char2": "Young Link"
 }
