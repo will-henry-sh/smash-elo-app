@@ -3248,5 +3248,18 @@
         "diff2": 45,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-27 08:13",
+        "p1": "Will",
+        "c1": "King K. Rool",
+        "new1": 1124,
+        "diff1": 16,
+        "p2": "Nick R",
+        "c2": "Terry",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
