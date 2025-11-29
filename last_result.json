@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Shulk",
-    "new1": 1000,
-    "diff1": 0,
+    "c1": "Ganondorf",
+    "new1": 1432,
+    "diff1": 12,
     "p2": "Nat",
-    "c2": "Rosalina and Luma",
-    "new2": 1078,
-    "diff2": 46,
+    "c2": "Kazuya",
+    "new2": 1000,
+    "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Nat",
-    "last_char1": "Shulk",
-    "last_char2": "Rosalina and Luma"
+    "last_char1": "Ganondorf",
+    "last_char2": "Kazuya"
 }
