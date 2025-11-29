@@ -3742,5 +3742,18 @@
         "diff2": 47,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-29 08:11",
+        "p1": "Will",
+        "c1": "Shulk",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Nat",
+        "c2": "Rosalina and Luma",
+        "new2": 1078,
+        "diff2": 46,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
