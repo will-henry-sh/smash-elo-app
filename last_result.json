@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Richter",
+    "c1": "Shulk",
     "new1": 1000,
     "diff1": 0,
     "p2": "Nat",
-    "c2": "Duck Hunt",
-    "new2": 1047,
-    "diff2": 47,
+    "c2": "Rosalina and Luma",
+    "new2": 1078,
+    "diff2": 46,
     "last_player1": "Will",
     "last_player2": "Nat",
-    "last_char1": "Richter",
-    "last_char2": "Duck Hunt"
+    "last_char1": "Shulk",
+    "last_char2": "Rosalina and Luma"
 }
