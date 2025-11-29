@@ -1,14 +1,14 @@
 {
     "p1": "Nat",
-    "c1": "Lucario",
+    "c1": "Zero Suit Samus",
     "new1": 1036,
     "diff1": 36,
     "p2": "Nick R",
-    "c2": "Yoshi",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Roy",
+    "new2": 1025,
+    "diff2": -20,
     "last_player1": "Nat",
     "last_player2": "Nick R",
-    "last_char1": "Lucario",
-    "last_char2": "Yoshi"
+    "last_char1": "Zero Suit Samus",
+    "last_char2": "Roy"
 }

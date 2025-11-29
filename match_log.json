@@ -3898,5 +3898,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-29 09:24",
+        "p1": "Nat",
+        "c1": "Zero Suit Samus",
+        "new1": 1036,
+        "diff1": 36,
+        "p2": "Nick R",
+        "c2": "Roy",
+        "new2": 1025,
+        "diff2": -20,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
