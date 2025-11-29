@@ -1474,3 +1474,9 @@ button {
 .player-badge-icon {
   border-radius: 10px;
 }
+
+.player-summary {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

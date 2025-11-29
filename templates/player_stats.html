@@ -64,20 +64,20 @@
       {% endif %}
 
       <!-- Character count -->
-      <p><strong>Total Characters Played:</strong> {{ total_chars }}</p>
+      <div class="player-summary">
+        <p><strong>Total Characters Played:</strong> {{ total_chars }}</p>
 
-      {% if best_char %}
-      <p>
-        <strong>Best Character:</strong> {{ best_char }} ({{ char_map[best_char]
-        }})
-      </p>
-      <p>
-        <strong>Worst Character:</strong> {{ worst_char }} ({{
-        char_map[worst_char] }})
-      </p>
-      {% else %}
-      <p>This player hasn’t recorded any matches yet.</p>
-      {% endif %}
+        {% if best_char %}
+        <p>
+          <strong>Best Character:</strong> {{ best_char }} ({{
+          char_map[best_char] }})
+        </p>
+        <p>
+          <strong>Worst Character:</strong> {{ worst_char }} ({{
+          char_map[worst_char] }})
+        </p>
+        {% endif %}
+      </div>
 
       <table>
         <tr>
