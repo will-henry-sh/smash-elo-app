@@ -4119,5 +4119,18 @@
         "diff2": 48,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-29 10:40",
+        "p1": "Will",
+        "c1": "King Dedede",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Nick R",
+        "c2": "King Dedede",
+        "new2": 1044,
+        "diff2": 44,
+        "winner": "p2",
+        "three_stock": false
     }
 ]

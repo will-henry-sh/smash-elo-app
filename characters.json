@@ -14,7 +14,7 @@
         "Min Min": 1154,
         "Palutena": 1005,
         "Ice Climbers": 1027,
-        "King Dedede": 1000,
+        "King Dedede": 1044,
         "Sephiroth": 1000,
         "Marth": 1000,
         "Mr. Game and Watch": 1054,
@@ -96,7 +96,8 @@
         "Richter": 1000,
         "Shulk": 1000,
         "Villager": 1000,
-        "Mega Man": 1000
+        "Mega Man": 1000,
+        "King Dedede": 1000
     },
     "Nat": {
         "Snake": 1000,
