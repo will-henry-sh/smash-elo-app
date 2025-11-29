@@ -3690,5 +3690,18 @@
         "diff2": 48,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-29 07:57",
+        "p1": "Will",
+        "c1": "Banjo & Kazooie",
+        "new1": 1013,
+        "diff1": 13,
+        "p2": "Nat",
+        "c2": "Jigglypuff",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
