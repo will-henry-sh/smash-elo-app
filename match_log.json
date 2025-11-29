@@ -3924,5 +3924,18 @@
         "diff2": 21,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-29 09:31",
+        "p1": "Nat",
+        "c1": "Dark Pit",
+        "new1": 1026,
+        "diff1": 26,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 1112,
+        "diff2": -17,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
