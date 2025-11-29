@@ -265,7 +265,7 @@ def badges():
         {"badge": "To New Heights", "description": "Gain more than 50 ELO rating from a single match"},
         {"badge": "PACKUN FLOWER", "description": "Win a game as Packun Flower"},
         {"badge": "Into Darkness", "description": "Reach 1,500 ELO rating with a character that has a darkness ability (Ganondorf, Hero, Joker, Mewtwo, Olimar, Piranha Plant, Robin, Ridley, Sephiroth)"},
-        {"badge": "Split Timeline", "description": "During the same set, win a game as young Link, Toon Link, and Link (in that order)"},
+        {"badge": "Split Timeline", "description": "During the same set, win a game as young Link, Toon Link, and Link (in that order)."},
         {"badge": "At Your Mercy", "description": "Win a game after letting your opponent choose your character"},
         {"badge": "From the Grave", "description": "Three-stock another player while using your worst-rated character"},
         {"badge": "Usurper", "description": "Win a game against someone whose global ELO rating is at least 1,000 higher than yours"},
