@@ -27,6 +27,49 @@ ADMIN_USERS = {
 }
 ADMIN_USERNAMES = ["Will", "Colton", "Nick R"]  # or ["Will", "YourOtherAdmins"]
 
+DECAY_START_DAYS = 14
+DECAY_PER_DAY = 2      # total global decay per day
+CHAR_FLOOR = 1000
+
+def apply_decay_to_player(player_data):
+    """Safely decays only real character ratings."""
+    
+    last_played_str = player_data.get("last_played")
+    if not last_played_str:
+        return
+
+    try:
+        last_played = datetime.strptime(last_played_str, "%Y-%m-%d").date()
+    except:
+        return
+
+    today = datetime.now().date()
+    inactive_days = (today - last_played).days
+
+    if inactive_days <= DECAY_START_DAYS:
+        return
+
+    days_of_decay = inactive_days - DECAY_START_DAYS
+
+    # Only decay TRUE characters
+    char_keys = [
+        c for c, v in player_data.items()
+        if c in CHARACTERS and isinstance(v, (int, float))
+    ]
+
+    if not char_keys:
+        return
+
+    # decay per character per day
+    decay_per_char = DECAY_PER_DAY / len(char_keys)
+    decay_per_char = int(decay_per_char) if decay_per_char >= 1 else 1
+
+    total_decay = decay_per_char * days_of_decay
+
+    for c in char_keys:
+        new_val = player_data[c] - total_decay
+        player_data[c] = max(CHAR_FLOOR, int(new_val))
+
 
 def push_to_github_worker():
     global is_pushing
@@ -265,7 +308,7 @@ def badges():
         {"badge": "To New Heights", "description": "Gain more than 50 ELO rating from a single match"},
         {"badge": "PACKUN FLOWER", "description": "Win a game as Packun Flower"},
         {"badge": "Into Darkness", "description": "Reach 1,500 ELO rating with a character that has a darkness ability (Ganondorf, Hero, Joker, Mewtwo, Olimar, Piranha Plant, Robin, Ridley, Sephiroth)"},
-        {"badge": "Split Timeline", "description": "During the same set, win a game as young Link, Toon Link, and Link (in that order)"},
+        {"badge": "Split Timeline", "description": "During the same set, win a game as young Link, Toon Link, and Link (in that order"},
         {"badge": "At Your Mercy", "description": "Win a game after letting your opponent choose your character"},
         {"badge": "From the Grave", "description": "Three-stock another player while using your worst-rated character"},
         {"badge": "Usurper", "description": "Win a game against someone whose global ELO rating is at least 1,000 higher than yours"},
@@ -309,6 +352,12 @@ def home_redirect():
 @app.route("/leaderboard")
 def leaderboard():
     data = load_players()
+        # --- APPLY ELO DECAY SAFELY ---
+    for pname, pdata in data.items():
+        apply_decay_to_player(pdata)
+
+    save_players(data)
+
 
     # Load last result safely
     try:
@@ -323,13 +372,18 @@ def leaderboard():
     # Build leaderboard rows
     rows = []
     for player, char_map in data.items():
-    # Remove badges key from ELO calculations
-        clean_map = {c: v for c, v in char_map.items() if c != "badges"}
 
-        diffs = [(elo - 1000) for elo in clean_map.values() if isinstance(elo, int) and elo != 1000]
-        global_elo = sum(diffs) if diffs else 0
+        # Only include REAL characters — prevents global_elo, last_played, etc.
+        clean_map = {
+            c: v for c, v in char_map.items()
+            if c in CHARACTERS and isinstance(v, (int, float))
+        }
+
+        diffs = [(v - 1000) for v in clean_map.values()]
+        global_elo = sum(diffs)
 
         rows.append((player, global_elo, clean_map))
+
 
 
     # Sort by ELO (descending)
