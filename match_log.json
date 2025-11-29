@@ -3781,5 +3781,18 @@
         "diff2": 47,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-29 08:21",
+        "p1": "Will",
+        "c1": "Mega Man",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Nat",
+        "c2": "Greninja",
+        "new2": 1046,
+        "diff2": 46,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
