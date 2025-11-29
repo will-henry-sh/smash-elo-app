@@ -81,7 +81,7 @@
         "Wario": 1017,
         "Falco": 1018,
         "Dr. Mario": 1019,
-        "Marth": 1017,
+        "Marth": 1000,
         "Piranha Plant": 1016,
         "badges": [
             "kidnapper",
@@ -113,7 +113,8 @@
         "Duck Hunt": 1047,
         "Kazuya": 1000,
         "Daisy": 1047,
-        "Greninja": 1046
+        "Greninja": 1046,
+        "Corrin": 1046
     },
     "Colton": {
         "Toon Link": 1142,

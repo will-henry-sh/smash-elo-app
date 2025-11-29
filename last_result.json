@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Mega Man",
+    "c1": "Marth",
     "new1": 1000,
-    "diff1": 0,
+    "diff1": -17,
     "p2": "Nat",
-    "c2": "Greninja",
+    "c2": "Corrin",
     "new2": 1046,
     "diff2": 46,
     "last_player1": "Will",
     "last_player2": "Nat",
-    "last_char1": "Mega Man",
-    "last_char2": "Greninja"
+    "last_char1": "Marth",
+    "last_char2": "Corrin"
 }
