@@ -65,7 +65,7 @@
         "Corrin": 1000,
         "Banjo & Kazooie": 1013,
         "Ike": 1078,
-        "Wolf": 1194,
+        "Wolf": 1170,
         "Incineroar": 1081,
         "Ridley": 1066,
         "Captain Falcon": 1101,
@@ -114,7 +114,8 @@
         "Kazuya": 1000,
         "Daisy": 1047,
         "Greninja": 1046,
-        "Corrin": 1046
+        "Corrin": 1046,
+        "Byleth": 1047
     },
     "Colton": {
         "Toon Link": 1142,

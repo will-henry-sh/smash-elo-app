@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Marth",
-    "new1": 1000,
-    "diff1": -17,
+    "c1": "Wolf",
+    "new1": 1170,
+    "diff1": -24,
     "p2": "Nat",
-    "c2": "Corrin",
-    "new2": 1046,
-    "diff2": 46,
+    "c2": "Byleth",
+    "new2": 1047,
+    "diff2": 47,
     "last_player1": "Will",
     "last_player2": "Nat",
-    "last_char1": "Marth",
-    "last_char2": "Corrin"
+    "last_char1": "Wolf",
+    "last_char2": "Byleth"
 }
