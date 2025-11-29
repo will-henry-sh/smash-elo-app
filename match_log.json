@@ -4106,5 +4106,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-29 10:17",
+        "p1": "Will",
+        "c1": "Ganondorf",
+        "new1": 1420,
+        "diff1": -24,
+        "p2": "Nat",
+        "c2": "Kazuya",
+        "new2": 1048,
+        "diff2": 48,
+        "winner": "p2",
+        "three_stock": false
     }
 ]

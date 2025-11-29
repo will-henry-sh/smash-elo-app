@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Robin",
-    "new1": 1388,
-    "diff1": 13,
+    "c1": "Ganondorf",
+    "new1": 1420,
+    "diff1": -24,
     "p2": "Nat",
     "c2": "Kazuya",
-    "new2": 1000,
-    "diff2": 0,
+    "new2": 1048,
+    "diff2": 48,
     "last_player1": "Will",
     "last_player2": "Nat",
-    "last_char1": "Robin",
+    "last_char1": "Ganondorf",
     "last_char2": "Kazuya"
 }
