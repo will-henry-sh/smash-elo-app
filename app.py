@@ -543,8 +543,12 @@ def player_stats(name):
             continue  # skip missing icons
 
         # --- PRETTY NAME GENERATION ---
-        spaced = "".join(" " + c if c.isdigit() else c for c in clean_id)
-        pretty = " ".join(word.capitalize() for word in spaced.split("_"))
+        # --- PRETTY NAME GENERATION ---
+# Strip tier numbers from tiered badge names
+        base_id = ''.join(ch for ch in clean_id if not ch.isdigit())
+
+        pretty = " ".join(word.capitalize() for word in base_id.split("_"))
+
 
         # SPECIAL CASE → PACKUN FLOWER SHOULD BE ALL CAPS
         if clean_id == "packun_flower":
