@@ -1,14 +1,14 @@
 {
     "p1": "Nat",
-    "c1": "Zero Suit Samus",
-    "new1": 1036,
-    "diff1": 36,
+    "c1": "Link",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Nick R",
-    "c2": "Roy",
-    "new2": 1025,
-    "diff2": -20,
+    "c2": "Donkey Kong",
+    "new2": 1171,
+    "diff2": 21,
     "last_player1": "Nat",
     "last_player2": "Nick R",
-    "last_char1": "Zero Suit Samus",
-    "last_char2": "Roy"
+    "last_char1": "Link",
+    "last_char2": "Donkey Kong"
 }
