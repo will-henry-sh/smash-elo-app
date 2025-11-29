@@ -9,7 +9,7 @@
         "Hero": 1087,
         "Mewtwo": 1029,
         "Roy": 1045,
-        "Cloud": 1032,
+        "Cloud": 1055,
         "Snake": 1000,
         "Min Min": 1154,
         "Palutena": 1005,
@@ -116,7 +116,8 @@
         "Greninja": 1046,
         "Corrin": 1046,
         "Byleth": 1035,
-        "Little Mac": 1047
+        "Little Mac": 1047,
+        "Inkling": 1000
     },
     "Colton": {
         "Toon Link": 1142,
