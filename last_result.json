@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Robin",
-    "new1": 1375,
-    "diff1": -24,
+    "c1": "Banjo & Kazooie",
+    "new1": 1013,
+    "diff1": 13,
     "p2": "Nat",
-    "c2": "Terry",
-    "new2": 1082,
-    "diff2": 48,
+    "c2": "Jigglypuff",
+    "new2": 1000,
+    "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Nat",
-    "last_char1": "Robin",
-    "last_char2": "Terry"
+    "last_char1": "Banjo & Kazooie",
+    "last_char2": "Jigglypuff"
 }
