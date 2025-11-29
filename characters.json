@@ -60,7 +60,7 @@
         "King K. Rool": 1139,
         "Greninja": 1056,
         "Sheik": 1153,
-        "Meta Knight": 1134,
+        "Meta Knight": 1110,
         "Steve": 1027,
         "Corrin": 1000,
         "Banjo & Kazooie": 1013,
@@ -115,7 +115,8 @@
         "Daisy": 1047,
         "Greninja": 1046,
         "Corrin": 1046,
-        "Byleth": 1035
+        "Byleth": 1035,
+        "Little Mac": 1047
     },
     "Colton": {
         "Toon Link": 1142,
