@@ -296,7 +296,7 @@ def badges():
         {"badge": "Game Set", "description": "Win (10/50/100/500) total matches) "},
         {"badge": "Dominator", "description": "Three-stock another player"},
         {"badge": "Devastator", "description": "Three-stock another player three times in a row in a set"},
-        {"badge": "Win a game by using Ganondorf's Flame Choke"},
+        {"badge": "Kidnapper", "description": "Win a game by using Ganondorf's Flame Choke"},
         {"badge": "Global Enthusiasm", "description": "Get ranked with every character"},
         {"badge": "Sky Full of Stars", "description": "Reach 2,000 global ELO ranking"},
         {"badge": "No Escape", "description": "In a single set, win with three different characters"},
