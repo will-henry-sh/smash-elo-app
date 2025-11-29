@@ -1309,6 +1309,63 @@ button {
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
+/* MOBILE FIX: prevent badge tooltip from overflowing */
+/* FINAL MOBILE TOOLTIP PATCH (guaranteed fix) */
+/* FINAL MOBILE TOOLTIP FIX — MOVE IT BELOW THE BADGE SO NOTHING CUTS IT OFF */
+/* FINAL MOBILE TOOLTIP FIX — PREVENT LEFT/RIGHT CUTOFF */
+@media (max-width: 600px) {
+  .badge-section {
+    position: relative !important;
+  }
+
+  .badge-popup {
+    position: absolute !important;
+
+    /* LOWER — moves it closer to the Badges header */
+    bottom: calc(100% - 47px) !important;
+
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    width: 90% !important;
+    max-width: 90% !important;
+
+    padding: 12px 14px !important;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 12px;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+
+    z-index: 9999 !important;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .badge-wrapper.active .badge-popup {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* show when active */
+  .badge-wrapper.active .badge-popup {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* prevent wrapper positioning from affecting tooltip */
+  .badge-wrapper {
+    position: static !important;
+  }
+
+  /* Keep badge-wrapper from shifting the tooltip relative to itself */
+  .badge-wrapper {
+    position: static !important;
+  }
+}
+
 .badge-wrapper.active .badge-popup {
   opacity: 1;
   pointer-events: auto;
