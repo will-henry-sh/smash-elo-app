@@ -1396,3 +1396,24 @@ button {
   line-height: 1.4;
   text-align: center;
 }
+
+/* Bigger Dominator badge */
+.player-badge-icon[src*="dominator.png"] {
+  width: 43px !important;
+  height: 43px !important;
+}
+
+/* Bigger Kidnapper badge */
+.player-badge-icon[src*="kidnapper.png"] {
+  width: 43px !important;
+  height: 43px !important;
+}
+.badge-wrapper {
+  width: 40px; /* adjust until perfect */
+  display: flex;
+  justify-content: center;
+}
+
+.player-badge-icon {
+  border-radius: 10px;
+}
