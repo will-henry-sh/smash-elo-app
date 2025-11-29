@@ -683,12 +683,22 @@ def add_match():
         winner_global = p2_global_rank
         loser_global = p1_global_rank
 
-    # --- APPLY THREE-STOCK DOUBLING ONLY WHEN VALID ---
-    if three_stock and winner_global < loser_global:
-        change1 *= 2
-        change2 *= 2
-        new1 = old1 + change1
-        new2 = old2 + change2
+
+    # --- NEW THREE-STOCK LOGIC ---
+    if three_stock:
+        if winner == "p1":
+            change1 *= 2          # winner bonus
+            new1 = old1 + change1
+            new2 = old2 + change2 # loser normal loss
+        else:
+            change2 *= 2          # winner bonus
+            new2 = old2 + change2
+            new1 = old1 + change1 # loser normal loss
+
+
+
+
+
 
     # Apply min rating of 1000
     new1 = max(1000, round(new1))
