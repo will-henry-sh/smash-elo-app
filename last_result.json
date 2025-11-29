@@ -1,14 +1,14 @@
 {
     "p1": "Nat",
-    "c1": "Joker",
-    "new1": 1038,
-    "diff1": 38,
+    "c1": "Lucario",
+    "new1": 1036,
+    "diff1": 36,
     "p2": "Nick R",
-    "c2": "Cloud",
-    "new2": 1034,
-    "diff2": -21,
+    "c2": "Yoshi",
+    "new2": 1000,
+    "diff2": 0,
     "last_player1": "Nat",
     "last_player2": "Nick R",
-    "last_char1": "Joker",
-    "last_char2": "Cloud"
+    "last_char1": "Lucario",
+    "last_char2": "Yoshi"
 }
