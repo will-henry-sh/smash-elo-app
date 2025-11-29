@@ -3716,5 +3716,18 @@
         "diff2": 47,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-11-29 08:03",
+        "p1": "Will",
+        "c1": "Isabelle",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Nat",
+        "c2": "Ness",
+        "new2": 1047,
+        "diff2": 47,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
