@@ -31,7 +31,7 @@
         "Little Mac": 1000,
         "Pichu": 1000,
         "Byleth": 1030,
-        "Richter": 1032,
+        "Richter": 1016,
         "Captain Falcon": 1000,
         "Terry": 1000,
         "Fox": 1000,
@@ -111,7 +111,8 @@
         "Pyra/Mythra": 1019,
         "Mewtwo": 1018,
         "Donkey Kong": 1018,
-        "Zero Suit Samus": 1018
+        "Zero Suit Samus": 1018,
+        "Samus": 1018
     },
     "Colton": {
         "Toon Link": 1122,
