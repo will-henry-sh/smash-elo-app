@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Incineroar",
-    "new1": 1152,
-    "diff1": 38,
+    "c1": "Captain Falcon",
+    "new1": 1051,
+    "diff1": -59,
     "p2": "Nick R",
-    "c2": "R.O.B",
-    "new2": 1183,
-    "diff2": -17,
+    "c2": "King Dedede",
+    "new2": 1109,
+    "diff2": 66,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Incineroar",
-    "last_char2": "R.O.B"
+    "last_char1": "Captain Falcon",
+    "last_char2": "King Dedede"
 }
