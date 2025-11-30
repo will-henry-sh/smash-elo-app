@@ -4392,5 +4392,18 @@
         "diff2": -13,
         "winner": "p1",
         "three_stock": true
+    },
+    {
+        "timestamp": "2025-11-30 09:02",
+        "p1": "Will",
+        "c1": "King K. Rool",
+        "new1": 1166,
+        "diff1": 13,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 1040,
+        "diff2": -12,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
