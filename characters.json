@@ -47,7 +47,8 @@
         "Ryu": 1000,
         "Simon": 1020,
         "Isabelle": 1000,
-        "Link": 1022
+        "Link": 1022,
+        "Lucas": 1000
     },
     "Nick W": {
         "Palutena": 1000,
@@ -104,7 +105,8 @@
             "specialism",
             "lifestream",
             "bloodlust"
-        ]
+        ],
+        "Min Min": 1019
     },
     "Colton": {
         "Toon Link": 1122,
