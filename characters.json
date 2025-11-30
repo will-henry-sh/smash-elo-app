@@ -1,6 +1,6 @@
 {
     "Nick R": {
-        "Piranha Plant": 1029,
+        "Piranha Plant": 1012,
         "Snake": 1000,
         "Min Min": 1097,
         "Palutena": 1000,
@@ -106,7 +106,8 @@
             "lifestream",
             "bloodlust"
         ],
-        "Min Min": 1019
+        "Min Min": 1019,
+        "Pyra/Mythra": 1019
     },
     "Colton": {
         "Toon Link": 1122,
