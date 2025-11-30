@@ -42,7 +42,8 @@
             "ambition2",
             "bloodlust",
             "dominator"
-        ]
+        ],
+        "Chrom": 1000
     },
     "Nick W": {
         "Palutena": 1000,
@@ -65,7 +66,7 @@
         "Captain Falcon": 1110,
         "Bowser": 1061,
         "Inkling": 1025,
-        "Sheik": 1035,
+        "Sheik": 1054,
         "Hero": 1054,
         "Roy": 1051,
         "King K. Rool": 1153,
