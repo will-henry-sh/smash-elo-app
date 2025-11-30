@@ -228,18 +228,21 @@ def calculate_elo_custom(
     p1_global, p2_global,
     winner
 ):
+    BASE_WIN = 30   # keep your base values
+    # BASE_LOSS removed — we now compute it dynamically for balance
+
     # Combined character+global weighted values
-    c1 = combined_value(p1_char, p1_global)
-    c2 = combined_value(p2_char, p2_global)
+    c1 = p1_char * 0.7 + p1_global * 0.3
+    c2 = p2_char * 0.7 + p2_global * 0.3
 
     # Expected outcomes
-    exp_p1 = expected_score(c1, c2)
+    exp_p1 = 1 / (1 + 10 ** ((c2 - c1) / 400))
     exp_p2 = 1 - exp_p1
 
-    # Select expected based on winner
+    # Choose the expected score for the actual winner
     expected = exp_p1 if winner == "p1" else exp_p2
 
-    # --- UPSERT-TIER WINNER MULTIPLIER SYSTEM ---
+    # --- Winner multiplier based on upset magnitude ---
     if expected < 0.01:
         winner_mult = 1 + 10.0 * (0.5 - expected)     # insane upset
     elif expected < 0.10:
@@ -249,12 +252,11 @@ def calculate_elo_custom(
     else:
         winner_mult = 1 + 1.2 * (0.5 - expected)      # normal match
 
-    # Loser multiplier (light penalty)
-    loser_mult = 1 + 0.5 * (0.5 - expected)
-
-    # Gains & losses
+    # GAIN is based on winner multiplier
     gain = round(BASE_WIN * winner_mult)
-    loss = round(BASE_LOSS * loser_mult)
+
+    # LOSS is ~90% of gain (Showdown-style symmetry)
+    loss = round(gain * 0.9)
 
     # Apply result
     if winner == "p1":
@@ -264,11 +266,9 @@ def calculate_elo_custom(
         new_p1 = p1_char - loss
         new_p2 = p2_char + gain
 
-    # Floor at 1000
-    new_p1 = max(1000, new_p1)
-    new_p2 = max(1000, new_p2)
+    # Floor ratings at 1000
+    return max(1000, new_p1), max(1000, new_p2)
 
-    return new_p1, new_p2
 
 
 
@@ -421,7 +421,24 @@ def leaderboard():
 
 
     # Last 20 matches, newest → oldest
-    recent_matches = log[-20:][::-1]
+    # --- Build Recent Matches Sorted by Timestamp ---
+    from datetime import datetime
+
+    def parse_time(entry):
+        ts = entry.get("timestamp", "")
+        try:
+            # real timestamp
+            return datetime.strptime(ts, "%Y-%m-%d %H:%M")
+        except:
+            # Handle missing or invalid timestamps
+            return datetime.min   # pushes old/no-timestamp entries to the bottom
+
+    # Sort all matches chronologically
+    log_sorted = sorted(log, key=parse_time)
+
+    # Take the last 20 (newest), then reverse so newest → oldest
+    recent_matches = log_sorted[-20:][::-1]
+
 
     # Render page
     return render_template(

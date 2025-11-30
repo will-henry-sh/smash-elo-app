@@ -109,19 +109,38 @@ for i, match in enumerate(match_log_sorted, start=1):
     )
 
     # Update ratings
+    # Update ratings
     players[p1][c1] = new1
     players[p2][c2] = new2
+
+    # Update diffs inside match log entry
+    match["new1"] = new1
+    match["new2"] = new2
+    match["diff1"] = new1 - old1
+    match["diff2"] = new2 - old2
 
     if i % 50 == 0:
         print(f"Processed {i}/{len(match_log_sorted)} matches...")
 
 
+
 # ------------------------
-# 4. SAVE NEW RESULTS
+# 4. SAVE NEW MATCH LOG + PLAYER RATINGS
 # ------------------------
+
+# Remove temporary timestamp field
+for m in match_log_sorted:
+    if "_parsed_time" in m:
+        del m["_parsed_time"]
+
+# Save new match log with updated ELO + diffs
+save_json(MATCH_LOG_FILE, match_log_sorted)
+
+# Save rebuilt player ratings
 save_json(DATA_FILE, players)
 
 print("\n=== REBUILD COMPLETE ===")
 print(f"Total players: {len(players)}")
 print(f"Total matches processed: {len(match_log_sorted)}")
 print("New leaderboard is now active.")
+
