@@ -1,64 +1,127 @@
 import json
 import os
 from datetime import datetime
-from app import calculate_elo  # uses your real elo function
 
+# Files
+DATA_FILE = "characters.json"
 MATCH_LOG_FILE = "match_log.json"
 
-def load_match_log():
-    if not os.path.exists(MATCH_LOG_FILE):
-        return []
-    with open(MATCH_LOG_FILE, "r") as f:
+# Import your ELO components from app.py
+from app import calculate_elo_custom, CHARACTERS, compute_global_elo
+
+
+def load_json(path, default):
+    if not os.path.exists(path):
+        return default
+    with open(path, "r") as f:
         return json.load(f)
 
-def save_match_log(log):
-    with open(MATCH_LOG_FILE, "w") as f:
-        json.dump(log, f, indent=4)
 
-def rebuild():
-    log = load_match_log()
-    if not log:
-        print("No match log found.")
-        return
+def save_json(path, data):
+    with open(path, "w") as f:
+        json.dump(data, f, indent=4)
 
-    print(f"Loaded {len(log)} matches — rebuilding ELO history...")
 
-    # Simulated ELO environment
-    ratings = {}  # { player: { character: elo } }
+print("=== REBUILDING ELO FROM MATCH HISTORY ===")
 
-    for m in log:
-        p1 = m["p1"]
-        c1 = m["c1"]
-        p2 = m["p2"]
-        c2 = m["c2"]
-        winner = m["winner"]
+# ------------------------
+# 1. LOAD DATA & BACKUP
+# ------------------------
+players = {}
+match_log = load_json(MATCH_LOG_FILE, [])
 
-        # Initialize missing ratings
-        ratings.setdefault(p1, {})
-        ratings.setdefault(p2, {})
-        ratings[p1].setdefault(c1, 1000)
-        ratings[p2].setdefault(c2, 1000)
+if not match_log:
+    print("No match history found. Cannot rebuild.")
+    exit(1)
 
-        old1 = ratings[p1][c1]
-        old2 = ratings[p2][c2]
+# Backup old files
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+os.system(f"cp {DATA_FILE} characters_backup_{timestamp}.json")
+os.system(f"cp {MATCH_LOG_FILE} match_log_backup_{timestamp}.json")
 
-        new1, new2 = calculate_elo(old1, old2, winner)
+print("Backups created.")
 
-        ratings[p1][c1] = new1
-        ratings[p2][c2] = new2
 
-        # Store reconstructed values
-        m["new1"] = new1
-        m["new2"] = new2
-        m["diff1"] = new1 - old1
-        m["diff2"] = new2 - old2
+# ------------------------
+# 2. RESET ALL RATINGS
+# ------------------------
+players = {}  # fully empty
+print("Ratings cleared. Beginning replay...")
 
-        # Add fake timestamps if missing (ordered oldest → newest)
-        if "timestamp" not in m:
-            m["timestamp"] = "Rebuilt " + datetime.now().strftime("%Y-%m-%d %H:%M")
 
-    save_match_log(log)
-    print("Rebuild complete! match_log.json now contains full ELO history.")
 
-if __name__ == "__main__":
-    rebuild()
+# ----------------------------------------
+# 3. SAFE CHRONOLOGICAL SORTING
+# ----------------------------------------
+fixed_matches = []
+fallback_start = datetime(2000, 1, 1, 0, 0)
+
+for index, m in enumerate(match_log):
+    ts = m.get("timestamp", "")
+
+    # Try to parse normally
+    try:
+        parsed = datetime.strptime(ts, "%Y-%m-%d %H:%M")
+    except Exception:
+        # Assign a synthetic timestamp so order is preserved
+        parsed = fallback_start.replace(
+            hour=(index // 60) % 24,
+            minute=index % 60
+        )
+        m["timestamp"] = "N/A"
+
+    m["_parsed_time"] = parsed
+    fixed_matches.append(m)
+
+match_log_sorted = sorted(fixed_matches, key=lambda m: m["_parsed_time"])
+
+
+
+for i, match in enumerate(match_log_sorted, start=1):
+    p1 = match["p1"]
+    c1 = match["c1"]
+    p2 = match["p2"]
+    c2 = match["c2"]
+    winner = match["winner"]
+
+    # Initialize players & characters at 1000
+    if p1 not in players:
+        players[p1] = {}
+    if p2 not in players:
+        players[p2] = {}
+    if c1 not in players[p1]:
+        players[p1][c1] = 1000
+    if c2 not in players[p2]:
+        players[p2][c2] = 1000
+
+    old1 = players[p1][c1]
+    old2 = players[p2][c2]
+
+    # Compute global ratings BEFORE this match
+    p1_global = compute_global_elo(p1, players)
+    p2_global = compute_global_elo(p2, players)
+
+    # Recompute match ELO using your new system
+    new1, new2 = calculate_elo_custom(
+        old1, old2,
+        p1_global, p2_global,
+        winner
+    )
+
+    # Update ratings
+    players[p1][c1] = new1
+    players[p2][c2] = new2
+
+    if i % 50 == 0:
+        print(f"Processed {i}/{len(match_log_sorted)} matches...")
+
+
+# ------------------------
+# 4. SAVE NEW RESULTS
+# ------------------------
+save_json(DATA_FILE, players)
+
+print("\n=== REBUILD COMPLETE ===")
+print(f"Total players: {len(players)}")
+print(f"Total matches processed: {len(match_log_sorted)}")
+print("New leaderboard is now active.")
