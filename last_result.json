@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Corrin",
-    "new1": 1019,
-    "diff1": 19,
+    "c1": "Roy",
+    "new1": 1080,
+    "diff1": 16,
     "p2": "Nick R",
-    "c2": "King Dedede",
-    "new2": 1062,
-    "diff2": -17,
+    "c2": "Chrom",
+    "new2": 1000,
+    "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Corrin",
-    "last_char2": "King Dedede"
+    "last_char1": "Roy",
+    "last_char2": "Chrom"
 }
