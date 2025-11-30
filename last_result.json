@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Piranha Plant",
-    "new1": 1012,
-    "diff1": -17,
+    "c1": "Pichu",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Will",
-    "c2": "Pyra/Mythra",
-    "new2": 1019,
-    "diff2": 19,
+    "c2": "Mewtwo",
+    "new2": 1018,
+    "diff2": 18,
     "last_player1": "Nick R",
     "last_player2": "Will",
-    "last_char1": "Piranha Plant",
-    "last_char2": "Pyra/Mythra"
+    "last_char1": "Pichu",
+    "last_char2": "Mewtwo"
 }
