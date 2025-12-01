@@ -5107,5 +5107,18 @@
         "diff2": -11,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-01 08:04",
+        "p1": "Colton",
+        "c1": "Toon Link",
+        "new1": 1177,
+        "diff1": 21,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
