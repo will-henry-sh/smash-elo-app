@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
-    "c1": "Sheik",
-    "new1": 1133,
-    "diff1": 14,
-    "p2": "Nick R",
-    "c2": "King Dedede",
-    "new2": 1000,
-    "diff2": 0,
-    "last_player1": "Will",
-    "last_player2": "Nick R",
-    "last_char1": "Sheik",
-    "last_char2": "King Dedede"
+    "p1": "Nick R",
+    "c1": "King Dedede",
+    "new1": 1019,
+    "diff1": 19,
+    "p2": "Nick W",
+    "c2": "Wii Fit Trainer",
+    "new2": 1011,
+    "diff2": -17,
+    "last_player1": "Nick R",
+    "last_player2": "Nick W",
+    "last_char1": "King Dedede",
+    "last_char2": "Wii Fit Trainer"
 }
