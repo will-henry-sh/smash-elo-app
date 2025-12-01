@@ -8,7 +8,7 @@
         "Hero": 1016,
         "Cloud": 1036,
         "Ice Climbers": 1021,
-        "King Dedede": 1008,
+        "King Dedede": 1000,
         "Sephiroth": 1000,
         "Marth": 1000,
         "Mr. Game and Watch": 1045,
@@ -63,7 +63,7 @@
         ]
     },
     "Will": {
-        "Ganondorf": 1470,
+        "Ganondorf": 1483,
         "Robin": 1297,
         "Wolf": 1045,
         "Incineroar": 1152,
