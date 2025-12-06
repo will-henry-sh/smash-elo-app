@@ -1,14 +1,14 @@
 {
-    "p1": "Colton",
-    "c1": "Yoshi",
-    "new1": 1036,
-    "diff1": 36,
+    "p1": "Nick W",
+    "c1": "Wii Fit Trainer",
+    "new1": 1190,
+    "diff1": -26,
     "p2": "Nick R",
-    "c2": "R.O.B",
-    "new2": 1014,
-    "diff2": -32,
-    "last_player1": "Colton",
+    "c2": "Byleth",
+    "new2": 1059,
+    "diff2": 29,
+    "last_player1": "Nick W",
     "last_player2": "Nick R",
-    "last_char1": "Yoshi",
-    "last_char2": "R.O.B"
+    "last_char1": "Wii Fit Trainer",
+    "last_char2": "Byleth"
 }
