@@ -299,7 +299,7 @@ def requires_auth(f):
 def badges():
     badges = [
         {"badge": "Ambition", "description": "Win (5/15/25) matches in a row"},
-        {"badge": "Defeatism", "description": "Lose 10 matches in a row"},
+        {"badge": "Drowning Lessons", "description": "Lose 10 matches in a row"},
         {"badge": "Game Set", "description": "Win (10/50/100/500) total matches) "},
         {"badge": "Dominator", "description": "Three-stock another player"},
         {"badge": "Devastator", "description": "Three-stock another player three times in a row in a set"},
@@ -528,7 +528,7 @@ def player_stats(name):
         "gameset4": "Win 500 total matches",
 
         # --- SINGLE ACHIEVEMENT BADGES ---
-        "defeatism": "Lose 10 matches in a row",
+        "drowning_lessons": "Lose 10 matches in a row",
         "bloodlust": "Beat three different players without losing a game",
         "dominator": "Three-stock another player",
         "devastator": "Three-stock another player three times in a row during one set",
