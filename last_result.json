@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Ganondorf",
-    "new1": 1663,
-    "diff1": 12,
+    "c1": "Incineroar",
+    "new1": 1204,
+    "diff1": 13,
     "p2": "Colton",
-    "c2": "Jigglypuff",
-    "new2": 1071,
-    "diff2": -11,
+    "c2": "Toon Link",
+    "new2": 1197,
+    "diff2": -12,
     "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "Ganondorf",
-    "last_char2": "Jigglypuff"
+    "last_char1": "Incineroar",
+    "last_char2": "Toon Link"
 }
