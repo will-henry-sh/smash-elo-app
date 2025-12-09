@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Greninja",
-    "new1": 1032,
-    "diff1": 26,
+    "c1": "Kazuya",
+    "new1": 1044,
+    "diff1": 14,
     "p2": "Nick R",
-    "c2": "Captain Falcon",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "R.O.B",
+    "new2": 1056,
+    "diff2": -13,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Greninja",
-    "last_char2": "Captain Falcon"
+    "last_char1": "Kazuya",
+    "last_char2": "R.O.B"
 }
