@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Kazuya",
-    "new1": 1044,
-    "diff1": 14,
-    "p2": "Nick R",
-    "c2": "R.O.B",
-    "new2": 1056,
-    "diff2": -13,
+    "c1": "Ganondorf",
+    "new1": 1663,
+    "diff1": 12,
+    "p2": "Colton",
+    "c2": "Jigglypuff",
+    "new2": 1071,
+    "diff2": -11,
     "last_player1": "Will",
-    "last_player2": "Nick R",
-    "last_char1": "Kazuya",
-    "last_char2": "R.O.B"
+    "last_player2": "Colton",
+    "last_char1": "Ganondorf",
+    "last_char2": "Jigglypuff"
 }
