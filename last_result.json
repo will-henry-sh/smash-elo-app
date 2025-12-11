@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Toon Link",
+    "c1": "Zelda",
     "new1": 1000,
-    "diff1": 0,
+    "diff1": -16,
     "p2": "Nick R",
-    "c2": "Toon Link",
-    "new2": 1114,
-    "diff2": 114,
+    "c2": "Zelda",
+    "new2": 1113,
+    "diff2": 113,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Toon Link",
-    "last_char2": "Toon Link"
+    "last_char1": "Zelda",
+    "last_char2": "Zelda"
 }
