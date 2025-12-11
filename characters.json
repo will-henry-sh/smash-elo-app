@@ -52,7 +52,8 @@
         "Falco": 1000,
         "Peach": 1000,
         "Toon Link": 1114,
-        "Zelda": 1113
+        "Zelda": 1113,
+        "Villager": 1000
     },
     "Nick W": {
         "Palutena": 1000,
@@ -136,7 +137,8 @@
         "Samus": 1000,
         "badges": [],
         "Richter": 1058,
-        "Ganondorf": 1060
+        "Ganondorf": 1060,
+        "Villager": 1054
     },
     "Mike": {
         "King K. Rool": 1047,

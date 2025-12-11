@@ -6459,5 +6459,18 @@
         "diff2": -54,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-11 08:03",
+        "p1": "Colton",
+        "c1": "Villager",
+        "new1": 1054,
+        "diff1": 54,
+        "p2": "Nick R",
+        "c2": "Villager",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
