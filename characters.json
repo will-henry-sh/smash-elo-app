@@ -23,7 +23,7 @@
         "Ike": 1000,
         "Bowser": 1006,
         "Steve": 1000,
-        "Ganondorf": 1064,
+        "Ganondorf": 1010,
         "Corrin": 1009,
         "Samus": 1048,
         "Dark Samus": 1000,
@@ -135,7 +135,8 @@
         "Captain Falcon": 1000,
         "Samus": 1000,
         "badges": [],
-        "Richter": 1058
+        "Richter": 1058,
+        "Ganondorf": 1060
     },
     "Mike": {
         "King K. Rool": 1047,

@@ -1,14 +1,14 @@
 {
     "p1": "Colton",
-    "c1": "Richter",
-    "new1": 1058,
-    "diff1": 58,
+    "c1": "Ganondorf",
+    "new1": 1060,
+    "diff1": 60,
     "p2": "Nick R",
-    "c2": "Richter",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Ganondorf",
+    "new2": 1010,
+    "diff2": -54,
     "last_player1": "Colton",
     "last_player2": "Nick R",
-    "last_char1": "Richter",
-    "last_char2": "Richter"
+    "last_char1": "Ganondorf",
+    "last_char2": "Ganondorf"
 }
