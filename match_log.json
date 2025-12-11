@@ -6368,5 +6368,18 @@
         "diff2": -12,
         "winner": "p1",
         "three_stock": true
+    },
+    {
+        "timestamp": "2025-12-11 07:33",
+        "p1": "Will",
+        "c1": "Captain Falcon",
+        "new1": 1093,
+        "diff1": 13,
+        "p2": "Nick R",
+        "c2": "R.O.B",
+        "new2": 1032,
+        "diff2": -12,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
