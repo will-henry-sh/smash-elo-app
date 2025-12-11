@@ -28,7 +28,7 @@
         "Samus": 1048,
         "Dark Samus": 1000,
         "Dr. Mario": 1072,
-        "Little Mac": 1000,
+        "Little Mac": 1111,
         "Pichu": 1000,
         "Byleth": 1134,
         "Richter": 1000,
@@ -121,7 +121,8 @@
         "Daisy": 1013,
         "Terry": 1013,
         "Pichu": 1013,
-        "Toon Link": 1000
+        "Toon Link": 1000,
+        "Little Mac": 1000
     },
     "Colton": {
         "Toon Link": 1197,
