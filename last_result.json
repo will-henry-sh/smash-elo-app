@@ -1,14 +1,14 @@
 {
-    "p1": "Colton",
-    "c1": "Yoshi",
-    "new1": 1001,
-    "diff1": -12,
-    "p2": "Will",
-    "c2": "Ridley",
-    "new2": 1017,
-    "diff2": 13,
-    "last_player1": "Colton",
-    "last_player2": "Will",
-    "last_char1": "Yoshi",
-    "last_char2": "Ridley"
+    "p1": "Will",
+    "c1": "Greninja",
+    "new1": 1071,
+    "diff1": 26,
+    "p2": "Nick R",
+    "c2": "R.O.B",
+    "new2": 1044,
+    "diff2": -12,
+    "last_player1": "Will",
+    "last_player2": "Nick R",
+    "last_char1": "Greninja",
+    "last_char2": "R.O.B"
 }
