@@ -57,7 +57,7 @@
     },
     "Nick W": {
         "Palutena": 1000,
-        "Wii Fit Trainer": 1096,
+        "Wii Fit Trainer": 1131,
         "Ike": 1000,
         "Fox": 1015,
         "Min Min": 1000,
@@ -139,7 +139,8 @@
         "badges": [],
         "Richter": 1058,
         "Ganondorf": 1060,
-        "Villager": 1054
+        "Villager": 1054,
+        "Fox": 1000
     },
     "Mike": {
         "King K. Rool": 1047,
