@@ -1,14 +1,14 @@
 {
-    "p1": "Colton",
-    "c1": "Dark Samus",
-    "new1": 1255,
-    "diff1": 31,
+    "p1": "Nick W",
+    "c1": "Wii Fit Trainer",
+    "new1": 1293,
+    "diff1": 35,
     "p2": "Nick R",
-    "c2": "Simon",
-    "new2": 1024,
-    "diff2": -28,
-    "last_player1": "Colton",
+    "c2": "Richter",
+    "new2": 1000,
+    "diff2": 0,
+    "last_player1": "Nick W",
     "last_player2": "Nick R",
-    "last_char1": "Dark Samus",
-    "last_char2": "Simon"
+    "last_char1": "Wii Fit Trainer",
+    "last_char2": "Richter"
 }
