@@ -1,14 +1,14 @@
 {
-    "p1": "Jeff",
-    "c1": "Byleth",
-    "new1": 1468,
-    "diff1": 113,
+    "p1": "Nick R",
+    "c1": "Simon",
+    "new1": 1011,
+    "diff1": -13,
     "p2": "Will",
-    "c2": "Wolf",
-    "new2": 1065,
-    "diff2": -102,
-    "last_player1": "Jeff",
+    "c2": "Captain Falcon",
+    "new2": 1120,
+    "diff2": 14,
+    "last_player1": "Nick R",
     "last_player2": "Will",
-    "last_char1": "Byleth",
-    "last_char2": "Wolf"
+    "last_char1": "Simon",
+    "last_char2": "Captain Falcon"
 }
