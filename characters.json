@@ -125,7 +125,8 @@
         "Toon Link": 1000,
         "Little Mac": 1000,
         "Ness": 1014,
-        "Mario": 1000
+        "Mario": 1000,
+        "Byleth": 1016
     },
     "Colton": {
         "Toon Link": 1334,
@@ -150,7 +151,7 @@
         "badges": []
     },
     "Jeff": {
-        "Byleth": 1442,
+        "Byleth": 1428,
         "Cloud": 1119,
         "badges": []
     },
