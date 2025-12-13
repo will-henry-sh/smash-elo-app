@@ -7421,5 +7421,18 @@
         "diff2": 32,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-13 10:35",
+        "p1": "Jeff",
+        "c1": "Byleth",
+        "new1": 1489,
+        "diff1": 34,
+        "p2": "Colton",
+        "c2": "Toon Link",
+        "new2": 1303,
+        "diff2": -31,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
