@@ -7460,5 +7460,18 @@
         "diff2": -22,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-13 10:48",
+        "p1": "Will",
+        "c1": "King K. Rool",
+        "new1": 1250,
+        "diff1": 14,
+        "p2": "Colton",
+        "c2": "Toon Link",
+        "new2": 1290,
+        "diff2": -13,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
