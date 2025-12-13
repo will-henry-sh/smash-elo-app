@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Lucina",
-    "new1": 1109,
-    "diff1": 17,
-    "p2": "Colton",
-    "c2": "Dark Samus",
-    "new2": 1362,
-    "diff2": -15,
+    "c1": "Ganondorf",
+    "new1": 1503,
+    "diff1": 12,
+    "p2": "Nick R",
+    "c2": "Young Link",
+    "new2": 1000,
+    "diff2": 0,
     "last_player1": "Will",
-    "last_player2": "Colton",
-    "last_char1": "Lucina",
-    "last_char2": "Dark Samus"
+    "last_player2": "Nick R",
+    "last_char1": "Ganondorf",
+    "last_char2": "Young Link"
 }
