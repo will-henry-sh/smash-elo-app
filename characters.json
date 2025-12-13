@@ -77,7 +77,7 @@
         "Captain Falcon": 1120,
         "Bowser": 1122,
         "Inkling": 1042,
-        "Sheik": 1046,
+        "Sheik": 1000,
         "Hero": 1099,
         "Roy": 1107,
         "King K. Rool": 1236,
@@ -128,7 +128,7 @@
         "Mario": 1000
     },
     "Colton": {
-        "Toon Link": 1270,
+        "Toon Link": 1334,
         "Jigglypuff": 1062,
         "Dark Samus": 1350,
         "Mario": 1087,
