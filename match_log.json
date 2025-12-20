@@ -7694,5 +7694,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-20 09:04",
+        "p1": "Will",
+        "c1": "Piranha Plant",
+        "new1": 1000,
+        "diff1": -34,
+        "p2": "Nick R",
+        "c2": "Bowser",
+        "new2": 1118,
+        "diff2": 112,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
