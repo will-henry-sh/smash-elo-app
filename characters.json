@@ -139,11 +139,8 @@
     "Fox": 1000,
     "Sora": 1000
   },
-  "Mike": {
-    "King K. Rool": 1047,
-    "Bowser Jr.": 1000,
-    "badges": []
-  },
+  "Mike": {},
+
   "Jeff": {
     "Byleth": 1489,
     "Cloud": 1119,
