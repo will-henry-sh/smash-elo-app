@@ -7681,5 +7681,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": true
+    },
+    {
+        "timestamp": "2025-12-20 09:02",
+        "p1": "Will",
+        "c1": "Falco",
+        "new1": 1074,
+        "diff1": 14,
+        "p2": "Nick R",
+        "c2": "Joker",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
