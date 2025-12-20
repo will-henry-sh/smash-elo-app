@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Greninja",
-    "new1": 1031,
-    "diff1": 17,
+    "c1": "Sheik",
+    "new1": 1019,
+    "diff1": 19,
     "p2": "Nick R",
-    "c2": "Sheik",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Min Min",
+    "new2": 1068,
+    "diff2": -17,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Greninja",
-    "last_char2": "Sheik"
+    "last_char1": "Sheik",
+    "last_char2": "Min Min"
 }
