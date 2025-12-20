@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Little Mac",
-    "new1": 1000,
-    "diff1": 0,
+    "c1": "Dr. Mario",
+    "new1": 1014,
+    "diff1": 14,
     "p2": "Nick R",
-    "c2": "Captain Falcon",
-    "new2": 1111,
-    "diff2": 111,
+    "c2": "Fox",
+    "new2": 1000,
+    "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Little Mac",
-    "last_char2": "Captain Falcon"
+    "last_char1": "Dr. Mario",
+    "last_char2": "Fox"
 }
