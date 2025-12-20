@@ -7967,5 +7967,18 @@
         "diff2": 116,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-20 11:13",
+        "p1": "Will",
+        "c1": "Incineroar",
+        "new1": 1256,
+        "diff1": 13,
+        "p2": "Jeff",
+        "c2": "Cloud",
+        "new2": 1347,
+        "diff2": -12,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
