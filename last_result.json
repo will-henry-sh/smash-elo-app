@@ -1,14 +1,14 @@
 {
     "p1": "Will",
     "c1": "Kirby",
-    "new1": 1014,
+    "new1": 1028,
     "diff1": 14,
     "p2": "Nick R",
-    "c2": "Young Link",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Ice Climbers",
+    "new2": 1008,
+    "diff2": -13,
     "last_player1": "Will",
     "last_player2": "Nick R",
     "last_char1": "Kirby",
-    "last_char2": "Young Link"
+    "last_char2": "Ice Climbers"
 }
