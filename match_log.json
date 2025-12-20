@@ -7759,5 +7759,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-20 09:34",
+        "p1": "Will",
+        "c1": "Sheik",
+        "new1": 1052,
+        "diff1": 17,
+        "p2": "Nick R",
+        "c2": "Pyra/Mythra",
+        "new2": 1032,
+        "diff2": -15,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
