@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Banjo & Kazooie",
-    "new1": 1029,
-    "diff1": 14,
+    "c1": "Meta Knight",
+    "new1": 1015,
+    "diff1": 15,
     "p2": "Nick R",
-    "c2": "Isabelle",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Byleth",
+    "new2": 1093,
+    "diff2": -14,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Banjo & Kazooie",
-    "last_char2": "Isabelle"
+    "last_char1": "Meta Knight",
+    "last_char2": "Byleth"
 }
