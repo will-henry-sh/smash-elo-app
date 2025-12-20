@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Wolf",
-    "new1": 1098,
-    "diff1": 15,
+    "c1": "Sonic",
+    "new1": 1017,
+    "diff1": 17,
     "p2": "Nick R",
-    "c2": "Young Link",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Samus",
+    "new2": 1033,
+    "diff2": -15,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Wolf",
-    "last_char2": "Young Link"
+    "last_char1": "Sonic",
+    "last_char2": "Samus"
 }

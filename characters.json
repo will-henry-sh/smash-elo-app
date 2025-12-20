@@ -25,7 +25,7 @@
         "Steve": 1000,
         "Ganondorf": 1010,
         "Corrin": 1009,
-        "Samus": 1048,
+        "Samus": 1033,
         "Dark Samus": 1000,
         "Dr. Mario": 1072,
         "Little Mac": 1111,
@@ -132,7 +132,8 @@
         "Mario": 1000,
         "Byleth": 1016,
         "Kirby": 1028,
-        "Dark Samus": 1028
+        "Dark Samus": 1028,
+        "Sonic": 1017
     },
     "Colton": {
         "Toon Link": 1290,
