@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
-    "c1": "Luigi",
-    "new1": 1000,
-    "diff1": 0,
+    "p1": "Jeff",
+    "c1": "Byleth",
+    "new1": 1463,
+    "diff1": -26,
     "p2": "Nick R",
-    "c2": "Pikachu",
-    "new2": 1065,
-    "diff2": 65,
-    "last_player1": "Will",
+    "c2": "King K. Rool",
+    "new2": 1029,
+    "diff2": 29,
+    "last_player1": "Jeff",
     "last_player2": "Nick R",
-    "last_char1": "Luigi",
-    "last_char2": "Pikachu"
+    "last_char1": "Byleth",
+    "last_char2": "King K. Rool"
 }
