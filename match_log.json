@@ -7811,5 +7811,18 @@
         "diff2": -15,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-20 10:16",
+        "p1": "Jeff",
+        "c1": "Cloud",
+        "new1": 1180,
+        "diff1": 61,
+        "p2": "Nick R",
+        "c2": "Rosalina and Luma",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
