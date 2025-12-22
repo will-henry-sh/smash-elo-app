@@ -8292,5 +8292,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-22 08:14",
+        "p1": "Will",
+        "c1": "Dark Samus",
+        "new1": 1132,
+        "diff1": 14,
+        "p2": "Colton",
+        "c2": "Toon Link",
+        "new2": 1265,
+        "diff2": -13,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
