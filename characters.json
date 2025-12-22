@@ -8,7 +8,7 @@
         "Hero": 1016,
         "Cloud": 1036,
         "Ice Climbers": 1008,
-        "King Dedede": 1055,
+        "King Dedede": 1073,
         "Sephiroth": 1018,
         "Marth": 1000,
         "Mr. Game and Watch": 1032,
@@ -156,7 +156,8 @@
         "Ganondorf": 1060,
         "Villager": 1054,
         "Fox": 1000,
-        "Sora": 1000
+        "Sora": 1000,
+        "Olimar": 1000
     },
     "Mike": {},
     "Jeff": {
