@@ -8461,5 +8461,18 @@
         "diff2": 13,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-22 09:12",
+        "p1": "Colton",
+        "c1": "Duck Hunt",
+        "new1": 1150,
+        "diff1": 53,
+        "p2": "Nick R",
+        "c2": "Rosalina and Luma",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
