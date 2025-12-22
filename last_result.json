@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
-    "c1": "Dark Samus",
-    "new1": 1158,
-    "diff1": 13,
+    "p1": "Jeff",
+    "c1": "Cloud",
+    "new1": 1429,
+    "diff1": 23,
     "p2": "Colton",
-    "c2": "Yoshi",
-    "new2": 1013,
-    "diff2": -12,
-    "last_player1": "Will",
+    "c2": "Mario",
+    "new2": 1066,
+    "diff2": -21,
+    "last_player1": "Jeff",
     "last_player2": "Colton",
-    "last_char1": "Dark Samus",
-    "last_char2": "Yoshi"
+    "last_char1": "Cloud",
+    "last_char2": "Mario"
 }
