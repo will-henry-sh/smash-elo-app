@@ -1,14 +1,14 @@
 {
     "p1": "Jeff",
     "c1": "Cloud",
-    "new1": 1465,
-    "diff1": 22,
+    "new1": 1418,
+    "diff1": -47,
     "p2": "Colton",
-    "c2": "Hero",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Byleth",
+    "new2": 1052,
+    "diff2": 52,
     "last_player1": "Jeff",
     "last_player2": "Colton",
     "last_char1": "Cloud",
-    "last_char2": "Hero"
+    "last_char2": "Byleth"
 }

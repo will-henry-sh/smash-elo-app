@@ -170,12 +170,13 @@
         "Link": 1057,
         "Chrom": 1057,
         "Young Link": 1054,
-        "Hero": 1000
+        "Hero": 1000,
+        "Byleth": 1052
     },
     "Mike": {},
     "Jeff": {
         "Byleth": 1479,
-        "Cloud": 1465,
+        "Cloud": 1418,
         "badges": []
     },
     "Nat": {
