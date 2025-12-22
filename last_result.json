@@ -1,14 +1,14 @@
 {
-    "p1": "Nick R",
-    "c1": "Squirtle",
-    "new1": 1000,
-    "diff1": 0,
-    "p2": "Will",
-    "c2": "Dark Samus",
-    "new2": 1057,
-    "diff2": 16,
-    "last_player1": "Nick R",
-    "last_player2": "Will",
-    "last_char1": "Squirtle",
-    "last_char2": "Dark Samus"
+    "p1": "Nick W",
+    "c1": "Wii Fit Trainer",
+    "new1": 1371,
+    "diff1": 55,
+    "p2": "Jeff",
+    "c2": "Cloud",
+    "new2": 1360,
+    "diff2": -50,
+    "last_player1": "Nick W",
+    "last_player2": "Jeff",
+    "last_char1": "Wii Fit Trainer",
+    "last_char2": "Cloud"
 }
