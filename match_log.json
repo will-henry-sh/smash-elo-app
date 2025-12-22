@@ -8565,5 +8565,18 @@
         "diff2": 55,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-22 09:53",
+        "p1": "Jeff",
+        "c1": "Cloud",
+        "new1": 1465,
+        "diff1": 22,
+        "p2": "Colton",
+        "c2": "Hero",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
