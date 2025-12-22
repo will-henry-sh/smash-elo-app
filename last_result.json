@@ -1,14 +1,14 @@
 {
-    "p1": "Colton",
-    "c1": "Young Link",
-    "new1": 1054,
-    "diff1": 54,
+    "p1": "Jeff",
+    "c1": "Cloud",
+    "new1": 1430,
+    "diff1": -26,
     "p2": "Nick R",
-    "c2": "Kirby",
-    "new2": 1000,
-    "diff2": 0,
-    "last_player1": "Colton",
+    "c2": "Ness",
+    "new2": 1043,
+    "diff2": 29,
+    "last_player1": "Jeff",
     "last_player2": "Nick R",
-    "last_char1": "Young Link",
-    "last_char2": "Kirby"
+    "last_char1": "Cloud",
+    "last_char2": "Ness"
 }
