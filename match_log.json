@@ -8448,5 +8448,18 @@
         "diff2": 16,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-22 09:03",
+        "p1": "Nick R",
+        "c1": "Bowser Jr.",
+        "new1": 1053,
+        "diff1": -12,
+        "p2": "Will",
+        "c2": "Ganondorf",
+        "new2": 1541,
+        "diff2": 13,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
