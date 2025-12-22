@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Ryu",
+    "c1": "Ness",
     "new1": 1014,
     "diff1": 14,
     "p2": "Nick W",
-    "c2": "Palutena",
+    "c2": "Ike",
     "new2": 1000,
     "diff2": 0,
     "last_player1": "Nick R",
     "last_player2": "Nick W",
-    "last_char1": "Ryu",
-    "last_char2": "Palutena"
+    "last_char1": "Ness",
+    "last_char2": "Ike"
 }
