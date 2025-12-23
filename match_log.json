@@ -8682,5 +8682,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-23 07:23",
+        "p1": "Nick R",
+        "c1": "Ness",
+        "new1": 1011,
+        "diff1": -32,
+        "p2": "Colton",
+        "c2": "Duck Hunt",
+        "new2": 1186,
+        "diff2": 36,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
