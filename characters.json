@@ -20,7 +20,7 @@
         "Luigi": 1012,
         "Mewtwo": 1000,
         "Roy": 1039,
-        "Ike": 1000,
+        "Ike": 1021,
         "Bowser": 1118,
         "Steve": 1018,
         "Ganondorf": 1163,
@@ -171,7 +171,8 @@
         "Chrom": 1057,
         "Young Link": 1054,
         "Hero": 1000,
-        "Byleth": 1052
+        "Byleth": 1052,
+        "Min Min": 1000
     },
     "Mike": {},
     "Jeff": {
