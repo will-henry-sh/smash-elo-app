@@ -35,7 +35,7 @@
         "Captain Falcon": 1211,
         "Terry": 1000,
         "Fox": 1000,
-        "R.O.B": 1076,
+        "R.O.B": 1062,
         "Sheik": 1000,
         "Yoshi": 1000,
         "badges": [
@@ -150,7 +150,8 @@
         "Jigglypuff": 1016,
         "Chrom": 1016,
         "Charizard": 1000,
-        "Mr. Game and Watch": 1032
+        "Mr. Game and Watch": 1032,
+        "Wii Fit Trainer": 1016
     },
     "Colton": {
         "Toon Link": 1285,
