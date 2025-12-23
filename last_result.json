@@ -1,14 +1,14 @@
 {
-    "p1": "Nick R",
-    "c1": "Ness",
-    "new1": 1011,
-    "diff1": -32,
+    "p1": "Will",
+    "c1": "Lucina",
+    "new1": 1063,
+    "diff1": 28,
     "p2": "Colton",
-    "c2": "Duck Hunt",
-    "new2": 1186,
-    "diff2": 36,
-    "last_player1": "Nick R",
+    "c2": "Byleth",
+    "new2": 1039,
+    "diff2": -13,
+    "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "Ness",
-    "last_char2": "Duck Hunt"
+    "last_char1": "Lucina",
+    "last_char2": "Byleth"
 }

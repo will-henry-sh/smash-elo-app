@@ -8695,5 +8695,18 @@
         "diff2": 36,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-23 07:26",
+        "p1": "Will",
+        "c1": "Lucina",
+        "new1": 1063,
+        "diff1": 28,
+        "p2": "Colton",
+        "c2": "Byleth",
+        "new2": 1039,
+        "diff2": -13,
+        "winner": "p1",
+        "three_stock": true
     }
 ]
