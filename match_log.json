@@ -8721,5 +8721,18 @@
         "diff2": -12,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-23 07:33",
+        "p1": "Nick R",
+        "c1": "Donkey Kong",
+        "new1": 1225,
+        "diff1": -57,
+        "p2": "Colton",
+        "c2": "Yoshi",
+        "new2": 1131,
+        "diff2": 63,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
