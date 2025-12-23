@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Ryu",
-    "new1": 1001,
-    "diff1": -13,
-    "p2": "Will",
-    "c2": "King K. Rool",
-    "new2": 1264,
-    "diff2": 14,
+    "c1": "Ike",
+    "new1": 1021,
+    "diff1": 21,
+    "p2": "Colton",
+    "c2": "Min Min",
+    "new2": 1000,
+    "diff2": 0,
     "last_player1": "Nick R",
-    "last_player2": "Will",
-    "last_char1": "Ryu",
-    "last_char2": "King K. Rool"
+    "last_player2": "Colton",
+    "last_char1": "Ike",
+    "last_char2": "Min Min"
 }
