@@ -1,7 +1,7 @@
 {
     "p1": "Will",
-    "c1": "Incineroar",
-    "new1": 1280,
+    "c1": "Meta Knight",
+    "new1": 1039,
     "diff1": 24,
     "p2": "Andreas",
     "c2": "Link",
@@ -9,6 +9,6 @@
     "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Andreas",
-    "last_char1": "Incineroar",
+    "last_char1": "Meta Knight",
     "last_char2": "Link"
 }
