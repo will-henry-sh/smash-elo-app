@@ -9319,5 +9319,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-24 09:41",
+        "p1": "Will",
+        "c1": "Rosalina and Luma",
+        "new1": 1015,
+        "diff1": 15,
+        "p2": "Nick R",
+        "c2": "Chrom",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
