@@ -1,7 +1,7 @@
 {
     "p1": "Will",
-    "c1": "Dr. Mario",
-    "new1": 1026,
+    "c1": "Greninja",
+    "new1": 1043,
     "diff1": 12,
     "p2": "Andreas",
     "c2": "Link",
@@ -9,6 +9,6 @@
     "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Andreas",
-    "last_char1": "Dr. Mario",
+    "last_char1": "Greninja",
     "last_char2": "Link"
 }
