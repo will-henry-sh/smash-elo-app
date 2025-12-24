@@ -9280,5 +9280,18 @@
         "diff2": 20,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-24 09:31",
+        "p1": "Will",
+        "c1": "Mewtwo",
+        "new1": 1083,
+        "diff1": 13,
+        "p2": "Jeff",
+        "c2": "Pikachu",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]

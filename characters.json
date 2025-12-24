@@ -123,7 +123,7 @@
         ],
         "Min Min": 1019,
         "Pyra/Mythra": 1019,
-        "Mewtwo": 1070,
+        "Mewtwo": 1083,
         "Donkey Kong": 1041,
         "Zero Suit Samus": 1018,
         "Samus": 1018,
@@ -163,7 +163,8 @@
     "Jeff": {
         "Byleth": 1691,
         "Cloud": 1410,
-        "badges": []
+        "badges": [],
+        "Pikachu": 1000
     },
     "Nat": {
         "Snake": 1000,
