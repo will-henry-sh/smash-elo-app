@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "R.O.B",
-    "new1": 1062,
-    "diff1": -14,
+    "c1": "Bayonetta",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Will",
-    "c2": "Lucina",
-    "new2": 1047,
-    "diff2": 16,
+    "c2": "Greninja",
+    "new2": 1058,
+    "diff2": 15,
     "last_player1": "Nick R",
     "last_player2": "Will",
-    "last_char1": "R.O.B",
-    "last_char2": "Lucina"
+    "last_char1": "Bayonetta",
+    "last_char2": "Greninja"
 }
