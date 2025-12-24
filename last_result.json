@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Ice Climbers",
-    "new1": 1066,
-    "diff1": 58,
+    "c1": "Daisy",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Jeff",
     "c2": "Byleth",
-    "new2": 1650,
-    "diff2": -52,
+    "new2": 1671,
+    "diff2": 21,
     "last_player1": "Nick R",
     "last_player2": "Jeff",
-    "last_char1": "Ice Climbers",
+    "last_char1": "Daisy",
     "last_char2": "Byleth"
 }
