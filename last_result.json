@@ -1,7 +1,7 @@
 {
     "p1": "Will",
-    "c1": "Lucina",
-    "new1": 1060,
+    "c1": "Ridley",
+    "new1": 1117,
     "diff1": 13,
     "p2": "Jeff",
     "c2": "Pikachu",
@@ -9,6 +9,6 @@
     "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Jeff",
-    "last_char1": "Lucina",
+    "last_char1": "Ridley",
     "last_char2": "Pikachu"
 }
