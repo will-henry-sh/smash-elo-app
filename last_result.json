@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Mr. Game and Watch",
-    "new1": 1014,
-    "diff1": -18,
+    "c1": "Ice Climbers",
+    "new1": 1066,
+    "diff1": 58,
     "p2": "Jeff",
     "c2": "Byleth",
-    "new2": 1702,
-    "diff2": 20,
+    "new2": 1650,
+    "diff2": -52,
     "last_player1": "Nick R",
     "last_player2": "Jeff",
-    "last_char1": "Mr. Game and Watch",
+    "last_char1": "Ice Climbers",
     "last_char2": "Byleth"
 }

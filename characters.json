@@ -7,7 +7,7 @@
         "Donkey Kong": 1351,
         "Hero": 1016,
         "Cloud": 1036,
-        "Ice Climbers": 1008,
+        "Ice Climbers": 1066,
         "King Dedede": 1055,
         "Sephiroth": 1018,
         "Marth": 1000,
@@ -160,7 +160,7 @@
     },
     "Mike": {},
     "Jeff": {
-        "Byleth": 1702,
+        "Byleth": 1650,
         "Cloud": 1410,
         "badges": []
     },
