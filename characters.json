@@ -30,7 +30,7 @@
         "Dr. Mario": 1072,
         "Little Mac": 1111,
         "Pichu": 1000,
-        "Byleth": 1070,
+        "Byleth": 1055,
         "Richter": 1027,
         "Captain Falcon": 1169,
         "Terry": 1000,
@@ -162,7 +162,7 @@
     },
     "Mike": {},
     "Jeff": {
-        "Byleth": 1786,
+        "Byleth": 1803,
         "Cloud": 1410,
         "badges": [],
         "Pikachu": 1000
