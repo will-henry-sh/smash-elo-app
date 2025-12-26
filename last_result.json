@@ -1,14 +1,14 @@
 {
-    "p1": "Colton",
-    "c1": "Duck Hunt",
-    "new1": 1146,
-    "diff1": 49,
+    "p1": "Will",
+    "c1": "Donkey Kong",
+    "new1": 1000,
+    "diff1": -41,
     "p2": "Nick R",
-    "c2": "Pyra/Mythra",
-    "new2": 1000,
-    "diff2": -32,
-    "last_player1": "Colton",
+    "c2": "Kirby",
+    "new2": 1109,
+    "diff2": 109,
+    "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Duck Hunt",
-    "last_char2": "Pyra/Mythra"
+    "last_char1": "Donkey Kong",
+    "last_char2": "Kirby"
 }
