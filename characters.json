@@ -106,7 +106,7 @@
         "Dr. Mario": 1026,
         "Marth": 1000,
         "Piranha Plant": 1000,
-        "Simon": 1013,
+        "Simon": 1026,
         "Isabelle": 1000,
         "Richter": 1000,
         "Shulk": 1000,
@@ -160,7 +160,8 @@
         "Ganondorf": 1060,
         "Villager": 1054,
         "Fox": 1000,
-        "Sora": 1000
+        "Sora": 1000,
+        "Sephiroth": 1000
     },
     "Mike": {},
     "Jeff": {
