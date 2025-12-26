@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
-    "c1": "Piranha Plant",
-    "new1": 1013,
-    "diff1": 13,
+    "p1": "Jeff",
+    "c1": "Byleth",
+    "new1": 1743,
+    "diff1": -56,
     "p2": "Colton",
-    "c2": "Roy",
-    "new2": 1000,
-    "diff2": 0,
-    "last_player1": "Will",
+    "c2": "Dark Samus",
+    "new2": 1424,
+    "diff2": 62,
+    "last_player1": "Jeff",
     "last_player2": "Colton",
-    "last_char1": "Piranha Plant",
-    "last_char2": "Roy"
+    "last_char1": "Byleth",
+    "last_char2": "Dark Samus"
 }
