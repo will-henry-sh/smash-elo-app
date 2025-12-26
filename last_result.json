@@ -1,14 +1,14 @@
 {
     "p1": "Colton",
-    "c1": "Jigglypuff",
-    "new1": 1129,
-    "diff1": -11,
+    "c1": "Bowser Jr.",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Will",
-    "c2": "Robin",
-    "new2": 1458,
-    "diff2": 12,
+    "c2": "Steve",
+    "new2": 1043,
+    "diff2": 13,
     "last_player1": "Colton",
     "last_player2": "Will",
-    "last_char1": "Jigglypuff",
-    "last_char2": "Robin"
+    "last_char1": "Bowser Jr.",
+    "last_char2": "Steve"
 }
