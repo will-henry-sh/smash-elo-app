@@ -9683,5 +9683,18 @@
         "diff2": 109,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-26 08:48",
+        "p1": "Will",
+        "c1": "Link",
+        "new1": 1037,
+        "diff1": 15,
+        "p2": "Nick R",
+        "c2": "Incineroar",
+        "new2": 1019,
+        "diff2": -14,
+        "winner": "p1",
+        "three_stock": false
     }
 ]

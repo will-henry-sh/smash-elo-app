@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Donkey Kong",
-    "new1": 1000,
-    "diff1": -41,
+    "c1": "Link",
+    "new1": 1037,
+    "diff1": 15,
     "p2": "Nick R",
-    "c2": "Kirby",
-    "new2": 1109,
-    "diff2": 109,
+    "c2": "Incineroar",
+    "new2": 1019,
+    "diff2": -14,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Donkey Kong",
-    "last_char2": "Kirby"
+    "last_char1": "Link",
+    "last_char2": "Incineroar"
 }
