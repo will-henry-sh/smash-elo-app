@@ -9735,5 +9735,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-27 07:42",
+        "p1": "Will",
+        "c1": "Greninja",
+        "new1": 1073,
+        "diff1": 15,
+        "p2": "Nick R",
+        "c2": "Yoshi",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
