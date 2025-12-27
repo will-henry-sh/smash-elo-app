@@ -56,7 +56,7 @@
         "Villager": 1000,
         "Mega Man": 1000,
         "Joker": 1000,
-        "Bowser Jr.": 1065,
+        "Bowser Jr.": 1130,
         "Jigglypuff": 1000,
         "Rosalina and Luma": 1000,
         "Pikachu": 1065,
@@ -147,7 +147,8 @@
         "Luigi": 1000,
         "Lucario": 1017,
         "Rosalina and Luma": 1015,
-        "Fox": 1013
+        "Fox": 1013,
+        "Ken": 1000
     },
     "Colton": {
         "Toon Link": 1365,

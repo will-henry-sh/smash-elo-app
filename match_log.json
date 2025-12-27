@@ -9709,5 +9709,18 @@
         "diff2": -14,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-27 07:35",
+        "p1": "Will",
+        "c1": "Ken",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Nick R",
+        "c2": "Bowser Jr.",
+        "new2": 1130,
+        "diff2": 65,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
