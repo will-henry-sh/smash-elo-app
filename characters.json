@@ -29,7 +29,7 @@
         "Dark Samus": 1000,
         "Dr. Mario": 1072,
         "Little Mac": 1111,
-        "Pichu": 1000,
+        "Pichu": 1018,
         "Byleth": 1022,
         "Richter": 1027,
         "Captain Falcon": 1169,
@@ -175,7 +175,8 @@
         "Sora": 1000,
         "Sephiroth": 1000,
         "Roy": 1000,
-        "Bowser Jr.": 1000
+        "Bowser Jr.": 1000,
+        "Palutena": 1000
     },
     "Mike": {},
     "Jeff": {
