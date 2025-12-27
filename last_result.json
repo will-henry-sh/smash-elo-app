@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
-    "c1": "Falco",
-    "new1": 1089,
-    "diff1": 15,
+    "p1": "Colton",
+    "c1": "Mario",
+    "new1": 1056,
+    "diff1": -19,
     "p2": "Nick R",
-    "c2": "Mega Man",
-    "new2": 1000,
-    "diff2": 0,
-    "last_player1": "Will",
+    "c2": "Terry",
+    "new2": 1021,
+    "diff2": 21,
+    "last_player1": "Colton",
     "last_player2": "Nick R",
-    "last_char1": "Falco",
-    "last_char2": "Mega Man"
+    "last_char1": "Mario",
+    "last_char2": "Terry"
 }
