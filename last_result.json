@@ -1,14 +1,14 @@
 {
-    "p1": "Nick R",
-    "c1": "Ness",
-    "new1": 1000,
-    "diff1": 0,
-    "p2": "Colton",
-    "c2": "Daisy",
-    "new2": 1060,
-    "diff2": 60,
-    "last_player1": "Nick R",
-    "last_player2": "Colton",
-    "last_char1": "Ness",
-    "last_char2": "Daisy"
+    "p1": "Nick W",
+    "c1": "Wii Fit Trainer",
+    "new1": 1367,
+    "diff1": -14,
+    "p2": "Jeff",
+    "c2": "Byleth",
+    "new2": 1693,
+    "diff2": 15,
+    "last_player1": "Nick W",
+    "last_player2": "Jeff",
+    "last_char1": "Wii Fit Trainer",
+    "last_char2": "Byleth"
 }
