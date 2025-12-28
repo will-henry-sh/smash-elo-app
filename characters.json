@@ -33,7 +33,7 @@
         "Byleth": 1022,
         "Richter": 1027,
         "Captain Falcon": 1169,
-        "Terry": 1021,
+        "Terry": 1000,
         "Fox": 1000,
         "R.O.B": 1012,
         "Sheik": 1000,
@@ -183,7 +183,7 @@
     "Mike": {},
     "Jeff": {
         "Byleth": 1708,
-        "Cloud": 1429,
+        "Cloud": 1463,
         "badges": [],
         "Pikachu": 1000
     },
