@@ -20,7 +20,7 @@
         "Luigi": 1000,
         "Mewtwo": 1000,
         "Roy": 1039,
-        "Ike": 1000,
+        "Ike": 1022,
         "Bowser": 1106,
         "Steve": 1000,
         "Ganondorf": 1010,
@@ -181,7 +181,8 @@
         "Daisy": 1060,
         "Lucas": 1060,
         "Peach": 1000,
-        "Falco": 1063
+        "Falco": 1063,
+        "Mega Man": 1000
     },
     "Mike": {},
     "Jeff": {
