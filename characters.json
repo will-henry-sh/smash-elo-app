@@ -35,7 +35,7 @@
         "Captain Falcon": 1169,
         "Terry": 1029,
         "Fox": 1000,
-        "R.O.B": 1012,
+        "R.O.B": 1000,
         "Sheik": 1000,
         "Yoshi": 1000,
         "badges": [
@@ -87,7 +87,7 @@
         "Isabelle": 1000
     },
     "Will": {
-        "Ganondorf": 1356,
+        "Ganondorf": 1369,
         "Robin": 1471,
         "Wolf": 1130,
         "Incineroar": 1293,
