@@ -17,7 +17,7 @@
         "Young Link": 1000,
         "Pyra/Mythra": 1000,
         "Ridley": 1000,
-        "Luigi": 1025,
+        "Luigi": 1000,
         "Mewtwo": 1000,
         "Roy": 1039,
         "Ike": 1000,
@@ -178,7 +178,8 @@
         "Roy": 1000,
         "Bowser Jr.": 1000,
         "Palutena": 1000,
-        "Daisy": 1060
+        "Daisy": 1060,
+        "Lucas": 1060
     },
     "Mike": {},
     "Jeff": {
