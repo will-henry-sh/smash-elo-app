@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
-    "c1": "Hero",
-    "new1": 1112,
-    "diff1": 13,
+    "p1": "Nick R",
+    "c1": "Joker",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Colton",
     "c2": "Duck Hunt",
-    "new2": 1134,
-    "diff2": -12,
-    "last_player1": "Will",
+    "new2": 1170,
+    "diff2": 36,
+    "last_player1": "Nick R",
     "last_player2": "Colton",
-    "last_char1": "Hero",
+    "last_char1": "Joker",
     "last_char2": "Duck Hunt"
 }
