@@ -10216,5 +10216,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-29 07:43",
+        "p1": "Will",
+        "c1": "Hero",
+        "new1": 1112,
+        "diff1": 13,
+        "p2": "Colton",
+        "c2": "Duck Hunt",
+        "new2": 1134,
+        "diff2": -12,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
