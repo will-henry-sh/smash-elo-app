@@ -1,14 +1,14 @@
 {
-    "p1": "Nick R",
-    "c1": "Terry",
-    "new1": 1029,
-    "diff1": 29,
-    "p2": "Jeff",
-    "c2": "Cloud",
-    "new2": 1437,
-    "diff2": -26,
-    "last_player1": "Nick R",
-    "last_player2": "Jeff",
-    "last_char1": "Terry",
-    "last_char2": "Cloud"
+    "p1": "Colton",
+    "c1": "Dark Samus",
+    "new1": 1349,
+    "diff1": -14,
+    "p2": "Will",
+    "c2": "Lucina",
+    "new2": 1076,
+    "diff2": 16,
+    "last_player1": "Colton",
+    "last_player2": "Will",
+    "last_char1": "Dark Samus",
+    "last_char2": "Lucina"
 }
