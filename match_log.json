@@ -10294,5 +10294,18 @@
         "diff2": 110,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-29 08:10",
+        "p1": "Will",
+        "c1": "Ice Climbers",
+        "new1": 1014,
+        "diff1": 14,
+        "p2": "Colton",
+        "c2": "Diddy Kong",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]

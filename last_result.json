@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Richter",
-    "new1": 1000,
-    "diff1": -15,
+    "c1": "Ice Climbers",
+    "new1": 1014,
+    "diff1": 14,
     "p2": "Colton",
-    "c2": "Jigglypuff",
-    "new2": 1215,
-    "diff2": 110,
+    "c2": "Diddy Kong",
+    "new2": 1000,
+    "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "Richter",
-    "last_char2": "Jigglypuff"
+    "last_char1": "Ice Climbers",
+    "last_char2": "Diddy Kong"
 }
