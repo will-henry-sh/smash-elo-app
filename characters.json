@@ -119,7 +119,7 @@
         "Isabelle": 1000,
         "Richter": 1015,
         "Shulk": 1019,
-        "Villager": 1000,
+        "Villager": 1013,
         "Mega Man": 1000,
         "King Dedede": 1000,
         "badges": [
@@ -182,7 +182,8 @@
         "Lucas": 1060,
         "Peach": 1000,
         "Falco": 1063,
-        "Mega Man": 1000
+        "Mega Man": 1000,
+        "Pichu": 1000
     },
     "Mike": {},
     "Jeff": {
