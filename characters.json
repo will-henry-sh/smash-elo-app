@@ -69,7 +69,7 @@
         "Robin": 1036,
         "Kirby": 1109,
         "Lucina": 1032,
-        "Wii Fit Trainer": 1092,
+        "Wii Fit Trainer": 1044,
         "Sonic": 1000,
         "Lucario": 1000,
         "Ness": 1000
@@ -186,7 +186,8 @@
         "Mega Man": 1000,
         "Pichu": 1000,
         "Diddy Kong": 1000,
-        "Link": 1037
+        "Link": 1037,
+        "Shulk": 1053
     },
     "Mike": {},
     "Jeff": {
