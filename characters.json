@@ -32,7 +32,7 @@
         "Pichu": 1018,
         "Byleth": 1022,
         "Richter": 1027,
-        "Captain Falcon": 1169,
+        "Captain Falcon": 1112,
         "Terry": 1029,
         "Fox": 1000,
         "R.O.B": 1000,
@@ -180,7 +180,8 @@
         "Palutena": 1000,
         "Daisy": 1060,
         "Lucas": 1060,
-        "Peach": 1000
+        "Peach": 1000,
+        "Falco": 1063
     },
     "Mike": {},
     "Jeff": {

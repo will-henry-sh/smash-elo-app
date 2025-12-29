@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Joker",
-    "new1": 1000,
-    "diff1": 0,
+    "c1": "Captain Falcon",
+    "new1": 1112,
+    "diff1": -57,
     "p2": "Colton",
-    "c2": "Duck Hunt",
-    "new2": 1170,
-    "diff2": 36,
+    "c2": "Falco",
+    "new2": 1063,
+    "diff2": 63,
     "last_player1": "Nick R",
     "last_player2": "Colton",
-    "last_char1": "Joker",
-    "last_char2": "Duck Hunt"
+    "last_char1": "Captain Falcon",
+    "last_char2": "Falco"
 }
