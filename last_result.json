@@ -1,14 +1,14 @@
 {
     "p1": "Colton",
-    "c1": "Daisy",
-    "new1": 1079,
-    "diff1": 19,
+    "c1": "Young Link",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Mike",
-    "c2": "King K. Rool",
-    "new2": 1306,
-    "diff2": -17,
+    "c2": "Banjo & Kazooie",
+    "new2": 1108,
+    "diff2": 108,
     "last_player1": "Colton",
     "last_player2": "Mike",
-    "last_char1": "Daisy",
-    "last_char2": "King K. Rool"
+    "last_char1": "Young Link",
+    "last_char2": "Banjo & Kazooie"
 }
