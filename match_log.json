@@ -10541,5 +10541,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-30 08:56",
+        "p1": "Colton",
+        "c1": "Meta Knight",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Nick R",
+        "c2": "Piranha Plant",
+        "new2": 1036,
+        "diff2": 24,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
