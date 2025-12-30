@@ -1,14 +1,14 @@
 {
     "p1": "Colton",
-    "c1": "Meta Knight",
-    "new1": 1000,
-    "diff1": 0,
+    "c1": "Toon Link",
+    "new1": 1517,
+    "diff1": 20,
     "p2": "Nick R",
     "c2": "Piranha Plant",
-    "new2": 1036,
-    "diff2": 24,
+    "new2": 1018,
+    "diff2": -18,
     "last_player1": "Colton",
     "last_player2": "Nick R",
-    "last_char1": "Meta Knight",
+    "last_char1": "Toon Link",
     "last_char2": "Piranha Plant"
 }
