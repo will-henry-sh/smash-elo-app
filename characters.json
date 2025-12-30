@@ -28,7 +28,7 @@
         "Samus": 1033,
         "Dark Samus": 1000,
         "Dr. Mario": 1072,
-        "Little Mac": 1111,
+        "Little Mac": 1123,
         "Pichu": 1018,
         "Byleth": 1022,
         "Richter": 1027,
@@ -189,7 +189,9 @@
         "Link": 1037,
         "Shulk": 1053
     },
-    "Mike": {},
+    "Mike": {
+        "King K. Rool": 1000
+    },
     "Jeff": {
         "Byleth": 1708,
         "Cloud": 1437,
