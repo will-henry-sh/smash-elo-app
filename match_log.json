@@ -10515,5 +10515,18 @@
         "diff2": -17,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-30 08:52",
+        "p1": "Colton",
+        "c1": "Young Link",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Mike",
+        "c2": "Banjo & Kazooie",
+        "new2": 1108,
+        "diff2": 108,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
