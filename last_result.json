@@ -1,14 +1,14 @@
 {
     "p1": "Colton",
-    "c1": "Mr. Game and Watch",
-    "new1": 1000,
-    "diff1": 0,
+    "c1": "Daisy",
+    "new1": 1079,
+    "diff1": 19,
     "p2": "Mike",
     "c2": "King K. Rool",
-    "new2": 1323,
-    "diff2": 60,
+    "new2": 1306,
+    "diff2": -17,
     "last_player1": "Colton",
     "last_player2": "Mike",
-    "last_char1": "Mr. Game and Watch",
+    "last_char1": "Daisy",
     "last_char2": "King K. Rool"
 }
