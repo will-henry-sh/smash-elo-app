@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Little Mac",
-    "new1": 1123,
-    "diff1": 12,
+    "c1": "Sonic",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Mike",
     "c2": "King K. Rool",
-    "new2": 1000,
-    "diff2": 0,
+    "new2": 1116,
+    "diff2": 116,
     "last_player1": "Nick R",
     "last_player2": "Mike",
-    "last_char1": "Little Mac",
+    "last_char1": "Sonic",
     "last_char2": "King K. Rool"
 }
