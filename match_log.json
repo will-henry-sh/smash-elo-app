@@ -10489,5 +10489,18 @@
         "diff2": 55,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-30 08:40",
+        "p1": "Colton",
+        "c1": "Mr. Game and Watch",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Mike",
+        "c2": "King K. Rool",
+        "new2": 1323,
+        "diff2": 60,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
