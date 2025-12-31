@@ -33,7 +33,7 @@
         "Byleth": 1022,
         "Richter": 1000,
         "Captain Falcon": 1112,
-        "Terry": 1029,
+        "Terry": 1015,
         "Fox": 1000,
         "R.O.B": 1052,
         "Sheik": 1000,
@@ -158,7 +158,8 @@
         "Charizard": 1015,
         "Bayonetta": 1000,
         "Jigglypuff": 1000,
-        "Ice Climbers": 1014
+        "Ice Climbers": 1014,
+        "Ryu": 1015
     },
     "Colton": {
         "Toon Link": 1504,
