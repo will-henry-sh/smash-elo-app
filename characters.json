@@ -29,7 +29,7 @@
         "Dark Samus": 1000,
         "Dr. Mario": 1072,
         "Little Mac": 1123,
-        "Pichu": 1000,
+        "Pichu": 1025,
         "Byleth": 1022,
         "Richter": 1000,
         "Captain Falcon": 1112,
@@ -192,7 +192,8 @@
         "Mr. Game and Watch": 1000,
         "Young Link": 1036,
         "Meta Knight": 1000,
-        "Zelda": 1036
+        "Zelda": 1036,
+        "Snake": 1000
     },
     "Mike": {
         "King K. Rool": 1306,
