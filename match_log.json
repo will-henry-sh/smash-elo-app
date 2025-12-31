@@ -10606,5 +10606,18 @@
         "diff2": 52,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2025-12-31 07:57",
+        "p1": "Colton",
+        "c1": "Dark Samus",
+        "new1": 1386,
+        "diff1": 24,
+        "p2": "Nick R",
+        "c2": "Pichu",
+        "new2": 1000,
+        "diff2": -18,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
