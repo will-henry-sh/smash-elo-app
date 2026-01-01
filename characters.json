@@ -4,7 +4,7 @@
         "Snake": 1131,
         "Min Min": 1068,
         "Palutena": 1000,
-        "Donkey Kong": 1333,
+        "Donkey Kong": 1346,
         "Hero": 1118,
         "Cloud": 1036,
         "Ice Climbers": 1066,
@@ -204,7 +204,8 @@
         "Byleth": 1673,
         "Cloud": 1437,
         "badges": [],
-        "Pikachu": 1000
+        "Pikachu": 1000,
+        "Ryu": 1000
     },
     "Nat": {
         "Snake": 1000,
