@@ -97,7 +97,7 @@
         "Greninja": 1039,
         "Ridley": 1158,
         "Captain Falcon": 1132,
-        "Bowser": 1175,
+        "Bowser": 1188,
         "Inkling": 1042,
         "Sheik": 1137,
         "Hero": 1112,
@@ -201,7 +201,8 @@
         "Ness": 1038,
         "Pit": 1049,
         "Ken": 1000,
-        "Dr. Mario": 1037
+        "Dr. Mario": 1037,
+        "Pyra/Mythra": 1000
     },
     "Mike": {
         "King K. Rool": 1306,
