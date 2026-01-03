@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Bowser",
-    "new1": 1188,
-    "diff1": 13,
+    "c1": "Ridley",
+    "new1": 1172,
+    "diff1": 14,
     "p2": "Colton",
-    "c2": "Pyra/Mythra",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Ness",
+    "new2": 1025,
+    "diff2": -13,
     "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "Bowser",
-    "last_char2": "Pyra/Mythra"
+    "last_char1": "Ridley",
+    "last_char2": "Ness"
 }

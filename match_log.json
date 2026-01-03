@@ -11230,5 +11230,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-03 09:00",
+        "p1": "Will",
+        "c1": "Ridley",
+        "new1": 1172,
+        "diff1": 14,
+        "p2": "Colton",
+        "c2": "Ness",
+        "new2": 1025,
+        "diff2": -13,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
