@@ -11100,5 +11100,18 @@
         "diff2": 19,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-03 07:48",
+        "p1": "Colton",
+        "c1": "Dark Samus",
+        "new1": 1354,
+        "diff1": -16,
+        "p2": "Will",
+        "c2": "Greninja",
+        "new2": 1039,
+        "diff2": 18,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
