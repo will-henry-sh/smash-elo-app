@@ -70,7 +70,7 @@
         "Kirby": 1109,
         "Lucina": 1110,
         "Wii Fit Trainer": 1044,
-        "Sonic": 1000,
+        "Sonic": 1027,
         "Lucario": 1000,
         "Ness": 1000,
         "Mario": 1000,
@@ -207,7 +207,8 @@
         "Dr. Mario": 1037,
         "Pyra/Mythra": 1000,
         "Steve": 1000,
-        "Corrin": 1034
+        "Corrin": 1034,
+        "Banjo & Kazooie": 1000
     },
     "Mike": {
         "King K. Rool": 1306,
