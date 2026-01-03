@@ -1,14 +1,14 @@
 {
-    "p1": "Colton",
-    "c1": "Dr. Mario",
-    "new1": 1037,
-    "diff1": 37,
+    "p1": "Will",
+    "c1": "Kazuya",
+    "new1": 1076,
+    "diff1": 17,
     "p2": "Nick R",
-    "c2": "Sora",
-    "new2": 1000,
-    "diff2": 0,
-    "last_player1": "Colton",
+    "c2": "Pichu",
+    "new2": 1130,
+    "diff2": -15,
+    "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Dr. Mario",
-    "last_char2": "Sora"
+    "last_char1": "Kazuya",
+    "last_char2": "Pichu"
 }
