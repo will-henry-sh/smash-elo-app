@@ -11308,5 +11308,18 @@
         "diff2": 34,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-03 09:59",
+        "p1": "Nick R",
+        "c1": "Pac-Man",
+        "new1": 1026,
+        "diff1": 26,
+        "p2": "Colton",
+        "c2": "Diddy Kong",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
