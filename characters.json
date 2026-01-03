@@ -112,7 +112,7 @@
         "Lucina": 1076,
         "Kazuya": 1000,
         "Zelda": 1000,
-        "Olimar": 1016,
+        "Olimar": 1030,
         "Wario": 1000,
         "Falco": 1019,
         "Dr. Mario": 1026,
@@ -202,7 +202,8 @@
         "Pit": 1049,
         "Ken": 1000,
         "Dr. Mario": 1037,
-        "Pyra/Mythra": 1000
+        "Pyra/Mythra": 1000,
+        "Steve": 1000
     },
     "Mike": {
         "King K. Rool": 1306,
