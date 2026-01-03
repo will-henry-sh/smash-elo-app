@@ -162,7 +162,8 @@
         "Jigglypuff": 1000,
         "Ice Climbers": 1014,
         "Ryu": 1015,
-        "Chrom": 1016
+        "Chrom": 1016,
+        "Dark Pit": 1015
     },
     "Colton": {
         "Toon Link": 1512,
@@ -175,7 +176,7 @@
         "Captain Falcon": 1000,
         "Samus": 1038,
         "badges": [],
-        "Richter": 1058,
+        "Richter": 1044,
         "Ganondorf": 1060,
         "Villager": 1054,
         "Fox": 1000,
