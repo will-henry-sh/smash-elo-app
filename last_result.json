@@ -2,13 +2,13 @@
     "p1": "Will",
     "c1": "Kazuya",
     "new1": 1000,
-    "diff1": -76,
+    "diff1": 0,
     "p2": "Colton",
-    "c2": "Jigglypuff",
-    "new2": 1253,
-    "diff2": 109,
+    "c2": "Lucas",
+    "new2": 1153,
+    "diff2": 106,
     "last_player1": "Will",
     "last_player2": "Colton",
     "last_char1": "Kazuya",
-    "last_char2": "Jigglypuff"
+    "last_char2": "Lucas"
 }
