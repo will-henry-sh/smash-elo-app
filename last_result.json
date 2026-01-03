@@ -1,14 +1,14 @@
 {
     "p1": "Colton",
-    "c1": "Pit",
-    "new1": 1049,
-    "diff1": 49,
+    "c1": "Ken",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Nick R",
-    "c2": "Zero Suit Samus",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Snake",
+    "new2": 1151,
+    "diff2": 20,
     "last_player1": "Colton",
     "last_player2": "Nick R",
-    "last_char1": "Pit",
-    "last_char2": "Zero Suit Samus"
+    "last_char1": "Ken",
+    "last_char2": "Snake"
 }
