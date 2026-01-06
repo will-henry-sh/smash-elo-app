@@ -1,14 +1,14 @@
 {
-    "p1": "Mike",
-    "c1": "King K. Rool",
-    "new1": 1529,
-    "diff1": -17,
+    "p1": "Will",
+    "c1": "Kazuya",
+    "new1": 1035,
+    "diff1": 16,
     "p2": "Nick R",
     "c2": "Terry",
-    "new2": 1082,
-    "diff2": 19,
-    "last_player1": "Mike",
+    "new2": 1068,
+    "diff2": -14,
+    "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "King K. Rool",
+    "last_char1": "Kazuya",
     "last_char2": "Terry"
 }
