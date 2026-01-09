@@ -6,9 +6,12 @@ import threading
 from functools import wraps
 from datetime import datetime
 from flask import Response
-from dotenv import load_dotenv
 
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    print("python-dotenv not installed, using environment variables directly")
 
 print("RUNNING FROM:", os.getcwd())
 print("APP FILE:", __file__)
@@ -35,9 +38,20 @@ def load_admin_credentials():
     admin_names_str = os.getenv('ADMIN_NAMES', '')
     admin_names = [name.strip() for name in admin_names_str.split(',') if name.strip()]
 
+    # Fallback to hardcoded credentials if environment variables not found
+    if not admin_users:
+        print("WARNING: No admin credentials found in environment variables, using fallback")
+        admin_users = {
+            "bunnyslave": "Letskill666",
+            "todaycowboy": "Heisrisen!",
+            "protodong": "Icecoffin666"
+        }
+        admin_names = ["Will", "Colton", "Nick R"]
+
     return admin_users, admin_names
 
 ADMIN_USERS, ADMIN_USERNAMES = load_admin_credentials()
+print(f"Loaded {len(ADMIN_USERS)} admin users")
 
 DECAY_START_DAYS = 14
 DECAY_PER_DAY = 2      # total global decay per day
