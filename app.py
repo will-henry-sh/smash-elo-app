@@ -44,7 +44,10 @@ def load_admin_credentials():
         admin_users = {
             "admin": "admin"
         }
-        admin_names = ["Admin"]
+
+    # Always use the original admin names for the key icons
+    if not admin_names:
+        admin_names = ["Will", "Colton", "Nick R"]
 
     return admin_users, admin_names
 
