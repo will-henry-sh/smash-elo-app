@@ -38,15 +38,8 @@ def load_admin_credentials():
     admin_names_str = os.getenv('ADMIN_NAMES', '')
     admin_names = [name.strip() for name in admin_names_str.split(',') if name.strip()]
 
-    # Fallback to hardcoded credentials if environment variables not found
     if not admin_users:
-        print("WARNING: No admin credentials found in environment variables, using fallback")
-        admin_users = {
-            "bunnyslave": "Letskill666",
-            "todaycowboy": "Heisrisen!",
-            "protodong": "Icecoffin666"
-        }
-        admin_names = ["Will", "Colton", "Nick R"]
+        raise ValueError("No admin credentials found! Please set ADMIN_USER_1, ADMIN_USER_2, etc. in your .env file")
 
     return admin_users, admin_names
 
