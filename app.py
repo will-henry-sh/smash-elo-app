@@ -38,8 +38,13 @@ def load_admin_credentials():
     admin_names_str = os.getenv('ADMIN_NAMES', '')
     admin_names = [name.strip() for name in admin_names_str.split(',') if name.strip()]
 
+    # Fallback to simple credentials if environment variables not found
     if not admin_users:
-        raise ValueError("No admin credentials found! Please set ADMIN_USER_1, ADMIN_USER_2, etc. in your .env file")
+        print("WARNING: No admin credentials found in environment variables, using default")
+        admin_users = {
+            "admin": "admin"
+        }
+        admin_names = ["Admin"]
 
     return admin_users, admin_names
 
