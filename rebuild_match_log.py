@@ -109,7 +109,6 @@ for i, match in enumerate(match_log_sorted, start=1):
     )
 
     # Update ratings
-    # Update ratings
     players[p1][c1] = new1
     players[p2][c2] = new2
 

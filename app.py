@@ -6,6 +6,9 @@ import threading
 from functools import wraps
 from datetime import datetime
 from flask import Response
+from dotenv import load_dotenv
+
+load_dotenv()
 
 print("RUNNING FROM:", os.getcwd())
 print("APP FILE:", __file__)
@@ -19,13 +22,22 @@ push_queue = []
 is_pushing = False
 push_log = []  # Stores recent push messages
 MAX_LOGS = 20
-# Admin login credentials
-ADMIN_USERS = {
-    "bunnyslave": "Letskill666",
-    "todaycowboy": "Heisrisen!",
-    "protodong": "Icecoffin666"
-}
-ADMIN_USERNAMES = ["Will", "Colton", "Nick R"]  # or ["Will", "YourOtherAdmins"]
+# Admin login credentials loaded from environment variables
+def load_admin_credentials():
+    """Load admin credentials from environment variables."""
+    admin_users = {}
+    for i in range(1, 10):  # Support up to 9 admin users
+        env_var = os.getenv(f'ADMIN_USER_{i}')
+        if env_var and ':' in env_var:
+            username, password = env_var.split(':', 1)
+            admin_users[username] = password
+
+    admin_names_str = os.getenv('ADMIN_NAMES', '')
+    admin_names = [name.strip() for name in admin_names_str.split(',') if name.strip()]
+
+    return admin_users, admin_names
+
+ADMIN_USERS, ADMIN_USERNAMES = load_admin_credentials()
 
 DECAY_START_DAYS = 14
 DECAY_PER_DAY = 2      # total global decay per day
@@ -566,9 +578,7 @@ def player_stats(name):
         if not os.path.exists(full_path):
             continue  # skip missing icons
 
-        # --- PRETTY NAME GENERATION ---
-        # --- PRETTY NAME GENERATION ---
-# Strip tier numbers from tiered badge names
+        # Strip tier numbers from tiered badge names
         base_id = ''.join(ch for ch in clean_id if not ch.isdigit())
 
         pretty = " ".join(word.capitalize() for word in base_id.split("_"))

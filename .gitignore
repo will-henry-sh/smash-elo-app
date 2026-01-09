@@ -10,3 +10,6 @@ venv/
 
 match_log.json
 last_result.json
+
+# Ignore environment variables
+.env
