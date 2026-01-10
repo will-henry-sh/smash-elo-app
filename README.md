@@ -132,6 +132,6 @@ Exportable stats and CSV downloads
 
 Improved badge visuals and animations
 
-License
+## License
 
 This project is for personal and educational use. Modify, extend, and experiment freely.
