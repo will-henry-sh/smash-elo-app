@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Dark Samus",
-    "new1": 1150,
-    "diff1": 18,
+    "c1": "Mewtwo",
+    "new1": 1123,
+    "diff1": 13,
     "p2": "Colton",
-    "c2": "Toon Link",
-    "new2": 1465,
-    "diff2": -16,
+    "c2": "Ness",
+    "new2": 1067,
+    "diff2": -12,
     "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "Dark Samus",
-    "last_char2": "Toon Link"
+    "last_char1": "Mewtwo",
+    "last_char2": "Ness"
 }

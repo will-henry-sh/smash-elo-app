@@ -11984,5 +11984,18 @@
         "diff2": -16,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-10 08:13",
+        "p1": "Will",
+        "c1": "Mewtwo",
+        "new1": 1123,
+        "diff1": 13,
+        "p2": "Colton",
+        "c2": "Ness",
+        "new2": 1067,
+        "diff2": -12,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
