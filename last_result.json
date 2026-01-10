@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "King K. Rool",
-    "new1": 1352,
+    "c1": "Incineroar",
+    "new1": 1306,
     "diff1": 13,
     "p2": "Colton",
-    "c2": "Yoshi",
-    "new2": 1051,
-    "diff2": -12,
+    "c2": "Pyra/Mythra",
+    "new2": 1000,
+    "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "King K. Rool",
-    "last_char2": "Yoshi"
+    "last_char1": "Incineroar",
+    "last_char2": "Pyra/Mythra"
 }
