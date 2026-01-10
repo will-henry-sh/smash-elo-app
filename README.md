@@ -38,22 +38,22 @@ Optional modifiers support streaks, decay, or custom tuning
 The ELO logic lives in a dedicated module, making it easy to tweak formulas without touching the rest of the app.
 
 ## Project Structure
+
+```text
 smash-elo-app/
-│
-├── app.py                  # Flask entry point
-├── elo.py                  # ELO calculation logic
+├── app.py                # Flask entry point
+├── elo.py                # ELO calculation logic
 ├── data/
-│   ├── players.json        # Player data
-│   ├── match_log.json      # Match history
-│   └── badges.json         # Badge definitions
-│
-├── templates/              # Jinja HTML templates
+│   ├── players.json      # Player data
+│   ├── match_log.json    # Match history
+│   └── badges.json       # Badge definitions
+├── templates/            # Jinja HTML templates
 ├── static/
-│   ├── css/                # Stylesheets
-│   ├── js/                 # Frontend logic
-│   └── images/             # Icons and badges
-│
+│   ├── css/              # Stylesheets
+│   ├── js/               # Frontend logic
+│   └── images/           # Icons and badges
 └── README.md
+```
 
 ## Running the App Locally
 
