@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Incineroar",
-    "new1": 1306,
-    "diff1": 13,
+    "c1": "Dark Samus",
+    "new1": 1150,
+    "diff1": 18,
     "p2": "Colton",
-    "c2": "Pyra/Mythra",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Toon Link",
+    "new2": 1465,
+    "diff2": -16,
     "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "Incineroar",
-    "last_char2": "Pyra/Mythra"
+    "last_char1": "Dark Samus",
+    "last_char2": "Toon Link"
 }
