@@ -668,9 +668,11 @@ def compute_global_elo(player_name, players_data):
 
 
 
-@app.route("/add_match", methods=["POST"])
+@app.route("/add_match", methods=["GET", "POST"])
 @requires_auth
 def add_match():
+    if request.method == "GET":
+        return redirect(url_for("matches"))
 
     p1 = request.form["player1"]
     c1 = request.form["p1_character"]
