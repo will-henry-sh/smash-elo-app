@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Sheik",
-    "new1": 1150,
+    "c1": "King K. Rool",
+    "new1": 1352,
     "diff1": 13,
     "p2": "Colton",
-    "c2": "Inkling",
-    "new2": 1007,
+    "c2": "Yoshi",
+    "new2": 1051,
     "diff2": -12,
     "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "Sheik",
-    "last_char2": "Inkling"
+    "last_char1": "King K. Rool",
+    "last_char2": "Yoshi"
 }
