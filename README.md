@@ -6,33 +6,22 @@ This project is designed as a personal tool rather than a commercial platform, p
 
 ## Features
 
-ELO-based ranking system for Smash Ultimate players
+- ELO-based ranking system for Smash Ultimate players
+- Match logging with automatic rating updates
+- Player leaderboard sorted by current ELO
+- Individual player pages with match history and stats
+- Badge and achievement system
+- Lightweight UI with mobile support
+- JSON-backed data storage synced to GitHub
 
-Match logging with automatic rating updates
+## Tech Stack
 
-Player leaderboard sorted by current ELO
-
-Individual player pages with match history and stats
-
-Badge and achievement system
-
-Lightweight UI with mobile support
-
-JSON-backed data storage synced to GitHub
-
-Tech Stack
-
-Python
-
-Flask
-
-HTML / CSS
-
-JavaScript
-
-JSON for persistent data
-
-GitHub for versioned storage and sync
+- Python
+- Flask
+- HTML / CSS
+- JavaScript
+- JSON
+- GitHub for versioned storage and sync
 
 ## How the ELO System Works
 
@@ -88,7 +77,6 @@ pip install flask
 ### Run the app:
 
 python app.py
-
 
 Visit http://127.0.0.1:5000 in your browser.
 
