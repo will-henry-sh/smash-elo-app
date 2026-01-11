@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
-    "c1": "Ice Climbers",
-    "new1": 1000,
-    "diff1": -14,
-    "p2": "Nick R",
-    "c2": "Ice Climbers",
-    "new2": 1171,
-    "diff2": 105,
-    "last_player1": "Will",
-    "last_player2": "Nick R",
-    "last_char1": "Ice Climbers",
-    "last_char2": "Ice Climbers"
+    "p1": "Nick R",
+    "c1": "R.O.B",
+    "new1": 1054,
+    "diff1": 15,
+    "p2": "Nick W",
+    "c2": "Wii Fit Trainer",
+    "new2": 1374,
+    "diff2": -14,
+    "last_player1": "Nick R",
+    "last_player2": "Nick W",
+    "last_char1": "R.O.B",
+    "last_char2": "Wii Fit Trainer"
 }
