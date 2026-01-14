@@ -12127,5 +12127,18 @@
         "diff2": 15,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-14 04:22",
+        "p1": "Colton",
+        "c1": "Toon Link",
+        "new1": 1450,
+        "diff1": -15,
+        "p2": "Will",
+        "c2": "Captain Falcon",
+        "new2": 1149,
+        "diff2": 17,
+        "winner": "p2",
+        "three_stock": false
     }
 ]

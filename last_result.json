@@ -1,14 +1,14 @@
 {
-    "p1": "Nick R",
-    "c1": "Pichu",
-    "new1": 1091,
-    "diff1": -14,
+    "p1": "Colton",
+    "c1": "Toon Link",
+    "new1": 1450,
+    "diff1": -15,
     "p2": "Will",
-    "c2": "Kazuya",
-    "new2": 1070,
-    "diff2": 15,
-    "last_player1": "Nick R",
+    "c2": "Captain Falcon",
+    "new2": 1149,
+    "diff2": 17,
+    "last_player1": "Colton",
     "last_player2": "Will",
-    "last_char1": "Pichu",
-    "last_char2": "Kazuya"
+    "last_char1": "Toon Link",
+    "last_char2": "Captain Falcon"
 }
