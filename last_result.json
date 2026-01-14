@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
     "c1": "Pichu",
-    "new1": 1105,
-    "diff1": -12,
+    "new1": 1091,
+    "diff1": -14,
     "p2": "Will",
-    "c2": "Ganondorf",
-    "new2": 1439,
-    "diff2": 26,
+    "c2": "Kazuya",
+    "new2": 1070,
+    "diff2": 15,
     "last_player1": "Nick R",
     "last_player2": "Will",
     "last_char1": "Pichu",
-    "last_char2": "Ganondorf"
+    "last_char2": "Kazuya"
 }
