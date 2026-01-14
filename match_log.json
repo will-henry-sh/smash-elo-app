@@ -12140,5 +12140,18 @@
         "diff2": 17,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-14 04:26",
+        "p1": "Colton",
+        "c1": "Yoshi",
+        "new1": 1039,
+        "diff1": -12,
+        "p2": "Will",
+        "c2": "Ike",
+        "new2": 1128,
+        "diff2": 13,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
