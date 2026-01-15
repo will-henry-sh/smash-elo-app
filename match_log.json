@@ -12218,5 +12218,18 @@
         "diff2": -13,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-15 22:21",
+        "p1": "Mike",
+        "c1": "Greninja",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Nick W",
+        "c2": "Pichu",
+        "new2": 1066,
+        "diff2": 66,
+        "winner": "p2",
+        "three_stock": true
     }
 ]
