@@ -29,7 +29,7 @@
         "Dark Samus": 1000,
         "Dr. Mario": 1072,
         "Little Mac": 1123,
-        "Pichu": 1006,
+        "Pichu": 1000,
         "Byleth": 1011,
         "Richter": 1000,
         "Captain Falcon": 1112,
@@ -167,7 +167,8 @@
         "Chrom": 1016,
         "Dark Pit": 1015,
         "Bowser Jr.": 1015,
-        "Sephiroth": 1019
+        "Sephiroth": 1019,
+        "Mr. Game and Watch": 1014
     },
     "Colton": {
         "Toon Link": 1450,
