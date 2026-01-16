@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Greninja",
-    "new1": 1081,
-    "diff1": 15,
-    "p2": "Colton",
-    "c2": "Dark Samus",
-    "new2": 1365,
-    "diff2": -14,
+    "c1": "Terry",
+    "new1": 1000,
+    "diff1": -25,
+    "p2": "Nick R",
+    "c2": "King Dedede",
+    "new2": 1165,
+    "diff2": 110,
     "last_player1": "Will",
-    "last_player2": "Colton",
-    "last_char1": "Greninja",
-    "last_char2": "Dark Samus"
+    "last_player2": "Nick R",
+    "last_char1": "Terry",
+    "last_char2": "King Dedede"
 }
