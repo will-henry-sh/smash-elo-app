@@ -12400,5 +12400,18 @@
         "diff2": -12,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-16 05:34",
+        "p1": "Mike",
+        "c1": "King K. Rool",
+        "new1": 1515,
+        "diff1": -14,
+        "p2": "Colton",
+        "c2": "Dark Samus",
+        "new2": 1381,
+        "diff2": 16,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
