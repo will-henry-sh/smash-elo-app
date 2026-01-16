@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Pac-Man",
-    "new1": 1014,
-    "diff1": 14,
-    "p2": "Mike",
-    "c2": "King K. Rool",
-    "new2": 1715,
-    "diff2": -13,
+    "c1": "Robin",
+    "new1": 1572,
+    "diff1": 12,
+    "p2": "Colton",
+    "c2": "Jigglypuff",
+    "new2": 1269,
+    "diff2": -11,
     "last_player1": "Will",
-    "last_player2": "Mike",
-    "last_char1": "Pac-Man",
-    "last_char2": "King K. Rool"
+    "last_player2": "Colton",
+    "last_char1": "Robin",
+    "last_char2": "Jigglypuff"
 }
