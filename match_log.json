@@ -12387,5 +12387,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-16 05:29",
+        "p1": "Will",
+        "c1": "King K. Rool",
+        "new1": 1378,
+        "diff1": 13,
+        "p2": "Nick R",
+        "c2": "Terry",
+        "new2": 1052,
+        "diff2": -12,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
