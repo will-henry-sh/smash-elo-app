@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Mr. Game and Watch",
-    "new1": 1027,
-    "diff1": 13,
+    "c1": "Fox",
+    "new1": 1000,
+    "diff1": -28,
     "p2": "Colton",
-    "c2": "Yoshi",
-    "new2": 1054,
-    "diff2": -12,
+    "c2": "Jigglypuff",
+    "new2": 1378,
+    "diff2": 109,
     "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "Mr. Game and Watch",
-    "last_char2": "Yoshi"
+    "last_char1": "Fox",
+    "last_char2": "Jigglypuff"
 }
