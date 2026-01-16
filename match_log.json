@@ -12504,5 +12504,18 @@
         "diff2": -13,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-16 06:26",
+        "p1": "Will",
+        "c1": "Pac-Man",
+        "new1": 1014,
+        "diff1": 14,
+        "p2": "Mike",
+        "c2": "King K. Rool",
+        "new2": 1715,
+        "diff2": -13,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
