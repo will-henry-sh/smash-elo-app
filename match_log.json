@@ -12530,5 +12530,18 @@
         "diff2": -11,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-16 06:36",
+        "p1": "Will",
+        "c1": "Mr. Game and Watch",
+        "new1": 1027,
+        "diff1": 13,
+        "p2": "Colton",
+        "c2": "Yoshi",
+        "new2": 1054,
+        "diff2": -12,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
