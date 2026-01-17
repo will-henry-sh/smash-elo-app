@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
+    "p1": "Nick R",
     "c1": "Ganondorf",
-    "new1": 1477,
-    "diff1": 13,
-    "p2": "Colton",
-    "c2": "Dark Samus",
-    "new2": 1369,
-    "diff2": -12,
-    "last_player1": "Will",
-    "last_player2": "Colton",
+    "new1": 1022,
+    "diff1": 12,
+    "p2": "Talmage",
+    "c2": "King K. Rool",
+    "new2": 1000,
+    "diff2": 0,
+    "last_player1": "Nick R",
+    "last_player2": "Talmage",
     "last_char1": "Ganondorf",
-    "last_char2": "Dark Samus"
+    "last_char2": "King K. Rool"
 }
