@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Cloud",
-    "new1": 1048,
+    "c1": "Captain Falcon",
+    "new1": 1112,
     "diff1": 12,
     "p2": "Talmage",
-    "c2": "King K. Rool",
+    "c2": "King Dedede",
     "new2": 1000,
     "diff2": 0,
     "last_player1": "Nick R",
     "last_player2": "Talmage",
-    "last_char1": "Cloud",
-    "last_char2": "King K. Rool"
+    "last_char1": "Captain Falcon",
+    "last_char2": "King Dedede"
 }

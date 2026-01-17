@@ -32,7 +32,7 @@
         "Pichu": 1000,
         "Byleth": 1011,
         "Richter": 1000,
-        "Captain Falcon": 1100,
+        "Captain Falcon": 1112,
         "Terry": 1052,
         "Fox": 1000,
         "R.O.B": 1042,
@@ -264,6 +264,7 @@
         "Link": 1000
     },
     "Talmage": {
-        "King K. Rool": 1000
+        "King K. Rool": 1000,
+        "King Dedede": 1000
     }
 }
