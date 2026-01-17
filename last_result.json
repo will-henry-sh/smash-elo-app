@@ -1,7 +1,7 @@
 {
     "p1": "Nick R",
-    "c1": "Captain Falcon",
-    "new1": 1112,
+    "c1": "Olimar",
+    "new1": 1012,
     "diff1": 12,
     "p2": "Talmage",
     "c2": "King Dedede",
@@ -9,6 +9,6 @@
     "diff2": 0,
     "last_player1": "Nick R",
     "last_player2": "Talmage",
-    "last_char1": "Captain Falcon",
+    "last_char1": "Olimar",
     "last_char2": "King Dedede"
 }
