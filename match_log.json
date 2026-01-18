@@ -12738,5 +12738,18 @@
         "diff2": 14,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-18 07:46",
+        "p1": "Nick R",
+        "c1": "Banjo & Kazooie",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Will",
+        "c2": "Samus",
+        "new2": 1032,
+        "diff2": 14,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
