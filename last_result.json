@@ -1,14 +1,14 @@
 {
-    "p1": "Colton",
-    "c1": "Pyra/Mythra",
-    "new1": 1000,
-    "diff1": 0,
+    "p1": "Will",
+    "c1": "Robin",
+    "new1": 1584,
+    "diff1": 12,
     "p2": "Nick R",
-    "c2": "King Dedede",
-    "new2": 1222,
-    "diff2": 19,
-    "last_player1": "Colton",
+    "c2": "Pichu",
+    "new2": 1000,
+    "diff2": 0,
+    "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Pyra/Mythra",
-    "last_char2": "King Dedede"
+    "last_char1": "Robin",
+    "last_char2": "Pichu"
 }
