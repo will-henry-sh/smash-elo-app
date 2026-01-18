@@ -12686,5 +12686,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-18 07:27",
+        "p1": "Nick R",
+        "c1": "Hero",
+        "new1": 1227,
+        "diff1": 109,
+        "p2": "Will",
+        "c2": "Hero",
+        "new2": 1014,
+        "diff2": -98,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
