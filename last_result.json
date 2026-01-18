@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Donkey Kong",
-    "new1": 1332,
-    "diff1": -15,
+    "c1": "King Dedede",
+    "new1": 1125,
+    "diff1": -14,
     "p2": "Will",
-    "c2": "Mewtwo",
-    "new2": 1155,
-    "diff2": 17,
+    "c2": "Dr. Mario",
+    "new2": 1041,
+    "diff2": 15,
     "last_player1": "Nick R",
     "last_player2": "Will",
-    "last_char1": "Donkey Kong",
-    "last_char2": "Mewtwo"
+    "last_char1": "King Dedede",
+    "last_char2": "Dr. Mario"
 }
