@@ -1,14 +1,14 @@
 {
-    "p1": "Nick R",
-    "c1": "King Dedede",
-    "new1": 1084,
-    "diff1": -32,
+    "p1": "Will",
+    "c1": "Greninja",
+    "new1": 1025,
+    "diff1": -56,
     "p2": "Colton",
-    "c2": "Duck Hunt",
-    "new2": 1176,
-    "diff2": 35,
-    "last_player1": "Nick R",
+    "c2": "Toon Link",
+    "new2": 1546,
+    "diff2": 62,
+    "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "King Dedede",
-    "last_char2": "Duck Hunt"
+    "last_char1": "Greninja",
+    "last_char2": "Toon Link"
 }

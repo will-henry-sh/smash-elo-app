@@ -12855,5 +12855,18 @@
         "diff2": 35,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-18 08:25",
+        "p1": "Will",
+        "c1": "Greninja",
+        "new1": 1025,
+        "diff1": -56,
+        "p2": "Colton",
+        "c2": "Toon Link",
+        "new2": 1546,
+        "diff2": 62,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
