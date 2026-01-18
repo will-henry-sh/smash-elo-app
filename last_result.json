@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
     "c1": "King Dedede",
-    "new1": 1116,
-    "diff1": -51,
+    "new1": 1084,
+    "diff1": -32,
     "p2": "Colton",
-    "c2": "Samus",
-    "new2": 1095,
-    "diff2": 57,
+    "c2": "Duck Hunt",
+    "new2": 1176,
+    "diff2": 35,
     "last_player1": "Nick R",
     "last_player2": "Colton",
     "last_char1": "King Dedede",
-    "last_char2": "Samus"
+    "last_char2": "Duck Hunt"
 }
