@@ -114,7 +114,7 @@
         "Banjo & Kazooie": 1029,
         "Lucina": 1120,
         "Kazuya": 1070,
-        "Zelda": 1000,
+        "Zelda": 1013,
         "Olimar": 1030,
         "Wario": 1000,
         "Falco": 1033,
@@ -214,7 +214,8 @@
         "Steve": 1000,
         "Corrin": 1034,
         "Banjo & Kazooie": 1000,
-        "Inkling": 1000
+        "Inkling": 1000,
+        "King Dedede": 1000
     },
     "Mike": {
         "King K. Rool": 1715,
