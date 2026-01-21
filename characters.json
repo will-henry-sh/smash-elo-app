@@ -69,7 +69,7 @@
         "Robin": 1036,
         "Kirby": 1109,
         "Lucina": 1069,
-        "Wii Fit Trainer": 1070,
+        "Wii Fit Trainer": 1057,
         "Sonic": 1027,
         "Lucario": 1000,
         "Ness": 1000,
@@ -176,7 +176,8 @@
         "Pac-Man": 1014,
         "Diddy Kong": 1000,
         "Peach": 1000,
-        "Palutena": 1014
+        "Palutena": 1014,
+        "Wii Fit Trainer": 1028
     },
     "Colton": {
         "Toon Link": 1533,
