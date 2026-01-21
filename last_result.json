@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
-    "c1": "Ridley",
-    "new1": 1280,
-    "diff1": 14,
-    "p2": "Nick R",
-    "c2": "King Dedede",
-    "new2": 1194,
-    "diff2": -13,
-    "last_player1": "Will",
-    "last_player2": "Nick R",
-    "last_char1": "Ridley",
-    "last_char2": "King Dedede"
+    "p1": "Nick R",
+    "c1": "King Dedede",
+    "new1": 1224,
+    "diff1": 30,
+    "p2": "Colton",
+    "c2": "Jigglypuff",
+    "new2": 1337,
+    "diff2": -27,
+    "last_player1": "Nick R",
+    "last_player2": "Colton",
+    "last_char1": "King Dedede",
+    "last_char2": "Jigglypuff"
 }
