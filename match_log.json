@@ -13531,5 +13531,18 @@
         "diff2": -13,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-23 08:09",
+        "p1": "Nick R",
+        "c1": "Donkey Kong",
+        "new1": 1402,
+        "diff1": 14,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 1554,
+        "diff2": -13,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
