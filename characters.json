@@ -35,7 +35,7 @@
         "Captain Falcon": 1087,
         "Terry": 1076,
         "Fox": 1000,
-        "R.O.B": 1042,
+        "R.O.B": 1055,
         "Sheik": 1000,
         "Yoshi": 1000,
         "badges": [
@@ -93,7 +93,8 @@
         "Pichu": 1066,
         "Byleth": 1000,
         "King Dedede": 1000,
-        "Lucina": 1000
+        "Lucina": 1000,
+        "Corrin": 1000
     },
     "Will": {
         "Ganondorf": 1615,
