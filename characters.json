@@ -69,7 +69,7 @@
         "Robin": 1036,
         "Kirby": 1109,
         "Lucina": 1069,
-        "Wii Fit Trainer": 1057,
+        "Wii Fit Trainer": 1069,
         "Sonic": 1027,
         "Lucario": 1000,
         "Ness": 1000,
@@ -276,6 +276,6 @@
     "Talmage": {
         "King K. Rool": 1000,
         "King Dedede": 1000,
-        "Wii Fit Trainer": 1178
+        "Wii Fit Trainer": 1167
     }
 }

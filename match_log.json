@@ -13921,5 +13921,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-25 10:00",
+        "p1": "Talmage",
+        "c1": "Wii Fit Trainer",
+        "new1": 1167,
+        "diff1": -11,
+        "p2": "Nick R",
+        "c2": "Wii Fit Trainer",
+        "new2": 1069,
+        "diff2": 12,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
