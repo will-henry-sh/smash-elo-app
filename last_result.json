@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Mii Gunner",
+    "c1": "Yoshi",
     "new1": 1000,
     "diff1": 0,
     "p2": "Will",
-    "c2": "Bowser",
-    "new2": 1242,
-    "diff2": 13,
+    "c2": "Greninja",
+    "new2": 1151,
+    "diff2": 26,
     "last_player1": "Nick R",
     "last_player2": "Will",
-    "last_char1": "Mii Gunner",
-    "last_char2": "Bowser"
+    "last_char1": "Yoshi",
+    "last_char2": "Greninja"
 }
