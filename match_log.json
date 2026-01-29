@@ -14103,5 +14103,18 @@
         "diff2": 17,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-01-29 07:57",
+        "p1": "Nick R",
+        "c1": "King Dedede",
+        "new1": 1404,
+        "diff1": -12,
+        "p2": "Will",
+        "c2": "Ganondorf",
+        "new2": 1652,
+        "diff2": 13,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
