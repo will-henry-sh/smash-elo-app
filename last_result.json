@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "King Dedede",
-    "new1": 1341,
-    "diff1": -14,
+    "c1": "Mii Gunner",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Will",
-    "c2": "Lucina",
-    "new2": 1148,
-    "diff2": 16,
+    "c2": "Bowser",
+    "new2": 1242,
+    "diff2": 13,
     "last_player1": "Nick R",
     "last_player2": "Will",
-    "last_char1": "King Dedede",
-    "last_char2": "Lucina"
+    "last_char1": "Mii Gunner",
+    "last_char2": "Bowser"
 }
