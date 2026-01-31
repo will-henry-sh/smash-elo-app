@@ -1,1 +1,18 @@
-{}
+{
+    "timestamp": "2026-01-31 03:42 AM",
+    "placements": [
+        "Nick R",
+        "Nick W",
+        "Will"
+    ],
+    "after": {
+        "Nick R": 1024,
+        "Nick W": 1000,
+        "Will": 1000
+    },
+    "delta": {
+        "Nick R": 24,
+        "Nick W": 0,
+        "Will": 0
+    }
+}
