@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mom's House</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <nav class="top-nav">
+      <a href="/matches">Matches</a>
+      <a href="/leaderboard">Leaderboard</a>
+      <a href="/badges">Badge Info</a>
+    </nav>
+
+    <div class="container">
+      <h1 class="page-title">Mom's House</h1>
+
+      <form action="/add_moms_house" method="POST" class="moms-house-form">
+        {% for i in range(1, 9) %}
+        {% set last_player = last_placements[i-1] if last_placements|length >= i else "" %}
+        {% set mod100 = i % 100 %}
+        {% if mod100 in [11, 12, 13] %}
+          {% set suffix = "th" %}
+        {% elif i % 10 == 1 %}
+          {% set suffix = "st" %}
+        {% elif i % 10 == 2 %}
+          {% set suffix = "nd" %}
+        {% elif i % 10 == 3 %}
+          {% set suffix = "rd" %}
+        {% else %}
+          {% set suffix = "th" %}
+        {% endif %}
+        <div class="placement-row">
+          <label class="placement-label" for="place_{{ i }}">{{ i }}{{ suffix }} place</label>
+          <select id="place_{{ i }}" name="place_{{ i }}">
+            <option value="">Select Player {{ i }}</option>
+            {% for p in player_list %}
+            <option value="{{ p }}" {% if p == last_player %}selected{% endif %}>{{ p }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        {% endfor %}
+
+        <div class="submit-row">
+          <button type="submit" class="submit-match">Submit Placements</button>
+        </div>
+      </form>
+
+      {% if last and last.get("placements") %}
+      <div class="result-box" style="text-align: center;">
+        <h2>Last Result</h2>
+        <p>{{ last["timestamp"] }}</p>
+        {% for name in last["placements"] %}
+        <p>
+          <strong>{{ loop.index }}. {{ name }}</strong> :
+          {{ last["after"][name] }}
+          <span class="{{ 'green' if last['delta'][name] > 0 else 'red' }}">
+            {% if last["delta"][name] > 0 %}+{{ last["delta"][name] }}{% else %}{{ last["delta"][name] }}{% endif %}
+          </span>
+        </p>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
