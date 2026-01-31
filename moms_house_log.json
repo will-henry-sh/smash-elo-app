@@ -48,5 +48,32 @@
             "Nick R": -14,
             "Nick W": 0
         }
+    },
+    {
+        "timestamp": "2026-01-31 03:51 AM",
+        "placements": [
+            "Will",
+            "Nick R",
+            "Nick W",
+            "Chris"
+        ],
+        "before": {
+            "Will": 1037,
+            "Nick R": 1010,
+            "Nick W": 1000,
+            "Chris": 1013
+        },
+        "after": {
+            "Will": 1070,
+            "Nick R": 1023,
+            "Nick W": 1000,
+            "Chris": 1000
+        },
+        "delta": {
+            "Will": 33,
+            "Nick R": 13,
+            "Nick W": 0,
+            "Chris": -13
+        }
     }
 ]

@@ -1,21 +1,21 @@
 {
-    "timestamp": "2026-01-31 03:46 AM",
+    "timestamp": "2026-01-31 03:51 AM",
     "placements": [
         "Will",
-        "Chris",
         "Nick R",
-        "Nick W"
+        "Nick W",
+        "Chris"
     ],
     "after": {
-        "Will": 1037,
-        "Chris": 1013,
-        "Nick R": 1010,
-        "Nick W": 1000
+        "Will": 1070,
+        "Nick R": 1023,
+        "Nick W": 1000,
+        "Chris": 1000
     },
     "delta": {
-        "Will": 37,
-        "Chris": 13,
-        "Nick R": -14,
-        "Nick W": 0
+        "Will": 33,
+        "Nick R": 13,
+        "Nick W": 0,
+        "Chris": -13
     }
 }
