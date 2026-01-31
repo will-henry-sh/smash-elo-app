@@ -917,7 +917,8 @@ def moms_house():
     return render_template(
         "moms_house.html",
         player_list=player_list,
-        last=last
+        last=last,
+        last_placements=last.get("placements", [])
     )
 
 
