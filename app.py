@@ -955,6 +955,9 @@ def add_moms_house():
 
     save_moms_house(data)
 
+    # Use applied deltas after floor so losses don't exceed 1000 floor
+    applied_deltas = {name: data[name] - ratings_before[name] for name in placements}
+
     # Log result
     log = load_moms_house_log()
     timestamp = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %I:%M %p")
@@ -963,7 +966,7 @@ def add_moms_house():
         "placements": placements,
         "before": ratings_before,
         "after": {name: data[name] for name in placements},
-        "delta": {name: round(deltas[name]) for name in placements}
+        "delta": applied_deltas
     })
     save_moms_house_log(log)
 
@@ -971,7 +974,7 @@ def add_moms_house():
         "timestamp": timestamp,
         "placements": placements,
         "after": {name: data[name] for name in placements},
-        "delta": {name: round(deltas[name]) for name in placements}
+        "delta": applied_deltas
     })
 
     queue_push("Auto-update from Mom's House submission")
