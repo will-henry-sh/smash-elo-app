@@ -5,6 +5,7 @@ import subprocess
 import threading
 from functools import wraps
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from flask import Response
 
 try:
@@ -161,6 +162,9 @@ os.makedirs(DATA_DIR, exist_ok=True)
 DATA_FILE = f"{DATA_DIR}/characters.json"
 LAST_RESULT_FILE = f"{DATA_DIR}/last_result.json"
 MATCH_LOG_FILE = f"{DATA_DIR}/match_log.json"
+MOMS_HOUSE_FILE = f"{DATA_DIR}/moms_house.json"
+MOMS_HOUSE_LOG_FILE = f"{DATA_DIR}/moms_house_log.json"
+MOMS_HOUSE_LAST_FILE = f"{DATA_DIR}/moms_house_last_result.json"
 
 
 # run with alias "runelo" in terminal
@@ -202,6 +206,36 @@ def save_match_log(log):
     with open(MATCH_LOG_FILE, "w") as f:
         json.dump(log, f, indent=4)
 
+def load_moms_house():
+    if not os.path.exists(MOMS_HOUSE_FILE):
+        return {}
+    with open(MOMS_HOUSE_FILE, "r") as f:
+        return json.load(f)
+
+def save_moms_house(data):
+    with open(MOMS_HOUSE_FILE, "w") as f:
+        json.dump(data, f, indent=4)
+
+def load_moms_house_log():
+    if not os.path.exists(MOMS_HOUSE_LOG_FILE):
+        return []
+    with open(MOMS_HOUSE_LOG_FILE, "r") as f:
+        return json.load(f)
+
+def save_moms_house_log(log):
+    with open(MOMS_HOUSE_LOG_FILE, "w") as f:
+        json.dump(log, f, indent=4)
+
+def load_moms_house_last_result():
+    if not os.path.exists(MOMS_HOUSE_LAST_FILE):
+        return {}
+    with open(MOMS_HOUSE_LAST_FILE, "r") as f:
+        return json.load(f)
+
+def save_moms_house_last_result(result):
+    with open(MOMS_HOUSE_LAST_FILE, "w") as f:
+        json.dump(result, f, indent=4)
+
 
 # -----------------------------
 # Character list
@@ -242,6 +276,7 @@ CHARACTERS = sorted([
 
 BASE_WIN = 30
 BASE_LOSS = 15
+MOMS_HOUSE_K = 24
 
 def combined_value(char_rating, global_rating):
     return char_rating * 0.7 + global_rating * 0.3
@@ -295,6 +330,20 @@ def calculate_elo_custom(
 
     # Floor ratings at 1000
     return max(1000, new_p1), max(1000, new_p2)
+
+
+def calculate_moms_house_deltas(placements, ratings):
+    """Pairwise multiplayer Elo: higher placement beats lower placement."""
+    deltas = {name: 0 for name in placements}
+    for i, winner in enumerate(placements):
+        for loser in placements[i + 1:]:
+            r_w = ratings[winner]
+            r_l = ratings[loser]
+            expected_w = 1 / (1 + 10 ** ((r_l - r_w) / 400))
+            change = MOMS_HOUSE_K * (1 - expected_w)
+            deltas[winner] += change
+            deltas[loser] -= change
+    return deltas
 
 
 
@@ -454,11 +503,15 @@ def leaderboard():
     def parse_time(entry):
         ts = entry.get("timestamp", "")
         try:
-            # real timestamp
-            return datetime.strptime(ts, "%Y-%m-%d %H:%M")
+            # preferred 12-hour timestamp
+            return datetime.strptime(ts, "%Y-%m-%d %I:%M %p")
         except:
-            # Handle missing or invalid timestamps
-            return datetime.min   # pushes old/no-timestamp entries to the bottom
+            try:
+                # legacy 24-hour timestamp
+                return datetime.strptime(ts, "%Y-%m-%d %H:%M")
+            except:
+                # Handle missing or invalid timestamps
+                return datetime.min   # pushes old/no-timestamp entries to the bottom
 
     # Sort all matches chronologically
     log_sorted = sorted(log, key=parse_time)
@@ -783,7 +836,7 @@ def add_match():
     # Log match history
     log = load_match_log()
     log.append({
-        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "timestamp": datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %I:%M %p"),
         "p1": p1,
         "c1": c1,
         "new1": new1,
@@ -842,6 +895,118 @@ def api_matchup(player, opponent):
         "losses": losses,
         "win_rate": win_rate
     }
+
+
+@app.route("/moms-house")
+@requires_auth
+def moms_house():
+    players_data = load_players()
+    moms_data = load_moms_house()
+    last = load_moms_house_last_result() or {}
+    player_list = sorted(set(players_data.keys()) | set(moms_data.keys()))
+
+    # Ensure every known player has a Mom's House rating
+    updated = False
+    for name in player_list:
+        if name not in moms_data:
+            moms_data[name] = 1000
+            updated = True
+    if updated:
+        save_moms_house(moms_data)
+
+    return render_template(
+        "moms_house.html",
+        player_list=player_list,
+        last=last
+    )
+
+
+@app.route("/add_moms_house", methods=["POST"])
+@requires_auth
+def add_moms_house():
+    # Collect up to 8 placements in order (1..8)
+    placements = []
+    seen = set()
+    for i in range(1, 9):
+        name = request.form.get(f"place_{i}", "").strip()
+        if not name:
+            continue
+        if name in seen:
+            return f"Duplicate player '{name}' in placements.", 400
+        seen.add(name)
+        placements.append(name)
+
+    if len(placements) < 2:
+        return "Need at least 2 players to submit a match.", 400
+
+    data = load_moms_house()
+    # Initialize players at 1000
+    for name in placements:
+        if name not in data:
+            data[name] = 1000
+
+    # Snapshot ratings before updates
+    ratings_before = {name: data[name] for name in placements}
+    deltas = calculate_moms_house_deltas(placements, ratings_before)
+
+    # Apply deltas with floor at 1000
+    for name in placements:
+        data[name] = max(1000, round(ratings_before[name] + deltas[name]))
+
+    save_moms_house(data)
+
+    # Log result
+    log = load_moms_house_log()
+    timestamp = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %I:%M %p")
+    log.append({
+        "timestamp": timestamp,
+        "placements": placements,
+        "before": ratings_before,
+        "after": {name: data[name] for name in placements},
+        "delta": {name: round(deltas[name]) for name in placements}
+    })
+    save_moms_house_log(log)
+
+    save_moms_house_last_result({
+        "timestamp": timestamp,
+        "placements": placements,
+        "after": {name: data[name] for name in placements},
+        "delta": {name: round(deltas[name]) for name in placements}
+    })
+
+    queue_push("Auto-update from Mom's House submission")
+    return redirect(url_for("moms_house"))
+
+
+@app.route("/scoreboard")
+def scoreboard():
+    data = load_moms_house()
+    players_data = load_players()
+    player_list = sorted(set(players_data.keys()) | set(data.keys()))
+
+    updated = False
+    for name in player_list:
+        if name not in data:
+            data[name] = 1000
+            updated = True
+    if updated:
+        save_moms_house(data)
+
+    # Compute win streaks from Mom's House logs (1st place streaks)
+    from collections import defaultdict
+    streaks = defaultdict(int)
+    log = load_moms_house_log()
+    for entry in log:
+        placements = entry.get("placements", [])
+        if not placements:
+            continue
+        winner = placements[0]
+        streaks[winner] += 1
+        for loser in placements[1:]:
+            streaks[loser] = 0
+
+    rows = sorted(data.items(), key=lambda x: x[1], reverse=True)
+    return render_template("scoreboard.html", rows=rows, win_streaks=streaks)
 
 
 

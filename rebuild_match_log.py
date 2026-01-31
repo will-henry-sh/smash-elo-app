@@ -59,16 +59,19 @@ fallback_start = datetime(2000, 1, 1, 0, 0)
 for index, m in enumerate(match_log):
     ts = m.get("timestamp", "")
 
-    # Try to parse normally
+    # Try to parse 12-hour first, then legacy 24-hour
     try:
-        parsed = datetime.strptime(ts, "%Y-%m-%d %H:%M")
+        parsed = datetime.strptime(ts, "%Y-%m-%d %I:%M %p")
     except Exception:
-        # Assign a synthetic timestamp so order is preserved
-        parsed = fallback_start.replace(
-            hour=(index // 60) % 24,
-            minute=index % 60
-        )
-        m["timestamp"] = "N/A"
+        try:
+            parsed = datetime.strptime(ts, "%Y-%m-%d %H:%M")
+        except Exception:
+            # Assign a synthetic timestamp so order is preserved
+            parsed = fallback_start.replace(
+                hour=(index // 60) % 24,
+                minute=index % 60
+            )
+            m["timestamp"] = "N/A"
 
     m["_parsed_time"] = parsed
     fixed_matches.append(m)
@@ -142,4 +145,3 @@ print("\n=== REBUILD COMPLETE ===")
 print(f"Total players: {len(players)}")
 print(f"Total matches processed: {len(match_log_sorted)}")
 print("New leaderboard is now active.")
-
