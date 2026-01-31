@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SCOREBOARD</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <nav class="top-nav">
+      <a href="/matches">Matches</a>
+      <a href="/leaderboard">Leaderboard</a>
+      <a href="/badges">Badge Info</a>
+    </nav>
+
+    <div class="container scoreboard-container">
+      <h1 class="page-title">SCOREBOARD</h1>
+
+      <table>
+        <tr>
+          <th>Rank</th>
+          <th class="ws-col"></th>
+          <th>Player</th>
+          <th>Rating</th>
+        </tr>
+
+        {% for player, rating in rows %}
+        <tr>
+          <td class="rank-col">
+            {% if loop.index == 1 %}
+            <span class="rank-gold">{{ loop.index }}</span>
+            {% elif loop.index == 2 %}
+            <span class="rank-silver">{{ loop.index }}</span>
+            {% elif loop.index == 3 %}
+            <span class="rank-bronze">{{ loop.index }}</span>
+            {% else %}
+            <span class="rank-normal">{{ loop.index }}</span>
+            {% endif %}
+          </td>
+          <td class="ws-col">
+            {% set streak = win_streaks.get(player, 0) -%}
+            {% if streak > 1 -%}
+            <img src="/static/icons/win_streak.png" class="ws-icon" />
+            <span class="ws-mult">×</span>
+            <span class="ws-num">{{ streak }}</span>
+            {%- endif %}
+          </td>
+          <td class="player-cell">
+            <span
+              class="player-name {{ 'rank-gold' if loop.index==1 else
+                                     'rank-silver' if loop.index==2 else
+                                     'rank-bronze' if loop.index==3 else
+                                     'rank-normal' }}"
+            >
+              {{ player }}
+            </span>
+          </td>
+          <td class="rating-value">{{ rating }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>

@@ -1389,9 +1389,11 @@ button {
 }
 
 .placement-label {
-  width: 90px;
+  width: 120px;
+  min-width: 120px;
   text-align: right;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .placement-row input {
@@ -1408,6 +1410,14 @@ button {
   .placement-label {
     width: auto;
     text-align: center;
+  }
+
+  .placement-row select {
+    width: 260px;
+    max-width: 260px;
+    margin: 0 auto;
+    text-align: center;
+    text-align-last: center;
   }
 }
 
@@ -1455,15 +1465,40 @@ button {
 }
 
 .scoreboard-container .ws-col {
+  width: 40px !important;
   max-width: none !important;
   padding: 0 !important;
+  text-align: center !important;
 }
 
 .scoreboard-container .ws-icon,
 .scoreboard-container .ws-mult,
 .scoreboard-container .ws-num {
+  display: inline-block !important;
   position: static !important;
   left: auto !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  color: #ff4d4d !important;
+  vertical-align: middle !important;
+}
+
+.scoreboard-container .ws-mult {
+  margin: 0 2px !important;
+}
+
+.scoreboard-container .ws-num {
+  font-family: "Helvetica Neue", Arial, sans-serif !important;
+  letter-spacing: 0.5px;
+}
+
+.scoreboard-container .ws-icon {
+  width: 20px !important;
+  height: 24px !important;
+  max-width: 20px !important;
+  max-height: 24px !important;
+  image-rendering: pixelated;
+  vertical-align: middle !important;
 }
 
 @media (max-width: 600px) {
