@@ -14285,5 +14285,18 @@
         "diff2": 17,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-02-04 03:06 AM",
+        "p1": "Nick R",
+        "c1": "Pac-Man",
+        "new1": 1014,
+        "diff1": -12,
+        "p2": "Will",
+        "c2": "Fox",
+        "new2": 1013,
+        "diff2": 13,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
