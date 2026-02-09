@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Robin",
-    "new1": 1719,
-    "diff1": 13,
-    "p2": "Nick R",
-    "c2": "King Dedede",
-    "new2": 1561,
-    "diff2": -12,
+    "c1": "Zelda",
+    "new1": 1000,
+    "diff1": -75,
+    "p2": "Colton",
+    "c2": "Toon Link",
+    "new2": 1639,
+    "diff2": 106,
     "last_player1": "Will",
-    "last_player2": "Nick R",
-    "last_char1": "Robin",
-    "last_char2": "King Dedede"
+    "last_player2": "Colton",
+    "last_char1": "Zelda",
+    "last_char2": "Toon Link"
 }
