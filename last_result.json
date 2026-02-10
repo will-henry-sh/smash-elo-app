@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Zelda",
-    "new1": 1037,
-    "diff1": 22,
+    "c1": "Dark Pit",
+    "new1": 1128,
+    "diff1": 38,
     "p2": "Nick R",
     "c2": "King Dedede",
-    "new2": 1541,
-    "diff2": -20,
+    "new2": 1524,
+    "diff2": -17,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Zelda",
+    "last_char1": "Dark Pit",
     "last_char2": "King Dedede"
 }
