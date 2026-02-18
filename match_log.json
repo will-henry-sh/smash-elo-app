@@ -15260,5 +15260,18 @@
         "diff2": 12,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-02-18 02:08 AM",
+        "p1": "Nick R",
+        "c1": "Young Link",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Will",
+        "c2": "Ganondorf",
+        "new2": 1603,
+        "diff2": 12,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
