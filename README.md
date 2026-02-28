@@ -120,18 +120,6 @@ Easy to migrate
 
 GitHub sync ensures match history and ratings remain auditable over time.
 
-## Planned Improvements
-
-ELO decay for inactivity
-
-Match filtering and search
-
-Per-character stats
-
-Exportable stats and CSV downloads
-
-Improved badge visuals and animations
-
 ## License
 
 This project is for personal and educational use. Modify, extend, and experiment freely.
