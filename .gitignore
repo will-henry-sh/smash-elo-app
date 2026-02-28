@@ -13,3 +13,4 @@ last_result.json
 
 # Ignore environment variables
 .env
+moms_house*
