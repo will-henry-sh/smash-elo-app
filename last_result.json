@@ -1,14 +1,14 @@
 {
-    "p1": "Nick R",
-    "c1": "Young Link",
-    "new1": 1000,
-    "diff1": 0,
-    "p2": "Will",
-    "c2": "Ganondorf",
-    "new2": 1603,
-    "diff2": 12,
-    "last_player1": "Nick R",
-    "last_player2": "Will",
-    "last_char1": "Young Link",
-    "last_char2": "Ganondorf"
+    "p1": "Will",
+    "c1": "Captain Falcon",
+    "new1": 1210,
+    "diff1": 38,
+    "p2": "Nick R",
+    "c2": "King Dedede",
+    "new2": 1605,
+    "diff2": -17,
+    "last_player1": "Will",
+    "last_player2": "Nick R",
+    "last_char1": "Captain Falcon",
+    "last_char2": "King Dedede"
 }
