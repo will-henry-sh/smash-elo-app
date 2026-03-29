@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
-    "c1": "Meta Knight",
-    "new1": 1000,
-    "diff1": -57,
-    "p2": "Nick R",
-    "c2": "King Dedede",
-    "new2": 1556,
-    "diff2": 64,
-    "last_player1": "Will",
-    "last_player2": "Nick R",
-    "last_char1": "Meta Knight",
-    "last_char2": "King Dedede"
+    "p1": "Nick R",
+    "c1": "King Dedede",
+    "new1": 1568,
+    "diff1": 12,
+    "p2": "Daryl",
+    "c2": "Zelda",
+    "new2": 1000,
+    "diff2": 0,
+    "last_player1": "Nick R",
+    "last_player2": "Daryl",
+    "last_char1": "King Dedede",
+    "last_char2": "Zelda"
 }

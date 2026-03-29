@@ -8,7 +8,7 @@
         "Hero": 1043,
         "Cloud": 1048,
         "Ice Climbers": 1171,
-        "King Dedede": 1556,
+        "King Dedede": 1568,
         "Sephiroth": 1004,
         "Marth": 1000,
         "Mr. Game and Watch": 1002,
@@ -272,15 +272,13 @@
             "ambition1"
         ]
     },
-
     "Talmage": {
         "King K. Rool": 1000,
         "King Dedede": 1000,
         "Wii Fit Trainer": 1334
     },
-
     "Daryl": {
+        "Zelda": 1000
     },
-    
-    "Jamichael" : {}
+    "Jamichael": {}
 }
