@@ -1,14 +1,14 @@
 {
-    "p1": "Nick W",
-    "c1": "Wii Fit Trainer",
-    "new1": 1481,
-    "diff1": -11,
-    "p2": "Will",
-    "c2": "Incineroar",
-    "new2": 1342,
-    "diff2": 12,
-    "last_player1": "Nick W",
-    "last_player2": "Will",
-    "last_char1": "Wii Fit Trainer",
-    "last_char2": "Incineroar"
+    "p1": "Will",
+    "c1": "Zelda",
+    "new1": 1049,
+    "diff1": 12,
+    "p2": "Daryl",
+    "c2": "Zelda",
+    "new2": 1104,
+    "diff2": -11,
+    "last_player1": "Will",
+    "last_player2": "Daryl",
+    "last_char1": "Zelda",
+    "last_char2": "Zelda"
 }
