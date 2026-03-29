@@ -272,13 +272,15 @@
             "ambition1"
         ]
     },
-    "Andreas": {
-        "Link": 1000
-    },
+
     "Talmage": {
         "King K. Rool": 1000,
         "King Dedede": 1000,
         "Wii Fit Trainer": 1334
     },
-    "Chris": {}
+
+    "Daryl": {
+    },
+    
+    "Jamichael" : {}
 }
