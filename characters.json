@@ -106,7 +106,7 @@
         "Incineroar": 1342,
         "Greninja": 1123,
         "Ridley": 1041,
-        "Captain Falcon": 1201,
+        "Captain Falcon": 1213,
         "Bowser": 1256,
         "Inkling": 1055,
         "Sheik": 1037,
@@ -286,6 +286,7 @@
         "Ridley": 1000
     },
     "Jamichael": {
-        "Mario": 1000
+        "Mario": 1000,
+        "Young Link": 1000
     }
 }
