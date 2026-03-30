@@ -101,7 +101,7 @@
     },
     "Will": {
         "Ganondorf": 1502,
-        "Robin": 1757,
+        "Robin": 1769,
         "Wolf": 1304,
         "Incineroar": 1342,
         "Greninja": 1123,
@@ -287,6 +287,7 @@
     },
     "Jamichael": {
         "Mario": 1000,
-        "Young Link": 1000
+        "Young Link": 1000,
+        "Fox": 1000
     }
 }
