@@ -100,7 +100,7 @@
         "Kazuya": 1000
     },
     "Will": {
-        "Ganondorf": 1478,
+        "Ganondorf": 1502,
         "Robin": 1757,
         "Wolf": 1304,
         "Incineroar": 1342,
@@ -285,5 +285,7 @@
         "Samus": 1000,
         "Ridley": 1000
     },
-    "Jamichael": {}
+    "Jamichael": {
+        "Mario": 1000
+    }
 }
