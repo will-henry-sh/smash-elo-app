@@ -15832,5 +15832,18 @@
         "diff2": 13,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-03-30 04:02 AM",
+        "p1": "Daryl",
+        "c1": "Zelda",
+        "new1": 1239,
+        "diff1": -11,
+        "p2": "Nick R",
+        "c2": "Donkey Kong",
+        "new2": 1464,
+        "diff2": 24,
+        "winner": "p2",
+        "three_stock": true
     }
 ]
