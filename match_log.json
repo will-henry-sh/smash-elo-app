@@ -15806,5 +15806,18 @@
         "diff2": -18,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-03-30 03:54 AM",
+        "p1": "Daryl",
+        "c1": "Zelda",
+        "new1": 1262,
+        "diff1": 180,
+        "p2": "Nick R",
+        "c2": "King Dedede",
+        "new2": 1400,
+        "diff2": -162,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
