@@ -16014,5 +16014,18 @@
         "diff2": 118,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-03-31 03:04 AM",
+        "p1": "Nick R",
+        "c1": "Steve",
+        "new1": 1013,
+        "diff1": 13,
+        "p2": "Nick W",
+        "c2": "Steve",
+        "new2": 1106,
+        "diff2": -12,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
