@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Min Min",
-    "new1": 1121,
-    "diff1": 26,
-    "p2": "Nick W",
-    "c2": "Steve",
-    "new2": 1094,
-    "diff2": -12,
+    "c1": "King Dedede",
+    "new1": 1441,
+    "diff1": -15,
+    "p2": "Will",
+    "c2": "Link",
+    "new2": 1049,
+    "diff2": 17,
     "last_player1": "Nick R",
-    "last_player2": "Nick W",
-    "last_char1": "Min Min",
-    "last_char2": "Steve"
+    "last_player2": "Will",
+    "last_char1": "King Dedede",
+    "last_char2": "Link"
 }
