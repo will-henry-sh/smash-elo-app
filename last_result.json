@@ -1,14 +1,14 @@
 {
     "p1": "Nick R",
-    "c1": "Piranha Plant",
-    "new1": 1000,
-    "diff1": -18,
+    "c1": "Min Min",
+    "new1": 1134,
+    "diff1": 13,
     "p2": "Nick W",
     "c2": "Steve",
-    "new2": 1118,
-    "diff2": 118,
+    "new2": 1106,
+    "diff2": -12,
     "last_player1": "Nick R",
     "last_player2": "Nick W",
-    "last_char1": "Piranha Plant",
+    "last_char1": "Min Min",
     "last_char2": "Steve"
 }
