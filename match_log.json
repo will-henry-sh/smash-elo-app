@@ -16209,5 +16209,18 @@
         "diff2": -11,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-03-31 03:55 AM",
+        "p1": "Will",
+        "c1": "Meta Knight",
+        "new1": 1013,
+        "diff1": 13,
+        "p2": "Nick R",
+        "c2": "Ganondorf",
+        "new2": 1000,
+        "diff2": -1,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
