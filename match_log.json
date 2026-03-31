@@ -16248,5 +16248,18 @@
         "diff2": -11,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-03-31 04:02 AM",
+        "p1": "Will",
+        "c1": "Incineroar",
+        "new1": 1354,
+        "diff1": 12,
+        "p2": "Nick W",
+        "c2": "Steve",
+        "new2": 1000,
+        "diff2": -4,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
