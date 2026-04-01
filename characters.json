@@ -8,7 +8,7 @@
         "Hero": 1000,
         "Cloud": 1048,
         "Ice Climbers": 1171,
-        "King Dedede": 1349,
+        "King Dedede": 1189,
         "Sephiroth": 1016,
         "Marth": 1000,
         "Mr. Game and Watch": 1002,
@@ -298,6 +298,7 @@
         "Zelda": 1000,
         "Sephiroth": 1000,
         "Pac-Man": 1000,
-        "Samus": 1179
+        "Samus": 1179,
+        "Olimar": 1178
     }
 }
