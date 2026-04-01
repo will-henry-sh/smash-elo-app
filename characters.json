@@ -107,7 +107,7 @@
         "Incineroar": 1366,
         "Greninja": 1123,
         "Ridley": 1041,
-        "Captain Falcon": 1253,
+        "Captain Falcon": 1265,
         "Bowser": 1256,
         "Inkling": 1055,
         "Sheik": 1049,
@@ -301,6 +301,7 @@
         "Samus": 1179,
         "Olimar": 1178,
         "Corrin": 1000,
-        "Mega Man": 1000
+        "Mega Man": 1000,
+        "Captain Falcon": 1000
     }
 }
