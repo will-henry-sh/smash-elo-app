@@ -5,7 +5,7 @@
         "Min Min": 1134,
         "Palutena": 1000,
         "Donkey Kong": 1476,
-        "Hero": 1068,
+        "Hero": 1000,
         "Cloud": 1048,
         "Ice Climbers": 1171,
         "King Dedede": 1546,
@@ -292,6 +292,7 @@
         "Fox": 1000,
         "Byleth": 1054,
         "Toon Link": 1049,
-        "Sonic": 1000
+        "Sonic": 1000,
+        "Sora": 1179
     }
 }
