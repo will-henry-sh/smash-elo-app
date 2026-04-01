@@ -16482,5 +16482,18 @@
         "diff2": 63,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-04-01 03:20 AM",
+        "p1": "Colton",
+        "c1": "Duck Hunt",
+        "new1": 1203,
+        "diff1": 13,
+        "p2": "Nick W",
+        "c2": "Steve",
+        "new2": 1039,
+        "diff2": -12,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
