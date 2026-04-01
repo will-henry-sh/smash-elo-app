@@ -16729,5 +16729,18 @@
         "diff2": 178,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-04-01 04:47 AM",
+        "p1": "Will",
+        "c1": "Mewtwo",
+        "new1": 1198,
+        "diff1": 12,
+        "p2": "Jamichael",
+        "c2": "Mario",
+        "new2": 1168,
+        "diff2": -11,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
