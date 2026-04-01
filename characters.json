@@ -105,7 +105,7 @@
         "Robin": 1805,
         "Wolf": 1334,
         "Incineroar": 1366,
-        "Greninja": 1123,
+        "Greninja": 1135,
         "Ridley": 1041,
         "Captain Falcon": 1265,
         "Bowser": 1268,
@@ -303,6 +303,7 @@
         "Corrin": 1000,
         "Mega Man": 1000,
         "Captain Falcon": 1000,
-        "Lucina": 1000
+        "Lucina": 1000,
+        "Pikachu": 1000
     }
 }
