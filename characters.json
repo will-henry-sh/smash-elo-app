@@ -110,7 +110,7 @@
         "Captain Falcon": 1253,
         "Bowser": 1256,
         "Inkling": 1055,
-        "Sheik": 1037,
+        "Sheik": 1049,
         "Hero": 1047,
         "Roy": 1017,
         "King K. Rool": 1340,
@@ -294,6 +294,7 @@
         "Toon Link": 1049,
         "Sonic": 1000,
         "Sora": 1179,
-        "King Dedede": 1167
+        "King Dedede": 1167,
+        "Zelda": 1000
     }
 }
