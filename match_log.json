@@ -16456,5 +16456,18 @@
         "diff2": -13,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-04-01 02:55 AM",
+        "p1": "Will",
+        "c1": "Pyra/Mythra",
+        "new1": 1122,
+        "diff1": 16,
+        "p2": "Nick R",
+        "c2": "King Dedede",
+        "new2": 1483,
+        "diff2": -14,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
