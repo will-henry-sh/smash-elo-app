@@ -104,7 +104,7 @@
         "Ganondorf": 1552,
         "Robin": 1805,
         "Wolf": 1334,
-        "Incineroar": 1354,
+        "Incineroar": 1366,
         "Greninja": 1123,
         "Ridley": 1041,
         "Captain Falcon": 1253,
@@ -300,6 +300,7 @@
         "Pac-Man": 1000,
         "Samus": 1179,
         "Olimar": 1178,
-        "Corrin": 1000
+        "Corrin": 1000,
+        "Mega Man": 1000
     }
 }
