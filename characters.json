@@ -116,7 +116,7 @@
         "King K. Rool": 1340,
         "Link": 1049,
         "Meta Knight": 1025,
-        "Ike": 1052,
+        "Ike": 1064,
         "Steve": 1043,
         "Corrin": 1039,
         "Banjo & Kazooie": 1029,
@@ -299,6 +299,7 @@
         "Sephiroth": 1000,
         "Pac-Man": 1000,
         "Samus": 1179,
-        "Olimar": 1178
+        "Olimar": 1178,
+        "Corrin": 1000
     }
 }
