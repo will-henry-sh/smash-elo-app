@@ -127,7 +127,7 @@
         "Wario": 1000,
         "Falco": 1067,
         "Dr. Mario": 1012,
-        "Marth": 1059,
+        "Marth": 1071,
         "Piranha Plant": 1013,
         "Simon": 1026,
         "Isabelle": 1000,
@@ -302,6 +302,7 @@
         "Olimar": 1178,
         "Corrin": 1000,
         "Mega Man": 1000,
-        "Captain Falcon": 1000
+        "Captain Falcon": 1000,
+        "Lucina": 1000
     }
 }
