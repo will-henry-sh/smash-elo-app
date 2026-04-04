@@ -190,7 +190,7 @@
         "Dark Samus": 1358,
         "Mario": 1056,
         "Yoshi": 1024,
-        "Duck Hunt": 1203,
+        "Duck Hunt": 1216,
         "Marth": 1000,
         "Captain Falcon": 1000,
         "Samus": 1125,
@@ -304,6 +304,7 @@
         "Mega Man": 1000,
         "Captain Falcon": 1000,
         "Lucina": 1000,
-        "Pikachu": 1000
+        "Pikachu": 1000,
+        "Hero": 1000
     }
 }
