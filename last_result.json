@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Meta Knight",
-    "new1": 1037,
+    "c1": "R.O.B",
+    "new1": 1065,
     "diff1": 12,
-    "p2": "Jamichael",
+    "p2": "Nick R",
     "c2": "King Dedede",
-    "new2": 1145,
+    "new2": 1087,
     "diff2": -11,
     "last_player1": "Will",
-    "last_player2": "Jamichael",
-    "last_char1": "Meta Knight",
+    "last_player2": "Nick R",
+    "last_char1": "R.O.B",
     "last_char2": "King Dedede"
 }
