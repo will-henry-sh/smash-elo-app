@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
-    "c1": "Sheik",
-    "new1": 1061,
-    "diff1": 12,
-    "p2": "Daryl",
-    "c2": "Zelda",
-    "new2": 1381,
-    "diff2": -11,
-    "last_player1": "Will",
-    "last_player2": "Daryl",
-    "last_char1": "Sheik",
-    "last_char2": "Zelda"
+    "p1": "Colton",
+    "c1": "Jigglypuff",
+    "new1": 1362,
+    "diff1": 13,
+    "p2": "Jamichael",
+    "c2": "Mario",
+    "new2": 1156,
+    "diff2": -12,
+    "last_player1": "Colton",
+    "last_player2": "Jamichael",
+    "last_char1": "Jigglypuff",
+    "last_char2": "Mario"
 }
