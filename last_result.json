@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Link",
-    "new1": 1061,
+    "c1": "Pyra/Mythra",
+    "new1": 1134,
     "diff1": 12,
     "p2": "Jamichael",
-    "c2": "Young Link",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Sora",
+    "new2": 1168,
+    "diff2": -11,
     "last_player1": "Will",
     "last_player2": "Jamichael",
-    "last_char1": "Link",
-    "last_char2": "Young Link"
+    "last_char1": "Pyra/Mythra",
+    "last_char2": "Sora"
 }
