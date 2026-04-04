@@ -4,7 +4,7 @@
         "Snake": 1002,
         "Min Min": 1134,
         "Palutena": 1000,
-        "Donkey Kong": 1500,
+        "Donkey Kong": 1512,
         "Hero": 1016,
         "Cloud": 1048,
         "Ice Climbers": 1171,
@@ -310,6 +310,7 @@
         "King K. Rool": 1024,
         "Dark Samus": 1024,
         "Isabelle": 1024,
-        "Bowser Jr.": 1000
+        "Bowser Jr.": 1000,
+        "Diddy Kong": 1000
     }
 }
