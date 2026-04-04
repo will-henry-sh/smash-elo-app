@@ -23,7 +23,7 @@
         "Ike": 1024,
         "Bowser": 1106,
         "Steve": 1013,
-        "Ganondorf": 1029,
+        "Ganondorf": 1018,
         "Corrin": 1009,
         "Samus": 1033,
         "Dark Samus": 1000,
@@ -135,7 +135,7 @@
         "Shulk": 1019,
         "Villager": 1013,
         "Mega Man": 1000,
-        "King Dedede": 1016,
+        "King Dedede": 1028,
         "badges": [
             "ambition3",
             "dominator",
