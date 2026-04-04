@@ -23,7 +23,7 @@
         "Ike": 1024,
         "Bowser": 1106,
         "Steve": 1013,
-        "Ganondorf": 1000,
+        "Ganondorf": 1016,
         "Corrin": 1009,
         "Samus": 1033,
         "Dark Samus": 1000,
@@ -280,7 +280,7 @@
         "Wii Fit Trainer": 1334
     },
     "Daryl": {
-        "Zelda": 1442,
+        "Zelda": 1428,
         "Link": 1111,
         "Zero Suit Samus": 1000,
         "Samus": 1000,
