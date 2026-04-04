@@ -189,7 +189,7 @@
         "Jigglypuff": 1362,
         "Dark Samus": 1358,
         "Mario": 1056,
-        "Yoshi": 1024,
+        "Yoshi": 1038,
         "Duck Hunt": 1216,
         "Marth": 1000,
         "Captain Falcon": 1000,
@@ -305,6 +305,7 @@
         "Captain Falcon": 1000,
         "Lucina": 1000,
         "Pikachu": 1000,
-        "Hero": 1000
+        "Hero": 1000,
+        "Min Min": 1000
     }
 }
