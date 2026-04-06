@@ -17223,5 +17223,18 @@
         "diff2": -11,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-04-06 03:31 AM",
+        "p1": "Will",
+        "c1": "Zero Suit Samus",
+        "new1": 1000,
+        "diff1": -18,
+        "p2": "Nick W",
+        "c2": "Donkey Kong",
+        "new2": 1180,
+        "diff2": 180,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
