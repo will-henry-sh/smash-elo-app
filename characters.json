@@ -23,7 +23,7 @@
         "Ike": 1024,
         "Bowser": 1106,
         "Steve": 1013,
-        "Ganondorf": 1018,
+        "Ganondorf": 1031,
         "Corrin": 1009,
         "Samus": 1033,
         "Dark Samus": 1000,
@@ -319,6 +319,7 @@
         "Yoshi": 1000,
         "Falco": 1000,
         "Ken": 1000,
-        "Steve": 1000
+        "Steve": 1000,
+        "Joker": 1000
     }
 }
