@@ -127,7 +127,7 @@
         "Olimar": 1030,
         "Wario": 1000,
         "Falco": 1067,
-        "Dr. Mario": 1012,
+        "Dr. Mario": 1024,
         "Marth": 1083,
         "Piranha Plant": 1013,
         "Simon": 1026,
@@ -317,6 +317,7 @@
         "Luigi": 1000,
         "Lucario": 1000,
         "Yoshi": 1000,
-        "Falco": 1000
+        "Falco": 1000,
+        "Ken": 1000
     }
 }
