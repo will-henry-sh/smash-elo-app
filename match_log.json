@@ -17444,5 +17444,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-04-09 05:51 AM",
+        "p1": "Nick R",
+        "c1": "Hero",
+        "new1": 1192,
+        "diff1": 13,
+        "p2": "Jamichael",
+        "c2": "Steve",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
