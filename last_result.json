@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
-    "c1": "Zero Suit Samus",
-    "new1": 1000,
-    "diff1": -18,
-    "p2": "Nick W",
-    "c2": "Donkey Kong",
-    "new2": 1180,
-    "diff2": 180,
-    "last_player1": "Will",
-    "last_player2": "Nick W",
-    "last_char1": "Zero Suit Samus",
-    "last_char2": "Donkey Kong"
+    "p1": "Nick R",
+    "c1": "Hero",
+    "new1": 1184,
+    "diff1": 13,
+    "p2": "Jamichael",
+    "c2": "Ness",
+    "new2": 1000,
+    "diff2": 0,
+    "last_player1": "Nick R",
+    "last_player2": "Jamichael",
+    "last_char1": "Hero",
+    "last_char2": "Ness"
 }

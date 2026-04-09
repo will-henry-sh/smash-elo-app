@@ -5,7 +5,7 @@
         "Min Min": 1134,
         "Palutena": 1000,
         "Donkey Kong": 1512,
-        "Hero": 1171,
+        "Hero": 1184,
         "Cloud": 1048,
         "Ice Climbers": 1171,
         "King Dedede": 1076,
@@ -312,6 +312,7 @@
         "Dark Samus": 1024,
         "Isabelle": 1024,
         "Bowser Jr.": 1000,
-        "Diddy Kong": 1000
+        "Diddy Kong": 1000,
+        "Ness": 1000
     }
 }
