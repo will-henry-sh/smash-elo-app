@@ -115,7 +115,7 @@
         "Hero": 1047,
         "Roy": 1017,
         "King K. Rool": 1340,
-        "Link": 1073,
+        "Link": 1085,
         "Meta Knight": 1063,
         "Ike": 1064,
         "Steve": 1043,
@@ -313,6 +313,7 @@
         "Isabelle": 1024,
         "Bowser Jr.": 1000,
         "Diddy Kong": 1000,
-        "Ness": 1000
+        "Ness": 1000,
+        "Luigi": 1000
     }
 }
