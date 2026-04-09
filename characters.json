@@ -122,7 +122,7 @@
         "Corrin": 1039,
         "Banjo & Kazooie": 1029,
         "Lucina": 1219,
-        "Kazuya": 1086,
+        "Kazuya": 1098,
         "Zelda": 1049,
         "Olimar": 1030,
         "Wario": 1000,
@@ -314,6 +314,7 @@
         "Bowser Jr.": 1000,
         "Diddy Kong": 1000,
         "Ness": 1000,
-        "Luigi": 1000
+        "Luigi": 1000,
+        "Lucario": 1000
     }
 }
