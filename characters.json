@@ -5,7 +5,7 @@
         "Min Min": 1134,
         "Palutena": 1000,
         "Donkey Kong": 1512,
-        "Hero": 1166,
+        "Hero": 1179,
         "Cloud": 1048,
         "Ice Climbers": 1171,
         "King Dedede": 1076,
@@ -316,6 +316,7 @@
         "Ness": 1000,
         "Luigi": 1000,
         "Lucario": 1000,
-        "Yoshi": 1000
+        "Yoshi": 1000,
+        "Falco": 1000
     }
 }
