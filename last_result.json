@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Kazuya",
-    "new1": 1098,
+    "c1": "Zelda",
+    "new1": 1061,
     "diff1": 12,
     "p2": "Jamichael",
-    "c2": "Lucario",
+    "c2": "Yoshi",
     "new2": 1000,
     "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Jamichael",
-    "last_char1": "Kazuya",
-    "last_char2": "Lucario"
+    "last_char1": "Zelda",
+    "last_char2": "Yoshi"
 }
