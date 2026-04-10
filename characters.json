@@ -116,7 +116,7 @@
         "Roy": 1017,
         "King K. Rool": 1352,
         "Link": 1085,
-        "Meta Knight": 1063,
+        "Meta Knight": 1000,
         "Ike": 1064,
         "Steve": 1043,
         "Corrin": 1039,
@@ -319,7 +319,7 @@
         "Yoshi": 1000,
         "Falco": 1000,
         "Ken": 1000,
-        "Steve": 1000,
+        "Steve": 1180,
         "Joker": 1000
     }
 }
