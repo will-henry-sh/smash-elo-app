@@ -17600,5 +17600,18 @@
         "diff2": 16,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-04-12 03:18 AM",
+        "p1": "Jamichael",
+        "c1": "Sonic",
+        "new1": 1102,
+        "diff1": 102,
+        "p2": "Nick R",
+        "c2": "Isabelle",
+        "new2": 1000,
+        "diff2": -16,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
