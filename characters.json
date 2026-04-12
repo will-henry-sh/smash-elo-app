@@ -23,7 +23,7 @@
         "Ike": 1024,
         "Bowser": 1106,
         "Steve": 1013,
-        "Ganondorf": 1000,
+        "Ganondorf": 1013,
         "Corrin": 1009,
         "Samus": 1033,
         "Dark Samus": 1000,
@@ -287,7 +287,8 @@
         "Samus": 1116,
         "Ridley": 1000,
         "Pyra/Mythra": 1116,
-        "Ike": 1115
+        "Ike": 1115,
+        "Sephiroth": 1000
     },
     "Jamichael": {
         "Mario": 1336,
