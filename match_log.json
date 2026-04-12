@@ -17535,5 +17535,18 @@
         "diff2": -31,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-04-12 03:06 AM",
+        "p1": "Daryl",
+        "c1": "Zelda",
+        "new1": 1489,
+        "diff1": 108,
+        "p2": "Nick R",
+        "c2": "Pyra/Mythra",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
