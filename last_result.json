@@ -1,14 +1,14 @@
 {
     "p1": "Will",
-    "c1": "Captain Falcon",
-    "new1": 1325,
+    "c1": "Meta Knight",
+    "new1": 1012,
     "diff1": 12,
     "p2": "Jamichael",
-    "c2": "Falco",
+    "c2": "Cloud",
     "new2": 1000,
     "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Jamichael",
-    "last_char1": "Captain Falcon",
-    "last_char2": "Falco"
+    "last_char1": "Meta Knight",
+    "last_char2": "Cloud"
 }
