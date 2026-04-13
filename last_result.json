@@ -1,14 +1,14 @@
 {
-    "p1": "Nick R",
-    "c1": "Ganondorf",
-    "new1": 1030,
-    "diff1": 17,
-    "p2": "Jamichael",
-    "c2": "Villager",
-    "new2": 1000,
-    "diff2": 0,
-    "last_player1": "Nick R",
-    "last_player2": "Jamichael",
-    "last_char1": "Ganondorf",
-    "last_char2": "Villager"
+    "p1": "Will",
+    "c1": "Captain Falcon",
+    "new1": 1337,
+    "diff1": 12,
+    "p2": "Nick R",
+    "c2": "Captain Falcon",
+    "new2": 1076,
+    "diff2": -11,
+    "last_player1": "Will",
+    "last_player2": "Nick R",
+    "last_char1": "Captain Falcon",
+    "last_char2": "Captain Falcon"
 }
