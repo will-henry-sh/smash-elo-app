@@ -1,14 +1,14 @@
 {
     "p1": "Nat",
-    "c1": "Kazuya",
-    "new1": 1275,
-    "diff1": 180,
+    "c1": "Terry",
+    "new1": 1404,
+    "diff1": -11,
     "p2": "Will",
-    "c2": "Wolf",
-    "new2": 1196,
-    "diff2": -162,
+    "c2": "Captain Falcon",
+    "new2": 1313,
+    "diff2": 12,
     "last_player1": "Nat",
     "last_player2": "Will",
-    "last_char1": "Kazuya",
-    "last_char2": "Wolf"
+    "last_char1": "Terry",
+    "last_char2": "Captain Falcon"
 }
