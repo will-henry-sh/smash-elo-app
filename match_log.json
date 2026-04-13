@@ -17756,5 +17756,18 @@
         "diff2": -31,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-04-13 04:09 AM",
+        "p1": "Nat",
+        "c1": "Palutena",
+        "new1": 1054,
+        "diff1": 35,
+        "p2": "Jamichael",
+        "c2": "Zelda",
+        "new2": 1149,
+        "diff2": -32,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
