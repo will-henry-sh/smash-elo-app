@@ -1,14 +1,14 @@
 {
     "p1": "Nat",
-    "c1": "Terry",
-    "new1": 1404,
-    "diff1": -11,
-    "p2": "Will",
-    "c2": "Captain Falcon",
-    "new2": 1313,
-    "diff2": 12,
+    "c1": "Ike",
+    "new1": 1034,
+    "diff1": 34,
+    "p2": "Jamichael",
+    "c2": "Sonic",
+    "new2": 1071,
+    "diff2": -31,
     "last_player1": "Nat",
-    "last_player2": "Will",
-    "last_char1": "Terry",
-    "last_char2": "Captain Falcon"
+    "last_player2": "Jamichael",
+    "last_char1": "Ike",
+    "last_char2": "Sonic"
 }

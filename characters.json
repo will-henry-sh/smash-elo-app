@@ -274,7 +274,8 @@
             "bloodlust",
             "ambition1"
         ],
-        "Ryu": 1000
+        "Ryu": 1000,
+        "Ike": 1034
     },
     "Talmage": {
         "King K. Rool": 1000,
@@ -297,7 +298,7 @@
         "Fox": 1000,
         "Byleth": 1043,
         "Toon Link": 1049,
-        "Sonic": 1102,
+        "Sonic": 1071,
         "Sora": 1155,
         "King Dedede": 1145,
         "Zelda": 1181,
