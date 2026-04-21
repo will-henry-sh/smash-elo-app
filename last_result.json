@@ -1,14 +1,14 @@
 {
-    "p1": "Will",
-    "c1": "Sheik",
-    "new1": 1000,
-    "diff1": 0,
-    "p2": "Daryl",
-    "c2": "Zelda",
-    "new2": 1769,
-    "diff2": 178,
-    "last_player1": "Will",
-    "last_player2": "Daryl",
-    "last_char1": "Sheik",
-    "last_char2": "Zelda"
+    "p1": "Daryl",
+    "c1": "Zelda",
+    "new1": 1672,
+    "diff1": -97,
+    "p2": "Nick W",
+    "c2": "Wii Fit Trainer",
+    "new2": 1464,
+    "diff2": 108,
+    "last_player1": "Daryl",
+    "last_player2": "Nick W",
+    "last_char1": "Zelda",
+    "last_char2": "Wii Fit Trainer"
 }
