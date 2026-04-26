@@ -8,9 +8,11 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 from flask import Response
 
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
+
 try:
     from dotenv import load_dotenv
-    load_dotenv()
+    load_dotenv(os.path.join(APP_DIR, ".env"))
 except ImportError:
     print("python-dotenv not installed, using environment variables directly")
 
