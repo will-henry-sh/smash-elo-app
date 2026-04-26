@@ -20,11 +20,18 @@
     <nav class="top-nav">
       <a href="/matches">Matches</a>
       <a href="/leaderboard">Leaderboard</a>
+      <a href="/lifetime-ratings">Lifetime Ratings</a>
       <a href="/badges">Badge Info</a>
     </nav>
 
     <div class="container leaderboard-container">
       <h1 class="page-title">Smash Leaderboard</h1>
+      <p class="season-banner">
+        Season {{ current_season.number }}
+        {% if current_season.started_at %}
+        <span class="season-meta">Started {{ current_season.started_at }}</span>
+        {% endif %}
+      </p>
 
       <table>
         <tr>
@@ -86,11 +93,10 @@
 
       <!-- RECENT MATCH SECTION (Safe even if last_match is None) -->
 
-      <h2 style="text-align: center; margin-top: 40px">
-        Recent Matches (Last 20)
-      </h2>
+      <h2 style="text-align: center; margin-top: 40px">Season Matches (Last 20)</h2>
 
       <div class="recent-matches-list">
+        {% if recent_matches %}
         {% for m in recent_matches %}
         <div class="result-box recent-match-card">
           {# Player 1 #}
@@ -129,6 +135,11 @@
           {% endif %}
         </div>
         {% endfor %}
+        {% else %}
+        <div class="result-box recent-match-card">
+          <p>No matches have been played in this season yet.</p>
+        </div>
+        {% endif %}
       </div>
     </div>
   </body>

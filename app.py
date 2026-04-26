@@ -39,12 +39,10 @@ def load_admin_credentials():
     admin_names_str = os.getenv('ADMIN_NAMES', '')
     admin_names = [name.strip() for name in admin_names_str.split(',') if name.strip()]
 
-    # Fallback to simple credentials if environment variables not found
     if not admin_users:
-        print("WARNING: No admin credentials found in environment variables, using default")
-        admin_users = {
-            "admin": "admin"
-        }
+        raise RuntimeError(
+            "No admin credentials found. Set ADMIN_USER_1..ADMIN_USER_9 in your environment or .env file."
+        )
 
     # Always use the original admin names for the key icons
     if not admin_names:
@@ -165,6 +163,7 @@ MATCH_LOG_FILE = f"{DATA_DIR}/match_log.json"
 MOMS_HOUSE_FILE = f"{DATA_DIR}/moms_house.json"
 MOMS_HOUSE_LOG_FILE = f"{DATA_DIR}/moms_house_log.json"
 MOMS_HOUSE_LAST_FILE = f"{DATA_DIR}/moms_house_last_result.json"
+SEASONS_FILE = f"{DATA_DIR}/seasons.json"
 
 
 # run with alias "runelo" in terminal
@@ -237,6 +236,60 @@ def save_moms_house_last_result(result):
         json.dump(result, f, indent=4)
 
 
+def _default_seasons_data():
+    return {
+        "current_season": {
+            "number": 1,
+            "started_at": None,
+            "match_start_index": 0
+        },
+        "archive": []
+    }
+
+
+def _safe_int(value, fallback):
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return fallback
+
+
+def load_seasons():
+    if not os.path.exists(SEASONS_FILE):
+        return _default_seasons_data()
+
+    try:
+        with open(SEASONS_FILE, "r") as f:
+            data = json.load(f)
+    except Exception:
+        return _default_seasons_data()
+
+    if not isinstance(data, dict):
+        return _default_seasons_data()
+
+    current = data.get("current_season") or {}
+    archive = data.get("archive")
+
+    if not isinstance(current, dict):
+        current = {}
+    if not isinstance(archive, list):
+        archive = []
+
+    return {
+        "current_season": {
+            "number": max(1, _safe_int(current.get("number", 1), 1)),
+            "started_at": current.get("started_at"),
+            "match_start_index": max(0, _safe_int(current.get("match_start_index", 0), 0))
+        },
+        "archive": archive
+    }
+
+
+def save_seasons(data):
+    with open(SEASONS_FILE, "w") as f:
+        json.dump(data, f, indent=4)
+
+
 # -----------------------------
 # Character list
 # -----------------------------
@@ -264,6 +317,60 @@ CHARACTERS = sorted([
     "Wii Fit Trainer", "Wolf", "Yoshi", "Young Link",
     "Zelda", "Zero Suit Samus"
 ])
+
+
+def extract_character_ratings(player_data):
+    return {
+        char: rating
+        for char, rating in player_data.items()
+        if char in CHARACTERS and isinstance(rating, (int, float))
+    }
+
+
+def build_leaderboard_rows(players_data):
+    rows = []
+    for player, player_data in players_data.items():
+        char_map = extract_character_ratings(player_data)
+        global_elo = sum(rating - 1000 for rating in char_map.values())
+        rows.append((player, global_elo, char_map))
+
+    rows.sort(key=lambda row: row[1], reverse=True)
+    return rows
+
+
+def get_best_character(player_data):
+    char_map = extract_character_ratings(player_data)
+    if not char_map:
+        return None
+
+    best_name = max(char_map, key=lambda name: char_map[name])
+    return {
+        "name": best_name,
+        "rating": char_map[best_name]
+    }
+
+
+def get_current_season_log(match_log, seasons_data):
+    start_index = seasons_data.get("current_season", {}).get("match_start_index", 0)
+    if not isinstance(start_index, int):
+        start_index = 0
+    start_index = max(0, min(start_index, len(match_log)))
+    return match_log[start_index:]
+
+
+def reset_live_ratings_for_new_season(players_data):
+    reset_data = {}
+
+    for player, player_data in players_data.items():
+        reset_player = {}
+        for key, value in player_data.items():
+            if key in CHARACTERS and isinstance(value, (int, float)):
+                reset_player[key] = 1000
+            else:
+                reset_player[key] = value
+        reset_data[player] = reset_player
+
+    return reset_data
 
 
 # -----------------------------
@@ -435,7 +542,9 @@ def home_redirect():
 @app.route("/leaderboard")
 def leaderboard():
     data = load_players()
-        # --- APPLY ELO DECAY SAFELY ---
+    seasons_data = load_seasons()
+
+    # --- APPLY ELO DECAY SAFELY ---
     for pname, pdata in data.items():
         apply_decay_to_player(pdata)
 
@@ -450,35 +559,13 @@ def leaderboard():
         last_result = None
 
     log = load_match_log()
-
-
-    # Build leaderboard rows
-    rows = []
-    for player, char_map in data.items():
-
-        # Only include REAL characters — prevents global_elo, last_played, etc.
-        clean_map = {
-            c: v for c, v in char_map.items()
-            if c in CHARACTERS and isinstance(v, (int, float))
-        }
-
-        diffs = [(v - 1000) for v in clean_map.values()]
-        global_elo = sum(diffs)
-
-        rows.append((player, global_elo, clean_map))
-
-
-
-    # Sort by ELO (descending)
-    rows.sort(key=lambda x: x[1], reverse=True)
+    season_log = get_current_season_log(log, seasons_data)
+    rows = build_leaderboard_rows(data)
 
     # Build rank lookup table: {"Will": 1, "Nick R": 2, ...}
     rank_map = {player: i + 1 for i, (player, _, _) in enumerate(rows)}
 
-    # Load match log once
-    log = load_match_log()
-
-        # Compute win streaks
+    # Compute current-season win streaks
     from collections import defaultdict
 
     def compute_win_streaks(match_log):
@@ -493,7 +580,7 @@ def leaderboard():
 
         return streaks
 
-    win_streaks = compute_win_streaks(log)
+    win_streaks = compute_win_streaks(season_log)
 
 
     # Last 20 matches, newest → oldest
@@ -514,7 +601,7 @@ def leaderboard():
                 return datetime.min   # pushes old/no-timestamp entries to the bottom
 
     # Sort all matches chronologically
-    log_sorted = sorted(log, key=parse_time)
+    log_sorted = sorted(season_log, key=parse_time)
 
     # Take the last 20 (newest), then reverse so newest → oldest
     recent_matches = log_sorted[-20:][::-1]
@@ -528,7 +615,9 @@ def leaderboard():
     recent_matches=recent_matches,
     rank_map=rank_map,
     admin_usernames=ADMIN_USERNAMES,
-    win_streaks=win_streaks
+    win_streaks=win_streaks,
+    current_season=seasons_data["current_season"],
+    archived_seasons=seasons_data["archive"]
 )
 
 
@@ -559,7 +648,7 @@ def player_stats(name):
     badges_list = data[name].get("badges", [])
 
     # Remove badges entry from character ratings
-    char_map = {c: v for c, v in data[name].items() if c != "badges"}
+    char_map = extract_character_ratings(data[name])
 
     total_chars = len(char_map)
 
@@ -692,6 +781,18 @@ def player_stats(name):
     )
 
 
+@app.route("/lifetime-ratings")
+def lifetime_ratings():
+    seasons_data = load_seasons()
+    archived_seasons = list(reversed(seasons_data.get("archive", [])))
+
+    return render_template(
+        "lifetime_ratings.html",
+        archived_seasons=archived_seasons,
+        current_season=seasons_data["current_season"]
+    )
+
+
 @app.route("/reset", methods=["POST"])
 def reset():
     if os.path.exists(DATA_FILE):
@@ -707,6 +808,47 @@ def reset():
 def sync_now():
     queue_push("Manual sync request")
     return "Manual sync triggered. Check /admin for status."
+
+
+@app.route("/start_new_season", methods=["POST"])
+@requires_auth
+def start_new_season():
+    players_data = load_players()
+    match_log = load_match_log()
+    seasons_data = load_seasons()
+    current_season = seasons_data["current_season"]
+    now = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %I:%M %p")
+
+    snapshot_rows = [
+        {
+            "player": player,
+            "rating": rating,
+            "best_character": get_best_character(players_data.get(player, {}))
+        }
+        for player, rating, _ in build_leaderboard_rows(players_data)
+    ]
+
+    season_log = get_current_season_log(match_log, seasons_data)
+    seasons_data["archive"].append({
+        "number": current_season["number"],
+        "started_at": current_season.get("started_at"),
+        "closed_at": now,
+        "match_count": len(season_log),
+        "rows": snapshot_rows
+    })
+
+    seasons_data["current_season"] = {
+        "number": current_season["number"] + 1,
+        "started_at": now,
+        "match_start_index": len(match_log)
+    }
+
+    save_seasons(seasons_data)
+    save_players(reset_live_ratings_for_new_season(players_data))
+    save_last_result({})
+
+    queue_push(f"Archived Season {current_season['number']} and started Season {current_season['number'] + 1}")
+    return redirect(url_for("admin_panel"))
 
 def compute_global_elo(player_name, players_data):
     """Returns total global ELO offset (sum of character deviations from 1000)."""
@@ -862,11 +1004,14 @@ def add_match():
 @app.route("/admin")
 @requires_auth
 def admin_panel():
+    seasons_data = load_seasons()
     return render_template(
         "admin.html",
         queue_length=len(push_queue),
         pushing_status="Running" if is_pushing else "Idle",
-        push_log=push_log
+        push_log=push_log,
+        current_season=seasons_data["current_season"],
+        archived_count=len(seasons_data["archive"])
     )
 
 @app.route("/api/matchup/<player>/<opponent>")

@@ -10,11 +10,14 @@
     <div class="container">
       <h1>{{ name }}</h1>
 
-      <a href="/leaderboard" class="nav-link">← Back to Leaderboard</a>
+      <div class="top-nav">
+        <a href="/leaderboard">Leaderboard</a>
+        <a href="/lifetime-ratings">Lifetime Ratings</a>
+      </div>
 
       <!-- Player Match Stats -->
       <div class="player-stats-box">
-        <h2>Player Data</h2>
+        <h2>Lifetime Player Data</h2>
 
         <p><strong>Total Matches:</strong> {{ total_matches }}</p>
         <p><strong>Wins:</strong> {{ wins }}</p>
@@ -65,6 +68,7 @@
 
       <!-- Character count -->
       <div class="player-summary">
+        <h2>Current Season Ratings</h2>
         <p><strong>Total Characters Played:</strong> {{ total_chars }}</p>
 
         {% if best_char %}

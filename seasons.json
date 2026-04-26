@@ -1,0 +1,81 @@
+{
+    "current_season": {
+        "number": 2,
+        "started_at": "2026-04-26 04:42 AM",
+        "match_start_index": 1430
+    },
+    "archive": [
+        {
+            "number": 1,
+            "started_at": null,
+            "closed_at": "2026-04-26 04:42 AM",
+            "match_count": 1430,
+            "rows": [
+                {
+                    "player": "Will",
+                    "rating": 5170,
+                    "best_character": {
+                        "name": "Robin",
+                        "rating": 1643
+                    }
+                },
+                {
+                    "player": "Nick R",
+                    "rating": 2640,
+                    "best_character": {
+                        "name": "Donkey Kong",
+                        "rating": 1548
+                    }
+                },
+                {
+                    "player": "Colton",
+                    "rating": 2604,
+                    "best_character": {
+                        "name": "Toon Link",
+                        "rating": 1639
+                    }
+                },
+                {
+                    "player": "Nat",
+                    "rating": 1932,
+                    "best_character": {
+                        "name": "Terry",
+                        "rating": 1361
+                    }
+                },
+                {
+                    "player": "Jamichael",
+                    "rating": 1924,
+                    "best_character": {
+                        "name": "Mario",
+                        "rating": 1325
+                    }
+                },
+                {
+                    "player": "Daryl",
+                    "rating": 1288,
+                    "best_character": {
+                        "name": "Zelda",
+                        "rating": 1653
+                    }
+                },
+                {
+                    "player": "Nick W",
+                    "rating": 1036,
+                    "best_character": {
+                        "name": "Wii Fit Trainer",
+                        "rating": 1671
+                    }
+                },
+                {
+                    "player": "Jeff",
+                    "rating": 873,
+                    "best_character": {
+                        "name": "Byleth",
+                        "rating": 1582
+                    }
+                }
+            ]
+        }
+    ]
+}

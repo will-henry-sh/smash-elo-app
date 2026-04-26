@@ -34,6 +34,21 @@
       li {
         margin-bottom: 6px;
       }
+      form {
+        margin-top: 12px;
+      }
+      button {
+        background-color: #4fa3ff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 16px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #67b2ff;
+      }
     </style>
   </head>
   <body>
@@ -43,7 +58,21 @@
       <h2>System Status</h2>
       <p><strong>Queue Length:</strong> {{ queue_length }}</p>
       <p><strong>Push Worker Status:</strong> {{ pushing_status }}</p>
-      <!-- <p><a href="/sync">Run Manual Sync</a></p>
+      <p><strong>Current Season:</strong> {{ current_season.number }}</p>
+      <p><strong>Archived Seasons:</strong> {{ archived_count }}</p>
+      <p><a href="/sync">Run Manual Sync</a></p>
+    </div>
+
+    <div class="card">
+      <h2>Season Controls</h2>
+      <p>
+        Archive the current leaderboard, publish a locked season snapshot, and
+        reset live ladder ratings back to 1000 while keeping lifetime match
+        stats.
+      </p>
+      <form method="POST" action="/start_new_season">
+        <button type="submit">Archive Season {{ current_season.number }} and Start Season {{ current_season.number + 1 }}</button>
+      </form>
     </div>
 
     <div class="card">
@@ -52,7 +81,7 @@
         {% for entry in push_log %}
         <li>{{ entry }}</li>
         {% endfor %}
-      </ul> -->
+      </ul>
     </div>
   </body>
 </html>

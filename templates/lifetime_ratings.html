@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lifetime Ratings</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+
+  <body>
+    <nav class="top-nav">
+      <a href="/matches">Matches</a>
+      <a href="/leaderboard">Leaderboard</a>
+      <a href="/lifetime-ratings">Lifetime Ratings</a>
+      <a href="/badges">Badge Info</a>
+    </nav>
+
+    <div class="container leaderboard-container">
+      <h1 class="page-title">Lifetime Ratings</h1>
+      <p class="season-banner">
+        Current live ladder: Season {{ current_season.number }}
+      </p>
+
+      {% if archived_seasons %}
+      {% for season in archived_seasons %}
+      <section class="season-card">
+        <h2>Season {{ season.number }}</h2>
+        <p class="season-meta">
+          {% if season.started_at %}Started {{ season.started_at }} · {% endif %}
+          Locked {{ season.closed_at or "Unknown" }} · {{ season.match_count or 0 }} matches
+        </p>
+
+        <table>
+          <colgroup>
+            <col style="width: 25%;" />
+            <col style="width: 25%;" />
+            <col style="width: 25%;" />
+            <col style="width: 25%;" />
+          </colgroup>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Global ELO</th>
+            <th>Best Character</th>
+          </tr>
+
+          {% for row in season.rows %}
+          {% set row_class = 'rank-gold' if loop.index == 1 else 'rank-silver' if loop.index == 2 else 'rank-bronze' if loop.index == 3 else 'rank-normal' %}
+          <tr>
+            <td><span class="{{ row_class }}">{{ loop.index }}</span></td>
+            <td>
+              <a href="/player/{{ row.player }}">
+                <span class="{{ row_class }}">
+                  {{ row.player }}
+                </span>
+              </a>
+            </td>
+            <td><span class="{{ row_class }}">{{ row.rating }}</span></td>
+            <td>
+              {% if row.best_character %}
+              <span class="{{ row_class }}">
+                {{ row.best_character.name }} ({{ row.best_character.rating }})
+              </span>
+              {% else %}
+              -
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </section>
+      {% endfor %}
+      {% else %}
+      <div class="result-box">
+        <p>No archived seasons yet.</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
