@@ -54,6 +54,7 @@ def load_admin_credentials():
 
 ADMIN_USERS, ADMIN_USERNAMES = load_admin_credentials()
 print(f"Loaded {len(ADMIN_USERS)} admin users")
+ADMIN_PANEL_USERNAME = "bunnyslave"
 
 DECAY_START_DAYS = 14
 DECAY_PER_DAY = 2      # total global decay per day
@@ -476,6 +477,20 @@ def requires_auth(f):
     return decorated
 
 
+def requires_admin_panel_auth(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        auth = request.authorization
+        if (
+            not auth
+            or not check_auth(auth.username, auth.password)
+            or auth.username != ADMIN_PANEL_USERNAME
+        ):
+            return authenticate()
+        return f(*args, **kwargs)
+    return decorated
+
+
 
 # -----------------------------
 # Routes
@@ -807,13 +822,14 @@ def reset():
     
 
 @app.route("/sync")
+@requires_admin_panel_auth
 def sync_now():
     queue_push("Manual sync request")
     return "Manual sync triggered. Check /admin for status."
 
 
 @app.route("/start_new_season", methods=["POST"])
-@requires_auth
+@requires_admin_panel_auth
 def start_new_season():
     players_data = load_players()
     match_log = load_match_log()
@@ -1004,7 +1020,7 @@ def add_match():
 
 
 @app.route("/admin")
-@requires_auth
+@requires_admin_panel_auth
 def admin_panel():
     seasons_data = load_seasons()
     return render_template(
