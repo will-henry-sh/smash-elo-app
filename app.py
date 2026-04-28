@@ -113,9 +113,10 @@ def push_to_github_worker():
         commit_message = push_queue.pop(0)
 
         try:
-            subprocess.run(["git", "add", "-u"], check=True)
+            subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True, cwd=APP_DIR)
+            subprocess.run(["git", "add", "-u"], check=True, cwd=APP_DIR)
 
-            diff_check = subprocess.run(["git", "diff", "--cached", "--quiet"])
+            diff_check = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=APP_DIR)
             if diff_check.returncode == 0:
                 msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] No changes to commit ({commit_message})"
                 print(msg)
@@ -124,8 +125,8 @@ def push_to_github_worker():
                     push_log.pop(0)
                 continue
 
-            subprocess.run(["git", "commit", "-m", commit_message], check=True)
-            subprocess.run(["git", "push", "origin", "main"], check=True)
+            subprocess.run(["git", "commit", "-m", commit_message], check=True, cwd=APP_DIR)
+            subprocess.run(["git", "push", "origin", "main"], check=True, cwd=APP_DIR)
 
             msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Git push successful: {commit_message}"
             print(msg)
