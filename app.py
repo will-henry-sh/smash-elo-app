@@ -3,6 +3,7 @@ import json
 import os
 import subprocess
 import threading
+import time
 from functools import wraps
 from datetime import datetime
 from zoneinfo import ZoneInfo
@@ -149,6 +150,38 @@ def queue_push(commit_message="Auto-update from match submission"):
     """Adds a push request to the queue and starts worker if one isn't running."""
     push_queue.append(commit_message)
     threading.Thread(target=push_to_github_worker).start()
+
+
+pull_log = []
+AUTO_PULL_INTERVAL = 60  # seconds
+
+
+def auto_pull_worker():
+    while True:
+        time.sleep(AUTO_PULL_INTERVAL)
+        if is_pushing or push_queue:
+            continue
+        try:
+            result = subprocess.run(
+                ["git", "pull", "origin", "main"],
+                check=True, capture_output=True, text=True,
+                cwd=APP_DIR
+            )
+            output = (result.stdout.strip() or "Already up to date.")
+            msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Git pull: {output}"
+            print(msg)
+            pull_log.append(msg)
+            if len(pull_log) > MAX_LOGS:
+                pull_log.pop(0)
+        except subprocess.CalledProcessError as e:
+            msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Git pull FAILED: {e}"
+            print(msg)
+            pull_log.append(msg)
+            if len(pull_log) > MAX_LOGS:
+                pull_log.pop(0)
+
+
+threading.Thread(target=auto_pull_worker, daemon=True).start()
 
 
 # Detect Render environment
@@ -1132,6 +1165,7 @@ def admin_panel():
         queue_length=len(push_queue),
         pushing_status="Running" if is_pushing else "Idle",
         push_log=push_log,
+        pull_log=pull_log,
         current_season=seasons_data["current_season"],
         archived_count=len(seasons_data["archive"])
     )

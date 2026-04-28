@@ -62,6 +62,17 @@
         {% endfor %}
       </ul>
     </div>
+
+    <div class="card">
+      <h2 class="section-title">Recent Git Pull Logs (auto every 60s)</h2>
+      <ul class="admin-list">
+        {% for entry in pull_log %}
+        <li>{{ entry }}</li>
+        {% else %}
+        <li>No pulls yet.</li>
+        {% endfor %}
+      </ul>
+    </div>
     </div>
   </body>
 </html>
