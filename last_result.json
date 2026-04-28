@@ -1,7 +1,7 @@
 {
     "p1": "Will",
-    "c1": "Captain Falcon",
-    "new1": 1055,
+    "c1": "Ike",
+    "new1": 1054,
     "diff1": 26,
     "p2": "Nick R",
     "c2": "Random",
@@ -9,7 +9,7 @@
     "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Captain Falcon",
+    "last_char1": "Ike",
     "last_char2": "Random",
     "last_winner": "p1"
 }
