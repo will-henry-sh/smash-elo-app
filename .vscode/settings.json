@@ -1,4 +1,7 @@
 {
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.postCommitCommand": "sync",
   "editor.inlineSuggest.enabled": false,
   "editor.quickSuggestions": {
     "comments": "off",
