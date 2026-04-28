@@ -18926,5 +18926,31 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-04-28 05:22 AM",
+        "p1": "Nick R",
+        "c1": "Random",
+        "new1": 1128,
+        "diff1": 38,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
+    },
+    {
+        "timestamp": "2026-04-28 05:22 AM",
+        "p1": "Nick R",
+        "c1": "Random",
+        "new1": 1164,
+        "diff1": 36,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
