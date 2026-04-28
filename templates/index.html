@@ -7,6 +7,16 @@
 
     <!-- Searchable Dropdown Script -->
     <script>
+        function updateMatchSubmitState() {
+          const submitButton = document.querySelector(".submit-match");
+          if (!submitButton) return;
+
+          const hasOpenDropdown = Array.from(document.querySelectorAll(".search-dropdown"))
+            .some((dropdown) => dropdown.style.display === "block");
+
+          submitButton.disabled = hasOpenDropdown;
+        }
+
         function makeSearchable(selectEl) {
           const wrapper = document.createElement("div");
           wrapper.style.position = "relative";
@@ -57,6 +67,7 @@
                 input.value = option;
                 selectEl.value = option;
                 dropdown.style.display = "none";
+                updateMatchSubmitState();
               });
       
               dropdown.appendChild(item);
@@ -68,15 +79,20 @@
             const filtered = options.filter((o) => o.toLowerCase().includes(val));
             renderDropdown(filtered);
             dropdown.style.display = filtered.length ? "block" : "none";
+            updateMatchSubmitState();
           });
       
           input.addEventListener("focus", () => {
             renderDropdown(options);
             dropdown.style.display = "block";
+            updateMatchSubmitState();
           });
       
           document.addEventListener("click", (e) => {
-            if (!wrapper.contains(e.target)) dropdown.style.display = "none";
+            if (!wrapper.contains(e.target)) {
+              dropdown.style.display = "none";
+              updateMatchSubmitState();
+            }
           });
         }
       
@@ -84,6 +100,7 @@
           document.querySelectorAll("select.searchable").forEach((select) => {
             makeSearchable(select);
           });
+          updateMatchSubmitState();
         });
       </script>
       

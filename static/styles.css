@@ -461,6 +461,12 @@ button:hover {
   background: linear-gradient(135deg, #2f8660, #3ea070);
 }
 
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background: linear-gradient(135deg, #3f4a45, #4b5650);
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1058,6 +1064,10 @@ button:hover {
     font-size: 0.84rem;
   }
 
+  body.matches-page .search-input {
+    font-size: 16px;
+  }
+
   body.matches-page .search-dropdown {
     max-height: 92px;
   }
@@ -1202,6 +1212,10 @@ button:hover {
   body.matches-page button {
     padding: 7px 8px;
     font-size: 0.8rem;
+  }
+
+  body.matches-page .search-input {
+    font-size: 16px;
   }
 
   body.matches-page .winner-row select {
