@@ -18,75 +18,81 @@
     {% endif %} {%- endmacro %}
 
     <nav class="top-nav">
-      <a href="/matches">Matches</a>
-      <a href="/leaderboard">Leaderboard</a>
-      <a href="/lifetime-ratings">Lifetime Ratings</a>
-      <a href="/badges">Badge Info</a>
+      <a href="/matches" class="{{ 'active' if request.path == '/matches' else '' }}">Matches</a>
+      <a href="/leaderboard" class="{{ 'active' if request.path == '/leaderboard' else '' }}">Leaderboard</a>
+      <a href="/lifetime-ratings" class="{{ 'active' if request.path == '/lifetime-ratings' else '' }}">Lifetime Ratings</a>
+      <a href="/badges" class="{{ 'active' if request.path == '/badges' else '' }}">Badge Info</a>
     </nav>
 
     <div class="container leaderboard-container">
-      <h1 class="page-title">Smash Leaderboard</h1>
+      <div class="page-hero">
+        <div class="page-kicker">Current Ladder</div>
+        <h1 class="page-title">Smash Leaderboard</h1>
+        <p class="page-subtitle">
+          Track the live season, follow momentum shifts, and see who is climbing fastest.
+        </p>
+      </div>
+
       <div class="season-banner">
         <h2>Season {{ current_season.number }}</h2>
         <span class="season-meta">Ends 5/01/2026</span>
       </div>
 
-      <table>
-        <tr>
-          <th>Rank</th>
-          <th class="ws-col"></th>
-          <th>Player</th>
-          <th>Global ELO</th>
-        </tr>
+      <section class="table-card">
+        <table>
+          <tr>
+            <th>Rank</th>
+            <th class="ws-col"></th>
+            <th>Player</th>
+            <th>Global ELO</th>
+          </tr>
 
-        {% for player, rating, char_map in rows %}
-        <tr>
-          <!-- Rank -->
-          <td class="rank-col">
-            {% if loop.index == 1 %}
-            <span class="rank-gold">{{ loop.index }}</span>
-            {% elif loop.index == 2 %}
-            <span class="rank-silver">{{ loop.index }}</span>
-            {% elif loop.index == 3 %}
-            <span class="rank-bronze">{{ loop.index }}</span>
-            {% else %}
-            <span class="rank-normal">{{ loop.index }}</span>
-            {% endif %}
-          </td>
+          {% for player, rating, char_map in rows %}
+          <tr>
+            <td class="rank-col">
+              {% if loop.index == 1 %}
+              <span class="rank-gold">{{ loop.index }}</span>
+              {% elif loop.index == 2 %}
+              <span class="rank-silver">{{ loop.index }}</span>
+              {% elif loop.index == 3 %}
+              <span class="rank-bronze">{{ loop.index }}</span>
+              {% else %}
+              <span class="rank-normal">{{ loop.index }}</span>
+              {% endif %}
+            </td>
 
-          <!-- win streak display -->
-          <td class="ws-col">
-            {% set streak = win_streaks.get(player, 0) -%} {% if streak > 1 -%}
-            <img src="/static/icons/win_streak.png" class="ws-icon" />
-            <span class="ws-mult">×</span>
-            <span class="ws-num">{{ streak }}</span>
-            {%- endif %}
-          </td>
+            <td class="ws-col">
+              {% set streak = win_streaks.get(player, 0) -%} {% if streak > 1 -%}
+              <img src="/static/icons/win_streak.png" class="ws-icon" />
+              <span class="ws-mult">×</span>
+              <span class="ws-num">{{ streak }}</span>
+              {%- endif %}
+            </td>
 
-          <!-- Player -->
-          <td class="player-cell">
-            <a href="/player/{{ player }}" class="player-name-block">
-              <span
-                class="player-name {{ 'rank-gold' if loop.index==1 else
-                                         'rank-silver' if loop.index==2 else
-                                         'rank-bronze' if loop.index==3 else
-                                         'rank-normal' }}"
-              >
-                {{ player }}
-              </span>
-            </a>
-          </td>
+            <td class="player-cell">
+              <a href="/player/{{ player }}" class="player-name-block">
+                <span
+                  class="player-name {{ 'rank-gold' if loop.index==1 else
+                                           'rank-silver' if loop.index==2 else
+                                           'rank-bronze' if loop.index==3 else
+                                           'rank-normal' }}"
+                >
+                  {{ player }}
+                </span>
+              </a>
+            </td>
 
-          <!-- Global ELO -->
-          <td class="rating-value">{{ rating }}</td>
-        </tr>
-        {% endfor %}
-      </table>
+            <td class="rating-value">{{ rating }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </section>
 
-      <!-- RECENT MATCH SECTION (Safe even if last_match is None) -->
-
-      <h2 style="text-align: center; margin-top: 40px">Season Matches (Last 20)</h2>
-
+      <section class="section-card">
+        <h2 class="section-title">Season Matches (Last 20)</h2>
+        <p class="section-subtitle">
+          Fresh results, rating swings, and the most recent shifts in the ladder.
+        </p>
       <div class="recent-matches-list">
         {% if recent_matches %}
         {% for m in recent_matches %}
@@ -128,11 +134,13 @@
         </div>
         {% endfor %}
         {% else %}
-        <div class="result-box recent-match-card">
+        <div class="result-box recent-match-card empty-state">
           <p>No matches have been played in this season yet.</p>
+          <p class="muted">Head to Matches to submit the first result.</p>
         </div>
         {% endif %}
       </div>
+      </section>
     </div>
   </body>
 </html>

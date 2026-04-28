@@ -4,75 +4,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Admin Panel</title>
     <link rel="stylesheet" href="/static/styles.css" />
-    <style>
-      body {
-        background-color: #222;
-        color: #eee;
-        padding: 20px;
-      }
-      h1 {
-        color: #fff;
-      }
-      .card {
-        background-color: #333;
-        padding: 15px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-      }
-      a {
-        color: #4fa3ff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      ul {
-        list-style: none;
-        padding-left: 0;
-      }
-      li {
-        margin-bottom: 6px;
-      }
-      form {
-        margin-top: 12px;
-      }
-      button {
-        background-color: #4fa3ff;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        padding: 12px 16px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-      button:hover {
-        background-color: #67b2ff;
-      }
-    </style>
   </head>
   <body>
     <nav class="top-nav">
-      <a href="/matches">Matches</a>
-      <a href="/leaderboard">Leaderboard</a>
-      <a href="/lifetime-ratings">Lifetime Ratings</a>
-      <a href="/badges">Badge Info</a>
+      <a href="/matches" class="{{ 'active' if request.path == '/matches' else '' }}">Matches</a>
+      <a href="/leaderboard" class="{{ 'active' if request.path == '/leaderboard' else '' }}">Leaderboard</a>
+      <a href="/lifetime-ratings" class="{{ 'active' if request.path == '/lifetime-ratings' else '' }}">Lifetime Ratings</a>
+      <a href="/badges" class="{{ 'active' if request.path == '/badges' else '' }}">Badge Info</a>
     </nav>
 
-    <h1>Smash ELO Admin Panel</h1>
+    <div class="container">
+      <div class="page-hero">
+        <div class="page-kicker">Restricted Access</div>
+        <h1 class="page-title">Smash ELO Admin Panel</h1>
+        <p class="page-subtitle">
+          Maintenance controls, sync status, and season rollover tools for the protected admin account.
+        </p>
+      </div>
 
-    <div class="card">
-      <h2>System Status</h2>
-      <p><strong>Queue Length:</strong> {{ queue_length }}</p>
-      <p><strong>Push Worker Status:</strong> {{ pushing_status }}</p>
-      <p><strong>Current Season:</strong> {{ current_season.number }}</p>
-      <p><strong>Archived Seasons:</strong> {{ archived_count }}</p>
-      <p><a href="/sync">Run Manual Sync</a></p>
+      <div class="card">
+        <h2 class="section-title">System Status</h2>
+        <div class="stats-grid">
+          <div class="stat-tile">
+            <span class="stat-label">Queue</span>
+            <span class="stat-value">{{ queue_length }}</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-label">Push Worker</span>
+            <span class="stat-value">{{ pushing_status }}</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-label">Season</span>
+            <span class="stat-value">{{ current_season.number }}</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-label">Archived</span>
+            <span class="stat-value">{{ archived_count }}</span>
+          </div>
+        </div>
+        <p style="text-align: center; margin-top: 18px;">
+          <a href="/sync" class="muted-link">Run Manual Sync</a>
+        </p>
     </div>
 
     <div class="card">
-      <h2>Season Controls</h2>
-      <p>
+      <h2 class="section-title">Season Controls</h2>
+      <p class="section-subtitle">
         Archive the current leaderboard, publish a locked season snapshot, and
         reset live ladder ratings back to 1000 while keeping lifetime match
         stats.
@@ -83,12 +60,13 @@
     </div>
 
     <div class="card">
-      <h2>Recent Git Push Logs</h2>
-      <ul>
+      <h2 class="section-title">Recent Git Push Logs</h2>
+      <ul class="admin-list">
         {% for entry in push_log %}
         <li>{{ entry }}</li>
         {% endfor %}
       </ul>
+    </div>
     </div>
   </body>
 </html>

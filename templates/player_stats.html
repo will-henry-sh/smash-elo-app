@@ -8,28 +8,46 @@
 
   <body>
     <nav class="top-nav">
-      <a href="/matches">Matches</a>
-      <a href="/leaderboard">Leaderboard</a>
-      <a href="/lifetime-ratings">Lifetime Ratings</a>
-      <a href="/badges">Badge Info</a>
+      <a href="/matches" class="{{ 'active' if request.path == '/matches' else '' }}">Matches</a>
+      <a href="/leaderboard" class="{{ 'active' if request.path == '/leaderboard' else '' }}">Leaderboard</a>
+      <a href="/lifetime-ratings" class="{{ 'active' if request.path == '/lifetime-ratings' else '' }}">Lifetime Ratings</a>
+      <a href="/badges" class="{{ 'active' if request.path == '/badges' else '' }}">Badge Info</a>
     </nav>
 
     <div class="container">
-      <h1>{{ name }}</h1>
-
-      <!-- Player Match Stats -->
-      <div class="player-stats-box">
-        <h2>Lifetime Player Data</h2>
-
-        <p><strong>Total Matches:</strong> {{ total_matches }}</p>
-        <p><strong>Wins:</strong> {{ wins }}</p>
-        <p><strong>Losses:</strong> {{ losses }}</p>
-        <p><strong>Win Percentage:</strong> {{ win_rate }}%</p>
+      <div class="page-hero">
+        <div class="page-kicker">Player Profile</div>
+        <h1 class="page-title">{{ name }}</h1>
+        <p class="page-subtitle">
+          Lifetime results, matchup history, current-season character spread, and achievement progress.
+        </p>
       </div>
 
-      <!-- Head-to-Head Section -->
+      <div class="player-stats-box">
+        <h2 class="section-title">Lifetime Player Data</h2>
+        <div class="stats-grid">
+          <div class="stat-tile">
+            <span class="stat-label">Matches</span>
+            <span class="stat-value">{{ total_matches }}</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-label">Wins</span>
+            <span class="stat-value">{{ wins }}</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-label">Losses</span>
+            <span class="stat-value">{{ losses }}</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-label">Win Rate</span>
+            <span class="stat-value">{{ win_rate }}%</span>
+          </div>
+        </div>
+      </div>
+
       <div class="matchup-box">
-        <h2>Matchup History</h2>
+        <h2 class="section-title">Matchup History</h2>
+        <p class="section-subtitle">Compare long-term results against a specific opponent.</p>
 
         <select id="opponentSelect">
           <option value="">Select Opponent</option>
@@ -48,6 +66,7 @@
       {% if badges %}
       <div class="badge-section">
         <h2 class="badge-header">Badges</h2>
+        <p class="section-subtitle">Collected achievements and milestone unlocks.</p>
 
         <div class="badge-grid">
           {% for badge in badges %}
@@ -68,36 +87,42 @@
       </div>
       {% endif %}
 
-      <!-- Character count -->
       <div class="player-summary">
-        <h2>Current Season Ratings</h2>
-        <p><strong>Total Characters Played:</strong> {{ total_chars }}</p>
+        <h2 class="section-title">Current Season Ratings</h2>
+        <div class="stats-grid">
+          <div class="stat-tile">
+            <span class="stat-label">Characters</span>
+            <span class="stat-value">{{ total_chars }}</span>
+          </div>
 
-        {% if best_char %}
-        <p>
-          <strong>Best Character:</strong> {{ best_char }} ({{
-          char_map[best_char] }})
-        </p>
-        <p>
-          <strong>Worst Character:</strong> {{ worst_char }} ({{
-          char_map[worst_char] }})
-        </p>
-        {% endif %}
+          {% if best_char %}
+          <div class="stat-tile">
+            <span class="stat-label">Best</span>
+            <span class="stat-value">{{ best_char }} ({{ char_map[best_char] }})</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-label">Worst</span>
+            <span class="stat-value">{{ worst_char }} ({{ char_map[worst_char] }})</span>
+          </div>
+          {% endif %}
+        </div>
       </div>
 
-      <table>
-        <tr>
-          <th>Character</th>
-          <th>ELO</th>
-        </tr>
+      <section class="table-card">
+        <table class="player-page-table">
+          <tr>
+            <th>Character</th>
+            <th>ELO</th>
+          </tr>
 
-        {% for char, elo in char_map | dictsort(by='value', reverse=true) %}
-        <tr>
-          <td>{{ char }}</td>
-          <td>{{ elo }}</td>
-        </tr>
-        {% endfor %}
-      </table>
+          {% for char, elo in char_map | dictsort(by='value', reverse=true) %}
+          <tr>
+            <td>{{ char }}</td>
+            <td>{{ elo }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </section>
     </div>
 
     <script>

@@ -8,22 +8,27 @@
 
   <body>
     <nav class="top-nav">
-      <a href="/matches">Matches</a>
-      <a href="/leaderboard">Leaderboard</a>
-      <a href="/lifetime-ratings">Lifetime Ratings</a>
-      <a href="/badges">Badge Info</a>
+      <a href="/matches" class="{{ 'active' if request.path == '/matches' else '' }}">Matches</a>
+      <a href="/leaderboard" class="{{ 'active' if request.path == '/leaderboard' else '' }}">Leaderboard</a>
+      <a href="/lifetime-ratings" class="{{ 'active' if request.path == '/lifetime-ratings' else '' }}">Lifetime Ratings</a>
+      <a href="/badges" class="{{ 'active' if request.path == '/badges' else '' }}">Badge Info</a>
     </nav>
 
     <div class="container leaderboard-container">
-      <h1 class="page-title">Lifetime Ratings</h1>
-      <p class="season-banner">
-        Current live ladder: Season {{ current_season.number }}
-      </p>
+      <div class="page-hero">
+        <div class="page-kicker">Season Archive</div>
+        <h1 class="page-title">Lifetime Ratings</h1>
+        <p class="page-subtitle">
+          Locked snapshots of every finished season, including final placements and best characters.
+        </p>
+      </div>
+
+      <p class="season-banner">Current live ladder: Season {{ current_season.number }}</p>
 
       {% if archived_seasons %}
       {% for season in archived_seasons %}
       <section class="season-card">
-        <h2>Season {{ season.number }}</h2>
+        <h2 class="section-title">Season {{ season.number }}</h2>
         <p class="season-meta">
           {% if season.started_at %}Started {{ season.started_at }} · {% endif %}
           Locked {{ season.closed_at or "Unknown" }} · {{ season.match_count or 0 }} matches
@@ -70,8 +75,9 @@
       </section>
       {% endfor %}
       {% else %}
-      <div class="result-box">
+      <div class="result-box empty-state">
         <p>No archived seasons yet.</p>
+        <p class="muted">Archive the current ladder from the admin page when a season ends.</p>
       </div>
       {% endif %}
     </div>

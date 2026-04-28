@@ -7,14 +7,22 @@
   </head>
   <body>
     <nav class="top-nav">
-      <a href="/matches">Matches</a>
-      <a href="/leaderboard">Leaderboard</a>
-      <a href="/badges">Badge Info</a>
+      <a href="/matches" class="{{ 'active' if request.path == '/matches' else '' }}">Matches</a>
+      <a href="/leaderboard" class="{{ 'active' if request.path == '/leaderboard' else '' }}">Leaderboard</a>
+      <a href="/lifetime-ratings" class="{{ 'active' if request.path == '/lifetime-ratings' else '' }}">Lifetime Ratings</a>
+      <a href="/badges" class="{{ 'active' if request.path == '/badges' else '' }}">Badge Info</a>
     </nav>
 
     <div class="container">
-      <h1 class="page-title">Mom's House</h1>
+      <div class="page-hero">
+        <div class="page-kicker">Event Ladder</div>
+        <h1 class="page-title">Mom's House</h1>
+        <p class="page-subtitle">
+          Submit placement-based results for special sessions outside the main one-on-one ladder.
+        </p>
+      </div>
 
+      <section class="section-card">
       <form action="/add_moms_house" method="POST" class="moms-house-form">
         {% for i in range(1, 9) %}
         {% set last_player = last_placements[i-1] if last_placements|length >= i else "" %}
@@ -45,10 +53,11 @@
           <button type="submit" class="submit-match">Submit Placements</button>
         </div>
       </form>
+      </section>
 
       {% if last and last.get("placements") %}
-      <div class="result-box" style="text-align: center;">
-        <h2>Last Result</h2>
+      <div class="result-box">
+        <h2 class="section-title">Last Result</h2>
         <p>{{ last["timestamp"] }}</p>
         {% for name in last["placements"] %}
         <p>

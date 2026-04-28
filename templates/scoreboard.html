@@ -7,15 +7,22 @@
   </head>
   <body>
     <nav class="top-nav">
-      <a href="/matches">Matches</a>
-      <a href="/leaderboard">Leaderboard</a>
-      <a href="/lifetime-ratings">Lifetime Ratings</a>
-      <a href="/badges">Badge Info</a>
+      <a href="/matches" class="{{ 'active' if request.path == '/matches' else '' }}">Matches</a>
+      <a href="/leaderboard" class="{{ 'active' if request.path == '/leaderboard' else '' }}">Leaderboard</a>
+      <a href="/lifetime-ratings" class="{{ 'active' if request.path == '/lifetime-ratings' else '' }}">Lifetime Ratings</a>
+      <a href="/badges" class="{{ 'active' if request.path == '/badges' else '' }}">Badge Info</a>
     </nav>
 
     <div class="container scoreboard-container">
-      <h1 class="page-title">SCOREBOARD</h1>
+      <div class="page-hero">
+        <div class="page-kicker">Mom's House</div>
+        <h1 class="page-title">Scoreboard</h1>
+        <p class="page-subtitle">
+          Special-event placements, side-bracket momentum, and multiplayer ranking snapshots.
+        </p>
+      </div>
 
+      <section class="table-card">
       <table>
         <tr>
           <th>Rank</th>
@@ -59,6 +66,7 @@
         </tr>
         {% endfor %}
       </table>
+      </section>
     </div>
   </body>
 </html>

@@ -88,24 +88,28 @@
 
   <body>
     <nav class="top-nav">
-      <a href="/matches">Matches</a>
-      <a href="/leaderboard">Leaderboard</a>
-      <a href="/lifetime-ratings">Lifetime Ratings</a>
-      <a href="/badges">Badge Info</a>
+      <a href="/matches" class="{{ 'active' if request.path == '/matches' else '' }}">Matches</a>
+      <a href="/leaderboard" class="{{ 'active' if request.path == '/leaderboard' else '' }}">Leaderboard</a>
+      <a href="/lifetime-ratings" class="{{ 'active' if request.path == '/lifetime-ratings' else '' }}">Lifetime Ratings</a>
+      <a href="/badges" class="{{ 'active' if request.path == '/badges' else '' }}">Badge Info</a>
     </nav>
     
     <div class="container">
-      <h1 class="page-title">Smash Ultimate Match Info</h1>
-    
+      <div class="page-hero">
+        <div class="page-kicker">Match Entry</div>
+        <h1 class="page-title">Submit Match Results</h1>
+        <p class="page-subtitle">
+          Log new games, update the ladder instantly, and keep the season record clean and auditable.
+        </p>
+      </div>
+
+      <section class="section-card">
       <form action="/add_match" method="POST">
-    
-          <!-- Player 1 -->
-          <div class="form-row-labels">
-            <div class="label-col player-label">Player 1</div>
-            <div class="label-col character-label"></div>
-          </div>
-    
-          <div class="form-row">
+
+          <div class="form-grid">
+            <div class="form-block">
+              <h3>Player 1</h3>
+              <div class="form-row">
               <select name="player1" required>
                   <option value="" disabled>Select Player 1</option>
                   {% for p in player_list %}
@@ -114,7 +118,7 @@
                   </option>
                   {% endfor %}
               </select>
-    
+
               <select name="p1_character" required class="searchable character-field">
                   <option value="" disabled>Select Character</option>
                   {% for char in characters %}
@@ -123,15 +127,12 @@
                   </option>
                   {% endfor %}
               </select>
-          </div>
-    
-          <!-- Player 2 -->
-          <div class="form-row-labels">
-            <div class="label-col player-label">Player 2</div>
-            <div class="label-col character-label"></div>
-          </div>
-    
-          <div class="form-row">
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>Player 2</h3>
+              <div class="form-row">
               <select name="player2" required>
                   <option value="" disabled>Select Player 2</option>
                   {% for p in player_list %}
@@ -140,7 +141,7 @@
                   </option>
                   {% endfor %}
               </select>
-    
+
               <select name="p2_character" required class="searchable character-field">
                   <option value="" disabled>Select Character</option>
                   {% for char in characters %}
@@ -149,9 +150,10 @@
                   </option>
                   {% endfor %}
               </select>
+              </div>
+            </div>
           </div>
-    
-          <!-- Winner -->
+
           <h3 class="form-section-label">Winner</h3>
           <div class="form-row">
               <select name="winner" required>
@@ -170,12 +172,12 @@
               <button type="submit" class="submit-match">Submit Match</button>
           </div>
     
-      </form>   <!-- ✅ CORRECT CLOSING FORM TAG -->
+      </form>
+      </section>
     
-      <!-- Last Match Result -->
       {% if last and last.get('p1') %}
-      <div class="result-box" style="text-align:center;">
-          <h2>Last Match Result</h2>
+      <div class="result-box">
+          <h2 class="section-title">Last Match Result</h2>
     
           <p>
             <strong>{{ last['p1'] }} ({{ last['c1'] }})</strong>:
@@ -199,7 +201,7 @@
       </div>
       {% endif %}
     
-    </div> <!-- container -->
+    </div>
     
 
     <script>
