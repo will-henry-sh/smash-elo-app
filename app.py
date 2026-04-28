@@ -513,6 +513,19 @@ def calculate_moms_house_deltas(placements, ratings):
     return deltas
 
 
+def apply_random_modifier(character_name, change_amount):
+    if character_name != "Random":
+        return change_amount
+
+    if change_amount > 0:
+        return round(change_amount * 1.5)
+
+    if change_amount < 0:
+        return round(change_amount * 0.8)
+
+    return 0
+
+
 
 
 def check_auth(username, password):
@@ -1047,6 +1060,11 @@ def add_match():
             change2 *= 2          # winner bonus
             new2 = old2 + change2
             new1 = old1 + change1 # loser normal loss
+
+    change1 = apply_random_modifier(c1, change1)
+    change2 = apply_random_modifier(c2, change2)
+    new1 = old1 + change1
+    new2 = old2 + change2
 
 
 

@@ -1021,68 +1021,108 @@ button:hover {
 
   body.matches-page .container {
     min-height: calc(100dvh - 82px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
-    padding: 14px 14px 12px;
+    padding: 10px 12px 8px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
 
   body.matches-page .page-hero {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
 
   body.matches-page .match-page-title {
-    font-size: 1.52rem;
+    font-size: 1.34rem;
   }
 
   body.matches-page .form-grid {
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
   }
 
   body.matches-page .form-block {
-    padding: 12px;
+    padding: 10px;
   }
 
   body.matches-page .form-block h3,
   body.matches-page .form-section-label {
-    margin-top: 10px;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
+    margin-top: 8px;
+    margin-bottom: 6px;
+    font-size: 0.82rem;
   }
 
   body.matches-page input,
   body.matches-page select,
   body.matches-page button {
-    padding: 11px 12px;
-    font-size: 0.95rem;
+    padding: 9px 10px;
+    font-size: 0.9rem;
   }
 
   body.matches-page .search-dropdown {
-    max-height: 116px;
+    max-height: 92px;
+  }
+
+  body.matches-page .form-row {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  body.matches-page .form-block .form-row .field-player,
+  body.matches-page .form-block .form-row .player-select {
+    flex: 0 0 38%;
+    max-width: 38%;
+  }
+
+  body.matches-page .form-block .form-row .field-character,
+  body.matches-page .form-block .form-row .character-select {
+    flex: 0 0 58%;
+    max-width: 58%;
   }
 
   body.matches-page .winner-row select {
     width: 100%;
-    max-width: 220px;
+    max-width: 180px;
+  }
+
+  body.matches-page .result-box {
+    display: block;
+    margin-top: 10px;
+    padding: 12px 14px;
+  }
+
+  body.matches-page .result-box .section-title {
+    font-size: 0.98rem;
+    margin-bottom: 8px;
+  }
+
+  body.matches-page .result-box p {
+    margin-bottom: 6px;
+    font-size: 0.84rem;
+    line-height: 1.3;
   }
 
   body.matches-page .submit-row {
-    gap: 10px;
-    margin-top: 14px;
+    gap: 8px;
+    margin-top: 10px;
+    flex-direction: row;
+    align-items: center;
   }
 
   body.matches-page .three-stock-wrapper {
-    padding: 10px 14px;
+    width: auto;
+    padding: 8px 12px;
+  }
+
+  body.matches-page .three-stock-wrapper label {
+    font-size: 0.9rem;
   }
 
   body.matches-page .submit-match {
     min-width: 0;
-    width: 100%;
-    max-width: 220px;
-  }
-
-  body.matches-page .result-box {
-    display: none;
+    width: auto;
+    max-width: none;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 }
 
@@ -1141,19 +1181,57 @@ button:hover {
   }
 
   body.matches-page .match-page-title {
-    font-size: 1.4rem;
+    font-size: 1.22rem;
   }
 
   body.matches-page .form-block {
-    padding: 10px;
+    padding: 8px;
   }
 
   body.matches-page .form-grid {
-    gap: 8px;
+    gap: 6px;
   }
 
   body.matches-page .submit-row {
-    gap: 8px;
-    margin-top: 12px;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  body.matches-page input,
+  body.matches-page select,
+  body.matches-page button {
+    padding: 8px 9px;
+    font-size: 0.84rem;
+  }
+
+  body.matches-page .winner-row select {
+    max-width: 156px;
+  }
+
+  body.matches-page .three-stock-wrapper {
+    padding: 7px 10px;
+  }
+
+  body.matches-page .three-stock-wrapper label {
+    font-size: 0.82rem;
+  }
+
+  body.matches-page .submit-match {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  body.matches-page .result-box {
+    padding: 10px 12px;
+  }
+
+  body.matches-page .result-box .section-title {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+
+  body.matches-page .result-box p {
+    font-size: 0.78rem;
+    margin-bottom: 5px;
   }
 }
