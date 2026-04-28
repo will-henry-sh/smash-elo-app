@@ -1,7 +1,16 @@
 {
   "git.autofetch": true,
+  "git.autofetchPeriod": 10,
+  "git.autorefresh": true,
   "git.confirmSync": false,
+  "git.fetchOnPull": true,
   "git.postCommitCommand": "sync",
+  "git.pruneOnFetch": true,
+  "git.showActionButton": {
+    "commit": true,
+    "publish": true,
+    "sync": true
+  },
   "editor.inlineSuggest.enabled": false,
   "editor.quickSuggestions": {
     "comments": "off",
