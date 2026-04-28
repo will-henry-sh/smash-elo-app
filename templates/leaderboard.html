@@ -26,12 +26,10 @@
 
     <div class="container leaderboard-container">
       <h1 class="page-title">Smash Leaderboard</h1>
-      <p class="season-banner">
-        Season {{ current_season.number }}
-        {% if current_season.started_at %}
-        <span class="season-meta">Started {{ current_season.started_at }}</span>
-        {% endif %}
-      </p>
+      <div class="season-banner">
+        <h2>Season {{ current_season.number }}</h2>
+        <span class="season-meta">Ends 5/01/2026</span>
+      </div>
 
       <table>
         <tr>
