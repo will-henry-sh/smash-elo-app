@@ -35,6 +35,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
+  background: #0f1114;
 }
 
 body {
@@ -43,8 +44,11 @@ body {
     linear-gradient(180deg, #17191d 0%, var(--bg) 28%, #0f1114 100%);
   color: var(--text);
   font-family: "SF Pro Display", "Inter", "Segoe UI", sans-serif;
-  padding: 92px 20px 32px;
+  min-height: 100vh;
+  padding: calc(92px + env(safe-area-inset-top, 0px)) calc(20px + env(safe-area-inset-right, 0px)) calc(32px + env(safe-area-inset-bottom, 0px)) calc(20px + env(safe-area-inset-left, 0px));
   line-height: 1.5;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
 }
 
 body::before {
@@ -138,30 +142,18 @@ h3 {
 
 .page-hero {
   text-align: center;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .page-title,
 .badge-title {
-  margin-bottom: 10px;
-  font-size: clamp(2.45rem, 5vw, 4rem);
+  margin-bottom: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 750;
 }
 
-.page-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(109, 211, 160, 0.1);
-  border: 1px solid rgba(109, 211, 160, 0.18);
-  color: var(--accent-strong);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
+.match-page-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
 }
 
 .page-subtitle,
@@ -189,6 +181,64 @@ h3 {
 .season-meta {
   display: inline-block;
   font-size: 1rem;
+}
+
+.season-card .season-meta {
+  display: block;
+  text-align: center;
+}
+
+.leaderboard-hero {
+  margin-bottom: 20px;
+}
+
+.leaderboard-title {
+  font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+  margin-bottom: 14px;
+}
+
+.leaderboard-season-block {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.leaderboard-season-block h2 {
+  font-size: clamp(1.55rem, 2.8vw, 2.1rem);
+  margin-bottom: 4px;
+}
+
+.leaderboard-season-block .season-meta {
+  font-size: 0.98rem;
+}
+
+.season-filter-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+  margin: -4px auto 24px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.season-filter-label {
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.season-filter-select {
+  width: auto;
+  min-width: 140px;
+  padding: 10px 38px 10px 14px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  background: rgba(14, 17, 22, 0.9);
 }
 
 .section-title {
@@ -235,6 +285,11 @@ h3 {
 .table-card + .table-card,
 .section-card + .section-card {
   margin-top: 22px;
+}
+
+.table-card,
+.season-card {
+  overflow-x: hidden;
 }
 
 table {
@@ -298,9 +353,22 @@ tr:hover td {
   display: inline-block;
 }
 
+.player-name-block {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 .player-name {
   font-weight: 700;
   font-size: 1.02rem;
+}
+
+.player-streak {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
 }
 
 .green {
@@ -311,13 +379,6 @@ tr:hover td {
 .red {
   color: var(--danger);
   font-weight: 700;
-}
-
-.ws-col {
-  width: 70px;
-  padding-left: 4px;
-  padding-right: 4px;
-  white-space: nowrap;
 }
 
 .ws-icon {
@@ -388,8 +449,8 @@ button:focus {
 
 button {
   width: auto;
-  background: linear-gradient(135deg, var(--accent), #4ebd88);
-  color: #082314;
+  background: linear-gradient(135deg, #287a54, #359566);
+  color: #fff;
   font-weight: 800;
   letter-spacing: 0.01em;
   cursor: pointer;
@@ -397,7 +458,7 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(135deg, var(--accent-strong), #61d79b);
+  background: linear-gradient(135deg, #2f8660, #3ea070);
 }
 
 .form-grid {
@@ -421,6 +482,7 @@ button:hover {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #dce3ee;
+  margin-top: 26px;
 }
 
 .form-row {
@@ -438,6 +500,34 @@ button:hover {
 
 .search-input {
   margin-bottom: 0;
+}
+
+.form-block .form-row .field-player,
+.form-block .form-row .player-select {
+  flex: 0 0 32%;
+  max-width: 32%;
+}
+
+.form-block .form-row .field-character,
+.form-block .form-row .character-select {
+  flex: 0 0 64%;
+  max-width: 64%;
+}
+
+.searchable-wrapper .search-input {
+  width: 100%;
+}
+
+.winner-row {
+  justify-content: center;
+}
+
+.winner-row select {
+  flex: 0 0 280px;
+  width: 280px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .submit-row {
@@ -470,7 +560,7 @@ button:hover {
 }
 
 .three-stock-wrapper label {
-  color: var(--text-muted);
+  color: #fff;
 }
 
 .stats-grid {
@@ -479,7 +569,16 @@ button:hover {
   gap: 14px;
 }
 
+.season-stats-grid {
+  grid-template-columns: repeat(3, minmax(260px, 320px));
+  justify-content: center;
+}
+
 .stat-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 18px 16px;
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.03);
@@ -499,11 +598,18 @@ button:hover {
 
 .stat-value {
   font-size: 1.4rem;
-  font-weight: 750;
+  font-weight: 500;
 }
 
 .matchup-results {
   min-height: 52px;
+}
+
+#opponentSelect {
+  display: block;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .matchup-row {
@@ -661,9 +767,13 @@ button:hover {
   border-radius: 12px;
   box-shadow: var(--shadow-md);
   overflow: hidden;
+  margin-top: 8px;
+  backdrop-filter: blur(14px);
 }
 
 .dropdown-item {
+  padding: 10px 12px;
+  cursor: pointer;
   color: var(--text);
   transition: background-color 120ms ease, color 120ms ease;
 }
@@ -684,6 +794,12 @@ button:hover {
   font-variant-numeric: tabular-nums;
 }
 
+.season-card td,
+.season-card td a,
+.season-card td span {
+  font-weight: 700;
+}
+
 .player-page-table th:nth-child(1),
 .player-page-table td:nth-child(1) {
   width: 70%;
@@ -696,7 +812,7 @@ button:hover {
 
 @media (max-width: 900px) {
   body {
-    padding: 112px 14px 24px;
+    padding: calc(108px + env(safe-area-inset-top, 0px)) calc(14px + env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) calc(14px + env(safe-area-inset-left, 0px));
   }
 
   .container {
@@ -732,7 +848,7 @@ button:hover {
 
 @media (max-width: 640px) {
   body {
-    padding: 102px 0 18px;
+    padding: calc(94px + env(safe-area-inset-top, 0px)) env(safe-area-inset-right, 0px) calc(18px + env(safe-area-inset-bottom, 0px)) env(safe-area-inset-left, 0px);
   }
 
   .container,
@@ -744,6 +860,21 @@ button:hover {
 
   .container {
     padding: 22px 16px;
+  }
+
+  .top-nav {
+    gap: 8px;
+    padding: 12px 12px 12px;
+  }
+
+  .top-nav a {
+    font-size: 0.88rem;
+    padding: 8px 14px;
+    white-space: nowrap;
+  }
+
+  .page-hero {
+    margin-bottom: 18px;
   }
 
   .table-card,
@@ -760,21 +891,83 @@ button:hover {
 
   th,
   td {
-    padding: 14px 10px;
-    font-size: 0.95rem;
+    padding: 12px 6px;
+    font-size: 0.84rem;
+  }
+
+  th {
+    font-size: 0.77rem;
+    letter-spacing: 0.02em;
   }
 
   .page-title,
   .badge-title {
-    font-size: 2.2rem;
+    font-size: 1.85rem;
   }
 
   .season-banner h2 {
     font-size: 1.55rem;
   }
 
+  .leaderboard-title {
+    font-size: 1.85rem;
+  }
+
+  .leaderboard-season-block h2,
+  .section-title {
+    font-size: 1.42rem;
+  }
+
+  .leaderboard-season-block .season-meta,
+  .season-meta {
+    font-size: 0.95rem;
+  }
+
+  .rank-col {
+    width: 56px;
+  }
+
+  .player-name {
+    font-size: 0.94rem;
+  }
+
+  .player-name-block {
+    gap: 6px;
+  }
+
+  .ws-icon {
+    width: 14px;
+    height: 18px;
+  }
+
+  .ws-mult,
+  .ws-num,
+  .rating-value {
+    font-size: 0.84rem;
+  }
+
+  .season-filter-form {
+    max-width: 100%;
+    padding: 7px 10px;
+  }
+
+  .season-filter-select {
+    min-width: 112px;
+    font-size: 0.9rem;
+  }
+
   .form-row {
     flex-direction: column;
+  }
+
+  .form-block .form-row .field-player,
+  .form-block .form-row .player-select,
+  .form-block .form-row .field-character,
+  .form-block .form-row .character-select,
+  .winner-row select,
+  #opponentSelect {
+    max-width: 100%;
+    flex-basis: auto;
   }
 
   .submit-row {
@@ -784,6 +977,11 @@ button:hover {
   .three-stock-wrapper {
     width: 100%;
     justify-content: center;
+  }
+
+  .recent-match-card p,
+  .matchup-results p {
+    font-size: 0.96rem;
   }
 
   .badge-table thead {
@@ -814,5 +1012,60 @@ button:hover {
 
   .badge-popup {
     max-width: calc(100vw - 48px);
+  }
+}
+
+@media (max-width: 430px) {
+  .container {
+    padding: 18px 14px;
+  }
+
+  .page-title,
+  .badge-title,
+  .leaderboard-title,
+  .match-page-title {
+    font-size: 1.7rem;
+  }
+
+  .section-title,
+  .leaderboard-season-block h2 {
+    font-size: 1.28rem;
+  }
+
+  .season-filter-form {
+    gap: 8px;
+  }
+
+  .season-filter-label {
+    font-size: 0.72rem;
+  }
+
+  .season-filter-select {
+    min-width: 104px;
+    padding: 9px 34px 9px 12px;
+  }
+
+  th,
+  td {
+    padding: 10px 4px;
+    font-size: 0.78rem;
+  }
+
+  th {
+    font-size: 0.72rem;
+  }
+
+  .rank-col {
+    width: 48px;
+  }
+
+  .player-name {
+    font-size: 0.88rem;
+  }
+
+  .ws-mult,
+  .ws-num,
+  .rating-value {
+    font-size: 0.78rem;
   }
 }

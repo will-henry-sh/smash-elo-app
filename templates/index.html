@@ -10,6 +10,13 @@
         function makeSearchable(selectEl) {
           const wrapper = document.createElement("div");
           wrapper.style.position = "relative";
+          wrapper.className = "searchable-wrapper";
+          if (selectEl.classList.contains("player-select")) {
+            wrapper.classList.add("field-player");
+          }
+          if (selectEl.classList.contains("character-select")) {
+            wrapper.classList.add("field-character");
+          }
       
           const input = document.createElement("input");
           input.type = "text";
@@ -25,8 +32,6 @@
           dropdown.style.position = "absolute";
           dropdown.style.left = "0";
           dropdown.style.right = "0";
-          dropdown.style.background = "#2a2a2a";
-          dropdown.style.border = "1px solid #444";
           dropdown.style.maxHeight = "150px";
           dropdown.style.overflowY = "auto";
           dropdown.style.display = "none";
@@ -47,8 +52,6 @@
               const item = document.createElement("div");
               item.textContent = option;
               item.className = "dropdown-item";
-              item.style.padding = "8px";
-              item.style.cursor = "pointer";
       
               item.addEventListener("click", () => {
                 input.value = option;
@@ -91,16 +94,11 @@
       <a href="/matches" class="{{ 'active' if request.path == '/matches' else '' }}">Matches</a>
       <a href="/leaderboard" class="{{ 'active' if request.path == '/leaderboard' else '' }}">Leaderboard</a>
       <a href="/lifetime-ratings" class="{{ 'active' if request.path == '/lifetime-ratings' else '' }}">Lifetime Ratings</a>
-      <a href="/badges" class="{{ 'active' if request.path == '/badges' else '' }}">Badge Info</a>
     </nav>
     
     <div class="container">
       <div class="page-hero">
-        <div class="page-kicker">Match Entry</div>
-        <h1 class="page-title">Submit Match Results</h1>
-        <p class="page-subtitle">
-          Log new games, update the ladder instantly, and keep the season record clean and auditable.
-        </p>
+        <h1 class="page-title match-page-title leaderboard-title">Match Results</h1>
       </div>
 
       <section class="section-card">
@@ -110,7 +108,7 @@
             <div class="form-block">
               <h3>Player 1</h3>
               <div class="form-row">
-              <select name="player1" required>
+          <select name="player1" required class="player-select">
                   <option value="" disabled>Select Player 1</option>
                   {% for p in player_list %}
                   <option value="{{ p }}" {% if p == last_player1 %}selected{% endif %}>
@@ -119,7 +117,7 @@
                   {% endfor %}
               </select>
 
-              <select name="p1_character" required class="searchable character-field">
+              <select name="p1_character" required class="searchable character-field character-select">
                   <option value="" disabled>Select Character</option>
                   {% for char in characters %}
                   <option value="{{ char }}" {% if char == last_char1 %}selected{% endif %}>
@@ -133,7 +131,7 @@
             <div class="form-block">
               <h3>Player 2</h3>
               <div class="form-row">
-              <select name="player2" required>
+              <select name="player2" required class="player-select">
                   <option value="" disabled>Select Player 2</option>
                   {% for p in player_list %}
                   <option value="{{ p }}" {% if p == last_player2 %}selected{% endif %}>
@@ -142,7 +140,7 @@
                   {% endfor %}
               </select>
 
-              <select name="p2_character" required class="searchable character-field">
+              <select name="p2_character" required class="searchable character-field character-select">
                   <option value="" disabled>Select Character</option>
                   {% for char in characters %}
                   <option value="{{ char }}" {% if char == last_char2 %}selected{% endif %}>
@@ -155,10 +153,10 @@
           </div>
 
           <h3 class="form-section-label">Winner</h3>
-          <div class="form-row">
+          <div class="form-row winner-row">
               <select name="winner" required>
-                  <option value="p1">Player 1 Wins</option>
-                  <option value="p2">Player 2 Wins</option>
+                  <option value="p1" {% if last_winner == "p1" %}selected{% endif %}>Player 1 Wins</option>
+                  <option value="p2" {% if last_winner == "p2" %}selected{% endif %}>Player 2 Wins</option>
               </select>
           </div>
     

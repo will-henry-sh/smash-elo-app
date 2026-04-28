@@ -21,28 +21,21 @@
       <a href="/matches" class="{{ 'active' if request.path == '/matches' else '' }}">Matches</a>
       <a href="/leaderboard" class="{{ 'active' if request.path == '/leaderboard' else '' }}">Leaderboard</a>
       <a href="/lifetime-ratings" class="{{ 'active' if request.path == '/lifetime-ratings' else '' }}">Lifetime Ratings</a>
-      <a href="/badges" class="{{ 'active' if request.path == '/badges' else '' }}">Badge Info</a>
     </nav>
 
     <div class="container leaderboard-container">
-      <div class="page-hero">
-        <div class="page-kicker">Current Ladder</div>
-        <h1 class="page-title">Smash Leaderboard</h1>
-        <p class="page-subtitle">
-          Track the live season, follow momentum shifts, and see who is climbing fastest.
-        </p>
-      </div>
-
-      <div class="season-banner">
-        <h2>Season {{ current_season.number }}</h2>
-        <span class="season-meta">Ends 5/01/2026</span>
+      <div class="page-hero leaderboard-hero">
+        <h1 class="page-title leaderboard-title">Smash Leaderboard</h1>
+        <div class="season-banner leaderboard-season-block">
+          <h2>Season {{ current_season.number }}</h2>
+          <span class="season-meta">Ends May 1, 2026</span>
+        </div>
       </div>
 
       <section class="table-card">
         <table>
           <tr>
             <th>Rank</th>
-            <th class="ws-col"></th>
             <th>Player</th>
             <th>Global ELO</th>
           </tr>
@@ -61,16 +54,16 @@
               {% endif %}
             </td>
 
-            <td class="ws-col">
-              {% set streak = win_streaks.get(player, 0) -%} {% if streak > 1 -%}
-              <img src="/static/icons/win_streak.png" class="ws-icon" />
-              <span class="ws-mult">×</span>
-              <span class="ws-num">{{ streak }}</span>
-              {%- endif %}
-            </td>
-
             <td class="player-cell">
+              {% set streak = win_streaks.get(player, 0) -%}
               <a href="/player/{{ player }}" class="player-name-block">
+                {% if streak > 1 -%}
+                <span class="player-streak">
+                  <img src="/static/icons/win_streak.png" class="ws-icon" />
+                  <span class="ws-mult">×</span>
+                  <span class="ws-num">{{ streak }}</span>
+                </span>
+                {%- endif %}
                 <span
                   class="player-name {{ 'rank-gold' if loop.index==1 else
                                            'rank-silver' if loop.index==2 else
@@ -90,9 +83,6 @@
 
       <section class="section-card">
         <h2 class="section-title">Season Matches (Last 20)</h2>
-        <p class="section-subtitle">
-          Fresh results, rating swings, and the most recent shifts in the ladder.
-        </p>
       <div class="recent-matches-list">
         {% if recent_matches %}
         {% for m in recent_matches %}

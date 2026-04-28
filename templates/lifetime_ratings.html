@@ -11,27 +11,37 @@
       <a href="/matches" class="{{ 'active' if request.path == '/matches' else '' }}">Matches</a>
       <a href="/leaderboard" class="{{ 'active' if request.path == '/leaderboard' else '' }}">Leaderboard</a>
       <a href="/lifetime-ratings" class="{{ 'active' if request.path == '/lifetime-ratings' else '' }}">Lifetime Ratings</a>
-      <a href="/badges" class="{{ 'active' if request.path == '/badges' else '' }}">Badge Info</a>
     </nav>
 
     <div class="container leaderboard-container">
       <div class="page-hero">
-        <div class="page-kicker">Season Archive</div>
-        <h1 class="page-title">Lifetime Ratings</h1>
-        <p class="page-subtitle">
-          Locked snapshots of every finished season, including final placements and best characters.
-        </p>
+        <h1 class="page-title leaderboard-title">Lifetime Ratings</h1>
       </div>
 
       <p class="season-banner">Current live ladder: Season {{ current_season.number }}</p>
 
       {% if archived_seasons %}
+      <form method="get" class="season-filter-form">
+        <span class="season-filter-label">Season</span>
+        <select id="season-select" name="season" onchange="this.form.submit()" class="season-filter-select">
+          <option value="lifetime" {% if selected_season is none %}selected{% endif %}>Lifetime</option>
+          {% for season_number in season_options %}
+          <option value="{{ season_number }}" {% if season_number == selected_season %}selected{% endif %}>
+            {{ season_number }}
+          </option>
+          {% endfor %}
+        </select>
+      </form>
+
       {% for season in archived_seasons %}
       <section class="season-card">
-        <h2 class="section-title">Season {{ season.number }}</h2>
+        <h2 class="section-title">{{ season.title if season.title else "Season " ~ season.number }}</h2>
         <p class="season-meta">
-          {% if season.started_at %}Started {{ season.started_at }} · {% endif %}
-          Locked {{ season.closed_at or "Unknown" }} · {{ season.match_count or 0 }} matches
+          {% if season.title == "Lifetime" %}
+          Current Season started on {{ season.display_date or "Unknown" }}
+          {% else %}
+          Locked {{ season.display_date or "Unknown" }} · {{ season.match_count or 0 }} matches
+          {% endif %}
         </p>
 
         <table>

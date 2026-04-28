@@ -313,7 +313,7 @@ CHARACTERS = sorted([
     "Mr. Game and Watch", "Ness", "Olimar", "Pac-Man",
     "Palutena", "Peach", "Pichu", "Pikachu", "Piranha Plant",
     "Pit", "Pyra/Mythra", "R.O.B", "Richter", "Ridley",
-    "Robin", "Rosalina and Luma", "Roy", "Ryu",
+    "Random", "Robin", "Rosalina and Luma", "Roy", "Ryu",
     "Samus", "Sephiroth", "Sheik", "Shulk", "Simon",
     "Snake", "Sonic", "Sora", "Squirtle", "Steve",
     "Terry", "Toon Link", "Villager", "Wario",
@@ -350,6 +350,63 @@ def get_best_character(player_data):
     return {
         "name": best_name,
         "rating": char_map[best_name]
+    }
+
+
+def format_display_date(value):
+    if not value:
+        return None
+
+    for date_format in ("%Y-%m-%d %I:%M %p", "%Y-%m-%d"):
+        try:
+            parsed = datetime.strptime(value, date_format)
+            return f"{parsed.strftime('%B')} {parsed.day}, {parsed.year}"
+        except ValueError:
+            continue
+
+    if isinstance(value, str) and " " in value:
+        return value.split(" ", 1)[0]
+
+    return value
+
+
+def build_lifetime_archive_view(archived_seasons):
+    player_totals = {}
+
+    for season in archived_seasons:
+        for row in season.get("rows", []):
+            player = row.get("player")
+            if not player:
+                continue
+
+            player_entry = player_totals.setdefault(player, {
+                "player": player,
+                "rating": 0,
+                "best_character": None
+            })
+
+            player_entry["rating"] += _safe_int(row.get("rating"), 0)
+
+            best_character = row.get("best_character") or {}
+            best_rating = _safe_int(best_character.get("rating"), 0)
+            current_best = player_entry["best_character"]
+
+            if best_character.get("name") and (
+                current_best is None or best_rating > _safe_int(current_best.get("rating"), 0)
+            ):
+                player_entry["best_character"] = {
+                    "name": best_character.get("name"),
+                    "rating": best_rating
+                }
+
+    rows = sorted(player_totals.values(), key=lambda row: row["rating"], reverse=True)
+
+    return {
+        "title": "Lifetime",
+        "started_at": archived_seasons[-1].get("started_at") if archived_seasons else None,
+        "closed_at": archived_seasons[0].get("closed_at") if archived_seasons else None,
+        "match_count": sum(_safe_int(season.get("match_count"), 0) for season in archived_seasons),
+        "rows": rows
     }
 
 
@@ -545,6 +602,7 @@ def matches():
         last_player2=last.get("last_player2", ""),
         last_char1=last.get("last_char1", ""),
         last_char2=last.get("last_char2", ""),
+        last_winner=last.get("last_winner", "p1"),
         player_list=player_list
     )
 
@@ -802,10 +860,37 @@ def player_stats(name):
 def lifetime_ratings():
     seasons_data = load_seasons()
     archived_seasons = list(reversed(seasons_data.get("archive", [])))
+    season_options = [season.get("number") for season in archived_seasons if season.get("number") is not None]
+    requested_view = request.args.get("season", "lifetime")
+
+    selected_season = None
+    visible_seasons = []
+
+    if requested_view != "lifetime":
+        requested_season = _safe_int(requested_view, None)
+        if requested_season in season_options:
+            selected_season = requested_season
+            visible_seasons = [
+                season for season in archived_seasons
+                if season.get("number") == selected_season
+            ]
+
+    if not visible_seasons and archived_seasons:
+        visible_seasons = [build_lifetime_archive_view(archived_seasons)]
+
+    visible_seasons = [
+        {
+            **season,
+            "display_date": format_display_date(season.get("closed_at"))
+        }
+        for season in visible_seasons
+    ]
 
     return render_template(
         "lifetime_ratings.html",
-        archived_seasons=archived_seasons,
+        archived_seasons=visible_seasons,
+        season_options=season_options,
+        selected_season=selected_season,
         current_season=seasons_data["current_season"]
     )
 
@@ -990,7 +1075,8 @@ def add_match():
         "last_player1": p1,
         "last_player2": p2,
         "last_char1": c1,
-        "last_char2": c2
+        "last_char2": c2,
+        "last_winner": winner
     })
 
     # Log match history
