@@ -159,8 +159,6 @@ AUTO_PULL_INTERVAL = 60  # seconds
 def auto_pull_worker():
     while True:
         time.sleep(AUTO_PULL_INTERVAL)
-        if is_pushing or push_queue:
-            continue
         try:
             result = subprocess.run(
                 ["git", "pull", "origin", "main"],
