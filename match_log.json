@@ -18588,5 +18588,18 @@
         "diff2": 30,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-04-28 05:12 AM",
+        "p1": "Colton",
+        "c1": "Banjo & Kazooie",
+        "new1": 1030,
+        "diff1": 30,
+        "p2": "Nat",
+        "c2": "Banjo & Kazooie",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
