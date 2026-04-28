@@ -113,7 +113,8 @@ def push_to_github_worker():
         commit_message = push_queue.pop(0)
 
         try:
-            subprocess.run(["git", "pull", "--rebase", "origin", "main"], check=True, cwd=APP_DIR)
+            subprocess.run(["git", "fetch", "origin", "main"], check=True, cwd=APP_DIR)
+            subprocess.run(["git", "merge", "-X", "ours", "--no-edit", "origin/main"], check=True, cwd=APP_DIR)
             subprocess.run(["git", "add", "-u"], check=True, cwd=APP_DIR)
 
             diff_check = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=APP_DIR)
