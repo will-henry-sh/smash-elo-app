@@ -19407,5 +19407,18 @@
         "diff2": -20,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-04-30 03:37 AM",
+        "p1": "Will",
+        "c1": "Mewtwo",
+        "new1": 1027,
+        "diff1": 27,
+        "p2": "Nick R",
+        "c2": "Random",
+        "new2": 1104,
+        "diff2": -19,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
