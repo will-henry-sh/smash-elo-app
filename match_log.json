@@ -19485,5 +19485,18 @@
         "diff2": 54,
         "winner": "p2",
         "three_stock": true
+    },
+    {
+        "timestamp": "2026-04-30 04:02 AM",
+        "p1": "Daryl",
+        "c1": "Bayonetta",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Jamichael",
+        "c2": "Hero",
+        "new2": 1026,
+        "diff2": 26,
+        "winner": "p2",
+        "three_stock": false
     }
 ]

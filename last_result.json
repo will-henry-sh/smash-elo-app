@@ -1,15 +1,15 @@
 {
     "p1": "Daryl",
-    "c1": "Zero Suit Samus",
+    "c1": "Bayonetta",
     "new1": 1000,
-    "diff1": -1,
+    "diff1": 0,
     "p2": "Jamichael",
-    "c2": "Zelda",
-    "new2": 1054,
-    "diff2": 54,
+    "c2": "Hero",
+    "new2": 1026,
+    "diff2": 26,
     "last_player1": "Daryl",
     "last_player2": "Jamichael",
-    "last_char1": "Zero Suit Samus",
-    "last_char2": "Zelda",
+    "last_char1": "Bayonetta",
+    "last_char2": "Hero",
     "last_winner": "p2"
 }
