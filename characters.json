@@ -119,7 +119,7 @@
         "King K. Rool": 1000,
         "Link": 1000,
         "Meta Knight": 1025,
-        "Ike": 1054,
+        "Ike": 1076,
         "Steve": 1000,
         "Corrin": 1000,
         "Banjo & Kazooie": 1000,
@@ -325,6 +325,7 @@
         "Kazuya": 1000,
         "Dr. Mario": 1037,
         "Lucas": 1035,
-        "Random": 1000
+        "Random": 1000,
+        "Wolf": 1000
     }
 }
