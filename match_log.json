@@ -19212,5 +19212,18 @@
         "diff2": 53,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-04-30 02:30 AM",
+        "p1": "Nick R",
+        "c1": "Random",
+        "new1": 1157,
+        "diff1": -26,
+        "p2": "Jamichael",
+        "c2": "Dr. Mario",
+        "new2": 1037,
+        "diff2": 37,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
