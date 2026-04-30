@@ -79,7 +79,7 @@
         "Inkling": 1000,
         "Mii Gunner": 1000,
         "Pit": 1000,
-        "Random": 1157
+        "Random": 1131
     },
     "Nick W": {
         "Palutena": 1000,
@@ -323,6 +323,7 @@
         "Cloud": 1000,
         "Villager": 1000,
         "Kazuya": 1000,
-        "Dr. Mario": 1037
+        "Dr. Mario": 1037,
+        "Lucas": 1035
     }
 }
