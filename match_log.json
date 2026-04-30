@@ -19134,5 +19134,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": true
+    },
+    {
+        "timestamp": "2026-04-30 02:02 AM",
+        "p1": "Will",
+        "c1": "Incineroar",
+        "new1": 1028,
+        "diff1": 28,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 1062,
+        "diff2": -25,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
