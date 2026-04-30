@@ -109,7 +109,7 @@
         "Wolf": 1059,
         "Incineroar": 1028,
         "Greninja": 1027,
-        "Ridley": 1000,
+        "Ridley": 1026,
         "Captain Falcon": 1104,
         "Bowser": 1000,
         "Inkling": 1000,
@@ -324,6 +324,7 @@
         "Villager": 1000,
         "Kazuya": 1000,
         "Dr. Mario": 1037,
-        "Lucas": 1035
+        "Lucas": 1035,
+        "Random": 1000
     }
 }
