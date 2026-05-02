@@ -19524,5 +19524,18 @@
         "diff2": 19,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-02 03:52 AM",
+        "p1": "Daryl",
+        "c1": "Link",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Will",
+        "c2": "King K. Rool",
+        "new2": 1020,
+        "diff2": 20,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
