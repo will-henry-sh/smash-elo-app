@@ -185,7 +185,8 @@
         "Diddy Kong": 1000,
         "Peach": 1000,
         "Palutena": 1000,
-        "Wii Fit Trainer": 1000
+        "Wii Fit Trainer": 1000,
+        "Random": 1000
     },
     "Colton": {
         "Toon Link": 1088,
@@ -231,7 +232,7 @@
         "Banjo & Kazooie": 1058,
         "Inkling": 1000,
         "King Dedede": 1000,
-        "Random": 1075
+        "Random": 1127
     },
     "Jeff": {
         "Byleth": 1000,
