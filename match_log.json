@@ -19589,5 +19589,18 @@
         "diff2": 52,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-02 04:19 AM",
+        "p1": "Will",
+        "c1": "Incineroar",
+        "new1": 1050,
+        "diff1": 22,
+        "p2": "Colton",
+        "c2": "Duck Hunt",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
