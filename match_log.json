@@ -19875,5 +19875,18 @@
         "diff2": 16,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-04 03:30 AM",
+        "p1": "Jamichael",
+        "c1": "Random",
+        "new1": 1000,
+        "diff1": -2,
+        "p2": "Will",
+        "c2": "Sephiroth",
+        "new2": 1210,
+        "diff2": 16,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
