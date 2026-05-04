@@ -179,7 +179,7 @@
         "Chrom": 1000,
         "Dark Pit": 1000,
         "Bowser Jr.": 1000,
-        "Sephiroth": 1066,
+        "Sephiroth": 1086,
         "Mr. Game and Watch": 1000,
         "Pac-Man": 1000,
         "Diddy Kong": 1000,
@@ -329,6 +329,7 @@
         "Lucas": 1035,
         "Random": 1009,
         "Wolf": 1000,
-        "Pyra/Mythra": 1027
+        "Pyra/Mythra": 1027,
+        "Palutena": 1000
     }
 }
