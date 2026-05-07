@@ -1,15 +1,15 @@
 {
-    "p1": "Will",
-    "c1": "Inkling",
-    "new1": 1018,
-    "diff1": 18,
+    "p1": "Jamichael",
+    "c1": "Zelda",
+    "new1": 1000,
+    "diff1": -19,
     "p2": "Colton",
-    "c2": "Jigglypuff",
-    "new2": 1037,
-    "diff2": -16,
-    "last_player1": "Will",
+    "c2": "Dark Samus",
+    "new2": 1033,
+    "diff2": 33,
+    "last_player1": "Jamichael",
     "last_player2": "Colton",
-    "last_char1": "Inkling",
-    "last_char2": "Jigglypuff",
-    "last_winner": "p1"
+    "last_char1": "Zelda",
+    "last_char2": "Dark Samus",
+    "last_winner": "p2"
 }
