@@ -21110,5 +21110,31 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-08 04:35 AM",
+        "p1": "Nick R",
+        "c1": "Random",
+        "new1": 1789,
+        "diff1": -26,
+        "p2": "Jamichael",
+        "c2": "Random",
+        "new2": 1671,
+        "diff2": 54,
+        "winner": "p2",
+        "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-08 04:35 AM",
+        "p1": "Nick R",
+        "c1": "Random",
+        "new1": 1766,
+        "diff1": -23,
+        "p2": "Jamichael",
+        "c2": "Random",
+        "new2": 1719,
+        "diff2": 48,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
