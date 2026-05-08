@@ -23,7 +23,7 @@
         "Ike": 1000,
         "Bowser": 1000,
         "Steve": 1000,
-        "Ganondorf": 1064,
+        "Ganondorf": 1093,
         "Corrin": 1000,
         "Samus": 1000,
         "Dark Samus": 1000,
@@ -332,6 +332,7 @@
         "Random": 1733,
         "Wolf": 1000,
         "Pyra/Mythra": 1027,
-        "Palutena": 1000
+        "Palutena": 1000,
+        "Ganondorf": 1000
     }
 }
