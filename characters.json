@@ -101,7 +101,8 @@
         "Kazuya": 1000,
         "Steve": 1035,
         "Donkey Kong": 1000,
-        "Hero": 1000
+        "Hero": 1000,
+        "Random": 1000
     },
     "Will": {
         "Ganondorf": 1217,
@@ -327,7 +328,7 @@
         "Kazuya": 1000,
         "Dr. Mario": 1037,
         "Lucas": 1035,
-        "Random": 1577,
+        "Random": 1597,
         "Wolf": 1000,
         "Pyra/Mythra": 1027,
         "Palutena": 1000
