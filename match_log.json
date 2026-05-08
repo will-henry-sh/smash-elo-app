@@ -21149,5 +21149,18 @@
         "diff2": -22,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-08 04:35 AM",
+        "p1": "Nick R",
+        "c1": "Random",
+        "new1": 1854,
+        "diff1": 42,
+        "p2": "Jamichael",
+        "c2": "Random",
+        "new2": 1677,
+        "diff2": -20,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
