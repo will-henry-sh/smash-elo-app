@@ -21435,5 +21435,18 @@
         "diff2": 17,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-09 03:24 AM",
+        "p1": "Colton",
+        "c1": "Toon Link",
+        "new1": 1074,
+        "diff1": -14,
+        "p2": "Will",
+        "c2": "Robin",
+        "new2": 1143,
+        "diff2": 15,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
