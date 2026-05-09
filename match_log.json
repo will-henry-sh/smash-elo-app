@@ -21357,5 +21357,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-09 02:57 AM",
+        "p1": "Nick R",
+        "c1": "Ice Climbers",
+        "new1": 1018,
+        "diff1": 18,
+        "p2": "Daryl",
+        "c2": "Zero Suit Samus",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
