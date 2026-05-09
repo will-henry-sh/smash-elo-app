@@ -21253,5 +21253,18 @@
         "diff2": -20,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-09 02:21 AM",
+        "p1": "Will",
+        "c1": "Sephiroth",
+        "new1": 1471,
+        "diff1": 15,
+        "p2": "Jamichael",
+        "c2": "Sora",
+        "new2": 1044,
+        "diff2": -14,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
