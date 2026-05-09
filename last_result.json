@@ -1,15 +1,15 @@
 {
     "p1": "Nick R",
-    "c1": "Ice Climbers",
-    "new1": 1018,
-    "diff1": 18,
+    "c1": "Min Min",
+    "new1": 1019,
+    "diff1": 19,
     "p2": "Daryl",
-    "c2": "Zero Suit Samus",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Zelda",
+    "new2": 1045,
+    "diff2": -17,
     "last_player1": "Nick R",
     "last_player2": "Daryl",
-    "last_char1": "Ice Climbers",
-    "last_char2": "Zero Suit Samus",
+    "last_char1": "Min Min",
+    "last_char2": "Zelda",
     "last_winner": "p1"
 }
