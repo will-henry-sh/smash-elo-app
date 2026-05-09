@@ -1,15 +1,15 @@
 {
     "p1": "Colton",
-    "c1": "Toon Link",
-    "new1": 1074,
-    "diff1": -14,
-    "p2": "Will",
-    "c2": "Robin",
-    "new2": 1143,
-    "diff2": 15,
+    "c1": "Random",
+    "new1": 1139,
+    "diff1": 38,
+    "p2": "Nick W",
+    "c2": "Wii Fit Trainer",
+    "new2": 1032,
+    "diff2": -22,
     "last_player1": "Colton",
-    "last_player2": "Will",
-    "last_char1": "Toon Link",
-    "last_char2": "Robin",
-    "last_winner": "p2"
+    "last_player2": "Nick W",
+    "last_char1": "Random",
+    "last_char2": "Wii Fit Trainer",
+    "last_winner": "p1"
 }

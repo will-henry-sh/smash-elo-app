@@ -21448,5 +21448,18 @@
         "diff2": 15,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-09 03:31 AM",
+        "p1": "Colton",
+        "c1": "Random",
+        "new1": 1139,
+        "diff1": 38,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 1032,
+        "diff2": -22,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
