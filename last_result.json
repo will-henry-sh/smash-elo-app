@@ -1,15 +1,15 @@
 {
     "p1": "Will",
-    "c1": "Sephiroth",
-    "new1": 1663,
-    "diff1": 22,
-    "p2": "Jamichael",
+    "c1": "Donkey Kong",
+    "new1": 1110,
+    "diff1": 110,
+    "p2": "Nick R",
     "c2": "Random",
-    "new2": 1755,
-    "diff2": -16,
+    "new2": 1939,
+    "diff2": -79,
     "last_player1": "Will",
-    "last_player2": "Jamichael",
-    "last_char1": "Sephiroth",
+    "last_player2": "Nick R",
+    "last_char1": "Donkey Kong",
     "last_char2": "Random",
     "last_winner": "p1"
 }
