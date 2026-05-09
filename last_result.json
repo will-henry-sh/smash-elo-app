@@ -1,15 +1,15 @@
 {
     "p1": "Will",
-    "c1": "Captain Falcon",
-    "new1": 1208,
-    "diff1": 59,
+    "c1": "Greninja",
+    "new1": 1088,
+    "diff1": 61,
     "p2": "Nick R",
     "c2": "Random",
-    "new2": 1897,
-    "diff2": -42,
+    "new2": 1853,
+    "diff2": -44,
     "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Captain Falcon",
+    "last_char1": "Greninja",
     "last_char2": "Random",
     "last_winner": "p1"
 }
