@@ -1093,8 +1093,9 @@ def add_match():
             new2 = old2 + change2
             new1 = old1 + change1 # loser normal loss
 
-    change1 = apply_random_modifier(c1, change1)
-    change2 = apply_random_modifier(c2, change2)
+    if not (c1 == "Random" and c2 == "Random"):
+        change1 = apply_random_modifier(c1, change1)
+        change2 = apply_random_modifier(c2, change2)
     new1 = old1 + change1
     new2 = old2 + change2
 
