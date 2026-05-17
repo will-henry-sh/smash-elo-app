@@ -111,7 +111,7 @@
         "Incineroar": 1067,
         "Greninja": 1088,
         "Ridley": 1060,
-        "Captain Falcon": 1257,
+        "Captain Falcon": 1270,
         "Bowser": 1027,
         "Inkling": 1018,
         "Sheik": 1086,
@@ -333,6 +333,7 @@
         "Wolf": 1000,
         "Pyra/Mythra": 1027,
         "Palutena": 1000,
-        "Ganondorf": 1000
+        "Ganondorf": 1000,
+        "Sheik": 1000
     }
 }
