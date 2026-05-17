@@ -22345,5 +22345,18 @@
         "diff2": 22,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-17 04:57 AM",
+        "p1": "Daryl",
+        "c1": "Zero Suit Samus",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Jeff",
+        "c2": "Byleth",
+        "new2": 1245,
+        "diff2": 22,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
