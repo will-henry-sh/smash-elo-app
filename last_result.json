@@ -1,15 +1,15 @@
 {
     "p1": "Daryl",
     "c1": "Roy",
-    "new1": 1116,
-    "diff1": 116,
+    "new1": 1094,
+    "diff1": -22,
     "p2": "Nick R",
-    "c2": "Random",
-    "new2": 1506,
-    "diff2": -83,
+    "c2": "Ganondorf",
+    "new2": 1062,
+    "diff2": 24,
     "last_player1": "Daryl",
     "last_player2": "Nick R",
     "last_char1": "Roy",
-    "last_char2": "Random",
-    "last_winner": "p1"
+    "last_char2": "Ganondorf",
+    "last_winner": "p2"
 }
