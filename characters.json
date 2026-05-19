@@ -3,7 +3,7 @@
         "Piranha Plant": 1000,
         "Snake": 1199,
         "Min Min": 1075,
-        "Palutena": 1000,
+        "Palutena": 1019,
         "Donkey Kong": 1000,
         "Hero": 1000,
         "Cloud": 1000,
@@ -102,7 +102,8 @@
         "Steve": 1035,
         "Donkey Kong": 1000,
         "Hero": 1000,
-        "Random": 1000
+        "Random": 1000,
+        "Lucario": 1000
     },
     "Will": {
         "Ganondorf": 1292,

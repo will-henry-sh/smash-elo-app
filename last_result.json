@@ -1,15 +1,15 @@
 {
     "p1": "Nick R",
-    "c1": "Snake",
-    "new1": 1199,
-    "diff1": 17,
+    "c1": "Palutena",
+    "new1": 1019,
+    "diff1": 19,
     "p2": "Nick W",
-    "c2": "Wii Fit Trainer",
-    "new2": 1067,
-    "diff2": -15,
+    "c2": "Lucario",
+    "new2": 1000,
+    "diff2": 0,
     "last_player1": "Nick R",
     "last_player2": "Nick W",
-    "last_char1": "Snake",
-    "last_char2": "Wii Fit Trainer",
+    "last_char1": "Palutena",
+    "last_char2": "Lucario",
     "last_winner": "p1"
 }
