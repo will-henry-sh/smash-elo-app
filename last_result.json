@@ -1,15 +1,15 @@
 {
-    "p1": "Daryl",
-    "c1": "Zero Suit Samus",
-    "new1": 1000,
-    "diff1": 0,
+    "p1": "Nick R",
+    "c1": "Min Min",
+    "new1": 1075,
+    "diff1": 18,
     "p2": "Nick W",
     "c2": "Wii Fit Trainer",
-    "new2": 1033,
-    "diff2": 33,
-    "last_player1": "Daryl",
+    "new2": 1017,
+    "diff2": -16,
+    "last_player1": "Nick R",
     "last_player2": "Nick W",
-    "last_char1": "Zero Suit Samus",
+    "last_char1": "Min Min",
     "last_char2": "Wii Fit Trainer",
-    "last_winner": "p2"
+    "last_winner": "p1"
 }
