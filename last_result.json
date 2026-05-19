@@ -1,15 +1,15 @@
 {
     "p1": "Daryl",
-    "c1": "Zelda",
-    "new1": 1137,
-    "diff1": -19,
+    "c1": "Pyra/Mythra",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Nick R",
     "c2": "Snake",
-    "new2": 1150,
-    "diff2": 21,
+    "new2": 1166,
+    "diff2": 16,
     "last_player1": "Daryl",
     "last_player2": "Nick R",
-    "last_char1": "Zelda",
+    "last_char1": "Pyra/Mythra",
     "last_char2": "Snake",
     "last_winner": "p2"
 }
