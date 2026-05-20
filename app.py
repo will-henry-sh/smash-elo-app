@@ -4,14 +4,14 @@ import os
 import subprocess
 import threading
 import time
-import base64
 import difflib
 from functools import wraps
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from flask import Response
-from urllib import error as urllib_error
-from urllib import request as urllib_request
+from io import BytesIO
+
+from PIL import Image, ImageFilter, ImageOps
 
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -61,7 +61,6 @@ def load_admin_credentials():
 ADMIN_USERS, ADMIN_USERNAMES = load_admin_credentials()
 print(f"Loaded {len(ADMIN_USERS)} admin users")
 ADMIN_PANEL_USERNAME = "bunnyslave"
-OPENAI_MATCH_SCAN_MODEL = os.getenv("OPENAI_MATCH_SCAN_MODEL", "gpt-4.1-mini")
 
 DECAY_START_DAYS = 14
 DECAY_PER_DAY = 2      # total global decay per day
@@ -610,7 +609,7 @@ def build_character_aliases(character_name, _alias_context=None):
         "mrgameandwatch": {"Mr. Game and Watch", "Mr Game and Watch", "Game & Watch", "Game and Watch"},
         "pacman": {"Pac-Man", "Pac Man"},
         "piranhaplant": {"Piranha Plant", "Plant", "Packun", "Packun Flower"},
-        "pyramythra": {"Pyra/Mythra", "Pyra Mythra", "Aegis"},
+        "pyramythra": {"Pyra/Mythra", "Pyra Mythra", "Aegis", "Pyra", "Mythra"},
         "rob": {"R.O.B", "ROB"},
         "rosalinaandluma": {"Rosalina and Luma", "Rosalina & Luma"},
         "toonlink": {"Toon Link"},
@@ -666,102 +665,106 @@ def resolve_best_match(raw_value, candidates, alias_builder, alias_context=None)
 
 
 def extract_response_text(response_payload):
-    output_text = response_payload.get("output_text")
-    if output_text:
-        return output_text
-
-    for item in response_payload.get("output", []):
-        for content in item.get("content", []):
-            if content.get("type") == "output_text" and content.get("text"):
-                return content["text"]
-
-    raise ValueError("No text output found in model response")
+    return ""
 
 
-def scan_match_image_with_openai(image_bytes, mime_type, player_names, player_tag_map):
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY is not configured")
+def crop_image(image, left, top, right, bottom):
+    width, height = image.size
+    box = (
+        int(width * left),
+        int(height * top),
+        int(width * right),
+        int(height * bottom),
+    )
+    return image.crop(box)
 
-    image_b64 = base64.b64encode(image_bytes).decode("utf-8")
-    image_url = f"data:{mime_type};base64,{image_b64}"
 
-    prompt = (
-        "You are parsing a Super Smash Bros. Ultimate match result image. "
-        "Extract exactly two entrants from the image if possible. "
-        "For each entrant, extract the visible tag, character name, and placing (1 or 2). "
-        "If a value is unclear, return an empty string for text fields and 0 for placing. "
-        "Do not infer players from outside the image. "
-        "Return only structured data that matches the schema."
+def upscale_for_ocr(image, scale=2.0):
+    width, height = image.size
+    return image.resize((max(1, int(width * scale)), max(1, int(height * scale))), Image.Resampling.LANCZOS)
+
+
+def preprocess_text_region(image, threshold=180, invert=False):
+    grayscale = ImageOps.grayscale(image)
+    sharpened = grayscale.filter(ImageFilter.SHARPEN).filter(ImageFilter.SHARPEN)
+    blurred = sharpened.filter(ImageFilter.GaussianBlur(radius=0.8))
+    binary = blurred.point(lambda pixel: 255 if pixel >= threshold else 0, mode="1").convert("L")
+    if invert:
+        binary = ImageOps.invert(binary)
+    return binary
+
+
+def run_tesseract_ocr(image, psm=7, whitelist=None):
+    config = ["tesseract", "stdin", "stdout", "--psm", str(psm)]
+    if whitelist:
+        config.extend(["-c", f"tessedit_char_whitelist={whitelist}"])
+
+    with BytesIO() as output:
+        image.save(output, format="PNG")
+        proc = subprocess.run(
+            config,
+            input=output.getvalue(),
+            capture_output=True,
+            check=False
+        )
+
+    if proc.returncode != 0:
+        stderr = proc.stderr.decode("utf-8", errors="replace").strip()
+        raise RuntimeError(f"Tesseract OCR failed: {stderr or 'unknown error'}")
+
+    return proc.stdout.decode("utf-8", errors="replace").strip()
+
+
+def normalize_ocr_text(value):
+    return " ".join(value.replace("\n", " ").split()).strip(" .,:;|")
+
+
+def extract_panel_data(image, side):
+    if side == "left":
+        panel = crop_image(image, 0.02, 0.00, 0.49, 0.95)
+    else:
+        panel = crop_image(image, 0.51, 0.00, 0.98, 0.95)
+
+    char_region = preprocess_text_region(
+        upscale_for_ocr(crop_image(panel, 0.03, 0.01, 0.67, 0.17), 3.0),
+        threshold=165
+    )
+    tag_region = preprocess_text_region(
+        upscale_for_ocr(crop_image(panel, 0.10, 0.12, 0.68, 0.24), 3.0),
+        threshold=150
+    )
+    placing_region = preprocess_text_region(
+        upscale_for_ocr(crop_image(panel, 0.72, 0.00, 0.98, 0.18), 3.2),
+        threshold=170
     )
 
-    payload = {
-        "model": OPENAI_MATCH_SCAN_MODEL,
-        "input": [{
-            "role": "user",
-            "content": [
-                {"type": "input_text", "text": prompt},
-                {"type": "input_image", "image_url": image_url, "detail": "high"}
-            ]
-        }],
-        "text": {
-            "format": {
-                "type": "json_schema",
-                "name": "match_scan",
-                "description": "Two-player Smash match scan result.",
-                "strict": True,
-                "schema": {
-                    "type": "object",
-                    "properties": {
-                        "entrants": {
-                            "type": "array",
-                            "minItems": 2,
-                            "maxItems": 2,
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "tag": {"type": "string"},
-                                    "character": {"type": "string"},
-                                    "placing": {"type": "integer", "enum": [0, 1, 2]}
-                                },
-                                "required": ["tag", "character", "placing"],
-                                "additionalProperties": False
-                            }
-                        },
-                        "notes": {"type": "string"}
-                    },
-                    "required": ["entrants", "notes"],
-                    "additionalProperties": False
-                }
-            }
-        }
+    character = normalize_ocr_text(run_tesseract_ocr(char_region, psm=7))
+    tag = normalize_ocr_text(run_tesseract_ocr(tag_region, psm=7))
+    placing_text = normalize_ocr_text(run_tesseract_ocr(placing_region, psm=10, whitelist="0123456789"))
+
+    placing = 0
+    for ch in placing_text:
+        if ch in {"1", "2"}:
+            placing = int(ch)
+            break
+
+    return {
+        "tag": tag,
+        "character": character,
+        "placing": placing
     }
 
-    req = urllib_request.Request(
-        "https://api.openai.com/v1/responses",
-        data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json"
-        },
-        method="POST"
-    )
 
+def scan_match_image_locally(image_bytes, player_names, player_tag_map):
     try:
-        with urllib_request.urlopen(req, timeout=60) as response:
-            response_payload = json.loads(response.read().decode("utf-8"))
-    except urllib_error.HTTPError as exc:
-        details = exc.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"OpenAI request failed: {details}") from exc
-    except urllib_error.URLError as exc:
-        raise RuntimeError("OpenAI request failed before receiving a response") from exc
+        image = Image.open(BytesIO(image_bytes)).convert("RGB")
+    except Exception as exc:
+        raise ValueError("The uploaded image could not be read.") from exc
 
-    parsed_text = extract_response_text(response_payload)
-    parsed = json.loads(parsed_text)
-
-    entrants = parsed.get("entrants") or []
-    if len(entrants) != 2:
-        raise ValueError("The image did not resolve to exactly two entrants")
+    entrants = [
+        extract_panel_data(image, "left"),
+        extract_panel_data(image, "right"),
+    ]
 
     resolved_entries = []
     warnings = []
@@ -848,7 +851,7 @@ def scan_match_image_with_openai(image_bytes, mime_type, player_names, player_ta
         "winner": "p1",
         "three_stock": False,
         "confidence": round(min_confidence, 3),
-        "notes": parsed.get("notes", ""),
+        "notes": "",
         "warnings": warnings,
         "summary": (
             f"{winner_entry['player']} ({winner_entry['character']}) beat "
@@ -1461,7 +1464,6 @@ def scan_match_image():
     if not image or not image.filename:
         return {"error": "No image was uploaded."}, 400
 
-    mime_type = image.mimetype or "image/jpeg"
     image_bytes = image.read()
 
     if not image_bytes:
@@ -1474,7 +1476,7 @@ def scan_match_image():
     player_tag_map = load_player_tags()
 
     try:
-        match = scan_match_image_with_openai(image_bytes, mime_type, player_names, player_tag_map)
+        match = scan_match_image_locally(image_bytes, player_names, player_tag_map)
     except ValueError as exc:
         return {"error": str(exc)}, 422
     except RuntimeError as exc:
