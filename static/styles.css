@@ -794,6 +794,186 @@ button:disabled {
   font-size: 0.95rem;
 }
 
+.mobile-only {
+  display: none !important;
+}
+
+body.is-mobile-layout .mobile-only {
+  display: block !important;
+}
+
+body.is-mobile-layout .desktop-only {
+  display: none !important;
+}
+
+.mobile-scan-anchor {
+  position: relative;
+  display: inline-block !important;
+  margin-bottom: 10px;
+}
+
+.scan-match-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  box-shadow: none;
+}
+
+.scan-match-toggle-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.scan-match-toggle:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.scan-match-toggle[aria-expanded="true"] {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.mobile-scan-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 12;
+  width: min(78vw, 220px);
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(19, 22, 27, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 34px rgba(0, 0, 0, 0.34);
+}
+
+.scan-match-trigger,
+.scan-match-upload,
+.scan-match-submit,
+.scan-match-retake,
+.scan-camera-capture,
+.scan-camera-cancel {
+  width: 100%;
+}
+
+.scan-match-upload,
+.scan-match-retake,
+.scan-camera-cancel {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+}
+
+.scan-match-upload {
+  margin-top: 8px;
+}
+
+.scan-match-trigger,
+.scan-match-upload,
+.scan-match-submit,
+.scan-match-retake,
+.scan-camera-capture,
+.scan-camera-cancel {
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  border-radius: 12px;
+}
+
+.scan-match-upload:hover,
+.scan-match-retake:hover,
+.scan-camera-cancel:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.scan-camera-shell,
+.scan-match-status,
+.scan-match-review {
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.scan-camera-shell {
+  background: rgba(14, 17, 22, 0.48);
+}
+
+.scan-camera-preview {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #08090c;
+}
+
+.scan-camera-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.scan-match-status {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.scan-match-status[data-tone="success"] {
+  background: rgba(124, 230, 172, 0.12);
+  border-color: rgba(124, 230, 172, 0.24);
+  color: var(--success);
+}
+
+.scan-match-status[data-tone="error"] {
+  background: rgba(255, 138, 138, 0.1);
+  border-color: rgba(255, 138, 138, 0.24);
+  color: var(--danger);
+}
+
+.scan-match-review {
+  background: rgba(14, 17, 22, 0.48);
+}
+
+.scan-match-review-title {
+  margin-bottom: 6px;
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.scan-match-summary,
+.scan-match-notes {
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+}
+
+.scan-match-warnings {
+  margin: 0 0 8px;
+  padding-left: 16px;
+  color: #ffd58e;
+  font-size: 0.74rem;
+}
+
+.scan-match-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-scan-panel .helper-text {
+  margin: 8px 0 0;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
 .scoreboard-container .rating-value,
 .leaderboard-container .rating-value,
 .season-card .rating-value {
@@ -1134,6 +1314,24 @@ button:disabled {
     padding-left: 14px;
     padding-right: 14px;
   }
+
+  body.matches-page .mobile-scan-panel {
+    width: min(74vw, 200px);
+    padding: 9px;
+  }
+
+  body.matches-page .scan-match-toggle {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+
+  body.matches-page .scan-camera-shell,
+  body.matches-page .scan-match-status,
+  body.matches-page .scan-match-review {
+    margin-top: 8px;
+    padding: 9px 10px;
+  }
 }
 
 @media (max-width: 430px) {
@@ -1233,6 +1431,16 @@ button:disabled {
   body.matches-page .submit-match {
     padding-left: 14px;
     padding-right: 14px;
+  }
+
+  body.matches-page .mobile-scan-panel {
+    width: min(76vw, 188px);
+    padding: 8px;
+  }
+
+  body.matches-page .scan-match-toggle {
+    width: 30px;
+    height: 30px;
   }
 
   body.matches-page .result-box {

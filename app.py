@@ -4,10 +4,14 @@ import os
 import subprocess
 import threading
 import time
+import base64
+import difflib
 from functools import wraps
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from flask import Response
+from urllib import error as urllib_error
+from urllib import request as urllib_request
 
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -24,6 +28,7 @@ print(">>> LOADED FLASK APP FROM:", __file__)
 
 
 app = Flask(__name__)
+app.config["MAX_CONTENT_LENGTH"] = 12 * 1024 * 1024
 
 push_queue = []
 is_pushing = False
@@ -56,6 +61,7 @@ def load_admin_credentials():
 ADMIN_USERS, ADMIN_USERNAMES = load_admin_credentials()
 print(f"Loaded {len(ADMIN_USERS)} admin users")
 ADMIN_PANEL_USERNAME = "bunnyslave"
+OPENAI_MATCH_SCAN_MODEL = os.getenv("OPENAI_MATCH_SCAN_MODEL", "gpt-4.1-mini")
 
 DECAY_START_DAYS = 14
 DECAY_PER_DAY = 2      # total global decay per day
@@ -199,6 +205,7 @@ MOMS_HOUSE_FILE = f"{DATA_DIR}/moms_house.json"
 MOMS_HOUSE_LOG_FILE = f"{DATA_DIR}/moms_house_log.json"
 MOMS_HOUSE_LAST_FILE = f"{DATA_DIR}/moms_house_last_result.json"
 SEASONS_FILE = f"{DATA_DIR}/seasons.json"
+PLAYER_TAGS_FILE = f"{DATA_DIR}/player_tags.json"
 
 
 # run with alias "runelo" in terminal
@@ -239,6 +246,12 @@ def load_match_log():
 def save_match_log(log):
     with open(MATCH_LOG_FILE, "w") as f:
         json.dump(log, f, indent=4)
+
+def load_player_tags():
+    if not os.path.exists(PLAYER_TAGS_FILE):
+        return {}
+    with open(PLAYER_TAGS_FILE, "r") as f:
+        return json.load(f)
 
 def load_moms_house():
     if not os.path.exists(MOMS_HOUSE_FILE):
@@ -556,6 +569,293 @@ def apply_random_modifier(character_name, change_amount):
         return round(change_amount * 0.8)
 
     return 0
+
+
+def normalize_lookup_value(value):
+    if not value:
+        return ""
+    return "".join(ch.lower() for ch in value if ch.isalnum())
+
+
+def build_player_aliases(player_name, player_tag_map=None):
+    aliases = {player_name}
+    parts = player_name.split()
+
+    if len(parts) >= 2:
+        first = parts[0]
+        last = parts[-1]
+        aliases.update({
+            f"{first} {last[0]}",
+            f"{first}{last[0]}",
+            f"{first}-{last[0]}",
+            f"{first}_{last[0]}",
+        })
+
+    if player_tag_map:
+        for tag, mapped_player in player_tag_map.items():
+            if mapped_player == player_name:
+                aliases.add(tag)
+
+    return {alias for alias in aliases if alias}
+
+
+def build_character_aliases(character_name, _alias_context=None):
+    aliases = {character_name}
+    normalized = normalize_lookup_value(character_name)
+
+    special_aliases = {
+        "bowserjr": {"Bowser Jr."},
+        "drmario": {"Dr. Mario", "Doctor Mario"},
+        "kingkrool": {"King K. Rool", "King Krool"},
+        "mrgameandwatch": {"Mr. Game and Watch", "Mr Game and Watch", "Game & Watch", "Game and Watch"},
+        "pacman": {"Pac-Man", "Pac Man"},
+        "piranhaplant": {"Piranha Plant", "Plant", "Packun", "Packun Flower"},
+        "pyramythra": {"Pyra/Mythra", "Pyra Mythra", "Aegis"},
+        "rob": {"R.O.B", "ROB"},
+        "rosalinaandluma": {"Rosalina and Luma", "Rosalina & Luma"},
+        "toonlink": {"Toon Link"},
+        "wiifittrainer": {"Wii Fit Trainer", "WiiFitTrainer"},
+        "younglink": {"Young Link"},
+        "zerosuitsamus": {"Zero Suit Samus", "ZSS"},
+    }
+
+    aliases.update(special_aliases.get(normalized, set()))
+    return {alias for alias in aliases if alias}
+
+
+def resolve_best_match(raw_value, candidates, alias_builder, alias_context=None):
+    if not raw_value:
+        return {
+            "matched": None,
+            "score": 0.0,
+            "raw": raw_value or "",
+            "ambiguous": False
+        }
+
+    raw_normalized = normalize_lookup_value(raw_value)
+    best_match = None
+    best_score = 0.0
+    second_score = 0.0
+
+    for candidate in candidates:
+        for alias in alias_builder(candidate, alias_context):
+            alias_normalized = normalize_lookup_value(alias)
+            if not alias_normalized:
+                continue
+
+            if alias_normalized == raw_normalized:
+                score = 1.0
+            elif raw_normalized in alias_normalized or alias_normalized in raw_normalized:
+                score = 0.94
+            else:
+                score = difflib.SequenceMatcher(None, raw_normalized, alias_normalized).ratio()
+
+            if score > best_score:
+                second_score = best_score
+                best_score = score
+                best_match = candidate
+            elif score > second_score:
+                second_score = score
+
+    return {
+        "matched": best_match if best_score >= 0.62 else None,
+        "score": round(best_score, 3),
+        "raw": raw_value,
+        "ambiguous": best_score < 0.8 or (best_score - second_score) < 0.08
+    }
+
+
+def extract_response_text(response_payload):
+    output_text = response_payload.get("output_text")
+    if output_text:
+        return output_text
+
+    for item in response_payload.get("output", []):
+        for content in item.get("content", []):
+            if content.get("type") == "output_text" and content.get("text"):
+                return content["text"]
+
+    raise ValueError("No text output found in model response")
+
+
+def scan_match_image_with_openai(image_bytes, mime_type, player_names, player_tag_map):
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise RuntimeError("OPENAI_API_KEY is not configured")
+
+    image_b64 = base64.b64encode(image_bytes).decode("utf-8")
+    image_url = f"data:{mime_type};base64,{image_b64}"
+
+    prompt = (
+        "You are parsing a Super Smash Bros. Ultimate match result image. "
+        "Extract exactly two entrants from the image if possible. "
+        "For each entrant, extract the visible tag, character name, and placing (1 or 2). "
+        "If a value is unclear, return an empty string for text fields and 0 for placing. "
+        "Do not infer players from outside the image. "
+        "Return only structured data that matches the schema."
+    )
+
+    payload = {
+        "model": OPENAI_MATCH_SCAN_MODEL,
+        "input": [{
+            "role": "user",
+            "content": [
+                {"type": "input_text", "text": prompt},
+                {"type": "input_image", "image_url": image_url, "detail": "high"}
+            ]
+        }],
+        "text": {
+            "format": {
+                "type": "json_schema",
+                "name": "match_scan",
+                "description": "Two-player Smash match scan result.",
+                "strict": True,
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "entrants": {
+                            "type": "array",
+                            "minItems": 2,
+                            "maxItems": 2,
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "tag": {"type": "string"},
+                                    "character": {"type": "string"},
+                                    "placing": {"type": "integer", "enum": [0, 1, 2]}
+                                },
+                                "required": ["tag", "character", "placing"],
+                                "additionalProperties": False
+                            }
+                        },
+                        "notes": {"type": "string"}
+                    },
+                    "required": ["entrants", "notes"],
+                    "additionalProperties": False
+                }
+            }
+        }
+    }
+
+    req = urllib_request.Request(
+        "https://api.openai.com/v1/responses",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        },
+        method="POST"
+    )
+
+    try:
+        with urllib_request.urlopen(req, timeout=60) as response:
+            response_payload = json.loads(response.read().decode("utf-8"))
+    except urllib_error.HTTPError as exc:
+        details = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"OpenAI request failed: {details}") from exc
+    except urllib_error.URLError as exc:
+        raise RuntimeError("OpenAI request failed before receiving a response") from exc
+
+    parsed_text = extract_response_text(response_payload)
+    parsed = json.loads(parsed_text)
+
+    entrants = parsed.get("entrants") or []
+    if len(entrants) != 2:
+        raise ValueError("The image did not resolve to exactly two entrants")
+
+    resolved_entries = []
+    warnings = []
+    normalized_tag_map = {
+        normalize_lookup_value(tag): player
+        for tag, player in player_tag_map.items()
+        if tag and player
+    }
+
+    for entrant in entrants:
+        raw_tag = entrant.get("tag", "")
+        normalized_tag = normalize_lookup_value(raw_tag)
+        exact_player = normalized_tag_map.get(normalized_tag)
+
+        if exact_player:
+            player_match = {
+                "matched": exact_player,
+                "score": 1.0,
+                "raw": raw_tag,
+                "ambiguous": False
+            }
+        else:
+            player_match = resolve_best_match(
+                raw_tag,
+                player_names,
+                build_player_aliases,
+                alias_context=player_tag_map
+            )
+
+        character_match = resolve_best_match(
+            entrant.get("character", ""),
+            CHARACTERS,
+            build_character_aliases
+        )
+
+        if not player_match["matched"]:
+            warnings.append(f"Could not match tag '{entrant.get('tag', '')}' to a player.")
+        elif player_match["ambiguous"]:
+            warnings.append(
+                f"Tag '{entrant.get('tag', '')}' was matched to '{player_match['matched']}' with low confidence."
+            )
+
+        if not character_match["matched"]:
+            warnings.append(f"Could not match character '{entrant.get('character', '')}' to the roster.")
+        elif character_match["ambiguous"]:
+            warnings.append(
+                f"Character '{entrant.get('character', '')}' was matched to '{character_match['matched']}' with low confidence."
+            )
+
+        resolved_entries.append({
+            "parsed_tag": entrant.get("tag", ""),
+            "parsed_character": entrant.get("character", ""),
+            "placing": entrant.get("placing", 0),
+            "player": player_match["matched"],
+            "player_score": player_match["score"],
+            "character": character_match["matched"],
+            "character_score": character_match["score"]
+        })
+
+    resolved_entries.sort(key=lambda entry: (entry["placing"] or 99, entry["parsed_tag"]))
+
+    placings = [entry["placing"] for entry in resolved_entries]
+    if sorted(placings) != [1, 2]:
+        raise ValueError("The image did not provide clear 1st and 2nd placings.")
+
+    if any(not entry["player"] or not entry["character"] for entry in resolved_entries):
+        raise ValueError("The image parsed, but at least one player or character could not be matched.")
+
+    winner_entry = next(entry for entry in resolved_entries if entry["placing"] == 1)
+    loser_entry = next(entry for entry in resolved_entries if entry["placing"] == 2)
+
+    min_confidence = min(
+        winner_entry["player_score"],
+        winner_entry["character_score"],
+        loser_entry["player_score"],
+        loser_entry["character_score"]
+    )
+
+    return {
+        "player1": winner_entry["player"],
+        "p1_character": winner_entry["character"],
+        "player2": loser_entry["player"],
+        "p2_character": loser_entry["character"],
+        "winner": "p1",
+        "three_stock": False,
+        "confidence": round(min_confidence, 3),
+        "notes": parsed.get("notes", ""),
+        "warnings": warnings,
+        "summary": (
+            f"{winner_entry['player']} ({winner_entry['character']}) beat "
+            f"{loser_entry['player']} ({loser_entry['character']})"
+        ),
+        "resolved_entries": resolved_entries
+    }
 
 
 
@@ -1152,6 +1452,38 @@ def add_match():
     queue_push("Auto-update from match submission")
 
     return redirect(url_for("matches"))
+
+
+@app.route("/api/scan-match-image", methods=["POST"])
+@requires_auth
+def scan_match_image():
+    image = request.files.get("image")
+    if not image or not image.filename:
+        return {"error": "No image was uploaded."}, 400
+
+    mime_type = image.mimetype or "image/jpeg"
+    image_bytes = image.read()
+
+    if not image_bytes:
+        return {"error": "The uploaded image was empty."}, 400
+
+    if len(image_bytes) > 10 * 1024 * 1024:
+        return {"error": "Image is too large. Keep it under 10 MB."}, 400
+
+    player_names = sorted(load_players().keys())
+    player_tag_map = load_player_tags()
+
+    try:
+        match = scan_match_image_with_openai(image_bytes, mime_type, player_names, player_tag_map)
+    except ValueError as exc:
+        return {"error": str(exc)}, 422
+    except RuntimeError as exc:
+        return {"error": str(exc)}, 503
+    except Exception as exc:
+        print("Scan failure:", exc)
+        return {"error": "The scan failed unexpectedly."}, 500
+
+    return {"match": match}
 
 
 

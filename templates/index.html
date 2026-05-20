@@ -119,7 +119,40 @@
       </div>
 
       <section class="section-card">
-      <form action="/add_match" method="POST">
+      <div class="mobile-scan-anchor mobile-only">
+        <button type="button" id="scan-match-toggle" class="scan-match-toggle" aria-expanded="false" aria-controls="mobile-scan-panel" aria-label="Open match scanner">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="scan-match-toggle-icon">
+            <path d="M9 4.5 7.8 6H5.5A2.5 2.5 0 0 0 3 8.5v9A2.5 2.5 0 0 0 5.5 20h13a2.5 2.5 0 0 0 2.5-2.5v-9A2.5 2.5 0 0 0 18.5 6h-2.3L15 4.5H9Zm3 4a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Z"/>
+          </svg>
+        </button>
+        <div id="mobile-scan-panel" class="mobile-scan-panel" hidden>
+          <button type="button" id="scan-match-trigger" class="scan-match-trigger">Open Camera</button>
+          <button type="button" id="scan-match-upload" class="scan-match-upload">Use Existing Screenshot</button>
+          <input type="file" id="scan-match-input" accept="image/*" capture="environment" hidden>
+          <p class="helper-text">Photo is captured in memory and not stored.</p>
+          <div id="scan-camera-shell" class="scan-camera-shell" hidden>
+            <video id="scan-camera-preview" class="scan-camera-preview" autoplay playsinline muted></video>
+            <canvas id="scan-camera-canvas" hidden></canvas>
+            <div class="scan-camera-actions">
+              <button type="button" id="scan-camera-capture" class="scan-camera-capture">Take Photo</button>
+              <button type="button" id="scan-camera-cancel" class="scan-camera-cancel">Cancel</button>
+            </div>
+          </div>
+          <div id="scan-match-status" class="scan-match-status" hidden></div>
+          <div id="scan-match-review" class="scan-match-review" hidden>
+            <h3 class="scan-match-review-title">Scan Ready</h3>
+            <p id="scan-match-summary" class="scan-match-summary"></p>
+            <p id="scan-match-notes" class="scan-match-notes" hidden></p>
+            <ul id="scan-match-warnings" class="scan-match-warnings" hidden></ul>
+            <div class="scan-match-actions">
+              <button type="button" id="scan-match-submit" class="scan-match-submit">Submit Scanned Match</button>
+              <button type="button" id="scan-match-retake" class="scan-match-retake">Retake Photo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form action="/add_match" method="POST" id="match-form">
 
           <div class="form-grid">
             <div class="form-block">
@@ -221,6 +254,338 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+          const mobileMediaQuery = window.matchMedia("(max-width: 900px)");
+          const matchForm = document.getElementById("match-form");
+          const mobileScanAnchor = document.querySelector(".mobile-scan-anchor");
+          const scanToggle = document.getElementById("scan-match-toggle");
+          const scanTrigger = document.getElementById("scan-match-trigger");
+          const scanUpload = document.getElementById("scan-match-upload");
+          const mobileScanPanel = document.getElementById("mobile-scan-panel");
+          const scanInput = document.getElementById("scan-match-input");
+          const scanCameraShell = document.getElementById("scan-camera-shell");
+          const scanCameraPreview = document.getElementById("scan-camera-preview");
+          const scanCameraCanvas = document.getElementById("scan-camera-canvas");
+          const scanCameraCapture = document.getElementById("scan-camera-capture");
+          const scanCameraCancel = document.getElementById("scan-camera-cancel");
+          const scanStatus = document.getElementById("scan-match-status");
+          const scanReview = document.getElementById("scan-match-review");
+          const scanSummary = document.getElementById("scan-match-summary");
+          const scanNotes = document.getElementById("scan-match-notes");
+          const scanWarnings = document.getElementById("scan-match-warnings");
+          const scanSubmit = document.getElementById("scan-match-submit");
+          const scanRetake = document.getElementById("scan-match-retake");
+          const submitMatchButton = document.querySelector(".submit-match");
+          let scannedMatch = null;
+          let activeCameraStream = null;
+
+          function applyViewportMode() {
+              const isMobileLayout = mobileMediaQuery.matches;
+
+              document.body.dataset.viewport = isMobileLayout ? "mobile" : "desktop";
+              document.body.classList.toggle("is-mobile-layout", isMobileLayout);
+              document.body.classList.toggle("is-desktop-layout", !isMobileLayout);
+
+              if (!isMobileLayout) {
+                  stopCameraStream();
+                  if (mobileScanPanel) {
+                      mobileScanPanel.hidden = true;
+                  }
+                  if (scanToggle) {
+                      scanToggle.setAttribute("aria-expanded", "false");
+                  }
+              }
+
+              document.dispatchEvent(new CustomEvent("viewportmodechange", {
+                  detail: {
+                      isMobileLayout,
+                      width: window.innerWidth
+                  }
+              }));
+          }
+
+          applyViewportMode();
+
+          if (typeof mobileMediaQuery.addEventListener === "function") {
+              mobileMediaQuery.addEventListener("change", applyViewportMode);
+          } else if (typeof mobileMediaQuery.addListener === "function") {
+              mobileMediaQuery.addListener(applyViewportMode);
+          }
+
+          window.addEventListener("resize", applyViewportMode);
+
+          function setScanStatus(message, tone) {
+              if (!scanStatus) return;
+
+              if (!message) {
+                  scanStatus.hidden = true;
+                  scanStatus.textContent = "";
+                  scanStatus.dataset.tone = "";
+                  return;
+              }
+
+              scanStatus.hidden = false;
+              scanStatus.dataset.tone = tone || "info";
+              scanStatus.textContent = message;
+          }
+
+          function stopCameraStream() {
+              if (activeCameraStream) {
+                  activeCameraStream.getTracks().forEach((track) => track.stop());
+                  activeCameraStream = null;
+              }
+
+              if (scanCameraPreview) {
+                  scanCameraPreview.srcObject = null;
+              }
+
+              if (scanCameraShell) {
+                  scanCameraShell.hidden = true;
+              }
+          }
+
+          function setScanPanelOpen(isOpen) {
+              if (mobileScanPanel) {
+                  mobileScanPanel.hidden = !isOpen;
+              }
+              if (scanToggle) {
+                  scanToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+              }
+              if (!isOpen) {
+                  stopCameraStream();
+              }
+          }
+
+          async function openCamera() {
+              clearScanReview();
+              setScanStatus("", "");
+              setScanPanelOpen(true);
+
+              if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                  scanInput?.click();
+                  return;
+              }
+
+              try {
+                  activeCameraStream = await navigator.mediaDevices.getUserMedia({
+                      video: {
+                          facingMode: { ideal: "environment" }
+                      },
+                      audio: false
+                  });
+
+                  if (scanCameraPreview) {
+                      scanCameraPreview.srcObject = activeCameraStream;
+                  }
+
+                  if (scanCameraShell) {
+                      scanCameraShell.hidden = false;
+                  }
+              } catch (error) {
+                  setScanStatus("Camera access failed. Falling back to photo upload.", "error");
+                  scanInput?.click();
+              }
+          }
+
+          function setSelectValue(selectEl, value) {
+              if (!selectEl) return;
+
+              selectEl.value = value;
+              const wrapper = selectEl.previousElementSibling;
+              if (!wrapper || !wrapper.classList.contains("searchable-wrapper")) return;
+
+              const input = wrapper.querySelector(".search-input");
+              const selectedOption = Array.from(selectEl.options).find((option) => option.value === value);
+              if (input && selectedOption) {
+                  input.value = selectedOption.textContent.trim();
+              }
+          }
+
+          function clearScanReview() {
+              scannedMatch = null;
+              if (scanReview) {
+                  scanReview.hidden = true;
+              }
+              if (scanSummary) {
+                  scanSummary.textContent = "";
+              }
+              if (scanNotes) {
+                  scanNotes.hidden = true;
+                  scanNotes.textContent = "";
+              }
+              if (scanWarnings) {
+                  scanWarnings.hidden = true;
+                  scanWarnings.innerHTML = "";
+              }
+          }
+
+          function applyScannedMatch(match) {
+              const player1Select = matchForm?.querySelector('select[name="player1"]');
+              const player2Select = matchForm?.querySelector('select[name="player2"]');
+              const character1Select = matchForm?.querySelector('select[name="p1_character"]');
+              const character2Select = matchForm?.querySelector('select[name="p2_character"]');
+              const winnerSelect = matchForm?.querySelector('select[name="winner"]');
+              const threeStockCheckbox = matchForm?.querySelector('input[name="three_stock"]');
+
+              setSelectValue(player1Select, match.player1);
+              setSelectValue(character1Select, match.p1_character);
+              setSelectValue(player2Select, match.player2);
+              setSelectValue(character2Select, match.p2_character);
+
+              if (winnerSelect) {
+                  winnerSelect.value = match.winner;
+              }
+
+              if (threeStockCheckbox) {
+                  threeStockCheckbox.checked = Boolean(match.three_stock);
+              }
+
+              updateMatchSubmitState();
+          }
+
+          async function uploadMatchScan(file) {
+              clearScanReview();
+              setScanStatus("Uploading photo for match parsing...", "info");
+
+              const formData = new FormData();
+              formData.append("image", file);
+
+              const response = await fetch("/api/scan-match-image", {
+                  method: "POST",
+                  body: formData
+              });
+
+              const payload = await response.json();
+              if (!response.ok) {
+                  throw new Error(payload.error || "Match scan failed.");
+              }
+
+              scannedMatch = payload.match;
+              applyScannedMatch(scannedMatch);
+
+              if (scanReview) {
+                  scanReview.hidden = false;
+              }
+
+              if (scanSummary) {
+                  scanSummary.textContent = scannedMatch.summary;
+              }
+
+              if (scanNotes && scannedMatch.notes) {
+                  scanNotes.hidden = false;
+                  scanNotes.textContent = scannedMatch.notes;
+              }
+
+              if (scanWarnings && scannedMatch.warnings && scannedMatch.warnings.length) {
+                  scanWarnings.hidden = false;
+                  scanWarnings.innerHTML = "";
+                  scannedMatch.warnings.forEach((warning) => {
+                      const item = document.createElement("li");
+                      item.textContent = warning;
+                      scanWarnings.appendChild(item);
+                  });
+              }
+
+              setScanStatus("Scan complete. Review the detected match, then submit it.", "success");
+              setScanPanelOpen(true);
+          }
+
+          scanToggle?.addEventListener("click", () => {
+              const isOpen = scanToggle.getAttribute("aria-expanded") === "true";
+              setScanPanelOpen(!isOpen);
+          });
+
+          document.addEventListener("click", (event) => {
+              if (!mobileScanAnchor || !scanToggle || !mobileScanPanel) return;
+              if (mobileScanPanel.hidden) return;
+              if (mobileScanAnchor.contains(event.target)) return;
+              setScanPanelOpen(false);
+          });
+
+          scanTrigger?.addEventListener("click", () => {
+              openCamera();
+          });
+
+          scanUpload?.addEventListener("click", () => {
+              clearScanReview();
+              setScanStatus("", "");
+              stopCameraStream();
+              scanInput?.click();
+          });
+
+          scanCameraCancel?.addEventListener("click", () => {
+              stopCameraStream();
+              setScanStatus("", "");
+              if (!scannedMatch) {
+                  setScanPanelOpen(false);
+              }
+          });
+
+          scanCameraCapture?.addEventListener("click", async () => {
+              if (!scanCameraPreview || !scanCameraCanvas) return;
+
+              const width = scanCameraPreview.videoWidth;
+              const height = scanCameraPreview.videoHeight;
+              if (!width || !height) {
+                  setScanStatus("Camera is not ready yet. Try again in a second.", "error");
+                  return;
+              }
+
+              scanCameraCanvas.width = width;
+              scanCameraCanvas.height = height;
+              const context = scanCameraCanvas.getContext("2d");
+              if (!context) {
+                  setScanStatus("Camera capture is not available in this browser.", "error");
+                  return;
+              }
+
+              context.drawImage(scanCameraPreview, 0, 0, width, height);
+
+              const blob = await new Promise((resolve) => {
+                  scanCameraCanvas.toBlob(resolve, "image/jpeg", 0.92);
+              });
+
+              stopCameraStream();
+
+              if (!blob) {
+                  setScanStatus("Could not capture a frame from the camera.", "error");
+                  return;
+              }
+
+              try {
+                  await uploadMatchScan(blob);
+              } catch (error) {
+                  clearScanReview();
+                  setScanStatus(error.message || "Match scan failed.", "error");
+              }
+          });
+
+          scanRetake?.addEventListener("click", () => {
+              clearScanReview();
+              setScanStatus("", "");
+              openCamera();
+          });
+
+          scanSubmit?.addEventListener("click", () => {
+              if (!scannedMatch || !matchForm || !submitMatchButton) return;
+              matchForm.requestSubmit(submitMatchButton);
+          });
+
+          scanInput?.addEventListener("change", async (event) => {
+              const file = event.target.files && event.target.files[0];
+              if (!file) return;
+
+              try {
+                  await uploadMatchScan(file);
+              } catch (error) {
+                  clearScanReview();
+                  setScanStatus(error.message || "Match scan failed.", "error");
+              } finally {
+                  event.target.value = "";
+              }
+          });
+
+          window.addEventListener("beforeunload", stopCameraStream);
+
           document.querySelectorAll(".search-input").forEach(input => {
               input.dataset.fromDropdown = "false";
       
