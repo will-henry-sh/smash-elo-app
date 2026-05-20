@@ -343,12 +343,12 @@ def save_seasons(data):
 
 CHARACTERS = sorted([
     "Banjo & Kazooie", "Bayonetta", "Bowser", "Bowser Jr.",
-    "Byleth", "Captain Falcon", "Charizard", "Chrom",
+    "Byleth", "Captain Falcon", "Chrom",
     "Cloud", "Corrin", "Daisy", "Dark Pit", "Dark Samus",
     "Diddy Kong", "Donkey Kong", "Dr. Mario", "Duck Hunt",
     "Falco", "Fox", "Ganondorf", "Greninja", "Hero",
     "Ice Climbers", "Ike", "Incineroar", "Inkling",
-    "Isabelle", "Ivysaur", "Jigglypuff", "Joker",
+    "Isabelle", "Jigglypuff", "Joker",
     "Kazuya", "Ken", "King Dedede", "King K. Rool",
     "Kirby", "Link", "Little Mac", "Lucario", "Lucas",
     "Lucina", "Luigi", "Mario", "Marth", "Mega Man",
@@ -359,7 +359,7 @@ CHARACTERS = sorted([
     "Pit", "Pyra/Mythra", "R.O.B", "Richter", "Ridley",
     "Random", "Robin", "Rosalina and Luma", "Roy", "Ryu",
     "Samus", "Sephiroth", "Sheik", "Shulk", "Simon",
-    "Snake", "Sonic", "Sora", "Squirtle", "Steve",
+    "Snake", "Sonic", "Sora", "Steve",
     "Terry", "Toon Link", "Villager", "Wario",
     "Wii Fit Trainer", "Wolf", "Yoshi", "Young Link",
     "Zelda", "Zero Suit Samus"
@@ -576,6 +576,17 @@ def normalize_lookup_value(value):
     return "".join(ch.lower() for ch in value if ch.isalnum())
 
 
+def canonicalize_character_name(character_name):
+    character_aliases = {
+        "charizard": "Pokemon Trainer",
+        "ivysaur": "Pokemon Trainer",
+        "squirtle": "Pokemon Trainer",
+        "mythra": "Pyra/Mythra",
+        "pyra": "Pyra/Mythra",
+    }
+    return character_aliases.get(normalize_lookup_value(character_name), character_name)
+
+
 def build_player_aliases(player_name, player_tag_map=None):
     aliases = {player_name}
     parts = player_name.split()
@@ -594,13 +605,18 @@ def build_player_aliases(player_name, player_tag_map=None):
         for tag, mapped_player in player_tag_map.items():
             if mapped_player == player_name:
                 aliases.add(tag)
+                for part in tag.split():
+                    cleaned_part = part.strip()
+                    if len(cleaned_part) >= 4:
+                        aliases.add(cleaned_part)
 
     return {alias for alias in aliases if alias}
 
 
 def build_character_aliases(character_name, _alias_context=None):
-    aliases = {character_name}
-    normalized = normalize_lookup_value(character_name)
+    canonical_name = canonicalize_character_name(character_name)
+    aliases = {canonical_name}
+    normalized = normalize_lookup_value(canonical_name)
 
     special_aliases = {
         "bowserjr": {"Bowser Jr."},
@@ -609,6 +625,7 @@ def build_character_aliases(character_name, _alias_context=None):
         "mrgameandwatch": {"Mr. Game and Watch", "Mr Game and Watch", "Game & Watch", "Game and Watch"},
         "pacman": {"Pac-Man", "Pac Man"},
         "piranhaplant": {"Piranha Plant", "Plant", "Packun", "Packun Flower"},
+        "pokemontrainer": {"Pokemon Trainer", "PokemonTrainer", "Charizard", "Squirtle", "Ivysaur"},
         "pyramythra": {"Pyra/Mythra", "Pyra Mythra", "Aegis", "Pyra", "Mythra"},
         "rob": {"R.O.B", "ROB"},
         "rosalinaandluma": {"Rosalina and Luma", "Rosalina & Luma"},
@@ -644,7 +661,9 @@ def resolve_best_match(raw_value, candidates, alias_builder, alias_context=None)
 
             if alias_normalized == raw_normalized:
                 score = 1.0
-            elif raw_normalized in alias_normalized or alias_normalized in raw_normalized:
+            elif min(len(raw_normalized), len(alias_normalized)) >= 4 and (
+                raw_normalized in alias_normalized or alias_normalized in raw_normalized
+            ):
                 score = 0.94
             else:
                 score = difflib.SequenceMatcher(None, raw_normalized, alias_normalized).ratio()
@@ -662,6 +681,43 @@ def resolve_best_match(raw_value, candidates, alias_builder, alias_context=None)
         "raw": raw_value,
         "ambiguous": best_score < 0.8 or (best_score - second_score) < 0.08
     }
+
+
+def resolve_direct_alias_match(raw_candidates, candidates, alias_builder, alias_context=None):
+    best_result = None
+
+    for raw_value in raw_candidates:
+        raw_normalized = normalize_lookup_value(raw_value)
+        if len(raw_normalized) < 3:
+            continue
+
+        for candidate in candidates:
+            for alias in alias_builder(candidate, alias_context):
+                alias_normalized = normalize_lookup_value(alias)
+                if len(alias_normalized) < 3:
+                    continue
+
+                if raw_normalized == alias_normalized:
+                    return {
+                        "matched": candidate,
+                        "score": 1.0,
+                        "raw": raw_value,
+                        "ambiguous": False
+                    }
+
+                if min(len(raw_normalized), len(alias_normalized)) >= 4 and (
+                    raw_normalized in alias_normalized or alias_normalized in raw_normalized
+                ):
+                    result = {
+                        "matched": candidate,
+                        "score": 0.99,
+                        "raw": raw_value,
+                        "ambiguous": False
+                    }
+                    if best_result is None or len(alias_normalized) > len(normalize_lookup_value(best_result["raw"])):
+                        best_result = result
+
+    return best_result
 
 
 def extract_response_text(response_payload):
@@ -719,40 +775,157 @@ def normalize_ocr_text(value):
     return " ".join(value.replace("\n", " ").split()).strip(" .,:;|")
 
 
+def collect_ocr_candidates(panel, region_specs, whitelist=None, include_invert=False):
+    candidates = []
+    seen = set()
+
+    for left, top, right, bottom, scale, thresholds, psms in region_specs:
+        region = upscale_for_ocr(crop_image(panel, left, top, right, bottom), scale)
+
+        for psm in psms:
+            raw_text = normalize_ocr_text(run_tesseract_ocr(region, psm=psm, whitelist=whitelist))
+            if raw_text and raw_text not in seen:
+                seen.add(raw_text)
+                candidates.append(raw_text)
+
+        for threshold in thresholds:
+            processed = preprocess_text_region(region, threshold=threshold)
+            image_variants = (processed,)
+            if include_invert:
+                image_variants = (processed, preprocess_text_region(region, threshold=threshold, invert=True))
+
+            for image_variant in image_variants:
+                for psm in psms:
+                    text = normalize_ocr_text(run_tesseract_ocr(image_variant, psm=psm, whitelist=whitelist))
+                    if text and text not in seen:
+                        seen.add(text)
+                        candidates.append(text)
+
+    return candidates
+
+
+def merge_unique_candidates(existing_candidates, new_candidates):
+    merged = list(existing_candidates)
+    seen = set(existing_candidates)
+    for candidate in new_candidates:
+        if candidate not in seen:
+            seen.add(candidate)
+            merged.append(candidate)
+    return merged
+
+
+def extract_first_placing_digit(value):
+    for ch in value:
+        if ch in {"1", "2"}:
+            return int(ch)
+    return 0
+
+
+def detect_panel_placing(panel):
+    candidate_specs = [
+        (0.68, 0.00, 1.00, 0.22, 4.0, (120, 150, 180, 210), (10, 6)),
+        (0.62, 0.00, 1.00, 0.20, 4.0, (120, 150, 180, 210), (10, 6)),
+        (0.00, 0.00, 1.00, 0.20, 3.2, (150, 180), (6,)),
+    ]
+
+    seen_digits = []
+
+    for left, top, right, bottom, scale, thresholds, psms in candidate_specs:
+        region = upscale_for_ocr(crop_image(panel, left, top, right, bottom), scale)
+
+        for psm in psms:
+            raw_text = normalize_ocr_text(run_tesseract_ocr(region, psm=psm, whitelist="0123456789"))
+            raw_digit = extract_first_placing_digit(raw_text)
+            if raw_digit in {1, 2}:
+                return raw_digit
+
+        for threshold in thresholds:
+            processed = preprocess_text_region(region, threshold=threshold)
+            for psm in psms:
+                processed_text = normalize_ocr_text(run_tesseract_ocr(processed, psm=psm, whitelist="0123456789"))
+                digit = extract_first_placing_digit(processed_text)
+                if digit in {1, 2}:
+                    return digit
+                if digit:
+                    seen_digits.append(digit)
+
+    return seen_digits[0] if seen_digits else 0
+
+
+def resolve_best_match_from_candidates(raw_candidates, candidates, alias_builder, alias_context=None):
+    filtered_candidates = [
+        raw_value for raw_value in raw_candidates
+        if len(normalize_lookup_value(raw_value)) >= 3
+    ]
+
+    if not filtered_candidates:
+        filtered_candidates = raw_candidates
+
+    best_result = {
+        "matched": None,
+        "score": 0.0,
+        "raw": filtered_candidates[0] if filtered_candidates else "",
+        "ambiguous": False
+    }
+
+    for raw_value in filtered_candidates:
+        result = resolve_best_match(raw_value, candidates, alias_builder, alias_context=alias_context)
+        if result["score"] > best_result["score"]:
+            best_result = result
+
+    return best_result
+
+
 def extract_panel_data(image, side):
+    if side == "left":
+        panel = crop_image(image, 0.02, 0.00, 0.49, 0.95)
+        placing = 1
+    else:
+        panel = crop_image(image, 0.51, 0.00, 0.98, 0.95)
+        placing = 2
+
+    character_candidates = collect_ocr_candidates(panel, [
+        (0.02, 0.00, 0.55, 0.12, 3.6, (130, 190), (7,)),
+        (0.00, 0.00, 0.62, 0.15, 3.6, (130,), (7,)),
+    ], include_invert=False)
+    tag_candidates = collect_ocr_candidates(panel, [
+        (0.13, 0.10, 0.60, 0.20, 3.8, (130, 190), (7,)),
+        (0.08, 0.09, 0.68, 0.22, 3.8, (130,), (6,)),
+    ], include_invert=True)
+
+    return {
+        "tag": tag_candidates[0] if tag_candidates else "",
+        "character": character_candidates[0] if character_candidates else "",
+        "tag_candidates": tag_candidates,
+        "character_candidates": character_candidates,
+        "placing": placing,
+    }
+
+
+def enrich_panel_data(image, side, panel_data):
     if side == "left":
         panel = crop_image(image, 0.02, 0.00, 0.49, 0.95)
     else:
         panel = crop_image(image, 0.51, 0.00, 0.98, 0.95)
 
-    char_region = preprocess_text_region(
-        upscale_for_ocr(crop_image(panel, 0.03, 0.01, 0.67, 0.17), 3.0),
-        threshold=165
-    )
-    tag_region = preprocess_text_region(
-        upscale_for_ocr(crop_image(panel, 0.10, 0.12, 0.68, 0.24), 3.0),
-        threshold=150
-    )
-    placing_region = preprocess_text_region(
-        upscale_for_ocr(crop_image(panel, 0.72, 0.00, 0.98, 0.18), 3.2),
-        threshold=170
-    )
+    extra_character_candidates = collect_ocr_candidates(panel, [
+        (0.02, 0.00, 0.55, 0.12, 4.0, (100, 130, 160, 190), (7, 6)),
+        (0.00, 0.00, 0.62, 0.15, 4.0, (100, 130, 160, 190), (7, 6)),
+    ], include_invert=False)
+    extra_tag_candidates = collect_ocr_candidates(panel, [
+        (0.13, 0.10, 0.60, 0.20, 4.0, (100, 130, 160, 190, 220), (7, 6)),
+        (0.08, 0.09, 0.68, 0.22, 4.0, (100, 130, 160, 190, 220), (7, 6)),
+    ], include_invert=True)
 
-    character = normalize_ocr_text(run_tesseract_ocr(char_region, psm=7))
-    tag = normalize_ocr_text(run_tesseract_ocr(tag_region, psm=7))
-    placing_text = normalize_ocr_text(run_tesseract_ocr(placing_region, psm=10, whitelist="0123456789"))
-
-    placing = 0
-    for ch in placing_text:
-        if ch in {"1", "2"}:
-            placing = int(ch)
-            break
-
-    return {
-        "tag": tag,
-        "character": character,
-        "placing": placing
-    }
+    panel_data["character_candidates"] = merge_unique_candidates(
+        panel_data.get("character_candidates", []),
+        extra_character_candidates
+    )
+    panel_data["tag_candidates"] = merge_unique_candidates(
+        panel_data.get("tag_candidates", []),
+        extra_tag_candidates
+    )
+    return panel_data
 
 
 def scan_match_image_locally(image_bytes, player_names, player_tag_map):
@@ -774,31 +947,71 @@ def scan_match_image_locally(image_bytes, player_names, player_tag_map):
         if tag and player
     }
 
-    for entrant in entrants:
-        raw_tag = entrant.get("tag", "")
-        normalized_tag = normalize_lookup_value(raw_tag)
-        exact_player = normalized_tag_map.get(normalized_tag)
+    def resolve_entrant(entrant):
+        tag_candidates = entrant.get("tag_candidates") or ([entrant.get("tag")] if entrant.get("tag") else [])
+        character_candidates = entrant.get("character_candidates") or ([entrant.get("character")] if entrant.get("character") else [])
+        direct_player_match = None
 
-        if exact_player:
-            player_match = {
-                "matched": exact_player,
-                "score": 1.0,
-                "raw": raw_tag,
-                "ambiguous": False
-            }
-        else:
-            player_match = resolve_best_match(
-                raw_tag,
+        for candidate_tag in tag_candidates:
+            normalized_tag = normalize_lookup_value(candidate_tag)
+            exact_player = normalized_tag_map.get(normalized_tag)
+            if exact_player:
+                direct_player_match = {
+                    "matched": exact_player,
+                    "score": 1.0,
+                    "raw": candidate_tag,
+                    "ambiguous": False
+                }
+                break
+
+        if direct_player_match is None:
+            direct_player_match = resolve_direct_alias_match(
+                tag_candidates,
                 player_names,
                 build_player_aliases,
                 alias_context=player_tag_map
             )
 
-        character_match = resolve_best_match(
-            entrant.get("character", ""),
+        if direct_player_match is not None:
+            player_match = direct_player_match
+        else:
+            player_match = resolve_best_match_from_candidates(
+                tag_candidates,
+                player_names,
+                build_player_aliases,
+                alias_context=player_tag_map
+            )
+
+        direct_character_match = resolve_direct_alias_match(
+            character_candidates,
             CHARACTERS,
             build_character_aliases
         )
+
+        if direct_character_match is not None:
+            character_match = direct_character_match
+        else:
+            character_match = resolve_best_match_from_candidates(
+                character_candidates,
+                CHARACTERS,
+                build_character_aliases
+            )
+
+        return player_match, character_match
+
+    for index, entrant in enumerate(entrants):
+        player_match, character_match = resolve_entrant(entrant)
+
+        if (
+            not player_match["matched"]
+            or not character_match["matched"]
+            or player_match["score"] < 0.9
+            or character_match["score"] < 0.9
+        ):
+            side = "left" if index == 0 else "right"
+            entrant = enrich_panel_data(image, side, entrant)
+            entrants[index] = entrant
+            player_match, character_match = resolve_entrant(entrant)
 
         if not player_match["matched"]:
             warnings.append(f"Could not match tag '{entrant.get('tag', '')}' to a player.")
@@ -815,8 +1028,8 @@ def scan_match_image_locally(image_bytes, player_names, player_tag_map):
             )
 
         resolved_entries.append({
-            "parsed_tag": entrant.get("tag", ""),
-            "parsed_character": entrant.get("character", ""),
+            "parsed_tag": player_match["raw"],
+            "parsed_character": character_match["raw"],
             "placing": entrant.get("placing", 0),
             "player": player_match["matched"],
             "player_score": player_match["score"],
@@ -1321,9 +1534,9 @@ def add_match():
         return redirect(url_for("matches"))
 
     p1 = request.form["player1"]
-    c1 = request.form["p1_character"]
+    c1 = canonicalize_character_name(request.form["p1_character"])
     p2 = request.form["player2"]
-    c2 = request.form["p2_character"]
+    c2 = canonicalize_character_name(request.form["p2_character"])
     winner = request.form["winner"]
 
     # Three-stock checkbox
