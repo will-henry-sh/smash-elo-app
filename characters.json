@@ -126,7 +126,7 @@
         "Corrin": 1000,
         "Banjo & Kazooie": 1000,
         "Lucina": 1000,
-        "Kazuya": 1000,
+        "Kazuya": 1015,
         "Zelda": 1019,
         "Olimar": 1000,
         "Wario": 1000,
@@ -344,6 +344,7 @@
         "Chrom": 1000,
         "Mewtwo": 1000,
         "Donkey Kong": 1000,
-        "Robin": 1000
+        "Robin": 1000,
+        "Little Mac": 1000
     }
 }
