@@ -23034,5 +23034,18 @@
         "diff2": -21,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-22 03:30 AM",
+        "p1": "Nick R",
+        "c1": "Random",
+        "new1": 1551,
+        "diff1": 22,
+        "p2": "Colton",
+        "c2": "Random",
+        "new2": 1348,
+        "diff2": -20,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
