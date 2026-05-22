@@ -1,15 +1,15 @@
 {
     "p1": "Jamichael",
-    "c1": "Chrom",
+    "c1": "Mega Man",
     "new1": 1000,
     "diff1": 0,
     "p2": "Will",
-    "c2": "Fox",
-    "new2": 1045,
+    "c2": "Inkling",
+    "new2": 1032,
     "diff2": 14,
     "last_player1": "Jamichael",
     "last_player2": "Will",
-    "last_char1": "Chrom",
-    "last_char2": "Fox",
+    "last_char1": "Mega Man",
+    "last_char2": "Inkling",
     "last_winner": "p2"
 }
