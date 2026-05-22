@@ -23112,5 +23112,18 @@
         "diff2": 15,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-22 03:56 AM",
+        "p1": "Jamichael",
+        "c1": "Zelda",
+        "new1": 1205,
+        "diff1": -17,
+        "p2": "Will",
+        "c2": "Zelda",
+        "new2": 1019,
+        "diff2": 19,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
