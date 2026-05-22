@@ -112,7 +112,7 @@
         "Incineroar": 1067,
         "Greninja": 1101,
         "Ridley": 1074,
-        "Captain Falcon": 1194,
+        "Captain Falcon": 1220,
         "Bowser": 1027,
         "Inkling": 1032,
         "Sheik": 1100,
@@ -342,6 +342,7 @@
         "Piranha Plant": 1036,
         "Pit": 1000,
         "Chrom": 1000,
-        "Mewtwo": 1000
+        "Mewtwo": 1000,
+        "Donkey Kong": 1000
     }
 }
