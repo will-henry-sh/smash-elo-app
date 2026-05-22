@@ -23138,5 +23138,18 @@
         "diff2": 14,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-22 04:02 AM",
+        "p1": "Jamichael",
+        "c1": "Young Link",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Will",
+        "c2": "Dr. Mario",
+        "new2": 1066,
+        "diff2": 14,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
