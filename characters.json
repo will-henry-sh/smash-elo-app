@@ -171,7 +171,7 @@
         "Luigi": 1000,
         "Lucario": 1000,
         "Rosalina and Luma": 1000,
-        "Fox": 1031,
+        "Fox": 1045,
         "Ken": 1000,
         "Charizard": 1000,
         "Bayonetta": 1000,
@@ -340,6 +340,7 @@
         "Sheik": 1000,
         "Wii Fit Trainer": 1035,
         "Piranha Plant": 1036,
-        "Pit": 1000
+        "Pit": 1000,
+        "Chrom": 1000
     }
 }
