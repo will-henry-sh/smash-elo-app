@@ -23,7 +23,7 @@
         "Ike": 1000,
         "Bowser": 1000,
         "Steve": 1000,
-        "Ganondorf": 1085,
+        "Ganondorf": 1113,
         "Corrin": 1000,
         "Samus": 1000,
         "Dark Samus": 1000,
@@ -339,6 +339,7 @@
         "Ganondorf": 1000,
         "Sheik": 1000,
         "Wii Fit Trainer": 1035,
-        "Piranha Plant": 1036
+        "Piranha Plant": 1036,
+        "Pit": 1000
     }
 }
