@@ -22995,5 +22995,18 @@
         "diff2": -12,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-22 03:14 AM",
+        "p1": "Jamichael",
+        "c1": "Sonic",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Colton",
+        "c2": "Ness",
+        "new2": 1035,
+        "diff2": 35,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
