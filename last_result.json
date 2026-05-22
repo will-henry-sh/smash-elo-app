@@ -1,15 +1,15 @@
 {
     "p1": "Will",
-    "c1": "Kazuya",
-    "new1": 1015,
-    "diff1": 15,
+    "c1": "Incineroar",
+    "new1": 1081,
+    "diff1": 14,
     "p2": "Jamichael",
-    "c2": "Little Mac",
+    "c2": "Dark Samus",
     "new2": 1000,
     "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Jamichael",
-    "last_char1": "Kazuya",
-    "last_char2": "Little Mac",
+    "last_char1": "Incineroar",
+    "last_char2": "Dark Samus",
     "last_winner": "p1"
 }
