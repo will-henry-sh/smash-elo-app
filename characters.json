@@ -152,7 +152,7 @@
         ],
         "Min Min": 1000,
         "Pyra/Mythra": 1000,
-        "Mewtwo": 1083,
+        "Mewtwo": 1111,
         "Donkey Kong": 1110,
         "Zero Suit Samus": 1000,
         "Samus": 1000,
@@ -341,6 +341,7 @@
         "Wii Fit Trainer": 1035,
         "Piranha Plant": 1036,
         "Pit": 1000,
-        "Chrom": 1000
+        "Chrom": 1000,
+        "Mewtwo": 1000
     }
 }
