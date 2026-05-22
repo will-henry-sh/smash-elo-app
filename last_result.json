@@ -1,15 +1,15 @@
 {
     "p1": "Will",
-    "c1": "Incineroar",
-    "new1": 1081,
-    "diff1": 14,
+    "c1": "Donkey Kong",
+    "new1": 1052,
+    "diff1": -58,
     "p2": "Jamichael",
-    "c2": "Dark Samus",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Zelda",
+    "new2": 1293,
+    "diff2": 65,
     "last_player1": "Will",
     "last_player2": "Jamichael",
-    "last_char1": "Incineroar",
-    "last_char2": "Dark Samus",
-    "last_winner": "p1"
+    "last_char1": "Donkey Kong",
+    "last_char2": "Zelda",
+    "last_winner": "p2"
 }
