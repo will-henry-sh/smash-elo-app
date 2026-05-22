@@ -23346,5 +23346,18 @@
         "diff2": 64,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-22 05:11 AM",
+        "p1": "Will",
+        "c1": "Wolf",
+        "new1": 1063,
+        "diff1": 16,
+        "p2": "Colton",
+        "c2": "Jigglypuff",
+        "new2": 1235,
+        "diff2": -14,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
