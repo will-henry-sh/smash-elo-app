@@ -23840,5 +23840,18 @@
         "diff2": -104,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-23 04:17 AM",
+        "p1": "Nat",
+        "c1": "Sonic",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Nick R",
+        "c2": "Snake",
+        "new2": 1333,
+        "diff2": 14,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
