@@ -1,15 +1,15 @@
 {
     "p1": "Nick R",
     "c1": "Snake",
-    "new1": 1482,
-    "diff1": -25,
+    "new1": 1464,
+    "diff1": -18,
     "p2": "Will",
-    "c2": "Meta Knight",
-    "new2": 1110,
-    "diff2": 28,
+    "c2": "Ganondorf",
+    "new2": 1345,
+    "diff2": 40,
     "last_player1": "Nick R",
     "last_player2": "Will",
     "last_char1": "Snake",
-    "last_char2": "Meta Knight",
+    "last_char2": "Ganondorf",
     "last_winner": "p2"
 }
