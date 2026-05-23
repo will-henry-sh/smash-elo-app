@@ -5,7 +5,7 @@
         "Min Min": 1075,
         "Palutena": 1019,
         "Donkey Kong": 1000,
-        "Hero": 1039,
+        "Hero": 1065,
         "Cloud": 1000,
         "Ice Climbers": 1018,
         "King Dedede": 1000,
@@ -347,6 +347,7 @@
         "Robin": 1000,
         "Little Mac": 1000,
         "Mii Swordfighter": 1034,
-        "Mii Gunner": 1020
+        "Mii Gunner": 1020,
+        "Mii Brawler": 1000
     }
 }
