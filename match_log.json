@@ -23788,5 +23788,18 @@
         "diff2": 179,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-23 04:12 AM",
+        "p1": "Will",
+        "c1": "Greninja",
+        "new1": 1000,
+        "diff1": -101,
+        "p2": "Nat",
+        "c2": "Little Mac",
+        "new2": 1118,
+        "diff2": 118,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
