@@ -1,15 +1,15 @@
 {
     "p1": "Jamichael",
-    "c1": "Sonic",
+    "c1": "Mii Brawler",
     "new1": 1000,
     "diff1": 0,
     "p2": "Will",
-    "c2": "Fox",
-    "new2": 1060,
-    "diff2": 15,
+    "c2": "Captain Falcon",
+    "new2": 1333,
+    "diff2": 13,
     "last_player1": "Jamichael",
     "last_player2": "Will",
-    "last_char1": "Sonic",
-    "last_char2": "Fox",
+    "last_char1": "Mii Brawler",
+    "last_char2": "Captain Falcon",
     "last_winner": "p2"
 }
