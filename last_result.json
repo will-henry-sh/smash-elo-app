@@ -1,15 +1,15 @@
 {
     "p1": "Nick R",
-    "c1": "Random",
-    "new1": 1544,
-    "diff1": 27,
+    "c1": "Pichu",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Jamichael",
-    "c2": "Random",
-    "new2": 1494,
-    "diff2": -24,
+    "c2": "Mii Swordfighter",
+    "new2": 1034,
+    "diff2": 34,
     "last_player1": "Nick R",
     "last_player2": "Jamichael",
-    "last_char1": "Random",
-    "last_char2": "Random",
-    "last_winner": "p1"
+    "last_char1": "Pichu",
+    "last_char2": "Mii Swordfighter",
+    "last_winner": "p2"
 }
