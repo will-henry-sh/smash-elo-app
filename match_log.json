@@ -23541,5 +23541,18 @@
         "diff2": 65,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-23 02:20 AM",
+        "p1": "Nick R",
+        "c1": "Ganondorf",
+        "new1": 1088,
+        "diff1": -25,
+        "p2": "Jamichael",
+        "c2": "Zelda",
+        "new2": 1321,
+        "diff2": 28,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
