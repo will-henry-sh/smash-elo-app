@@ -1,15 +1,15 @@
 {
     "p1": "Daryl",
-    "c1": "Young Link",
-    "new1": 1062,
-    "diff1": 62,
-    "p2": "Nick R",
-    "c2": "Captain Falcon",
-    "new2": 1000,
-    "diff2": -26,
+    "c1": "Zero Suit Samus",
+    "new1": 1087,
+    "diff1": -18,
+    "p2": "Jamichael",
+    "c2": "Lucario",
+    "new2": 1020,
+    "diff2": 20,
     "last_player1": "Daryl",
-    "last_player2": "Nick R",
-    "last_char1": "Young Link",
-    "last_char2": "Captain Falcon",
-    "last_winner": "p1"
+    "last_player2": "Jamichael",
+    "last_char1": "Zero Suit Samus",
+    "last_char2": "Lucario",
+    "last_winner": "p2"
 }
