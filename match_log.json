@@ -23879,5 +23879,18 @@
         "diff2": -94,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-24 02:42 AM",
+        "p1": "Daryl",
+        "c1": "Pyra/Mythra",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Nick R",
+        "c2": "Captain Falcon",
+        "new2": 1026,
+        "diff2": 18,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
