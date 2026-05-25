@@ -24126,5 +24126,18 @@
         "diff2": -22,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-25 03:37 AM",
+        "p1": "Nick R",
+        "c1": "Captain Falcon",
+        "new1": 1046,
+        "diff1": 21,
+        "p2": "Daryl",
+        "c2": "Zero Suit Samus",
+        "new2": 1068,
+        "diff2": -19,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
