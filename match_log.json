@@ -24178,5 +24178,18 @@
         "diff2": -17,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-25 04:17 AM",
+        "p1": "Will",
+        "c1": "Ganondorf",
+        "new1": 1405,
+        "diff1": 26,
+        "p2": "Colton",
+        "c2": "Duck Hunt",
+        "new2": 1023,
+        "diff2": -12,
+        "winner": "p1",
+        "three_stock": true
     }
 ]
