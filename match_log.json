@@ -24035,5 +24035,18 @@
         "diff2": 32,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-25 03:05 AM",
+        "p1": "Colton",
+        "c1": "Toon Link",
+        "new1": 1159,
+        "diff1": 109,
+        "p2": "Will",
+        "c2": "Meta Knight",
+        "new2": 1012,
+        "diff2": -98,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
