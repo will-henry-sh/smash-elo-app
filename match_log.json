@@ -24048,5 +24048,18 @@
         "diff2": -98,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-25 03:10 AM",
+        "p1": "Colton",
+        "c1": "Dark Samus",
+        "new1": 1098,
+        "diff1": 65,
+        "p2": "Will",
+        "c2": "Meta Knight",
+        "new2": 1000,
+        "diff2": -12,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
