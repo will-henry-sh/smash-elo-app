@@ -23970,5 +23970,18 @@
         "diff2": 19,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-25 02:39 AM",
+        "p1": "Daryl",
+        "c1": "Pyra/Mythra",
+        "new1": 1017,
+        "diff1": -15,
+        "p2": "Nick R",
+        "c2": "Min Min",
+        "new2": 1092,
+        "diff2": 17,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
