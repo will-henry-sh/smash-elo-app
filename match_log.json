@@ -24490,5 +24490,18 @@
         "diff2": 14,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-25 05:55 AM",
+        "p1": "Nick R",
+        "c1": "Captain Falcon",
+        "new1": 1224,
+        "diff1": 110,
+        "p2": "Will",
+        "c2": "Captain Falcon",
+        "new2": 1171,
+        "diff2": -99,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
