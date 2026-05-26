@@ -86,6 +86,20 @@
       <div class="recent-matches-list">
         {% if recent_matches %}
         {% for m in recent_matches %}
+        {% if m.get('type') == 'elo_adjustment' %}
+        <div class="result-box recent-match-card elo-adjustment-entry">
+          <p>
+            <strong>{{ colored(m.player) }}</strong>:
+            <span class="{{ 'green' if m.amount > 0 else 'red' }}">
+              {% if m.amount > 0 %}+{{ m.amount }}{% else %}{{ m.amount }}{% endif %}
+            </span>
+          </p>
+          <p class="elo-adjust-note">{{ m.note }}</p>
+          {% if m.timestamp %}
+          <p class="recent-date">{{ m.timestamp }}</p>
+          {% endif %}
+        </div>
+        {% else %}
         <div class="result-box recent-match-card">
           {# Player 1 #}
           <p>
@@ -122,6 +136,7 @@
           <p class="recent-date">{{ m.timestamp }}</p>
           {% endif %}
         </div>
+        {% endif %}
         {% endfor %}
         {% else %}
         <div class="result-box recent-match-card empty-state">

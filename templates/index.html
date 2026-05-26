@@ -119,6 +119,7 @@
       </div>
 
       <section class="section-card">
+      <div class="match-tools-row">
       <div class="mobile-scan-anchor mobile-only">
         <button type="button" id="scan-match-toggle" class="scan-match-toggle" aria-expanded="false" aria-controls="mobile-scan-panel" aria-label="Open match scanner">
           <svg viewBox="0 0 24 24" aria-hidden="true" class="scan-match-toggle-icon">
@@ -149,6 +150,43 @@
               <button type="button" id="scan-match-retake" class="scan-match-retake">Retake Photo</button>
             </div>
           </div>
+        </div>
+      </div>
+
+      <button type="button" id="elo-adjust-toggle" class="scan-match-toggle" aria-label="Add ELO adjustment">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="scan-match-toggle-icon" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+      </button>
+      </div>
+
+      <!-- ELO Adjustment Modal -->
+      <div id="elo-adjust-overlay" class="elo-adjust-overlay" hidden>
+        <div class="elo-adjust-modal">
+          <h3 class="elo-adjust-title">Add ELO Adjustment</h3>
+          <form action="/add_elo_adjustment" method="POST" id="elo-adjust-form">
+            <div class="elo-adjust-field">
+              <label for="elo-player">Player</label>
+              <select id="elo-player" name="player" required>
+                <option value="" disabled selected>Select Player</option>
+                {% for p in player_list %}
+                <option value="{{ p }}">{{ p }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="elo-adjust-field">
+              <label for="elo-amount">ELO Amount</label>
+              <input type="number" id="elo-amount" name="amount" required placeholder="e.g. 50" min="-9999" max="9999">
+            </div>
+            <div class="elo-adjust-field">
+              <label for="elo-note">Note <span class="elo-required">(required)</span></label>
+              <textarea id="elo-note" name="note" required placeholder="Reason for adjustment..." rows="3"></textarea>
+            </div>
+            <div class="elo-adjust-actions">
+              <button type="submit" class="submit-match">Submit</button>
+              <button type="button" id="elo-adjust-close" class="scan-match-upload">Cancel</button>
+            </div>
+          </form>
         </div>
       </div>
 
@@ -585,6 +623,23 @@
           });
 
           window.addEventListener("beforeunload", stopCameraStream);
+
+          // ELO Adjustment modal
+          const eloToggle = document.getElementById("elo-adjust-toggle");
+          const eloOverlay = document.getElementById("elo-adjust-overlay");
+          const eloClose = document.getElementById("elo-adjust-close");
+
+          eloToggle?.addEventListener("click", () => {
+              if (eloOverlay) eloOverlay.hidden = false;
+          });
+
+          eloClose?.addEventListener("click", () => {
+              if (eloOverlay) eloOverlay.hidden = true;
+          });
+
+          eloOverlay?.addEventListener("click", (e) => {
+              if (e.target === eloOverlay) eloOverlay.hidden = true;
+          });
 
           document.querySelectorAll(".search-input").forEach(input => {
               input.dataset.fromDropdown = "false";

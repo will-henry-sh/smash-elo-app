@@ -1457,3 +1457,126 @@ body.is-mobile-layout .desktop-only {
     margin-bottom: 5px;
   }
 }
+
+/* ── Match tools row (camera + ELO adjust buttons) ── */
+.match-tools-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.match-tools-row .mobile-scan-anchor {
+  display: flex !important;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+/* ── ELO Adjustment modal overlay ── */
+.elo-adjust-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.62);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.elo-adjust-overlay[hidden] {
+  display: none;
+}
+
+.elo-adjust-modal {
+  background: rgba(18, 22, 28, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: 28px 28px 24px;
+  width: min(92vw, 380px);
+  box-shadow: var(--shadow-lg);
+}
+
+.elo-adjust-title {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.elo-adjust-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.elo-adjust-field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.elo-required {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-soft);
+}
+
+.elo-adjust-field select,
+.elo-adjust-field input,
+.elo-adjust-field textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: 0.9rem;
+  padding: 10px 12px;
+  font-family: inherit;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.elo-adjust-field select:focus,
+.elo-adjust-field input:focus,
+.elo-adjust-field textarea:focus {
+  outline: none;
+  border-color: rgba(109, 211, 160, 0.4);
+}
+
+.elo-adjust-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.elo-adjust-actions button {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+}
+
+/* ── ELO Adjustment match log entry ── */
+.elo-adjustment-entry {
+  background: rgba(120, 20, 20, 0.28) !important;
+  border: 1px solid rgba(200, 60, 60, 0.22) !important;
+}
+
+.elo-adjust-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(220, 100, 100, 0.9);
+  margin-bottom: 6px !important;
+}
+
+.elo-adjust-note {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 4px !important;
+}

@@ -3,7 +3,6 @@ import json
 import os
 import subprocess
 import threading
-import time
 import difflib
 from functools import wraps
 from datetime import datetime
@@ -159,33 +158,6 @@ def queue_push(commit_message="Auto-update from match submission"):
 
 
 pull_log = []
-AUTO_PULL_INTERVAL = 60  # seconds
-
-
-def auto_pull_worker():
-    while True:
-        time.sleep(AUTO_PULL_INTERVAL)
-        try:
-            result = subprocess.run(
-                ["git", "pull", "origin", "main"],
-                check=True, capture_output=True, text=True,
-                cwd=APP_DIR
-            )
-            output = (result.stdout.strip() or "Already up to date.")
-            msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Git pull: {output}"
-            print(msg)
-            pull_log.append(msg)
-            if len(pull_log) > MAX_LOGS:
-                pull_log.pop(0)
-        except subprocess.CalledProcessError as e:
-            msg = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Git pull FAILED: {e}"
-            print(msg)
-            pull_log.append(msg)
-            if len(pull_log) > MAX_LOGS:
-                pull_log.pop(0)
-
-
-threading.Thread(target=auto_pull_worker, daemon=True).start()
 
 
 # Detect Render environment
@@ -379,6 +351,9 @@ def build_leaderboard_rows(players_data):
     for player, player_data in players_data.items():
         char_map = extract_character_ratings(player_data)
         global_elo = sum(rating - 1000 for rating in char_map.values())
+        bonus = player_data.get("_elo_bonus", 0)
+        if isinstance(bonus, (int, float)):
+            global_elo += int(bonus)
         rows.append((player, global_elo, char_map))
 
     rows.sort(key=lambda row: row[1], reverse=True)
@@ -1208,6 +1183,8 @@ def leaderboard():
         streaks = defaultdict(int)
 
         for m in match_log:
+            if m.get("type") == "elo_adjustment":
+                continue
             winner = m["p1"] if m["winner"] == "p1" else m["p2"]
             loser = m["p2"] if winner == m["p1"] else m["p1"]
 
@@ -1515,15 +1492,17 @@ def start_new_season():
     return redirect(url_for("admin_panel"))
 
 def compute_global_elo(player_name, players_data):
-    """Returns total global ELO offset (sum of character deviations from 1000)."""
+    """Returns total global ELO offset (sum of character deviations from 1000) plus any manual bonus."""
     if player_name not in players_data:
         return 0
-
-    return sum(
+    player_data = players_data[player_name]
+    char_total = sum(
         (elo - 1000)
-        for elo in players_data[player_name].values()
-        if isinstance(elo, (int, float))  # only count numeric ELO values
+        for char, elo in player_data.items()
+        if char in CHARACTERS and isinstance(elo, (int, float))
     )
+    bonus = player_data.get("_elo_bonus", 0)
+    return char_total + (int(bonus) if isinstance(bonus, (int, float)) else 0)
 
 
 
@@ -1860,6 +1839,48 @@ def scoreboard():
     rows = sorted(data.items(), key=lambda x: x[1], reverse=True)
     return render_template("scoreboard.html", rows=rows, win_streaks=streaks)
 
+
+
+@app.route("/add_elo_adjustment", methods=["POST"])
+@requires_auth
+def add_elo_adjustment():
+    player = request.form.get("player", "").strip()
+    amount_str = request.form.get("amount", "").strip()
+    note = request.form.get("note", "").strip()
+
+    if not player or not amount_str or not note:
+        return "Missing required fields.", 400
+
+    try:
+        amount = int(amount_str)
+    except ValueError:
+        return "Amount must be an integer.", 400
+
+    data = load_players()
+    if player not in data:
+        return f"Player '{player}' not found.", 404
+
+    current_bonus = data[player].get("_elo_bonus", 0)
+    if not isinstance(current_bonus, (int, float)):
+        current_bonus = 0
+    data[player]["_elo_bonus"] = int(current_bonus) + amount
+    save_players(data)
+
+    new_global = compute_global_elo(player, data)
+
+    log = load_match_log()
+    log.append({
+        "type": "elo_adjustment",
+        "timestamp": datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %I:%M %p"),
+        "player": player,
+        "amount": amount,
+        "note": note,
+        "new_global": new_global
+    })
+    save_match_log(log)
+
+    queue_push("Auto-update from ELO adjustment")
+    return redirect(url_for("matches"))
 
 
 if __name__ == "__main__":
