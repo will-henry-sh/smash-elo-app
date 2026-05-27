@@ -1,15 +1,15 @@
 {
-    "p1": "Will",
-    "c1": "Captain Falcon",
-    "new1": 1217,
-    "diff1": 14,
-    "p2": "Colton",
-    "c2": "Inkling",
-    "new2": 1000,
-    "diff2": 0,
-    "last_player1": "Will",
-    "last_player2": "Colton",
-    "last_char1": "Captain Falcon",
-    "last_char2": "Inkling",
-    "last_winner": "p1"
+    "p1": "Jamichael",
+    "c1": "Toon Link",
+    "new1": 1000,
+    "diff1": -16,
+    "p2": "Nick R",
+    "c2": "King K. Rool",
+    "new2": 1079,
+    "diff2": 27,
+    "last_player1": "Jamichael",
+    "last_player2": "Nick R",
+    "last_char1": "Toon Link",
+    "last_char2": "King K. Rool",
+    "last_winner": "p2"
 }
