@@ -24828,5 +24828,18 @@
         "diff2": -33,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-27 04:13 AM",
+        "p1": "Colton",
+        "c1": "Dr. Mario",
+        "new1": 1035,
+        "diff1": 35,
+        "p2": "Nick R",
+        "c2": "King K. Rool",
+        "new2": 1044,
+        "diff2": -32,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
