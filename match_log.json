@@ -24711,5 +24711,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-27 03:14 AM",
+        "p1": "Will",
+        "c1": "Captain Falcon",
+        "new1": 1203,
+        "diff1": 14,
+        "p2": "Colton",
+        "c2": "Daisy",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]

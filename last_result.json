@@ -1,15 +1,15 @@
 {
-    "p1": "Nick R",
-    "c1": "King K. Rool",
-    "new1": 1052,
-    "diff1": 25,
+    "p1": "Will",
+    "c1": "Captain Falcon",
+    "new1": 1203,
+    "diff1": 14,
     "p2": "Colton",
-    "c2": "Luigi",
+    "c2": "Daisy",
     "new2": 1000,
     "diff2": 0,
-    "last_player1": "Nick R",
+    "last_player1": "Will",
     "last_player2": "Colton",
-    "last_char1": "King K. Rool",
-    "last_char2": "Luigi",
+    "last_char1": "Captain Falcon",
+    "last_char2": "Daisy",
     "last_winner": "p1"
 }
