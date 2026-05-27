@@ -24984,5 +24984,18 @@
         "diff2": -20,
         "winner": "p1",
         "three_stock": true
+    },
+    {
+        "timestamp": "2026-05-27 04:50 AM",
+        "p1": "Will",
+        "c1": "Marth",
+        "new1": 1000,
+        "diff1": -15,
+        "p2": "Colton",
+        "c2": "Toon Link",
+        "new2": 1215,
+        "diff2": 56,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
