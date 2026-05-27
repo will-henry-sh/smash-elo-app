@@ -24815,5 +24815,18 @@
         "diff2": 25,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-27 04:10 AM",
+        "p1": "Colton",
+        "c1": "Isabelle",
+        "new1": 1037,
+        "diff1": 37,
+        "p2": "Nick R",
+        "c2": "King K. Rool",
+        "new2": 1076,
+        "diff2": -33,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
