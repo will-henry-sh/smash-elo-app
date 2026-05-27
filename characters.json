@@ -60,7 +60,7 @@
         "Jigglypuff": 1000,
         "Rosalina and Luma": 1000,
         "Pikachu": 1000,
-        "King K. Rool": 1000,
+        "King K. Rool": 1027,
         "Bayonetta": 1000,
         "Daisy": 1000,
         "Zero Suit Samus": 1000,
@@ -234,7 +234,8 @@
         "Banjo & Kazooie": 1058,
         "Inkling": 1000,
         "King Dedede": 1000,
-        "Random": 1584
+        "Random": 1584,
+        "Ike": 1000
     },
     "Jeff": {
         "Byleth": 1260,
