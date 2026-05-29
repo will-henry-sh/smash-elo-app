@@ -1,7 +1,7 @@
 {
     "Nick R": {
         "Piranha Plant": 1000,
-        "Snake": 1210,
+        "Snake": 1225,
         "Min Min": 1092,
         "Palutena": 1019,
         "Donkey Kong": 1028,
@@ -282,7 +282,8 @@
         "Ike": 1000,
         "Banjo & Kazooie": 1000,
         "Richter": 1179,
-        "Sonic": 1112
+        "Sonic": 1112,
+        "Fox": 1000
     },
     "Daryl": {
         "Zelda": 1175,

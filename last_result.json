@@ -1,15 +1,15 @@
 {
     "p1": "Nat",
-    "c1": "Byleth",
-    "new1": 1100,
-    "diff1": -16,
+    "c1": "Fox",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Nick R",
     "c2": "Snake",
-    "new2": 1210,
-    "diff2": 18,
+    "new2": 1225,
+    "diff2": 15,
     "last_player1": "Nat",
     "last_player2": "Nick R",
-    "last_char1": "Byleth",
+    "last_char1": "Fox",
     "last_char2": "Snake",
     "last_winner": "p2"
 }
