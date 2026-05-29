@@ -1,15 +1,15 @@
 {
     "p1": "Nat",
-    "c1": "Fox",
-    "new1": 1065,
-    "diff1": 65,
+    "c1": "Joker",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Colton",
-    "c2": "Yoshi",
-    "new2": 1107,
-    "diff2": -58,
+    "c2": "Jigglypuff",
+    "new2": 1216,
+    "diff2": 16,
     "last_player1": "Nat",
     "last_player2": "Colton",
-    "last_char1": "Fox",
-    "last_char2": "Yoshi",
-    "last_winner": "p1"
+    "last_char1": "Joker",
+    "last_char2": "Jigglypuff",
+    "last_winner": "p2"
 }
