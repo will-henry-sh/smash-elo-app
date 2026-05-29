@@ -25270,5 +25270,18 @@
         "diff2": -94,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-05-29 02:58 AM",
+        "p1": "Nat",
+        "c1": "Fox",
+        "new1": 1065,
+        "diff1": 65,
+        "p2": "Colton",
+        "c2": "Yoshi",
+        "new2": 1107,
+        "diff2": -58,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
