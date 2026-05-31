@@ -132,7 +132,7 @@
         "Wario": 1000,
         "Falco": 1053,
         "Dr. Mario": 1010,
-        "Marth": 1033,
+        "Marth": 1048,
         "Piranha Plant": 1000,
         "Simon": 1000,
         "Isabelle": 1000,
@@ -355,6 +355,7 @@
         "Little Mac": 1000,
         "Mii Swordfighter": 1034,
         "Mii Gunner": 1020,
-        "Mii Brawler": 1000
+        "Mii Brawler": 1000,
+        "Marth": 1000
     }
 }
