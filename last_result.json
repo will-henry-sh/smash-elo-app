@@ -1,15 +1,15 @@
 {
-    "p1": "Colton",
-    "c1": "Ganondorf",
-    "new1": 1000,
-    "diff1": 0,
+    "p1": "Will",
+    "c1": "Captain Falcon",
+    "new1": 1570,
+    "diff1": 12,
     "p2": "Nick R",
-    "c2": "Ganondorf",
-    "new2": 1213,
-    "diff2": 25,
-    "last_player1": "Colton",
+    "c2": "Captain Falcon",
+    "new2": 1000,
+    "diff2": 0,
+    "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Ganondorf",
-    "last_char2": "Ganondorf",
-    "last_winner": "p2"
+    "last_char1": "Captain Falcon",
+    "last_char2": "Captain Falcon",
+    "last_winner": "p1"
 }
