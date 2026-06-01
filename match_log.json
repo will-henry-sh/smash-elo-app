@@ -26791,5 +26791,31 @@
         "diff2": 18,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-01 04:58 AM",
+        "p1": "Jamichael",
+        "c1": "Zelda",
+        "new1": 1358,
+        "diff1": 34,
+        "p2": "Nick R",
+        "c2": "Ganondorf",
+        "new2": 1295,
+        "diff2": -31,
+        "winner": "p1",
+        "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-01 04:58 AM",
+        "p1": "Jamichael",
+        "c1": "Zelda",
+        "new1": 1388,
+        "diff1": 30,
+        "p2": "Nick R",
+        "c2": "Ganondorf",
+        "new2": 1268,
+        "diff2": -27,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
