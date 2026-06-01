@@ -2,7 +2,7 @@
     "Nick R": {
         "Piranha Plant": 1000,
         "Snake": 1098,
-        "Min Min": 1464,
+        "Min Min": 1481,
         "Palutena": 1019,
         "Donkey Kong": 1028,
         "Hero": 1065,
@@ -359,6 +359,7 @@
         "Mii Brawler": 1000,
         "Marth": 1000,
         "Link": 1028,
-        "Greninja": 1037
+        "Greninja": 1037,
+        "Snake": 1000
     }
 }
