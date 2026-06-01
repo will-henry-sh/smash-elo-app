@@ -26661,5 +26661,18 @@
         "diff2": 60,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-01 04:01 AM",
+        "p1": "Jamichael",
+        "c1": "Mr. Game and Watch",
+        "new1": 1018,
+        "diff1": 18,
+        "p2": "Daryl",
+        "c2": "Steve",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
