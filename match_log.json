@@ -26713,5 +26713,18 @@
         "diff2": 21,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-01 04:14 AM",
+        "p1": "Jamichael",
+        "c1": "Bowser Jr.",
+        "new1": 1010,
+        "diff1": -19,
+        "p2": "Nick R",
+        "c2": "Ganondorf",
+        "new2": 1270,
+        "diff2": 21,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
