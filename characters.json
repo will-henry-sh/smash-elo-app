@@ -301,7 +301,8 @@
         "Young Link": 1062,
         "Roy": 1074,
         "Corrin": 1000,
-        "Piranha Plant": 1063
+        "Piranha Plant": 1063,
+        "Mr. Game and Watch": 1060
     },
     "Jamichael": {
         "Mario": 1028,
@@ -364,6 +365,7 @@
         "Greninja": 1037,
         "Snake": 1000,
         "Richter": 1000,
-        "Terry": 1033
+        "Terry": 1033,
+        "Bayonetta": 1000
     }
 }
