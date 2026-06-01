@@ -19,7 +19,7 @@
         "Ridley": 1000,
         "Luigi": 1000,
         "Mewtwo": 1000,
-        "Roy": 1033,
+        "Roy": 1003,
         "Ike": 1000,
         "Bowser": 1000,
         "Steve": 1000,
@@ -363,6 +363,7 @@
         "Link": 1028,
         "Greninja": 1037,
         "Snake": 1000,
-        "Richter": 1000
+        "Richter": 1000,
+        "Terry": 1033
     }
 }
