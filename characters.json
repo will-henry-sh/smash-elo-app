@@ -23,7 +23,7 @@
         "Ike": 1000,
         "Bowser": 1000,
         "Steve": 1000,
-        "Ganondorf": 1119,
+        "Ganondorf": 1143,
         "Corrin": 1000,
         "Samus": 1000,
         "Dark Samus": 1000,
@@ -237,7 +237,8 @@
         "Random": 1584,
         "Ike": 1000,
         "Luigi": 1000,
-        "Isabelle": 1037
+        "Isabelle": 1037,
+        "Kirby": 1000
     },
     "Jeff": {
         "Byleth": 1201,
