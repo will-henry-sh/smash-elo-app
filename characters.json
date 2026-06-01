@@ -191,7 +191,7 @@
         "Random": 1000
     },
     "Colton": {
-        "Toon Link": 1225,
+        "Toon Link": 1249,
         "Jigglypuff": 1216,
         "Dark Samus": 1086,
         "Mario": 1000,
@@ -360,6 +360,7 @@
         "Marth": 1000,
         "Link": 1028,
         "Greninja": 1037,
-        "Snake": 1000
+        "Snake": 1000,
+        "Richter": 1000
     }
 }
