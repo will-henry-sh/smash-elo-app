@@ -26674,5 +26674,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-01 04:02 AM",
+        "p1": "Jamichael",
+        "c1": "Mii Brawler",
+        "new1": 1019,
+        "diff1": 19,
+        "p2": "Daryl",
+        "c2": "Zero Suit Samus",
+        "new2": 1005,
+        "diff2": -17,
+        "winner": "p1",
+        "three_stock": false
     }
 ]

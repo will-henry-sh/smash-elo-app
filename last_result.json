@@ -1,15 +1,15 @@
 {
     "p1": "Jamichael",
-    "c1": "Mr. Game and Watch",
-    "new1": 1018,
-    "diff1": 18,
+    "c1": "Mii Brawler",
+    "new1": 1019,
+    "diff1": 19,
     "p2": "Daryl",
-    "c2": "Steve",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Zero Suit Samus",
+    "new2": 1005,
+    "diff2": -17,
     "last_player1": "Jamichael",
     "last_player2": "Daryl",
-    "last_char1": "Mr. Game and Watch",
-    "last_char2": "Steve",
+    "last_char1": "Mii Brawler",
+    "last_char2": "Zero Suit Samus",
     "last_winner": "p1"
 }
