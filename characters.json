@@ -23,7 +23,7 @@
         "Ike": 1000,
         "Bowser": 1000,
         "Steve": 1000,
-        "Ganondorf": 1144,
+        "Ganondorf": 1170,
         "Corrin": 1000,
         "Samus": 1000,
         "Dark Samus": 1000,
@@ -358,6 +358,6 @@
         "Mii Gunner": 1020,
         "Mii Brawler": 1000,
         "Marth": 1000,
-        "Link": 1051
+        "Link": 1028
     }
 }
