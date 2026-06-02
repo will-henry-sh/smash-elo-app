@@ -1,15 +1,15 @@
 {
     "p1": "Colton",
-    "c1": "Yoshi",
-    "new1": 1167,
-    "diff1": -14,
+    "c1": "Toon Link",
+    "new1": 1428,
+    "diff1": 114,
     "p2": "Will",
-    "c2": "Wolf",
-    "new2": 1133,
-    "diff2": 16,
+    "c2": "Captain Falcon",
+    "new2": 1480,
+    "diff2": -103,
     "last_player1": "Colton",
     "last_player2": "Will",
-    "last_char1": "Yoshi",
-    "last_char2": "Wolf",
-    "last_winner": "p2"
+    "last_char1": "Toon Link",
+    "last_char2": "Captain Falcon",
+    "last_winner": "p1"
 }
