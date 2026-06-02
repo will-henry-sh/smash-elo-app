@@ -23,7 +23,7 @@
         "Ike": 1000,
         "Bowser": 1000,
         "Steve": 1000,
-        "Ganondorf": 1319,
+        "Ganondorf": 1337,
         "Corrin": 1000,
         "Samus": 1000,
         "Dark Samus": 1000,
@@ -369,6 +369,7 @@
         "Terry": 1033,
         "Bayonetta": 1000,
         "Mr. Game and Watch": 1018,
-        "Simon": 1000
+        "Simon": 1000,
+        "Jigglypuff": 1000
     }
 }
