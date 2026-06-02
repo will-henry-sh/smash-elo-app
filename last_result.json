@@ -1,15 +1,15 @@
 {
-    "p1": "Jamichael",
-    "c1": "Random",
-    "new1": 1499,
-    "diff1": 50,
-    "p2": "Colton",
-    "c2": "Random",
-    "new2": 1589,
-    "diff2": -45,
-    "last_player1": "Jamichael",
-    "last_player2": "Colton",
-    "last_char1": "Random",
-    "last_char2": "Random",
-    "last_winner": "p1"
+    "p1": "Nick R",
+    "c1": "Marth",
+    "new1": 1000,
+    "diff1": 0,
+    "p2": "Will",
+    "c2": "Marth",
+    "new2": 1044,
+    "diff2": 16,
+    "last_player1": "Nick R",
+    "last_player2": "Will",
+    "last_char1": "Marth",
+    "last_char2": "Marth",
+    "last_winner": "p2"
 }
