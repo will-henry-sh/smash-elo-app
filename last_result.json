@@ -1,15 +1,15 @@
 {
     "p1": "Jamichael",
-    "c1": "Lucina",
+    "c1": "Roy",
     "new1": 1000,
     "diff1": 0,
     "p2": "Nick R",
     "c2": "Lucina",
-    "new2": 1057,
-    "diff2": 28,
+    "new2": 1083,
+    "diff2": 26,
     "last_player1": "Jamichael",
     "last_player2": "Nick R",
-    "last_char1": "Lucina",
+    "last_char1": "Roy",
     "last_char2": "Lucina",
     "last_winner": "p2"
 }
