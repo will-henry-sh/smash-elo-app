@@ -27129,5 +27129,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-02 04:04 AM",
+        "p1": "Will",
+        "c1": "Marth",
+        "new1": 1140,
+        "diff1": 15,
+        "p2": "Nick R",
+        "c2": "Piranha Plant",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
