@@ -27545,5 +27545,18 @@
         "diff2": -58,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-04 03:18 AM",
+        "p1": "Nat",
+        "c1": "Fox",
+        "new1": 1155,
+        "diff1": -22,
+        "p2": "Colton",
+        "c2": "Dark Samus",
+        "new2": 1110,
+        "diff2": 24,
+        "winner": "p2",
+        "three_stock": false
     }
 ]

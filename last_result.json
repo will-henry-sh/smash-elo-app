@@ -1,15 +1,15 @@
 {
     "p1": "Nat",
-    "c1": "Corrin",
-    "new1": 1065,
-    "diff1": 65,
+    "c1": "Fox",
+    "new1": 1155,
+    "diff1": -22,
     "p2": "Colton",
-    "c2": "Jigglypuff",
-    "new2": 1158,
-    "diff2": -58,
+    "c2": "Dark Samus",
+    "new2": 1110,
+    "diff2": 24,
     "last_player1": "Nat",
     "last_player2": "Colton",
-    "last_char1": "Corrin",
-    "last_char2": "Jigglypuff",
-    "last_winner": "p1"
+    "last_char1": "Fox",
+    "last_char2": "Dark Samus",
+    "last_winner": "p2"
 }
