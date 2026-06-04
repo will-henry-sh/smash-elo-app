@@ -83,7 +83,7 @@
     },
     "Nick W": {
         "Palutena": 1000,
-        "Wii Fit Trainer": 1193,
+        "Wii Fit Trainer": 1144,
         "Ike": 1000,
         "Fox": 1000,
         "Min Min": 1000,
@@ -373,5 +373,7 @@
         "Jigglypuff": 1000,
         "Roy": 1000
     },
-    "Ian": {}
+    "Ian": {
+        "Kazuya": 1054
+    }
 }
