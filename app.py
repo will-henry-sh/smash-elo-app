@@ -28,6 +28,8 @@ print(">>> LOADED FLASK APP FROM:", __file__)
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 12 * 1024 * 1024
+MAX_OCR_IMAGE_DIMENSION = 1600
+TESSERACT_TIMEOUT_SECONDS = 4
 
 push_queue = []
 is_pushing = False
@@ -715,6 +717,20 @@ def upscale_for_ocr(image, scale=2.0):
     return image.resize((max(1, int(width * scale)), max(1, int(height * scale))), Image.Resampling.LANCZOS)
 
 
+def downscale_for_ocr(image):
+    width, height = image.size
+    longest_side = max(width, height)
+    if longest_side <= MAX_OCR_IMAGE_DIMENSION:
+        return image
+
+    scale = MAX_OCR_IMAGE_DIMENSION / float(longest_side)
+    resized = (
+        max(1, int(width * scale)),
+        max(1, int(height * scale))
+    )
+    return image.resize(resized, Image.Resampling.LANCZOS)
+
+
 def preprocess_text_region(image, threshold=180, invert=False):
     grayscale = ImageOps.grayscale(image)
     sharpened = grayscale.filter(ImageFilter.SHARPEN).filter(ImageFilter.SHARPEN)
@@ -730,14 +746,18 @@ def run_tesseract_ocr(image, psm=7, whitelist=None):
     if whitelist:
         config.extend(["-c", f"tessedit_char_whitelist={whitelist}"])
 
-    with BytesIO() as output:
-        image.save(output, format="PNG")
-        proc = subprocess.run(
-            config,
-            input=output.getvalue(),
-            capture_output=True,
-            check=False
-        )
+    try:
+        with BytesIO() as output:
+            image.save(output, format="PNG")
+            proc = subprocess.run(
+                config,
+                input=output.getvalue(),
+                capture_output=True,
+                check=False,
+                timeout=TESSERACT_TIMEOUT_SECONDS
+            )
+    except subprocess.TimeoutExpired as exc:
+        raise RuntimeError("Tesseract OCR timed out while processing the image.") from exc
 
     if proc.returncode != 0:
         stderr = proc.stderr.decode("utf-8", errors="replace").strip()
@@ -908,6 +928,8 @@ def scan_match_image_locally(image_bytes, player_names, player_tag_map):
         image = Image.open(BytesIO(image_bytes)).convert("RGB")
     except Exception as exc:
         raise ValueError("The uploaded image could not be read.") from exc
+
+    image = downscale_for_ocr(image)
 
     entrants = [
         extract_panel_data(image, "left"),
