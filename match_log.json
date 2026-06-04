@@ -27532,5 +27532,18 @@
         "diff2": -100,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-04 03:15 AM",
+        "p1": "Nat",
+        "c1": "Corrin",
+        "new1": 1065,
+        "diff1": 65,
+        "p2": "Colton",
+        "c2": "Jigglypuff",
+        "new2": 1158,
+        "diff2": -58,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
