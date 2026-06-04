@@ -1,15 +1,15 @@
 {
-    "p1": "Nat",
-    "c1": "Little Mac",
-    "new1": 1226,
-    "diff1": 108,
+    "p1": "Ian",
+    "c1": "Kazuya",
+    "new1": 1296,
+    "diff1": 116,
     "p2": "Will",
     "c2": "Marth",
-    "new2": 1075,
-    "diff2": -97,
-    "last_player1": "Nat",
+    "new2": 1000,
+    "diff2": -75,
+    "last_player1": "Ian",
     "last_player2": "Will",
-    "last_char1": "Little Mac",
+    "last_char1": "Kazuya",
     "last_char2": "Marth",
     "last_winner": "p1"
 }
