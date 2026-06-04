@@ -27480,5 +27480,18 @@
         "diff2": -49,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-04 02:52 AM",
+        "p1": "Ian",
+        "c1": "Kazuya",
+        "new1": 1089,
+        "diff1": 35,
+        "p2": "Nick W",
+        "c2": "Wii Fit Trainer",
+        "new2": 1112,
+        "diff2": -32,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
