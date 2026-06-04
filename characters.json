@@ -6,7 +6,7 @@
         "Palutena": 1019,
         "Donkey Kong": 1109,
         "Hero": 1152,
-        "Cloud": 1017,
+        "Cloud": 1000,
         "Ice Climbers": 1018,
         "King Dedede": 1000,
         "Sephiroth": 1023,
@@ -375,6 +375,6 @@
         "Roy": 1000
     },
     "Ian": {
-        "Kazuya": 1239
+        "Kazuya": 1304
     }
 }
