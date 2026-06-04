@@ -27519,5 +27519,18 @@
         "diff2": 17,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-04 03:10 AM",
+        "p1": "Nat",
+        "c1": "Byleth",
+        "new1": 1211,
+        "diff1": 111,
+        "p2": "Colton",
+        "c2": "Toon Link",
+        "new2": 1345,
+        "diff2": -100,
+        "winner": "p1",
+        "three_stock": false
     }
 ]

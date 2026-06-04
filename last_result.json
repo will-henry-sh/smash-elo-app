@@ -1,15 +1,15 @@
 {
-    "p1": "Ian",
-    "c1": "Kazuya",
-    "new1": 1180,
-    "diff1": -15,
+    "p1": "Nat",
+    "c1": "Byleth",
+    "new1": 1211,
+    "diff1": 111,
     "p2": "Colton",
-    "c2": "Duck Hunt",
-    "new2": 1017,
-    "diff2": 17,
-    "last_player1": "Ian",
+    "c2": "Toon Link",
+    "new2": 1345,
+    "diff2": -100,
+    "last_player1": "Nat",
     "last_player2": "Colton",
-    "last_char1": "Kazuya",
-    "last_char2": "Duck Hunt",
-    "last_winner": "p2"
+    "last_char1": "Byleth",
+    "last_char2": "Toon Link",
+    "last_winner": "p1"
 }
