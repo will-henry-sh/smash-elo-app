@@ -196,7 +196,7 @@
         "Dark Samus": 1086,
         "Mario": 1000,
         "Yoshi": 1167,
-        "Duck Hunt": 1000,
+        "Duck Hunt": 1017,
         "Marth": 1000,
         "Captain Falcon": 1000,
         "Samus": 1000,
@@ -374,6 +374,6 @@
         "Roy": 1000
     },
     "Ian": {
-        "Kazuya": 1195
+        "Kazuya": 1180
     }
 }

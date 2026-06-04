@@ -27506,5 +27506,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-04 03:05 AM",
+        "p1": "Ian",
+        "c1": "Kazuya",
+        "new1": 1180,
+        "diff1": -15,
+        "p2": "Colton",
+        "c2": "Duck Hunt",
+        "new2": 1017,
+        "diff2": 17,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
