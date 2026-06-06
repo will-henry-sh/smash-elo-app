@@ -1,15 +1,15 @@
 {
     "p1": "Nick R",
-    "c1": "Piranha Plant",
-    "new1": 1000,
-    "diff1": 0,
+    "c1": "Toon Link",
+    "new1": 1110,
+    "diff1": 110,
     "p2": "Will",
-    "c2": "Marth",
-    "new2": 1184,
-    "diff2": 16,
+    "c2": "Captain Falcon",
+    "new2": 1225,
+    "diff2": -99,
     "last_player1": "Nick R",
     "last_player2": "Will",
-    "last_char1": "Piranha Plant",
-    "last_char2": "Marth",
-    "last_winner": "p2"
+    "last_char1": "Toon Link",
+    "last_char2": "Captain Falcon",
+    "last_winner": "p1"
 }
