@@ -28052,5 +28052,18 @@
         "diff2": -99,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-06 03:42 AM",
+        "p1": "Nick R",
+        "c1": "Duck Hunt",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Will",
+        "c2": "Ganondorf",
+        "new2": 1489,
+        "diff2": 14,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
