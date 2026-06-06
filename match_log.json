@@ -27857,5 +27857,18 @@
         "diff2": -14,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-06 02:45 AM",
+        "p1": "Will",
+        "c1": "King K. Rool",
+        "new1": 1115,
+        "diff1": 16,
+        "p2": "Colton",
+        "c2": "Duck Hunt",
+        "new2": 1003,
+        "diff2": -14,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
