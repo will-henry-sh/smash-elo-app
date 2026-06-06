@@ -27935,5 +27935,18 @@
         "diff2": 63,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-06 03:09 AM",
+        "p1": "Nick R",
+        "c1": "Donkey Kong",
+        "new1": 1136,
+        "diff1": 27,
+        "p2": "Jamichael",
+        "c2": "Wii Fit Trainer",
+        "new2": 1011,
+        "diff2": -24,
+        "winner": "p1",
+        "three_stock": false
     }
 ]

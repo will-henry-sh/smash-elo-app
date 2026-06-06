@@ -1,15 +1,15 @@
 {
     "p1": "Nick R",
-    "c1": "Min Min",
-    "new1": 1338,
-    "diff1": -57,
+    "c1": "Donkey Kong",
+    "new1": 1136,
+    "diff1": 27,
     "p2": "Jamichael",
-    "c2": "Pit",
-    "new2": 1063,
-    "diff2": 63,
+    "c2": "Wii Fit Trainer",
+    "new2": 1011,
+    "diff2": -24,
     "last_player1": "Nick R",
     "last_player2": "Jamichael",
-    "last_char1": "Min Min",
-    "last_char2": "Pit",
-    "last_winner": "p2"
+    "last_char1": "Donkey Kong",
+    "last_char2": "Wii Fit Trainer",
+    "last_winner": "p1"
 }
