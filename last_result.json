@@ -1,15 +1,15 @@
 {
     "p1": "Nick R",
-    "c1": "Ganondorf",
-    "new1": 1261,
-    "diff1": -93,
+    "c1": "Captain Falcon",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Jamichael",
-    "c2": "Mii Brawler",
-    "new2": 1122,
-    "diff2": 103,
+    "c2": "Kazuya",
+    "new2": 1141,
+    "diff2": 31,
     "last_player1": "Nick R",
     "last_player2": "Jamichael",
-    "last_char1": "Ganondorf",
-    "last_char2": "Mii Brawler",
+    "last_char1": "Captain Falcon",
+    "last_char2": "Kazuya",
     "last_winner": "p2"
 }

@@ -28481,5 +28481,18 @@
         "diff2": 103,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-12 03:34 AM",
+        "p1": "Nick R",
+        "c1": "Captain Falcon",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Jamichael",
+        "c2": "Kazuya",
+        "new2": 1141,
+        "diff2": 31,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
