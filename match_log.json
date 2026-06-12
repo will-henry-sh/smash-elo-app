@@ -28494,5 +28494,18 @@
         "diff2": 31,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-12 03:35 AM",
+        "p1": "Nick R",
+        "c1": "Lucina",
+        "new1": 1121,
+        "diff1": 22,
+        "p2": "Jamichael",
+        "c2": "Sonic",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]

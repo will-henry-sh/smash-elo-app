@@ -1,15 +1,15 @@
 {
     "p1": "Nick R",
-    "c1": "Captain Falcon",
-    "new1": 1000,
-    "diff1": 0,
+    "c1": "Lucina",
+    "new1": 1121,
+    "diff1": 22,
     "p2": "Jamichael",
-    "c2": "Kazuya",
-    "new2": 1141,
-    "diff2": 31,
+    "c2": "Sonic",
+    "new2": 1000,
+    "diff2": 0,
     "last_player1": "Nick R",
     "last_player2": "Jamichael",
-    "last_char1": "Captain Falcon",
-    "last_char2": "Kazuya",
-    "last_winner": "p2"
+    "last_char1": "Lucina",
+    "last_char2": "Sonic",
+    "last_winner": "p1"
 }
