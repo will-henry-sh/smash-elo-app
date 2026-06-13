@@ -1,15 +1,15 @@
 {
     "p1": "Jamichael",
-    "c1": "Greninja",
+    "c1": "Pikachu",
     "new1": 1000,
-    "diff1": -4,
+    "diff1": 0,
     "p2": "Will",
-    "c2": "Meta Knight",
-    "new2": 1070,
-    "diff2": 16,
+    "c2": "Ridley",
+    "new2": 1106,
+    "diff2": 32,
     "last_player1": "Jamichael",
     "last_player2": "Will",
-    "last_char1": "Greninja",
-    "last_char2": "Meta Knight",
+    "last_char1": "Pikachu",
+    "last_char2": "Ridley",
     "last_winner": "p2"
 }

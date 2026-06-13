@@ -28728,5 +28728,18 @@
         "diff2": 16,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-13 03:23 AM",
+        "p1": "Jamichael",
+        "c1": "Pikachu",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Will",
+        "c2": "Ridley",
+        "new2": 1106,
+        "diff2": 32,
+        "winner": "p2",
+        "three_stock": true
     }
 ]
