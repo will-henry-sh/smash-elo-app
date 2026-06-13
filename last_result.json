@@ -1,15 +1,15 @@
 {
     "p1": "Jamichael",
-    "c1": "Falco",
-    "new1": 1094,
-    "diff1": 30,
-    "p2": "Nick R",
-    "c2": "Mr. Game and Watch",
-    "new2": 1000,
-    "diff2": 0,
+    "c1": "Zelda",
+    "new1": 1342,
+    "diff1": -18,
+    "p2": "Will",
+    "c2": "Captain Falcon",
+    "new2": 1275,
+    "diff2": 20,
     "last_player1": "Jamichael",
-    "last_player2": "Nick R",
-    "last_char1": "Falco",
-    "last_char2": "Mr. Game and Watch",
-    "last_winner": "p1"
+    "last_player2": "Will",
+    "last_char1": "Zelda",
+    "last_char2": "Captain Falcon",
+    "last_winner": "p2"
 }
