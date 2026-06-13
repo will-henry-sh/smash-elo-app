@@ -28715,5 +28715,18 @@
         "diff2": 61,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-13 03:19 AM",
+        "p1": "Jamichael",
+        "c1": "Greninja",
+        "new1": 1000,
+        "diff1": -4,
+        "p2": "Will",
+        "c2": "Meta Knight",
+        "new2": 1070,
+        "diff2": 16,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
