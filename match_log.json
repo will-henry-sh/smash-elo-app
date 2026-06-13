@@ -28702,5 +28702,18 @@
         "diff2": 50,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-13 03:11 AM",
+        "p1": "Nick R",
+        "c1": "Donkey Kong",
+        "new1": 1228,
+        "diff1": -55,
+        "p2": "Jamichael",
+        "c2": "Banjo & Kazooie",
+        "new2": 1061,
+        "diff2": 61,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
