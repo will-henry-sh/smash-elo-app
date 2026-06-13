@@ -28793,5 +28793,18 @@
         "diff2": 13,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-13 03:46 AM",
+        "p1": "Daryl",
+        "c1": "Pyra/Mythra",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Nick R",
+        "c2": "Donkey Kong",
+        "new2": 1254,
+        "diff2": 13,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
