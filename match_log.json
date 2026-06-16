@@ -29183,5 +29183,18 @@
         "diff2": 31,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-16 04:04 AM",
+        "p1": "Nick R",
+        "c1": "Mr. Game and Watch",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Jamichael",
+        "c2": "Zero Suit Samus",
+        "new2": 1031,
+        "diff2": 31,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
