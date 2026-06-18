@@ -29248,5 +29248,18 @@
         "diff2": 33,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-18 02:23 AM",
+        "p1": "Colton",
+        "c1": "Toon Link",
+        "new1": 1373,
+        "diff1": 15,
+        "p2": "Ian",
+        "c2": "Kazuya",
+        "new2": 1290,
+        "diff2": -14,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
