@@ -1,15 +1,15 @@
 {
     "p1": "Ian",
     "c1": "Kazuya",
-    "new1": 1249,
+    "new1": 1238,
     "diff1": -11,
     "p2": "Will",
-    "c2": "Captain Falcon",
-    "new2": 1317,
+    "c2": "Marth",
+    "new2": 1166,
     "diff2": 12,
     "last_player1": "Ian",
     "last_player2": "Will",
     "last_char1": "Kazuya",
-    "last_char2": "Captain Falcon",
+    "last_char2": "Marth",
     "last_winner": "p2"
 }
