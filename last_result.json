@@ -1,15 +1,15 @@
 {
-    "p1": "Ian",
-    "c1": "Kazuya",
-    "new1": 1227,
-    "diff1": -11,
-    "p2": "Will",
-    "c2": "Incineroar",
-    "new2": 1150,
-    "diff2": 12,
-    "last_player1": "Ian",
-    "last_player2": "Will",
-    "last_char1": "Kazuya",
-    "last_char2": "Incineroar",
-    "last_winner": "p2"
+    "p1": "Nick R",
+    "c1": "Mr. Game and Watch",
+    "new1": 1060,
+    "diff1": 31,
+    "p2": "Jamichael",
+    "c2": "Pyra/Mythra",
+    "new2": 1003,
+    "diff2": -28,
+    "last_player1": "Nick R",
+    "last_player2": "Jamichael",
+    "last_char1": "Mr. Game and Watch",
+    "last_char2": "Pyra/Mythra",
+    "last_winner": "p1"
 }
