@@ -110,7 +110,7 @@
         "Ganondorf": 1502,
         "Robin": 1112,
         "Wolf": 1146,
-        "Incineroar": 1138,
+        "Incineroar": 1150,
         "Greninja": 1000,
         "Ridley": 1121,
         "Captain Falcon": 1317,
@@ -382,6 +382,6 @@
         "Peach": 1033
     },
     "Ian": {
-        "Kazuya": 1238
+        "Kazuya": 1227
     }
 }
