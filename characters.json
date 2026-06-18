@@ -121,7 +121,7 @@
         "Roy": 1000,
         "King K. Rool": 1145,
         "Link": 1029,
-        "Meta Knight": 1086,
+        "Meta Knight": 1000,
         "Ike": 1150,
         "Steve": 1000,
         "Corrin": 1000,
@@ -382,6 +382,6 @@
         "Peach": 1033
     },
     "Ian": {
-        "Kazuya": 1227
+        "Kazuya": 1404
     }
 }
