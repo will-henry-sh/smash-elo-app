@@ -29482,5 +29482,18 @@
         "diff2": -52,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-26 03:07 AM",
+        "p1": "Nick R",
+        "c1": "Young Link",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Jamichael",
+        "c2": "Mewtwo",
+        "new2": 1032,
+        "diff2": 32,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
