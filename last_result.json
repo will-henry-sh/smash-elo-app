@@ -1,15 +1,15 @@
 {
     "p1": "Daryl",
-    "c1": "Pyra/Mythra",
+    "c1": "Roy",
     "new1": 1000,
-    "diff1": 0,
+    "diff1": -4,
     "p2": "Nick R",
-    "c2": "Min Min",
-    "new2": 1350,
-    "diff2": 12,
+    "c2": "Pichu",
+    "new2": 1034,
+    "diff2": 14,
     "last_player1": "Daryl",
     "last_player2": "Nick R",
-    "last_char1": "Pyra/Mythra",
-    "last_char2": "Min Min",
+    "last_char1": "Roy",
+    "last_char2": "Pichu",
     "last_winner": "p2"
 }
