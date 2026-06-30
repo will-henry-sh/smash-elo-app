@@ -1,15 +1,15 @@
 {
     "p1": "Daryl",
-    "c1": "Roy",
-    "new1": 1029,
-    "diff1": -11,
+    "c1": "Pyra/Mythra",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Will",
-    "c2": "Incineroar",
-    "new2": 1176,
+    "c2": "Dr. Mario",
+    "new2": 1052,
     "diff2": 12,
     "last_player1": "Daryl",
     "last_player2": "Will",
-    "last_char1": "Roy",
-    "last_char2": "Incineroar",
+    "last_char1": "Pyra/Mythra",
+    "last_char2": "Dr. Mario",
     "last_winner": "p2"
 }
