@@ -29716,5 +29716,18 @@
         "diff2": -14,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-30 03:03 AM",
+        "p1": "Will",
+        "c1": "Hero",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Colton",
+        "c2": "Duck Hunt",
+        "new2": 1109,
+        "diff2": 109,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
