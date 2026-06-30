@@ -29690,5 +29690,18 @@
         "diff2": 14,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-30 02:49 AM",
+        "p1": "Daryl",
+        "c1": "Roy",
+        "new1": 1004,
+        "diff1": -12,
+        "p2": "Nick R",
+        "c2": "Donkey Kong",
+        "new2": 1267,
+        "diff2": 13,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
