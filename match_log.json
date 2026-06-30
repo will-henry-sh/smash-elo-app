@@ -29833,5 +29833,18 @@
         "diff2": 12,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-06-30 03:38 AM",
+        "p1": "Daryl",
+        "c1": "Roy",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Will",
+        "c2": "Robin",
+        "new2": 1124,
+        "diff2": 12,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
