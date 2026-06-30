@@ -1,15 +1,15 @@
 {
     "p1": "Daryl",
-    "c1": "Roy",
+    "c1": "Zero Suit Samus",
     "new1": 1000,
-    "diff1": -4,
+    "diff1": 0,
     "p2": "Nick R",
-    "c2": "Pichu",
-    "new2": 1034,
+    "c2": "Richter",
+    "new2": 1014,
     "diff2": 14,
     "last_player1": "Daryl",
     "last_player2": "Nick R",
-    "last_char1": "Roy",
-    "last_char2": "Pichu",
+    "last_char1": "Zero Suit Samus",
+    "last_char2": "Richter",
     "last_winner": "p2"
 }
