@@ -54,30 +54,6 @@
         <div id="matchupResults" class="matchup-results"></div>
       </div>
 
-      <!-- BADGES SECTION -->
-      {% if badges %}
-      <div class="badge-section">
-        <h2 class="badge-header">Badges</h2>
-        <p class="section-subtitle">Collected achievements and milestone unlocks.</p>
-
-        <div class="badge-grid">
-          {% for badge in badges %}
-          <div class="badge-wrapper" onclick="toggleBadge(this)">
-            <img
-              src="{{ badge.icon }}"
-              class="player-badge-icon"
-              alt="{{ badge.name }}"
-            />
-
-            <div class="badge-popup">
-              {{ badge.name }}<br />
-              {{ badge.description }}
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
 
       <div class="player-summary">
         <h2 class="section-title">Current Season Ratings</h2>
