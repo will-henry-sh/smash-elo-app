@@ -2,14 +2,14 @@
     "current_season": {
         "number": 3,
         "started_at": "2026-07-02 11:47 PM",
-        "match_start_index": 2298
+        "match_start_index": 2225
     },
     "archive": [
         {
             "number": 1,
             "started_at": null,
             "closed_at": "2026-04-26 04:42 AM",
-            "match_count": 1430,
+            "match_count": 1384,
             "rows": [
                 {
                     "player": "Will",
@@ -33,14 +33,6 @@
                     "best_character": {
                         "name": "Toon Link",
                         "rating": 1639
-                    }
-                },
-                {
-                    "player": "Nat",
-                    "rating": 1932,
-                    "best_character": {
-                        "name": "Terry",
-                        "rating": 1361
                     }
                 },
                 {
@@ -81,7 +73,7 @@
             "number": 2,
             "started_at": "2026-04-26 04:42 AM",
             "closed_at": "2026-07-02 11:47 PM",
-            "match_count": 868,
+            "match_count": 841,
             "rows": [
                 {
                     "player": "Will",
@@ -113,14 +105,6 @@
                     "best_character": {
                         "name": "Random",
                         "rating": 1565
-                    }
-                },
-                {
-                    "player": "Nat",
-                    "rating": 1386,
-                    "best_character": {
-                        "name": "Richter",
-                        "rating": 1281
                     }
                 },
                 {
