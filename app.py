@@ -153,8 +153,13 @@ def push_to_github_worker():
 
 
 
+LOCAL_DEV = os.getenv("LOCAL_DEV", "").lower() in ("1", "true", "yes")
+
+
 def queue_push(commit_message="Auto-update from match submission"):
     """Adds a push request to the queue and starts worker if one isn't running."""
+    if LOCAL_DEV:
+        return
     push_queue.append(commit_message)
     threading.Thread(target=push_to_github_worker).start()
 
@@ -165,8 +170,10 @@ pull_log = []
 # Detect Render environment
 if os.getenv("RENDER"):
     DATA_DIR = "/var/data"  # Render persistent disk
+elif LOCAL_DEV:
+    DATA_DIR = os.path.join(APP_DIR, "local_data")
 else:
-    DATA_DIR = "."  # Local folder for development
+    DATA_DIR = "."  # Production local folder
 
 # Ensure the directory exists
 os.makedirs(DATA_DIR, exist_ok=True)
@@ -330,7 +337,7 @@ CHARACTERS = sorted([
     "Mii Gunner", "Mii Swordfighter", "Min Min",
     "Mr. Game and Watch", "Ness", "Olimar", "Pac-Man",
     "Palutena", "Peach", "Pichu", "Pikachu", "Piranha Plant",
-    "Pit", "Pyra/Mythra", "R.O.B", "Richter", "Ridley",
+    "Pit", "Pokemon Trainer", "Pyra/Mythra", "R.O.B", "Richter", "Ridley",
     "Random", "Robin", "Rosalina and Luma", "Roy", "Ryu",
     "Samus", "Sephiroth", "Sheik", "Shulk", "Simon",
     "Snake", "Sonic", "Sora", "Steve",
