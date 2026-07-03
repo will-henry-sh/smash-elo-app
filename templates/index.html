@@ -10,97 +10,161 @@
         function updateMatchSubmitState() {
           const submitButton = document.querySelector(".submit-match");
           if (!submitButton) return;
-
           const hasOpenDropdown = Array.from(document.querySelectorAll(".search-dropdown"))
-            .some((dropdown) => dropdown.style.display === "block");
-
+            .some((d) => d.style.display === "block");
           submitButton.disabled = hasOpenDropdown;
         }
 
+        // Returns {setOptions(newOptions)} where newOptions is an array of
+        // {type:'item', value:'...'} or {type:'header', label:'...'} entries.
         function makeSearchable(selectEl) {
           const wrapper = document.createElement("div");
           wrapper.style.position = "relative";
           wrapper.className = "searchable-wrapper";
-          if (selectEl.classList.contains("player-select")) {
-            wrapper.classList.add("field-player");
-          }
-          if (selectEl.classList.contains("character-select")) {
-            wrapper.classList.add("field-character");
-          }
-      
+          if (selectEl.classList.contains("player-select"))   wrapper.classList.add("field-player");
+          if (selectEl.classList.contains("character-select")) wrapper.classList.add("field-character");
+
           const input = document.createElement("input");
           input.type = "text";
-      
           const selectedOption = selectEl.querySelector("option:checked");
           input.value = selectedOption && selectedOption.value ? selectedOption.text : "";
           input.placeholder = "Search...";
           input.className = "search-input";
-      
+
           const dropdown = document.createElement("div");
           dropdown.className = "search-dropdown";
-      
-          dropdown.style.position = "absolute";
-          dropdown.style.left = "0";
-          dropdown.style.right = "0";
-          dropdown.style.maxHeight = "150px";
-          dropdown.style.overflowY = "auto";
-          dropdown.style.display = "none";
-          dropdown.style.zIndex = "50";
-      
+          Object.assign(dropdown.style, {
+            position: "absolute", left: "0", right: "0",
+            maxHeight: "150px", overflowY: "auto", display: "none", zIndex: "50"
+          });
+
           selectEl.parentNode.insertBefore(wrapper, selectEl);
           wrapper.appendChild(input);
           wrapper.appendChild(dropdown);
           selectEl.style.display = "none";
-      
-          const options = Array.from(selectEl.options)
+
+          let allOptions = Array.from(selectEl.options)
             .filter((o) => o.value)
-            .map((o) => o.value);
-      
-          function renderDropdown(filtered) {
+            .map((o) => ({ type: "item", value: o.value }));
+
+          function renderDropdown(items) {
             dropdown.innerHTML = "";
-            filtered.forEach((option) => {
-              const item = document.createElement("div");
-              item.textContent = option;
-              item.className = "dropdown-item";
-      
-              item.addEventListener("click", () => {
-                input.value = option;
-                selectEl.value = option;
+            items.forEach((item) => {
+              if (item.type === "header") {
+                const el = document.createElement("div");
+                el.textContent = item.label;
+                el.className = "dropdown-header";
+                dropdown.appendChild(el);
+                return;
+              }
+              const el = document.createElement("div");
+              el.textContent = item.value;
+              el.className = "dropdown-item";
+              el.addEventListener("mousedown", (e) => e.preventDefault()); // keep focus on input
+              el.addEventListener("click", () => {
+                input.value = item.value;
+                selectEl.value = item.value;
                 dropdown.style.display = "none";
                 updateMatchSubmitState();
               });
-      
-              dropdown.appendChild(item);
+              dropdown.appendChild(el);
             });
           }
-      
+
+          function getDisplayItems(query) {
+            if (query) {
+              return allOptions.filter(
+                (o) => o.type === "item" && o.value.toLowerCase().includes(query)
+              );
+            }
+            return allOptions;
+          }
+
           input.addEventListener("input", () => {
             const val = input.value.toLowerCase();
-            const filtered = options.filter((o) => o.toLowerCase().includes(val));
-            renderDropdown(filtered);
-            dropdown.style.display = filtered.length ? "block" : "none";
+            const items = getDisplayItems(val);
+            renderDropdown(items);
+            dropdown.style.display = items.some((i) => i.type === "item") ? "block" : "none";
             updateMatchSubmitState();
           });
-      
+
           input.addEventListener("focus", () => {
-            renderDropdown(options);
+            renderDropdown(getDisplayItems(""));
             dropdown.style.display = "block";
             updateMatchSubmitState();
           });
-      
+
+          input.addEventListener("blur", () => {
+            input.value = selectEl.value || "";
+          });
+
           document.addEventListener("click", (e) => {
             if (!wrapper.contains(e.target)) {
               dropdown.style.display = "none";
               updateMatchSubmitState();
             }
           });
+
+          return {
+            setOptions(newOptions) {
+              allOptions = newOptions;
+              const stillValid = newOptions.some(
+                (o) => o.type === "item" && o.value === selectEl.value
+              );
+              if (!stillValid) {
+                input.value = "";
+                selectEl.value = "";
+              }
+            },
+          };
         }
-      
+
         document.addEventListener("DOMContentLoaded", () => {
+          const charSelectAPIs = {};
           document.querySelectorAll("select.searchable").forEach((select) => {
-            makeSearchable(select);
+            charSelectAPIs[select.name] = makeSearchable(select);
           });
           updateMatchSubmitState();
+
+          const allChars = {{ characters | tojson }};
+          const charUsage = {{ char_usage | tojson }};
+
+          function buildCharOptions(player) {
+            const usage = charUsage[player] || {};
+            const top5 = Object.entries(usage)
+              .sort((a, b) => b[1] - a[1])
+              .slice(0, 5)
+              .map(([c]) => c)
+              .filter((c) => allChars.includes(c));
+
+            if (top5.length === 0) {
+              return allChars.map((c) => ({ type: "item", value: c }));
+            }
+            const rest = allChars.filter((c) => !top5.includes(c));
+            return [
+              { type: "header", label: "Top Characters" },
+              ...top5.map((c) => ({ type: "item", value: c })),
+              { type: "header", label: "Character Select" },
+              ...rest.map((c) => ({ type: "item", value: c })),
+            ];
+          }
+
+          function applyOrder(playerSelectEl, charSelectName) {
+            const player = playerSelectEl.value;
+            charSelectAPIs[charSelectName]?.setOptions(
+              player ? buildCharOptions(player) : allChars.map((c) => ({ type: "item", value: c }))
+            );
+          }
+
+          const p1Select = document.querySelector('select[name="player1"]');
+          const p2Select = document.querySelector('select[name="player2"]');
+
+          p1Select?.addEventListener("change", () => applyOrder(p1Select, "p1_character"));
+          p2Select?.addEventListener("change", () => applyOrder(p2Select, "p2_character"));
+
+          // Apply on load for pre-selected players
+          if (p1Select?.value) applyOrder(p1Select, "p1_character");
+          if (p2Select?.value) applyOrder(p2Select, "p2_character");
         });
       </script>
       
@@ -641,26 +705,6 @@
               if (e.target === eloOverlay) eloOverlay.hidden = true;
           });
 
-          document.querySelectorAll(".search-input").forEach(input => {
-              input.dataset.fromDropdown = "false";
-      
-              input.parentElement.querySelectorAll(".dropdown-item").forEach(item => {
-                  item.addEventListener("click", () => {
-                      input.dataset.fromDropdown = "true";
-                  });
-              });
-      
-              input.addEventListener("blur", () => {
-                  if (input.dataset.fromDropdown === "false") {
-                      input.value = "";
-                  }
-                  input.dataset.fromDropdown = "false";
-              });
-      
-              input.addEventListener("input", () => {
-                  input.dataset.fromDropdown = "false";
-              });
-          });
       });
     </script>
 

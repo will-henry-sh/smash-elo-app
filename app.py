@@ -1158,10 +1158,24 @@ def matches():
     last = load_last_result() or {}   # <-- FIXED
     player_list = sorted(list(data.keys()))
 
+    # Compute per-player character usage counts
+    log = load_match_log()
+    char_usage = {}
+    for m in log:
+        if m.get("type") == "elo_adjustment":
+            continue
+        for player_key, char_key in [("p1", "c1"), ("p2", "c2")]:
+            player = m.get(player_key)
+            char = m.get(char_key)
+            if player and char and char in CHARACTERS:
+                char_usage.setdefault(player, {})
+                char_usage[player][char] = char_usage[player].get(char, 0) + 1
+
     return render_template(
         "index.html",
         players=data,
         characters=CHARACTERS,
+        char_usage=char_usage,
         last=last,
         last_player1=last.get("last_player1", ""),
         last_player2=last.get("last_player2", ""),
