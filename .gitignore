@@ -1,3 +1,6 @@
+# Local dev data — never commit
+local_data/
+
 # Ignore Python cache
 __pycache__/
 
