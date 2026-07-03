@@ -1,8 +1,8 @@
 {
     "current_season": {
-        "number": 2,
-        "started_at": "2026-04-26 04:42 AM",
-        "match_start_index": 1430
+        "number": 3,
+        "started_at": "2026-07-02 11:47 PM",
+        "match_start_index": 2298
     },
     "archive": [
         {
@@ -73,6 +73,86 @@
                     "best_character": {
                         "name": "Byleth",
                         "rating": 1582
+                    }
+                }
+            ]
+        },
+        {
+            "number": 2,
+            "started_at": "2026-04-26 04:42 AM",
+            "closed_at": "2026-07-02 11:47 PM",
+            "match_count": 868,
+            "rows": [
+                {
+                    "player": "Will",
+                    "rating": 3288,
+                    "best_character": {
+                        "name": "Sephiroth",
+                        "rating": 1637
+                    }
+                },
+                {
+                    "player": "Nick R",
+                    "rating": 2297,
+                    "best_character": {
+                        "name": "Random",
+                        "rating": 1523
+                    }
+                },
+                {
+                    "player": "Jamichael",
+                    "rating": 2056,
+                    "best_character": {
+                        "name": "Random",
+                        "rating": 1510
+                    }
+                },
+                {
+                    "player": "Colton",
+                    "rating": 1854,
+                    "best_character": {
+                        "name": "Random",
+                        "rating": 1565
+                    }
+                },
+                {
+                    "player": "Nat",
+                    "rating": 1386,
+                    "best_character": {
+                        "name": "Richter",
+                        "rating": 1281
+                    }
+                },
+                {
+                    "player": "Daryl",
+                    "rating": 559,
+                    "best_character": {
+                        "name": "Zelda",
+                        "rating": 1374
+                    }
+                },
+                {
+                    "player": "Ian",
+                    "rating": 518,
+                    "best_character": {
+                        "name": "Kazuya",
+                        "rating": 1518
+                    }
+                },
+                {
+                    "player": "Nick W",
+                    "rating": 472,
+                    "best_character": {
+                        "name": "Wii Fit Trainer",
+                        "rating": 1326
+                    }
+                },
+                {
+                    "player": "Jeff",
+                    "rating": 325,
+                    "best_character": {
+                        "name": "Byleth",
+                        "rating": 1201
                     }
                 }
             ]
