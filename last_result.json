@@ -1,15 +1,15 @@
 {
     "p1": "Nick R",
-    "c1": "Snake",
-    "new1": 1036,
-    "diff1": 36,
+    "c1": "Pichu",
+    "new1": 1000,
+    "diff1": 0,
     "p2": "Will",
-    "c2": "Ness",
-    "new2": 1000,
-    "diff2": 0,
+    "c2": "Kazuya",
+    "new2": 1024,
+    "diff2": 24,
     "last_player1": "Nick R",
     "last_player2": "Will",
-    "last_char1": "Snake",
-    "last_char2": "Ness",
-    "last_winner": "p1"
+    "last_char1": "Pichu",
+    "last_char2": "Kazuya",
+    "last_winner": "p2"
 }
