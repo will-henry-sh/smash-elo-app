@@ -29365,5 +29365,18 @@
         "diff2": 42,
         "winner": "p2",
         "three_stock": true
+    },
+    {
+        "timestamp": "2026-07-07 02:49 AM",
+        "p1": "Nick R",
+        "c1": "King Dedede",
+        "new1": 1053,
+        "diff1": 53,
+        "p2": "Will",
+        "c2": "Meta Knight",
+        "new2": 1000,
+        "diff2": -23,
+        "winner": "p1",
+        "three_stock": false
     }
 ]

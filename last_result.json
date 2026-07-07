@@ -1,15 +1,15 @@
 {
     "p1": "Nick R",
-    "c1": "Pichu",
-    "new1": 1000,
-    "diff1": 0,
+    "c1": "King Dedede",
+    "new1": 1053,
+    "diff1": 53,
     "p2": "Will",
-    "c2": "King K. Rool",
-    "new2": 1066,
-    "diff2": 42,
+    "c2": "Meta Knight",
+    "new2": 1000,
+    "diff2": -23,
     "last_player1": "Nick R",
     "last_player2": "Will",
-    "last_char1": "Pichu",
-    "last_char2": "King K. Rool",
-    "last_winner": "p2"
+    "last_char1": "King Dedede",
+    "last_char2": "Meta Knight",
+    "last_winner": "p1"
 }
