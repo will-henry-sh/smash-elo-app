@@ -29300,5 +29300,18 @@
         "diff2": -28,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-07-07 02:33 AM",
+        "p1": "Nick R",
+        "c1": "Snake",
+        "new1": 1064,
+        "diff1": 28,
+        "p2": "Daryl",
+        "c2": "Roy",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
