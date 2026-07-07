@@ -1,15 +1,15 @@
 {
     "p1": "Nick R",
-    "c1": "Donkey Kong",
+    "c1": "Piranha Plant",
     "new1": 1029,
     "diff1": 29,
     "p2": "Daryl",
-    "c2": "Roy",
+    "c2": "Young Link",
     "new2": 1000,
     "diff2": 0,
     "last_player1": "Nick R",
     "last_player2": "Daryl",
-    "last_char1": "Donkey Kong",
-    "last_char2": "Roy",
+    "last_char1": "Piranha Plant",
+    "last_char2": "Young Link",
     "last_winner": "p1"
 }
