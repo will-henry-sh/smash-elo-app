@@ -29209,5 +29209,18 @@
         "diff2": 20,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-07-07 01:37 AM",
+        "p1": "Jamichael",
+        "c1": "Captain Falcon",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Colton",
+        "c2": "Dark Samus",
+        "new2": 1030,
+        "diff2": 30,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
