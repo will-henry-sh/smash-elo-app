@@ -1,7 +1,7 @@
 {
     "p1": "Will",
-    "c1": "Captain Falcon",
-    "new1": 1122,
+    "c1": "Ganondorf",
+    "new1": 1091,
     "diff1": 17,
     "p2": "Jamichael",
     "c2": "Mario",
@@ -9,7 +9,7 @@
     "diff2": 0,
     "last_player1": "Will",
     "last_player2": "Jamichael",
-    "last_char1": "Captain Falcon",
+    "last_char1": "Ganondorf",
     "last_char2": "Mario",
     "last_winner": "p1"
 }
