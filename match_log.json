@@ -29729,5 +29729,18 @@
         "diff2": 34,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-07-10 03:12 AM",
+        "p1": "Will",
+        "c1": "Greninja",
+        "new1": 1088,
+        "diff1": 18,
+        "p2": "Jamichael",
+        "c2": "Random",
+        "new2": 1017,
+        "diff2": -13,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
