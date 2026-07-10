@@ -29625,5 +29625,18 @@
         "diff2": -18,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-07-10 02:39 AM",
+        "p1": "Will",
+        "c1": "Incineroar",
+        "new1": 1059,
+        "diff1": 18,
+        "p2": "Colton",
+        "c2": "Toon Link",
+        "new2": 1000,
+        "diff2": -13,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
