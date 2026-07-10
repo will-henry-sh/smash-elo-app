@@ -29703,5 +29703,18 @@
         "diff2": 0,
         "winner": "p1",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-07-10 03:03 AM",
+        "p1": "Nick R",
+        "c1": "Lucina",
+        "new1": 1027,
+        "diff1": 27,
+        "p2": "Jamichael",
+        "c2": "Toon Link",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
