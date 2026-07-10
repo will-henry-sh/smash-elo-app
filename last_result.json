@@ -1,15 +1,15 @@
 {
-    "p1": "Jamichael",
-    "c1": "Rosalina and Luma",
-    "new1": 1031,
-    "diff1": 31,
+    "p1": "Will",
+    "c1": "Captain Falcon",
+    "new1": 1084,
+    "diff1": 19,
     "p2": "Nick R",
-    "c2": "Richter",
+    "c2": "Cloud",
     "new2": 1000,
     "diff2": 0,
-    "last_player1": "Jamichael",
+    "last_player1": "Will",
     "last_player2": "Nick R",
-    "last_char1": "Rosalina and Luma",
-    "last_char2": "Richter",
+    "last_char1": "Captain Falcon",
+    "last_char2": "Cloud",
     "last_winner": "p1"
 }
