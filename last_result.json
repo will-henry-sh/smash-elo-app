@@ -1,15 +1,15 @@
 {
     "p1": "Jamichael",
-    "c1": "Zelda",
+    "c1": "Link",
     "new1": 1000,
     "diff1": 0,
     "p2": "Colton",
-    "c2": "Yoshi",
+    "c2": "Toon Link",
     "new2": 1031,
     "diff2": 31,
     "last_player1": "Jamichael",
     "last_player2": "Colton",
-    "last_char1": "Zelda",
-    "last_char2": "Yoshi",
+    "last_char1": "Link",
+    "last_char2": "Toon Link",
     "last_winner": "p2"
 }

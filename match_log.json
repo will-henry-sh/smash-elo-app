@@ -29586,5 +29586,18 @@
         "diff2": 31,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-07-10 02:27 AM",
+        "p1": "Jamichael",
+        "c1": "Link",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Colton",
+        "c2": "Toon Link",
+        "new2": 1031,
+        "diff2": 31,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
