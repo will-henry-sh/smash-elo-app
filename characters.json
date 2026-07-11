@@ -6,7 +6,7 @@
         "Palutena": 1000,
         "Donkey Kong": 1029,
         "Hero": 1000,
-        "Cloud": 1037,
+        "Cloud": 1020,
         "Ice Climbers": 1000,
         "King Dedede": 1078,
         "Sephiroth": 1000,
@@ -191,7 +191,7 @@
         "Palutena": 1000,
         "Wii Fit Trainer": 1000,
         "Random": 1020,
-        "Cloud": 1050
+        "Cloud": 1069
     },
     "Colton": {
         "Toon Link": 1045,
