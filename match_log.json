@@ -30041,5 +30041,18 @@
         "diff2": 15,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-07-16 03:20 AM",
+        "p1": "Colton",
+        "c1": "Dark Samus",
+        "new1": 1015,
+        "diff1": -15,
+        "p2": "Will",
+        "c2": "Bowser",
+        "new2": 1041,
+        "diff2": 17,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
