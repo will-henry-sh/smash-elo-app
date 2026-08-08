@@ -30379,5 +30379,18 @@
         "diff2": 14,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-08-08 02:38 AM",
+        "p1": "Colton",
+        "c1": "Yoshi",
+        "new1": 1000,
+        "diff1": -5,
+        "p2": "Will",
+        "c2": "Captain Falcon",
+        "new2": 1230,
+        "diff2": 14,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
