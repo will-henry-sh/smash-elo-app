@@ -30613,5 +30613,18 @@
         "diff2": 16,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-08-08 03:43 AM",
+        "p1": "Jamichael",
+        "c1": "King K. Rool",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Will",
+        "c2": "Ganondorf",
+        "new2": 1155,
+        "diff2": 15,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
