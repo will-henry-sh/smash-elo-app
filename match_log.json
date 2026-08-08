@@ -30405,5 +30405,18 @@
         "diff2": 28,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-08-08 02:45 AM",
+        "p1": "Daryl",
+        "c1": "Zelda",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Colton",
+        "c2": "Jigglypuff",
+        "new2": 1028,
+        "diff2": 28,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
