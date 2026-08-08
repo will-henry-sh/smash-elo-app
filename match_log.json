@@ -30561,5 +30561,18 @@
         "diff2": 15,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-08-08 03:31 AM",
+        "p1": "Nick R",
+        "c1": "Mario",
+        "new1": 1000,
+        "diff1": 0,
+        "p2": "Will",
+        "c2": "Ridley",
+        "new2": 1065,
+        "diff2": 18,
+        "winner": "p2",
+        "three_stock": false
     }
 ]
