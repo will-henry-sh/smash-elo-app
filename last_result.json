@@ -1,15 +1,15 @@
 {
     "p1": "Jamichael",
-    "c1": "Falco",
-    "new1": 1000,
-    "diff1": 0,
+    "c1": "Robin",
+    "new1": 1018,
+    "diff1": -14,
     "p2": "Will",
-    "c2": "Robin",
-    "new2": 1056,
+    "c2": "Incineroar",
+    "new2": 1075,
     "diff2": 16,
     "last_player1": "Jamichael",
     "last_player2": "Will",
-    "last_char1": "Falco",
-    "last_char2": "Robin",
+    "last_char1": "Robin",
+    "last_char2": "Incineroar",
     "last_winner": "p2"
 }
