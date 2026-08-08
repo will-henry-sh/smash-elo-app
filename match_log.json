@@ -30457,5 +30457,18 @@
         "diff2": 25,
         "winner": "p2",
         "three_stock": false
+    },
+    {
+        "timestamp": "2026-08-08 03:00 AM",
+        "p1": "Daryl",
+        "c1": "Pyra/Mythra",
+        "new1": 1035,
+        "diff1": 35,
+        "p2": "Jamichael",
+        "c2": "Byleth",
+        "new2": 1000,
+        "diff2": 0,
+        "winner": "p1",
+        "three_stock": false
     }
 ]
